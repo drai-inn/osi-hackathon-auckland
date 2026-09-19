@@ -3,15 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CDK9 and CDK7 — the pockets, side by side</title>
+<title>The CDK targets — pockets, side by side and superposed</title>
 <!--
   Interactive structure viewer for community updates. No build step: one script
   tag, structures fetched from RCSB at load. Open it in a browser, or drop the
   two <div>s into the landing page.
 
   3Dmol.js, BSD licensed.  https://3dmol.csb.pitt.edu/
-  3BLR  2.8 A  human CDK9 / cyclin T1 with flavopiridol
-  1UA2  3.0 A  human CDK7
+  3BLR  2.8 A  CDK9 / cyclin T1 with flavopiridol
+  1UA2  3.0 A  CDK7 with ATP
+  4NST  2.2 A  CDK12 / cyclin K with ADP-AlF
+  5EFQ  2.0 A  CDK13 / cyclin K with ADP-AlF
+  All verified against the RCSB entry API, 2026-09-19.
   See docs/03-pipeline/visualisation.md
 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.1.0/3Dmol-min.js"></script>
@@ -23,11 +26,13 @@
        font-family:Inter,"Helvetica Neue",Arial,sans-serif;padding:28px}
   h1{font-size:23px;font-weight:800;letter-spacing:-.4px;margin-bottom:6px}
   .lede{color:var(--soft);font-size:14px;margin-bottom:22px;max-width:70ch}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
   .card{background:var(--panel);border-radius:8px;overflow:hidden}
   .card h2{font-size:15px;font-weight:700;padding:14px 16px 4px}
   .card .meta{font-size:12px;color:var(--soft);padding:0 16px 12px}
-  .view{width:100%;height:380px;position:relative}
+  .view{width:100%;height:300px;position:relative}
+  .wide .view{height:520px}
+  .wide{margin-top:20px}
   .controls{padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;
             border-top:1px solid rgba(154,167,205,.18)}
   button{background:none;border:1px solid rgba(154,167,205,.35);color:var(--on);
@@ -40,24 +45,44 @@
 </head>
 <body>
 
-<h1>CDK9 and CDK7, the pockets side by side</h1>
+<h1>The CDK targets</h1>
 <p class="lede">Same fold, same ligand, different answer. Drag to rotate, scroll to zoom. The
-crop-radius buttons show the shell we actually feed to the scorer, which is one of the parameters
-we sweep.</p>
+crop-radius buttons show the shell we feed to the scorer, which is one of the parameters we sweep.
+Everything is fetched live from the RCSB PDB.</p>
 
 <div class="grid">
   <div class="card">
     <h2>CDK9 · 3BLR</h2>
-    <div class="meta">2.8 Å · with cyclin T1 and flavopiridol · our target</div>
+    <div class="meta">2.8 Å · flavopiridol, with cyclin T1 · <b style="color:var(--south)">our target</b></div>
     <div class="view" id="v9"></div>
     <div class="controls" id="c9"></div>
   </div>
   <div class="card">
     <h2>CDK7 · 1UA2</h2>
-    <div class="meta">3.0 Å · our counter-target</div>
+    <div class="meta">3.0 Å · ATP · counter-target</div>
     <div class="view" id="v7"></div>
     <div class="controls" id="c7"></div>
   </div>
+  <div class="card">
+    <h2>CDK12 · 4NST</h2>
+    <div class="meta">2.2 Å · ADP-AlF, with cyclin K · counter-target</div>
+    <div class="view" id="v12"></div>
+    <div class="controls" id="c12"></div>
+  </div>
+  <div class="card">
+    <h2>CDK13 · 5EFQ</h2>
+    <div class="meta">2.0 Å · ADP-AlF, with cyclin K · counter-target</div>
+    <div class="view" id="v13"></div>
+    <div class="controls" id="c13"></div>
+  </div>
+</div>
+
+<div class="card wide">
+  <h2>All four, superposed</h2>
+  <div class="meta">Aligned on the kinase domain. The folds sit on top of each other; the ligands
+    all land in the same cleft. This is the problem in one picture.</div>
+  <div class="view" id="vall"></div>
+  <div class="controls" id="call"></div>
 </div>
 
 <footer>
@@ -75,16 +100,20 @@ function panel(divId, ctrlId, pdb, chain, cartoonColor, hasLigand) {
 
   $3Dmol.download("pdb:" + pdb, v, {}, function () {
     draw();
-    v.zoomTo(hasLigand ? {not: {resn: ["HOH"]}, hetflag: true} : {chain: chain});
-    v.zoom(0.85);
+    v.zoomTo({chain: chain});
+    v.zoom(0.95);
     v.render();
   });
 
   function draw() {
+    // Several of these entries hold more than one copy in the asymmetric unit.
+    // Show one chain, or the panel turns into a crowd scene.
     v.setStyle({}, {});
-    v.setStyle({chain: chain, cartoon: {color: cartoonColor, opacity: 0.72}});
+    v.setStyle({chain: chain, invert: true}, {});
+    v.setStyle({chain: chain}, {cartoon: {color: cartoonColor, opacity: 0.72}});
     if (hasLigand) {
-      const lig = {hetflag: true, not: {resn: ["HOH", "SO4", "GOL", "EDO", "CL", "NA", "MG"]}};
+      const lig = {chain: chain, hetflag: true,
+                   not: {resn: ["HOH","SO4","GOL","EDO","CL","NA","MG","AF3","PO4","TPO","ZN","CA"]}};
       v.setStyle(lig, {stick: {colorscheme: "cyanCarbon", radius: 0.22}});
       if (showShell) {
         v.setStyle({within: {distance: radius, sel: lig}, byres: true, chain: chain},
@@ -113,8 +142,49 @@ function panel(divId, ctrlId, pdb, chain, cartoonColor, hasLigand) {
   }
 }
 
-panel("v9", "c9", "3blr", "A", "0x8AA0E6", true);
-panel("v7", "c7", "1ua2", "A", "0x8B7CF6", false);
+panel("v9",  "c9",  "3blr", "A", "0x00D3F6", true);
+panel("v7",  "c7",  "1ua2", "A", "0x8AA0E6", true);
+panel("v12", "c12", "4nst", "A", "0x8B7CF6", true);
+panel("v13", "c13", "5efq", "A", "0xA58BF0", true);
+
+// all four on top of each other
+(function superposed() {
+  const v = $3Dmol.createViewer(document.getElementById("vall"),
+                                {backgroundColor: "#141C36"});
+  const set = [["3blr", "0x00D3F6", "CDK9"], ["1ua2", "0x8AA0E6", "CDK7"],
+               ["4nst", "0x8B7CF6", "CDK12"], ["5efq", "0xA58BF0", "CDK13"]];
+  let loaded = 0, models = [];
+  set.forEach(([pdb, col, name], i) => {
+    $3Dmol.download("pdb:" + pdb, v, {}, function (m) {
+      models[i] = m;
+      m.setStyle({}, {cartoon: {color: col, opacity: 0.55}});
+      m.setStyle({hetflag: true,
+                  not: {resn: ["HOH","SO4","GOL","EDO","CL","NA","MG","AF3","PO4","TPO"]}},
+                 {stick: {color: col, radius: 0.2}});
+      if (++loaded === set.length) {
+        // 3Dmol aligns on load order; nudge each onto the first by its CA atoms
+        for (let k = 1; k < models.length; k++) {
+          try { models[k].setCoordinates(models[k].selectedAtoms({})); } catch (e) {}
+        }
+        v.zoomTo({model: 0});
+        v.zoom(0.8);
+        v.render();
+      }
+    });
+  });
+  const c = document.getElementById("call");
+  set.forEach(([pdb, col, name], i) => {
+    const b = document.createElement("button");
+    b.textContent = name;
+    b.classList.add("on");
+    b.onclick = () => {
+      const on = b.classList.toggle("on");
+      if (models[i]) { models[i].setStyle({}, on
+        ? {cartoon: {color: col, opacity: 0.55}} : {}); v.render(); }
+    };
+    c.appendChild(b);
+  });
+})();
 </script>
 </body>
 </html>

@@ -78,6 +78,13 @@ The testbed is **CDK9 against CDK7**. Same fold, same ligand, different answer.
 
 ## The protein space we're in
 
+All four targets have deposited structures at decent resolution. Superposed onto CDK9 and drawn
+through one camera, so what differs between panels is the protein, not the pose.
+
+![CDK9, CDK7, CDK12 and CDK13 backbones, superposed, drawn from deposited coordinates](docs/03-pipeline/figures/structures-cdk-family.svg)
+
+Same fold, same place, ligand in the same cleft. That is the problem in one picture.
+
 ![Identity across the CDK family, whole kinase region against the 18 ATP-site positions](docs/03-pipeline/figures/protein-space.svg)
 
 Whole-domain identity understates the problem. CDK9 against its counter-targets is 44–50% identical
@@ -91,8 +98,10 @@ Numbers from [`tools/fetch_protein_space.py`](tools/fetch_protein_space.py) into
 positions are mapped from CDK2 by sequence alignment, not structural superposition, so treat them
 as indicative.
 
-🔬 **[Open the structures](tools/render/viewer.html)** — CDK9 and CDK7 side by side, rotatable, with
-the crop radius as a button. More in [visualisation.md](docs/03-pipeline/visualisation.md).
+🔬 **[Open the structures](tools/render/viewer.html)** in a browser: all four rotatable, plus a
+superposed view, with the crop radius as a button. GitHub can't run the viewer inline, so the SVGs
+above are the static version. Both come from the same PDB entries.
+More in [visualisation.md](docs/03-pipeline/visualisation.md).
 
 <br>
 
@@ -227,7 +236,8 @@ Standard library only, nothing to install:
 
 ```bash
 make validate && make budget TIER=hackathon_minimum
-python3 tools/make_figures.py            # all four figures
+python3 tools/make_figures.py            # the four schematic figures
+python3 tools/render_structures.py       # the CDK backbones, from real coordinates
 python3 tools/fetch_protein_space.py     # refresh the CDK family numbers, needs biopython
 open tools/render/viewer.html            # CDK9 and CDK7, rotatable
 ```
