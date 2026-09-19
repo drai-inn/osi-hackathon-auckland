@@ -42,6 +42,7 @@ Status key: 🔴 blocking · 🟠 shapes design · 🟡 nice to resolve early ·
 | C3 | Do we include known *non-selective* pan-CDK inhibitors as a distinct class? | Strongly recommended: they are the discriminating cases, and the ones a 2D baseline gets wrong | WP-A owner | Fri 2 Oct | 🟠 |
 | C4 | Protonation, tautomer and metal/cofactor handling at the pocket boundary | Quantum labels are highly sensitive to this. Get it wrong and WP-E produces confident nonsense | WP-E + WP-A | Fri 9 Oct | 🟠 |
 | C5 | Apo vs. holo starting structures; which PDB entries; how to handle the DFG/activation loop state | Induced fit is part of the selectivity signal we claim to capture | WP-B owner | Fri 2 Oct | 🟠 |
+| C7 | **The crop drops the cyclin.** No cyclin T1 residue is within 15 Å of the ligand; the first appears at 18 Å `[measured]`. The cyclin holds the αC helix in the active position | We crop away what sets the conformation we are scoring. Either the cropped pocket is rigid enough not to care, or restraints are needed, or the radius has to go to 18 Å and pay ≈800× on the quantum stage. Nobody has checked which | WP-B + WP-E | Fri 2 Oct | 🔴 |
 | C6 | What is the honest 2D baseline? (ECFP4+RF? A published CDK selectivity model?) | Without a real baseline, "better than 2D" is unfalsifiable | WP-A + WP-D | Fri 2 Oct | 🔴 |
 
 ## D. Methodology

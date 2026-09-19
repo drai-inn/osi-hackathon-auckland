@@ -32,6 +32,42 @@ protonation assignment. See [interfaces.md](../interfaces.md#s2--s3--cropped-poc
 
 Do not exceed three radii during the hackathon. `[source-doc]`
 
+## What the radius actually costs
+
+![One site at six scales, from the whole complex down to the quantum region, with heavy-atom counts](../figures/zoom-ladder.svg)
+
+Measured on CDK9 with flavopiridol, 3BLR. Whole residues, any heavy atom inside the cutoff,
+hydrogens absent because the structure has none at 2.8 Å.
+
+| Radius | Residues | Heavy atoms | Relative quantum cost `[estimate]` | Chains |
+| --- | --: | --: | --: | --- |
+| 4 Å | 16 | 153 | 1× | kinase |
+| 5 Å | 20 | 185 | ≈2× | kinase |
+| 6 Å | 26 | 237 | ≈4× | kinase |
+| 8 Å | 49 | 408 | ≈19× | kinase |
+| **10 Å** | 62 | 504 | ≈36× | kinase |
+| **12 Å** | 89 | 733 | ≈110× | kinase |
+| **15 Å** | 130 | 1,067 | ≈339× | kinase |
+| 18 Å | 173 | 1,419 | ≈798× | kinase **+ cyclin T1** |
+| 20 Å | 201 | 1,650 | ≈1,254× | kinase + cyclin T1 |
+
+Bold rows are the three radii in the parameter table. Atom counts are `[measured]` —
+[`tools/render_components.py`](../../../tools/render_components.py) into
+[`data/pocket-anatomy.json`](../../../data/pocket-anatomy.json). The cost column is a cubic scaling
+on atom count relative to the 4 Å region, so it is `[estimate]` and indicative only. Day 1 replaces
+it with wall-clock.
+
+Two things fall out that were not obvious before the counts existed.
+
+**The sanctioned range spans about 10× in cost.** 10 to 15 Å is 504 to 1,067 heavy atoms. Add
+hydrogens and both roughly double. That is a large enough swing that the radius decision should be
+made on measured accuracy, not on habit.
+
+**The cyclin is outside every radius we are considering.** The first cyclin T1 residue appears at
+18 Å. Convenient for cost, awkward for physics: the cyclin is what holds the αC helix in the active
+position, so the crop discards the thing that sets the conformation we are trying to score.
+See [C7](../../02-scope/open-questions.md#c-science-and-benchmark-design).
+
 ## Why crop radius deserves careful treatment
 
 Cost of the quantum stage scales steeply with system size, so radius is the main lever on the

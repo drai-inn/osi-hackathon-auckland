@@ -15,6 +15,7 @@ context, and the collateral we recruit with.
 | [roles.md](roles.md) | Owners, hosts, disciplines needed, and who to invite |
 | [adjacent-activities.md](adjacent-activities.md) | The four cross-disciplinary tracks — pick three |
 | [us-handoff.md](us-handoff.md) | The relay to the US team, and the timing that makes it work |
+| [sessions/](sessions/) | What was built, decided and rejected, dated. The only place carrying the evolution of our thinking |
 
 ## The one thing to remember
 

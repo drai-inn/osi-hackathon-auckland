@@ -28,6 +28,19 @@ which is exactly the part that has to be told apart. And CDK8 / CDK19 are identi
 positions, so the family contains a harder pair than ours.
 See [visualisation.md](../03-pipeline/visualisation.md).
 
+Sequence identity is the wide view. The narrow one is twenty residues.
+
+![The twenty residues lining the CDK9 ATP site, and the equivalent residue in CDK7, CDK12 and CDK13](../03-pipeline/figures/pocket-anatomy.svg)
+
+Twenty residues sit within 5 Å of flavopiridol in CDK9. Across those twenty, structural
+superposition puts **two** where CDK9 differs from all three counter-targets: **Cys106** at the
+hinge, where the others have methionine, and **Ala153** on the floor. Cys106 is 3.2 Å from the
+ligand.
+
+That is the discrimination problem stated exactly. Not "these proteins are similar" but *this
+atom, here, is the difference*, and a method that cannot see it will rank all four the same.
+It is also why a 2D fingerprint has nothing to work with: the compound is identical in every case.
+
 ## Why now, and why this shape of solution
 
 Three things have changed enough to make a different pipeline shape plausible:
