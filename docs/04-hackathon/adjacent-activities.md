@@ -144,13 +144,21 @@ The default protects the two things most likely to invalidate the project (a bad
 untrustworthy surrogates) while giving the methodological thread the room to become something
 publishable. Activity 4's work happens regardless under WP-F.
 
-## Running them
+## Running them across two days
 
-- **Day 1:** all three clinics run in the morning, before anyone touches a GPU. They set shared
-  vocabulary and surface disagreements while they are still cheap.
-- **Days 2–4:** each activity's participants embed in their linked work package.
-- **Day 5:** each activity presents its artifact — separately from the pipeline result, so a
-  disappointing pipeline result does not bury three good pieces of work.
+The event is **19–20 Oct**, so the clinics compress and most of each activity's substance has to be
+prepared during the month.
+
+- **Day 1, 10:00–11:30:** the three clinics run in parallel as
+  [on-ramps](engagement.md#the-on-ramps). Activity 1 is on-ramp C, Activity 2 is on-ramp E,
+  Activity 3 runs as a working session on the pre-computed convergence study.
+- **Day 1 afternoon – Day 2 morning:** participants embed in their linked work package.
+- **Day 2, 14:30:** each activity presents its artifact — **separately from the pipeline result**,
+  so a disappointing pipeline result does not bury three good pieces of work.
+
+**What this means for the month:** an activity whose material is prepared on the day will not
+happen. Activity 1 needs the 2D baseline browsable (week 2); Activity 3 needs the convergence study
+finished (week 3); Activity 2 needs the search-space spec and a worked example (week 3).
 
 ## Invitation framing
 

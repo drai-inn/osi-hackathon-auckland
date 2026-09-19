@@ -22,8 +22,12 @@ output, so packages do not block each other. Only settings that show stable sign
 Plus a **methodology lead** (1 person, cross-cutting) owning
 [the diagnostics and sensitivity analysis](../03-experiments/hpo-microtopic.md).
 
-Total: **13–20 people**. Below ~10, drop WP-C (keep static + relaxation only, no surrogate arm)
-before dropping anything else — it has the widest cost range and the weakest prior.
+Total: **13–20 people**. Below ~10, drop WP-C's surrogate arm (keep static + relaxation) before
+dropping anything else — widest cost range, weakest prior, heaviest install burden.
+
+**Each package also needs a named *host*, who is not the owner** — responsible for the newcomers
+attached to that package. In a two-day sprint the owner will choose the technical work every time.
+See [engagement.md](engagement.md#the-structural-fix-split-the-host-role).
 
 ---
 
@@ -55,27 +59,49 @@ Each package maps to stage pages, which carry the real content:
 | E | [S6 Quantum labelling](../02-pipeline/stages/S6-quantum-labelling.md) |
 | F | [S8 Orchestration](../02-pipeline/stages/S8-orchestration.md) |
 
-## Day-1 obligations
+## These were day-1 obligations. Now they are month obligations.
 
-Non-negotiable, because everything else depends on them. All by end of day 1:
+The event is **two days**. Everything below must be true *before* 19 Oct, not on it. Dates from
+[critical-path.md](critical-path.md).
 
-| WP | Obligation |
-| --- | --- |
-| A | Manifest v1 validated and committed, even with provisional fields |
-| B | **Measured** GPU-hours per complex, published |
-| C | Static vs. relaxation contact persistence on 5 complexes |
-| D | Off-the-shelf scorer run on static pockets + the MW/logP confound diagnostic |
-| E | Quantum convergence check on 3–5 systems + **measured** GPU-hours per label. **No production labels** |
-| F | `make smoke` green with stubs, before lunch |
-| Methodology | Pre-registration pages collected from every WP |
+| WP | Obligation | By |
+| --- | --- | --- |
+| F | Architecture spike answered: what builds for `aarch64` and `x86_64` | **Fri 25 Sep** |
+| E | cuEST availability resolved, or the fallback decided | **Fri 25 Sep** |
+| A | Manifest v1 frozen and validated | **Fri 2 Oct** |
+| F | `make smoke` green on GB10; multi-arch images published | **Fri 2 Oct** |
+| B | **Measured** GPU-hours per complex, on both architectures | Fri 2 Oct |
+| A | 2D baseline computed — the number everything is measured against | Fri 2 Oct |
+| C | Static vs. relaxation contact persistence on 5 complexes | Fri 9 Oct |
+| D | Scorer running with uncertainty + the MW/logP confound diagnostic | Fri 9 Oct |
+| E | **Quantum convergence study on H200** + **measured** GPU-hours per label | **Fri 9 Oct** |
+| F | Live dashboard showing runs by name | Fri 9 Oct |
+| F | Pre-computation campaign complete | **Fri 16 Oct** |
+| Hosts | Novice dry run: first result in under 30 minutes | **Fri 16 Oct** |
+| Methodology | Pre-registration pages, one per package | Fri 16 Oct |
 
-Note that three of these are measurements that replace `[estimate]`s in the
-[compute budget](../05-feasibility/compute-budget.md). **The day-1 close is a re-planning
-meeting**, not a status update — run sizes get re-derived from real numbers.
+Several of these are measurements that replace `[estimate]`s in the
+[compute budget](../05-feasibility/compute-budget.md). The **Friday gate meetings** are where run
+sizes get re-derived from real numbers — not a status update.
+
+## Event-day obligations
+
+What each package actually does in the room, now that the build is behind us:
+
+| WP | Day 1 | Day 2 |
+| --- | --- | --- |
+| A | Host [break-the-benchmark](engagement.md#c--break-the-benchmark--medicinal-chemistry-pharmacology--60-min); fold findings into the manifest | Benchmark limitations section of the handoff |
+| B | Host [pose triage](engagement.md#b--pose-triage--structural-biology-medicinal-chemistry--zero-code); collect human pose labels | Close fidelity contract 1 with real human ground truth |
+| C | Mode comparison sweeps | Motion-value gate evidence |
+| D | Scoring sweeps; uncertainty and acquisition | Acquisition-value gate; feedback round |
+| E | Production labels from the acquisition list | Quantum-value gate |
+| F | Keep the DAG and dashboard alive; burn-down board | Integrated run; handoff package |
+| Methodology | Collect score distributions; first sensitivity ranking | Diagnostics, intervals, gate report |
 
 ## Anti-patterns to name out loud on day 1
 
-- **Building end-to-end before interfaces are frozen.** The integration happens once, on day 4.
+- **Building end-to-end before interfaces are frozen.** Integration happens once, on day 2.
+- **Treating the month as optional.** Two days cannot absorb a build.
 - **Generating production quantum labels before the convergence check.** The most expensive way to
   waste the week.
 - **Reporting a point estimate.** See [metrics.md](../03-experiments/metrics.md).

@@ -1,7 +1,8 @@
 # Roles, people, and who to invite
 
-Names are deliberately blank. Filling them in is the current critical path
-([A3](../01-scope/open-questions.md), [A5](../01-scope/open-questions.md)).
+Names are deliberately blank. **Filling them in is Monday's job** and the top of the critical path
+([A3](../01-scope/open-questions.md), [A5](../01-scope/open-questions.md),
+[monday-session.md](monday-session.md)).
 
 ## Core roles
 
@@ -16,7 +17,22 @@ Names are deliberately blank. Filling them in is the current critical path
 | **WP-E owner** | Quantum labelling | _unassigned_ |
 | **WP-F owner** | Workflow, infrastructure, telemetry | _unassigned_ |
 
-A work package without a named owner two weeks out should be cut, not hoped for.
+A work package without a named owner by **Fri 2 Oct** should be cut, not hoped for.
+
+## Hosts — a separate, mandatory role
+
+Each package also needs a **host**, who is *not* the owner: responsible for the newcomers attached
+to that package, for getting them started, and for making sure their contribution lands in the
+output. [Why the split is mandatory](engagement.md#the-structural-fix-split-the-host-role).
+
+| Package | Host | Their on-ramps |
+| --- | --- | --- |
+| A | _unassigned_ | [C break the benchmark](engagement.md#c--break-the-benchmark--medicinal-chemistry-pharmacology--60-min) |
+| B | _unassigned_ | [B pose triage](engagement.md#b--pose-triage--structural-biology-medicinal-chemistry--zero-code) |
+| C | _unassigned_ | [A your run](engagement.md#a--your-run-your-parameter--anyone-including-non-coders--20-min) |
+| D | _unassigned_ | [A your run](engagement.md#a--your-run-your-parameter--anyone-including-non-coders--20-min) |
+| E | _unassigned_ | [Activity 3](adjacent-activities.md#activity-3--the-fidelity-ladder-quantum-surrogates-and-knowing-when-to-trust-them) |
+| F | _unassigned_ | [A your run](engagement.md#a--your-run-your-parameter--anyone-including-non-coders--20-min) |
 
 ## Skills needed, by discipline
 
@@ -60,3 +76,6 @@ Not everyone can give a week. Offer three doors:
 
 Door 3 costs an hour and is how several of the most useful contributions will arrive. Make it easy
 to take.
+
+**Invitations go out by Wed 23 Sep.** Four weeks is already short notice for a two-day commitment;
+five days from now is not a notice period at all.

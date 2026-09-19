@@ -1,20 +1,29 @@
 # Compute budget
 
 > **Every number on this page marked `[estimate]` is a guess and should be treated as one.**
-> Day 1 of the hackathon exists partly to replace them with `[measured]` values, after which run
-> sizes are re-derived. See [plan.md](../04-hackathon/plan.md#day-1--clinics-measurement-and-re-planning).
+> The month before the event exists partly to replace them with `[measured]` values, after which
+> run sizes are re-derived at the Friday gate meetings. See
+> [critical-path.md](../04-hackathon/critical-path.md).
 >
 > Use [`tools/compute_budget.py`](../../tools/compute_budget.py) to recompute any tier after
 > editing the per-unit costs.
+>
+> **Which machine, and when, is [compute-plan.md](compute-plan.md).** This page is GPU-hour
+> arithmetic only, quoted in **H200-hours**; multiply by ~6.7 for GB10-hours `[estimate]`.
 
-## Assumed resource
+## Assumed resources
 
-8× H200 `[source-doc, unconfirmed — see A2]`. Treating a day as ~20 usable GPU-hours per card
-after queueing and failures gives **~160 GPU-hours/day**, ~800 over a five-day event.
+| | Availability | Capacity |
+| --- | --- | --- |
+| **Dual GB10** | Continuous, now to 18 Oct, plus the event | ~1,200 GB10-h over the month ≈ **~180 H200-equivalent hours** `[estimate]` |
+| **HGX H200** | Booked blocks in weeks 2–4 and 19–20 Oct `[unconfirmed — A2]` | ~160 H200-h per 8-GPU day `[estimate]` |
 
-That headline number is comfortable. The binding constraint is not total GPU-hours — it is
-**wall-clock on the critical path** and **the quantum stage**, which is the only thing that can
-consume the budget faster than it can produce insight.
+The event is **two days**, so the in-room H200 budget is roughly **320 H200-hours** — not the 800
+a five-day event would have given. The month's GB10 time closes the gap, by pre-computing
+everything that does not need people present.
+
+The binding constraint was never total GPU-hours. It is **wall-clock on the critical path** and
+**the quantum stage**, the only thing that can consume the budget faster than it produces insight.
 
 ## Run-size tiers `[source-doc]`
 
@@ -24,7 +33,7 @@ consume the budget faster than it can produce insight.
 | Dynamic / surrogate states | 1–3 per complex | 3 per complex | 3–5 per complex | surrogate broadly; explicit dynamics on subsets only |
 | Pocket scoring | <100 scored graphs | 200–500 | 2k–10k | 100k+ plausible |
 | cuEST labels | 5–10 | 20–50 | 200–1,000 | 5k–50k, only after acquisition is validated |
-| **Wall-clock target on 8× H200** | **1–3 h incl. setup** | **1–2 days with parallel groups** | **several days to 1–2 weeks** | campaign scale, after gates |
+| **Wall-clock target on 8× H200** `[source-doc]` | **1–3 h incl. setup** | **1–2 days with parallel groups** | **several days to 1–2 weeks** | campaign scale, after gates |
 
 ## Per-unit cost assumptions `[estimate]`
 
@@ -69,8 +78,10 @@ which is why WP-E's day-1 obligation is to measure it and generate no production
 
 Reproduce with `python3 tools/compute_budget.py hackathon_minimum`.
 
-**~290 GPU-hours against ~800 available — about 1.8 days of the cluster.** Comfortable, *if* the
-S6 unit cost holds. At 5 GPU-h per label instead of 0.5, S6 production alone becomes 200 GPU-h and
+**~290 H200-hours.** Against ~320 in-room hours over two days that is tight, which is why the
+month matters: S1 complexes, ensembles, reference MD and the convergence study (~100 h of the
+table above) are **pre-computed**, leaving ~190 h of sweeps and labelling for the room. Comfortable,
+*if* the S6 unit cost holds. At 5 GPU-h per label instead of 0.5, S6 production alone becomes 200 GPU-h and
 the picture changes materially.
 
 Two things worth noticing in that table:
@@ -107,6 +118,20 @@ what [diagnostic D2](../03-experiments/hpo-microtopic.md#q2--does-sensitivity-fa
 ~10 days of dedicated 8× H200, or 2–3 weeks realistically with queueing. Consistent with the
 origin document's "several days to 1–2 weeks" for this tier. `[source-doc]`
 
+## Split between the month and the room
+
+| Pre-computed (month, GB10 + booked H200) | In the room (19–20 Oct) |
+| --- | --- |
+| S1 complexes (6 h) | S5 random search (72 h) — the participant-facing on-ramp |
+| S3 ensembles, both modes (18 h) | S6 production labels (20 h) |
+| S3 reference MD (20 h) | S7 feedback rounds (2.5 h) |
+| **S6 convergence study (40 h, H200 week 3)** | The integrated run and baselines |
+| 2D and static-3D baselines | Re-runs after failures |
+
+The convergence study is the clearest case for moving into the month: it is a prerequisite for
+gates 4 and 5, it needs H200, and discovering a problem with it *during* a two-day event leaves no
+time to respond.
+
 ## What to cut, in order, if compute is short
 
 1. Reference MD validation → 3 systems instead of 5 (saves ~8 GPU-h, weakens
@@ -127,4 +152,7 @@ without them the two most important gates cannot be assessed.
   the queue-to-compute ratio from day 1.
 - **Storage.** Ensembles and raw quantum outputs add up. Budget ~1 TB for the hackathon minimum
   `[estimate]`.
-- **Human attention.** Six packages × 2–3 people is the real bottleneck on days 2–3, not silicon.
+- **Human attention.** Six packages × 2–3 people is the real bottleneck, not silicon — and over two
+  days it is the *only* bottleneck that cannot be relieved by booking more of something.
+- **Architecture.** GB10 is `aarch64`, H200 is `x86_64`. A GPU-hour on a machine your container
+  cannot run on is worth nothing ([compute-plan.md](compute-plan.md#the-architecture-split)).

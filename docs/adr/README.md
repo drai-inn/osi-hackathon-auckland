@@ -12,5 +12,6 @@ moves · a methodological commitment is made.
 | [0002](0002-cdk9-selectivity-as-driving-case.md) | CDK9 paralog selectivity as the driving case | Accepted |
 | [0003](0003-small-scale-search-before-scale-up.md) | Thorough small-scale search before any scale-up | Accepted |
 | [0004](0004-snakemake-containers-no-new-infra.md) | Snakemake + containers; no new distributed infrastructure | Accepted |
+| [0005](0005-two-tier-compute-gb10-h200.md) | Develop on GB10, benchmark on H200, pre-compute the month | Accepted |
 
 Template: [0000-template.md](0000-template.md)

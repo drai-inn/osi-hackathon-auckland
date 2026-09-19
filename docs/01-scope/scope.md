@@ -27,8 +27,8 @@ not academic. Alternatives considered in [ADR-0002](../adr/0002-cdk9-selectivity
 | | |
 | --- | --- |
 | **Stages** | Complex generation → pocket crop → ensemble generation → ensemble reduction → equivariant scoring → selective quantum labelling → feedback learning → orchestration |
-| **Scale** | 12–20 ligands × 2–4 targets × 3 poses/states; 20–50 quantum labels `[source-doc]` |
-| **Compute** | GPU jobs on the available HGX H200 Kubernetes cluster; whole-GPU, containerised, Snakemake-orchestrated |
+| **Scale** | 12–20 ligands × 2 targets × 3 poses/states; 20–50 quantum labels `[source-doc]` |
+| **Compute** | Dual GB10 for development, pre-computation and the event's interactive load; HGX H200 for benchmarks, quantum labelling and batch sweeps ([compute-plan.md](../05-feasibility/compute-plan.md)) |
 | **Methodology** | Random search over the joint pipeline configuration; sensitivity analysis; the four diagnostics; cost-per-informative-label accounting |
 | **Outputs** | Benchmark manifest, per-stage cost/quality tables, sensitivity ranking, one reproducible end-to-end run, gate assessment |
 
@@ -57,22 +57,28 @@ Explicitly, so nobody spends a day on them:
 
 ## Phasing
 
-| Phase | Content | Gate to pass |
-| --- | --- | --- |
-| **0 — Scoping** *(now)* | This repo. Benchmark defined, interfaces frozen, compute confirmed, team assembled | Manifest v1 agreed; every stage has a named owner |
-| **1 — Hackathon** | Six work packages in parallel on a shared manifest, then one integrated run | Technical reproducibility + ranking signal |
-| **2 — Motion & quantum value** | Does motion-awareness help? Does uncertainty-guided labelling beat random? | Motion value + quantum value + acquisition value |
-| **3 — Useful pilot** | 50–100 ligands × 4 targets; 200–1,000 labels `[source-doc]` | Operational cost predictable |
-| **4 — Scale-up** | 1k–10k candidates post-filtering | All gates green |
+| Phase | Dates | Content | Gate to pass |
+| --- | --- | --- | --- |
+| **0 — Scoping** | to 21 Sep | This repo. Shape, gates and parameter space agreed | Owners named at Monday's session |
+| **0.5 — Build** *(now)* | 21 Sep – 18 Oct | The month. Stack built on GB10, benchmark curated, stages implemented, pre-computation campaign run ([critical-path.md](../04-hackathon/critical-path.md)) | Clean clone runs end-to-end; a novice reaches a result in <30 min |
+| **1 — Hackathon** | **19–20 Oct** | Two days: on-ramps, sweeps, integrated run, gate assessment, handoff | Technical reproducibility + ranking signal |
+| **1b — US relay** | 20–21 Oct | Our outcomes extend into their two days ([us-handoff.md](../04-hackathon/us-handoff.md)) | Handoff package delivered before they start |
+| **2 — Motion & quantum value** | post-event | Does motion-awareness help? Does uncertainty-guided labelling beat random? | Motion value + quantum value + acquisition value |
+| **3 — Useful pilot** | — | 50–100 ligands × 4 targets; 200–1,000 labels `[source-doc]` | Operational cost predictable |
+| **4 — Scale-up** | — | 1k–10k candidates post-filtering | All gates green |
 
 Phases 2+ are conditional. Phase 1 is designed so that a negative result is still a good outcome:
-knowing that motion-awareness does *not* pay for itself on this target class is worth the week.
+knowing that motion-awareness does *not* pay for itself on this target class is worth the two days.
+
+**Phase 0.5 is where the project is won or lost.** Two days cannot absorb a build.
 
 ## Assumptions this scope rests on
 
 Each is tracked in [open-questions.md](open-questions.md) with an owner and a resolve-by date.
 
-- 8× H200 (or equivalent) available for a contiguous multi-day block `[source-doc, unconfirmed]`
-- cuEST usable on that cluster — licensing, container, and driver stack `[unconfirmed]`
+- Dual GB10 available continuously to 18 Oct and during the event `[stated, to confirm in W1]`
+- H200 blocks bookable in weeks 2, 3, 4 and for 19–20 Oct `[unconfirmed — W1.2]`
+- **The software stack builds for both `aarch64` and `x86_64`** `[unconfirmed — W1.1, the biggest unexamined assumption]`
+- cuEST usable on at least one of them — licensing, container, driver stack `[unconfirmed — W1.3]`
 - Public data suffices for a defensible benchmark (ChEMBL/BindingDB + PDB) `[likely]`
-- A cross-disciplinary team of roughly 10–18 can be assembled `[unconfirmed]`
+- A cross-disciplinary team of roughly 10–18 can be assembled at four weeks' notice `[unconfirmed]`

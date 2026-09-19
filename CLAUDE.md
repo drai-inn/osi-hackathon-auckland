@@ -2,13 +2,24 @@
 
 ## What this repo is
 
-A **scoping, feasibility and planning repo** for a cross-disciplinary hackathon at the University
-of Auckland on a 3D chemistry-aware multi-fidelity surrogate pipeline for drug selectivity.
+The team repo for a cross-disciplinary hackathon at the University of Auckland on a 3D
+chemistry-aware multi-fidelity surrogate pipeline for drug selectivity.
 
-It is mostly documents. That is the current stage of the work, not an oversight. Do not
-"helpfully" scaffold a Python package, add CI, or implement pipeline stages unless asked — stage
-implementations land after owners agree on interfaces, and premature code would freeze decisions
-that are deliberately still open.
+**Key dates:** hackathon **Mon 19 – Tue 20 Oct 2026** (2 days) · US relay 20–21 Oct · the month
+before it is the build ([docs/04-hackathon/critical-path.md](docs/04-hackathon/critical-path.md)).
+
+It is currently mostly documents, because the stage implementations land during the month against
+frozen interfaces. Do not scaffold a Python package or implement pipeline stages unprompted —
+premature code would freeze decisions that are deliberately still open. Check
+[critical-path.md](docs/04-hackathon/critical-path.md) for what week we are in and what is due.
+
+## Hardware, which affects everything
+
+Two architectures: **dual GB10 (`aarch64`)** for development, pre-computation and the event's
+interactive load; **HGX H200 (`x86_64`)** for benchmarks and batch. Anything containerised must
+build for both. See [compute-plan.md](docs/05-feasibility/compute-plan.md) and
+[ADR-0005](docs/adr/0005-two-tier-compute-gb10-h200.md). This is the most commonly missed
+constraint in the repo.
 
 ## Conventions that matter
 
@@ -34,6 +45,13 @@ says so loudly; day 1 of the hackathon converts those to `[measured]`.
 - **The pipeline is the model; its configuration is the hyperparameter vector**
   (`docs/03-experiments/hpo-microtopic.md`). Crop radius and microstate count are the object of
   study, not settings to be guessed.
+
+### Engagement is a first-class concern
+
+Several participants will be new to AI for science. The design principle is that a newcomer's
+experience is good when they **personally own a result the group uses** — see
+[engagement.md](docs/04-hackathon/engagement.md). When editing event-facing docs, keep the
+on-ramps and the host/owner split intact.
 
 ### Stage / work-package naming
 
