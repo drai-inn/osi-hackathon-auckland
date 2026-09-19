@@ -8,18 +8,23 @@
 
 ## How far can a chain of surrogates get us?
 
-We want to try a more AI-intensive approach to a structure-based pipeline, where every expensive
-step is handed to a learned surrogate, and see how far that actually gets us today.
+**Three things, in order.**
 
-Other groups have done individual steps well. We haven't found anyone who has run the whole chain
-end to end, with the expensive physics kept only for the places where it changes the answer.
+**1. Hand every expensive step to a learned surrogate.**
+Individual steps have been done well by other groups.
+We haven't found anyone who ran the whole chain.
 
-It might not be good enough yet. We'd still like the number. Every step in the chain is improving
-quickly, and at some point the chain crosses a threshold and becomes useful. Without a measured
-starting point we won't know when that happens. So this is a baseline, taken carefully enough to be
-worth repeating.
+**2. Measure where that lands, as a baseline.**
+It might not be good enough yet. We'd still like the number.
+Every step is improving quickly. At some point the chain crosses a threshold.
+Without a starting point we won't know when.
 
-📖 **[Read the narrative](docs/00-event/narrative.md)** for the whole thing, about ten minutes.
+**3. Get there by starting small.**
+Twelve compounds. Two targets. A handful of quantum labels.
+Explore the parameter space properly at that size.
+Scale only what survives.
+
+📖 **[Read the narrative](docs/00-event/narrative.md)**, about ten minutes.
 
 <br>
 
@@ -29,18 +34,16 @@ worth repeating.
 
 ## The chain
 
-Eight steps. Each one cheap enough to run on everything that reaches it, and each allowed to be
-wrong in a characterised way that the next step corrects.
+Eight steps. Each cheap enough to run on everything reaching it. Each allowed to be wrong in a
+characterised way that the next step corrects.
 
 ![The eight steps, what passes between them, and where the gates sit](docs/03-pipeline/figures/pipeline-isometric.svg)
 
-Four steps hand an expensive calculation to a learned model. A surrogate can be fast, confident and
-wrong, and it can be accurate on average while being wrong on the close calls the pipeline exists to
-resolve. So each one has to declare where it can be trusted, which is what the
-[fidelity contracts](docs/03-pipeline/fidelity-contracts.md) are for.
+Four steps hand an expensive calculation to a learned model.
 
-The testbed is **CDK9 against CDK7**. Two kinases with ATP sites similar enough that telling them
-apart is the whole difficulty.
+A surrogate can be fast, confident and wrong. It can be accurate on average and wrong on the close
+calls the pipeline exists to resolve. So each declares where it can be trusted, which is what the
+[fidelity contracts](docs/03-pipeline/fidelity-contracts.md) are for.
 
 <br>
 
@@ -48,20 +51,40 @@ apart is the whole difficulty.
 
 <br>
 
-## How we're measuring it
+## What each phase actually holds
 
-The pipeline has about eight configurable choices, each combination costs GPU hours, and nobody can
-explore that at production scale. The usual approach is to guess most of it and tune two or three
-knobs on a small grid. Recent work suggests that's the thing that goes wrong: small experiments fail
-to transfer because they're under-explored, not because they're small.
+Different matter at every step. A table of compounds. A predicted pose. A cropped shell. An
+ensemble. A few weighted states. A graph. An electron density. A correction.
 
-So we start small and explore the parameter space properly, in parallel across the phases, before
-trying an integrated run. The questions we actually want answered are: is this even feasible, what
-data would we need, and how small can we go while still being usefully robust.
+![The four CDK targets, and the object of study at each phase](docs/03-pipeline/figures/objects-of-study.svg)
 
-That last one isn't chemistry-specific. Anyone with one field season, a small cohort or a three-week
-synthesis has the same problem, which is part of why this is cross-disciplinary.
-[More on the method](docs/04-experiments/hpo-microtopic.md).
+The testbed is **CDK9 against CDK7**. Same fold, same ligand, different answer.
+
+<br>
+
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
+
+<br>
+
+## Start small, then scale
+
+The pipeline has about eight configurable choices. Each combination costs GPU hours. Nobody can
+explore that at production scale, so the usual approach is to guess most of it and tune a couple of
+knobs on a small grid.
+
+Recent work says that's the mistake. Small experiments fail to transfer because they're
+under-explored, not because they're small. Four configurations showed nothing. Sixteen showed
+nothing. 256 gave a clean answer.
+
+![Four tiers, from smoke test to scale-up, with a gate between each](docs/03-pipeline/figures/scale-trajectory.svg)
+
+Four tiers, and each gate has to be green before we move up. The hackathon sits at tier two.
+
+What we want answered: is this even feasible, what data would we need, and how small can we go
+while still being usefully robust.
+
+Not chemistry-specific. Anyone with one field season, a small cohort or a three-week synthesis has
+the same problem. [More on the method](docs/04-experiments/hpo-microtopic.md).
 
 <br>
 

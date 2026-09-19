@@ -194,7 +194,365 @@ def build() -> str:
     o.append('</svg>')
     return "\n".join(o)
 
+
+
+
+# =============================================================================
+# Figure 2 — objects of study
+# What each phase actually holds in its hands, and what gets measured on it.
+# Deliberately not isometric: this one is about the matter, not the machinery.
+# =============================================================================
+
+OUT2 = OUT.parent / "objects-of-study.svg"
+
+OBJECTS = [
+    ("S0", "Benchmark",  "a table of compounds",
+     "activity, assay, decoy class", "glyph_table"),
+    ("S1", "Complex",    "a predicted protein-ligand pose",
+     "RMSD to crystal, confidence", "glyph_complex"),
+    ("S2", "Pocket",     "a cropped binding-site shell",
+     "contacts retained, net charge", "glyph_pocket"),
+    ("S3", "Ensemble",   "the same pocket, many ways",
+     "contact persistence, RMSF", "glyph_ensemble"),
+    ("S4", "Microstates", "a few states, with weights",
+     "cluster stability under bootstrap", "glyph_states"),
+    ("S5", "Graph",      "the pocket as a 3D graph",
+     "score, uncertainty, rank", "glyph_graph"),
+    ("S6", "Density",    "the electrons, properly",
+     "interaction energy, ESP", "glyph_density"),
+    ("S7", "Correction", "cheap score against expensive truth",
+     "error reduction per label", "glyph_correction"),
+]
+
+
+def hexring(cx, cy, r, **kw):
+    pts = [(cx + r * math.cos(math.radians(a)), cy + r * math.sin(math.radians(a)))
+           for a in range(0, 360, 60)]
+    d = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    attrs = " ".join(f'{k.replace("_","-")}="{v}"' for k, v in kw.items())
+    return f'<polygon points="{d}" {attrs}/>'
+
+
+def glyph_table(x, y):
+    """A curated set: some actives, some decoys, some unknown."""
+    g = [f'<g transform="translate({x},{y})">']
+    fills = [SOUTH, "none", SOUTH, "none", "none", SOUTH, "none", "none", SOUTH, "none", "none", "none"]
+    for i, f in enumerate(fills):
+        cx, cy = 20 + (i % 4) * 34, 18 + (i // 4) * 34
+        g.append(hexring(cx, cy, 11, fill=(f if f != "none" else "none"),
+                         stroke=(SOFT if f == "none" else SOUTH), stroke_width=1.5,
+                         opacity=(".55" if f == "none" else ".9")))
+        g.append(f'<line x1="{cx+11:.0f}" y1="{cy}" x2="{cx+16:.0f}" y2="{cy}" '
+                 f'stroke="{SOFT}" stroke-width="1.3" opacity=".5"/>')
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'actives · decoys · non-selectives</text>')
+    return "\n".join(g) + "</g>"
+
+
+def protein_blob(op=".5", sw=1.7):
+    """A rough protein silhouette with two helices."""
+    return (f'<path d="M14 62 q-6 -32 20 -44 q26 -12 50 -2 q26 10 24 38 q-2 28 -26 36 '
+            f'q-26 8 -46 0 q-20 -8 -22 -28 z" fill="none" stroke="{ON}" stroke-width="{sw}" '
+            f'opacity="{op}"/>'
+            f'<path d="M30 40 q8 -8 16 0 q8 8 16 0 q8 -8 16 0" fill="none" stroke="{ON}" '
+            f'stroke-width="1.4" opacity="{op}"/>'
+            f'<path d="M28 82 q8 -8 16 0 q8 8 16 0" fill="none" stroke="{ON}" stroke-width="1.4" '
+            f'opacity="{op}"/>')
+
+
+def glyph_complex(x, y):
+    g = [f'<g transform="translate({x},{y})">', protein_blob()]
+    g.append(f'<circle cx="60" cy="62" r="24" fill="none" stroke="{SOUTH}" stroke-width="1.1" '
+             f'stroke-dasharray="3 3" opacity=".55"/>')
+    g.append(hexring(60, 62, 11, fill=SOUTH, opacity=".9"))
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'co-folded, with a confidence halo</text>')
+    return "\n".join(g) + "</g>"
+
+
+def glyph_pocket(x, y):
+    """A wedge cut out of the protein, residues pointing in."""
+    g = [f'<g transform="translate({x},{y})">', protein_blob(op=".16", sw=1.3)]
+    g.append(f'<path d="M60 62 m-38 0 a38 38 0 0 1 76 0 a38 38 0 0 1 -76 0" fill="none" '
+             f'stroke="{SOUTH}" stroke-width="1.6" stroke-dasharray="5 4" opacity=".8"/>')
+    for a in range(0, 360, 45):
+        r = math.radians(a)
+        x1, y1 = 60 + 36 * math.cos(r), 62 + 36 * math.sin(r)
+        x2, y2 = 60 + 20 * math.cos(r), 62 + 20 * math.sin(r)
+        g.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                 f'stroke="{ON}" stroke-width="1.5" opacity=".6"/>')
+        g.append(f'<circle cx="{x2:.1f}" cy="{y2:.1f}" r="2.4" fill="{ON}" opacity=".6"/>')
+    g.append(hexring(60, 62, 9, fill=SOUTH, opacity=".85"))
+    g.append(f'<line x1="60" y1="62" x2="{60+36*math.cos(math.radians(-60)):.1f}" '
+             f'y2="{62+36*math.sin(math.radians(-60)):.1f}" stroke="{GOLD}" stroke-width="1.2" '
+             f'opacity=".85"/>')
+    g.append(f'<text x="86" y="34" fill="{GOLD}" font-size="10.5" font-weight="700">r</text>')
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'10, 12 or 15 Å of protein</text>')
+    return "\n".join(g) + "</g>"
+
+
+def glyph_ensemble(x, y):
+    g = [f'<g transform="translate({x},{y})">']
+    for k, dx in enumerate((-9, -4.5, 0, 4.5, 9)):
+        op = ".9" if k == 2 else ".22"
+        col = SOUTH if k == 2 else ON
+        g.append(f'<g transform="translate({dx},{dx*0.4:.1f})">'
+                 f'<circle cx="60" cy="62" r="34" fill="none" stroke="{col}" stroke-width="1.5" '
+                 f'opacity="{op}"/></g>')
+    for a in (20, 110, 200, 290):
+        r = math.radians(a)
+        g.append(f'<line x1="{60+34*math.cos(r):.1f}" y1="{62+34*math.sin(r):.1f}" '
+                 f'x2="{60+19*math.cos(r):.1f}" y2="{62+19*math.sin(r):.1f}" stroke="{ON}" '
+                 f'stroke-width="1.4" opacity=".45"/>')
+    g.append(hexring(60, 62, 9, fill=SOUTH, opacity=".8"))
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'static, relaxed or learned</text>')
+    return "\n".join(g) + "</g>"
+
+
+def glyph_states(x, y):
+    g = [f'<g transform="translate({x},{y})">']
+    for i, (w, lab) in enumerate([(0.58, "0.58"), (0.29, "0.29"), (0.13, "0.13")]):
+        cx = 24 + i * 40
+        g.append(f'<circle cx="{cx}" cy="46" r="17" fill="none" stroke="{SOUTH if i==0 else ON}" '
+                 f'stroke-width="1.6" opacity="{.9 if i==0 else .5}"/>')
+        g.append(hexring(cx, 46, 6, fill=(SOUTH if i == 0 else ON),
+                         opacity=(".8" if i == 0 else ".45")))
+        g.append(f'<rect x="{cx-13}" y="74" width="26" height="{34*w:.0f}" rx="2" '
+                 f'fill="{SOUTH if i==0 else ON}" opacity="{.75 if i==0 else .35}" '
+                 f'transform="translate(0,{34-34*w:.0f})"/>')
+        g.append(f'<text x="{cx}" y="120" fill="{SOFT}" font-size="9.5" text-anchor="middle" '
+                 f'opacity=".7">{lab}</text>')
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'weights, and do they hold up</text>')
+    return "\n".join(g) + "</g>"
+
+
+def glyph_graph(x, y):
+    g = [f'<g transform="translate({x},{y})">']
+    nodes = [(60, 26), (92, 46), (92, 80), (60, 98), (28, 80), (28, 46), (60, 62)]
+    for i, (ax, ay) in enumerate(nodes):
+        for bx, by in nodes[i + 1:]:
+            if math.hypot(ax - bx, ay - by) < 45:
+                g.append(f'<line x1="{ax}" y1="{ay}" x2="{bx}" y2="{by}" stroke="{ON}" '
+                         f'stroke-width="1" opacity=".3"/>')
+    for ax, ay in nodes:
+        g.append(f'<circle cx="{ax}" cy="{ay}" r="4.5" fill="{ON}" opacity=".65"/>')
+    g.append(f'<circle cx="60" cy="62" r="6.5" fill="{SOUTH}"/>')
+    g.append(f'<rect x="20" y="116" width="80" height="6" rx="3" fill="{ON}" opacity=".2"/>')
+    g.append(f'<rect x="20" y="116" width="52" height="6" rx="3" fill="{SOUTH}" opacity=".85"/>')
+    g.append(f'<line x1="44" y1="119" x2="82" y2="119" stroke="{GOLD}" stroke-width="1.4"/>')
+    g.append(f'<line x1="44" y1="114" x2="44" y2="124" stroke="{GOLD}" stroke-width="1.4"/>')
+    g.append(f'<line x1="82" y1="114" x2="82" y2="124" stroke="{GOLD}" stroke-width="1.4"/>')
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'a score, with an interval on it</text>')
+    return "\n".join(g) + "</g>"
+
+
+def glyph_density(x, y):
+    g = [f'<g transform="translate({x},{y})">']
+    for i, rr in enumerate((30, 23, 16, 9)):
+        g.append(f'<ellipse cx="42" cy="58" rx="{rr}" ry="{rr*0.78:.0f}" fill="none" '
+                 f'stroke="{ACTION}" stroke-width="1.3" opacity="{.25 + i*0.17:.2f}"/>')
+    for i, rr in enumerate((26, 19, 12)):
+        g.append(f'<ellipse cx="86" cy="70" rx="{rr}" ry="{rr*0.8:.0f}" fill="none" '
+                 f'stroke="#C0603A" stroke-width="1.3" opacity="{.28 + i*0.2:.2f}"/>')
+    g.append(f'<text x="38" y="62" fill="{ACTION}" font-size="15" font-weight="800">−</text>')
+    g.append(f'<text x="82" y="75" fill="#C0603A" font-size="15" font-weight="800">+</text>')
+    g.append(hexring(64, 100, 8, fill="none", stroke=SOUTH, stroke_width=1.6, opacity=".8"))
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'ΔE, partial charges, ESP</text>')
+    return "\n".join(g) + "</g>"
+
+
+def glyph_correction(x, y):
+    g = [f'<g transform="translate({x},{y})">']
+    g.append(f'<line x1="18" y1="104" x2="18" y2="20" stroke="{SOFT}" stroke-width="1.2" opacity=".5"/>')
+    g.append(f'<line x1="18" y1="104" x2="112" y2="104" stroke="{SOFT}" stroke-width="1.2" opacity=".5"/>')
+    g.append(f'<line x1="22" y1="100" x2="108" y2="26" stroke="{SOFT}" stroke-width="1.2" '
+             f'stroke-dasharray="4 3" opacity=".45"/>')
+    pts = [(36, 78), (52, 74), (66, 56), (82, 52), (96, 38)]
+    for px, py in pts:
+        tx, ty = 22 + (100 - py) * (86 / 74), py
+        g.append(f'<circle cx="{px}" cy="{py}" r="3.4" fill="{ON}" opacity=".4"/>')
+        g.append(f'<line x1="{px}" y1="{py}" x2="{min(tx,108):.0f}" y2="{py}" stroke="{SOUTH}" '
+                 f'stroke-width="1.7" opacity=".9" marker-end="url(#ar3)"/>')
+    g.append(f'<text x="0" y="152" fill="{SOFT}" font-size="10.5" opacity=".75">'
+             f'gain per expensive label</text>')
+    return "\n".join(g) + "</g>"
+
+
+def build_objects() -> str:
+    W, H = 1340, 830
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
+         f'font-family="Inter,Helvetica Neue,Arial,sans-serif" role="img" '
+         f'aria-label="What each phase of the pipeline actually holds, and what is measured on it">',
+         '<title>Objects of study, phase by phase</title>',
+         f'<rect width="{W}" height="{H}" fill="{VOID}"/>',
+         '<defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" '
+         f'markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="{SOUTH}"/>'
+         '</marker></defs>']
+
+    o.append(f'<text x="48" y="58" fill="{ON}" font-size="28" font-weight="800" '
+             f'letter-spacing="-.5">Objects of study</text>')
+    o.append(f'<text x="48" y="86" fill="{SOFT}" font-size="14.5">Each phase holds a different '
+             f'kind of thing. What it is, and what we measure on it.</text>')
+
+    # the targets, across the top
+    o.append(f'<line x1="48" y1="112" x2="{W-48}" y2="112" stroke="{SOFT}" opacity=".2"/>')
+    o.append(f'<text x="48" y="140" fill="{SOFT}" font-size="11.5" font-weight="700" '
+             f'letter-spacing="1.6">THE TARGETS</text>')
+    for i, (name, primary) in enumerate([("CDK9", True), ("CDK7", False),
+                                         ("CDK12", False), ("CDK13", False)]):
+        cx = 210 + i * 108
+        col = SOUTH if primary else "#5A6B9C"
+        o.append(f'<circle cx="{cx}" cy="150" r="27" fill="none" stroke="{col}" '
+                 f'stroke-width="{2 if primary else 1.4}" opacity="{.95 if primary else .55}"/>')
+        for a in range(0, 360, 60):
+            r = math.radians(a)
+            o.append(f'<line x1="{cx+27*math.cos(r):.1f}" y1="{150+27*math.sin(r):.1f}" '
+                     f'x2="{cx+16*math.cos(r):.1f}" y2="{150+16*math.sin(r):.1f}" stroke="{col}" '
+                     f'stroke-width="1.3" opacity="{.7 if primary else .4}"/>')
+        o.append(hexring(cx, 150, 8, fill=col, opacity=(".85" if primary else ".3")))
+        o.append(f'<text x="{cx}" y="196" fill="{ON if primary else SOFT}" font-size="12.5" '
+                 f'font-weight="{800 if primary else 600}" text-anchor="middle">{name}</text>')
+    o.append(f'<text x="672" y="146" fill="{ON}" font-size="15" font-weight="700">'
+             f'Same fold. Same ligand. Different answer.</text>')
+    o.append(f'<text x="672" y="168" fill="{SOFT}" font-size="13.5">Bind the first one and not the '
+             f'others, and the whole chain has to see</text>')
+    o.append(f'<text x="672" y="186" fill="{SOFT}" font-size="13.5">a difference that a 2D '
+             f'fingerprint throws away.</text>')
+    o.append(f'<line x1="48" y1="224" x2="{W-48}" y2="224" stroke="{SOFT}" opacity=".2"/>')
+
+    # eight panels, 4 x 2
+    glyphs = {f.__name__: f for f in (glyph_table, glyph_complex, glyph_pocket, glyph_ensemble,
+                                      glyph_states, glyph_graph, glyph_density, glyph_correction)}
+    for i, (sid, name, obj, measured, gname) in enumerate(OBJECTS):
+        col, row = i % 4, i // 4
+        px, py = 48 + col * 322, 254 + row * 286
+        o.append(f'<rect x="{px}" y="{py}" width="296" height="258" rx="8" fill="{PANEL}" '
+                 f'opacity=".38"/>')
+        o.append(f'<text x="{px+20}" y="{py+28}" font-size="13" font-weight="800">'
+                 f'<tspan fill="{SOUTH}">{sid}</tspan>'
+                 f'<tspan dx="9" fill="{ON}">{name}</tspan></text>')
+        o.append(glyphs[gname](px + 24, py + 42))
+        o.append(f'<text x="{px+20}" y="{py+222}" fill="{ON}" font-size="12.5" opacity=".9">'
+                 f'{obj}</text>')
+        o.append(f'<text x="{px+20}" y="{py+242}" fill="{GOLD}" font-size="11.5" opacity=".9">'
+                 f'measured: {measured}</text>')
+        if col < 3:
+            o.append(f'<text x="{px+306}" y="{py+134}" fill="{SOFT}" font-size="17" '
+                     f'opacity=".45">›</text>')
+
+    o.append('</svg>')
+    return "\n".join(o)
+
+
+# =============================================================================
+# Figure 3 — the scale trajectory
+# Start small, explore the parameter space, scale only what survives.
+# =============================================================================
+
+OUT3 = OUT.parent / "scale-trajectory.svg"
+
+TIERS = [
+    ("Smoke test", "5 ligands · 2 targets · 1 pose",
+     ["10–30 complexes", "5–10 quantum labels", "1–3 h on 8× H200"],
+     "Do the containers run, do the formats line up", 0.30),
+    ("Hackathon minimum", "12–20 ligands · 2 targets · 3 poses",
+     ["72–120 complexes", "20–50 quantum labels", "~290 H200-hours"],
+     "Do parameter changes move the ranking, is each stage feasible", 0.52),
+    ("Useful pilot", "50–100 ligands · 4 targets · 3–5 states",
+     ["600–2,000 complexes", "200–1,000 labels", "~1,600 H200-hours"],
+     "Ranking stability, selectivity trend, cost per label", 0.75),
+    ("Scale-up", "1k–10k candidates after filtering",
+     ["5k–50k complexes", "5k–50k labels", "campaign scale"],
+     "Operational throughput and candidate prioritisation", 1.00),
+]
+
+GATE_TEXT = [
+    "Reproducible? Costs measured?",
+    "Ranking beats 2D baseline?\nMotion and quantum earning their cost?",
+    "Predictable enough to schedule?",
+]
+
+
+def build_trajectory() -> str:
+    W, H = 1340, 790
+    BASE, TOP = 556, 232
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
+         f'font-family="Inter,Helvetica Neue,Arial,sans-serif" role="img" '
+         f'aria-label="The scale trajectory from smoke test to scale-up, with gates between tiers">',
+         '<title>Start small, then scale what survives</title>',
+         f'<rect width="{W}" height="{H}" fill="{VOID}"/>']
+
+    o.append(f'<text x="48" y="56" fill="{ON}" font-size="28" font-weight="800" '
+             f'letter-spacing="-.5">Start small. Then scale what survives.</text>')
+    o.append(f'<text x="48" y="84" fill="{SOFT}" font-size="14.5">Explore the parameter space where '
+             f'it is cheap. Move up a tier only when the gate below it is green.</text>')
+
+    cw = (W - 150) / len(TIERS)
+    for i, (name, scope, nums, asks, h) in enumerate(TIERS):
+        x = 80 + i * cw
+        top = BASE - (BASE - TOP) * h
+        surro = i < 2
+        col = SOUTH if surro else "#4A5C8C"
+        o.append(f'<rect x="{x:.0f}" y="{top:.0f}" width="{cw-42:.0f}" height="{BASE-top:.0f}" '
+                 f'rx="5" fill="{col}" opacity="{.20 if not surro else .30}"/>')
+        o.append(f'<rect x="{x:.0f}" y="{top:.0f}" width="{cw-42:.0f}" height="4" rx="2" '
+                 f'fill="{col}"/>')
+        o.append(f'<text x="{x+14:.0f}" y="{top-34:.0f}" fill="{ON}" font-size="16.5" '
+                 f'font-weight="800">{name}</text>')
+        o.append(f'<text x="{x+14:.0f}" y="{top-14:.0f}" fill="{SOUTH if surro else SOFT}" '
+                 f'font-size="12">{scope}</text>')
+        for k, n in enumerate(nums):
+            o.append(f'<text x="{x+14:.0f}" y="{top+30+k*20:.0f}" fill="{ON}" font-size="12.5" '
+                     f'opacity=".85">{n}</text>')
+        o.append(f'<text x="{x+14:.0f}" y="{BASE+26:.0f}" fill="{SOFT}" font-size="11.5" '
+                 f'font-weight="700" letter-spacing="1.2">WHAT IT ANSWERS</text>')
+        for k, line in enumerate(_wrap(asks, 34)):
+            o.append(f'<text x="{x+14:.0f}" y="{BASE+46+k*17:.0f}" fill="{SOFT}" '
+                     f'font-size="12">{line}</text>')
+
+        if i < len(TIERS) - 1:
+            gx = x + cw - 34
+            o.append(f'<line x1="{gx:.0f}" y1="{TOP-70:.0f}" x2="{gx:.0f}" y2="{BASE+16:.0f}" '
+                     f'stroke="{GOLD}" stroke-width="1.2" stroke-dasharray="5 5" opacity=".55"/>')
+            o.append(f'<circle cx="{gx:.0f}" cy="{TOP-82:.0f}" r="13" fill="{VOID}" '
+                     f'stroke="{GOLD}" stroke-width="1.4"/>')
+            o.append(f'<text x="{gx:.0f}" y="{TOP-77:.0f}" fill="{GOLD}" font-size="12" '
+                     f'font-weight="800" text-anchor="middle">{i+1}</text>')
+            for k, line in enumerate(GATE_TEXT[i].split("\n")):
+                o.append(f'<text x="{gx:.0f}" y="{TOP-52+k*15:.0f}" fill="{GOLD}" font-size="11" '
+                         f'text-anchor="middle" opacity=".85">{line}</text>')
+
+    o.append(f'<text x="48" y="{BASE+120:.0f}" fill="{SOFT}" font-size="12.5" font-weight="700" '
+             f'letter-spacing="1.4">THE POINT OF STARTING SMALL</text>')
+    for k, line in enumerate([
+            "Four configurations tell you nothing. Sixteen tell you nothing. A couple of hundred give a clean answer.",
+            "Small experiments fail to transfer because they are under-explored, not because they are small.",
+            "So the cheap tiers are where we search hard, and the expensive ones inherit what survived."]):
+        o.append(f'<text x="48" y="{BASE+144+k*19:.0f}" fill="{ON}" font-size="13" opacity=".8">'
+                 f'{line}</text>')
+    o.append('</svg>')
+    return "\n".join(o)
+
+
+def _wrap(text: str, n: int) -> list[str]:
+    words, lines, cur = text.split(), [], ""
+    for w in words:
+        if len(cur) + len(w) + 1 > n:
+            lines.append(cur); cur = w
+        else:
+            cur = f"{cur} {w}".strip()
+    if cur:
+        lines.append(cur)
+    return lines
+
+
 if __name__ == "__main__":
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(build())
-    print(f"wrote {OUT.relative_to(Path.cwd())}  ({OUT.stat().st_size:,} bytes)")
+    for path, fn in ((OUT, build), (OUT2, build_objects), (OUT3, build_trajectory)):
+        path.write_text(fn())
+        print(f"wrote {path.relative_to(Path.cwd())}  ({path.stat().st_size:,} bytes)")

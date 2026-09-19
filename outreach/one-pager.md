@@ -8,16 +8,19 @@
 
 ## What we're trying
 
-We want to try a more AI-intensive approach to a structure-based pipeline, where every expensive
-step is handed to a learned surrogate, and see how far that actually gets us today.
+**Three things, in order.**
 
-Other groups have done individual steps well. We haven't found anyone who has run the whole chain
-end to end, with the expensive physics kept only for the places where it changes the answer.
+**1. Hand every expensive step to a learned surrogate.**
+Individual steps have been done well by other groups. We haven't found anyone who ran the whole
+chain.
 
-It might not be good enough yet. We'd still like the number. Every step in the chain is improving
-quickly, and at some point it crosses a threshold and becomes useful. Without a measured starting
-point we won't know when that happens. So this is a baseline, taken carefully enough to be worth
-repeating.
+**2. Measure where that lands, as a baseline.**
+It might not be good enough yet. We'd still like the number. Every step is improving quickly, and
+at some point the chain crosses a threshold. Without a starting point we won't know when.
+
+**3. Get there by starting small.**
+Twelve compounds. Two targets. A handful of quantum labels. Explore the parameter space properly at
+that size, then scale only what survives.
 
 ## The testbed
 
@@ -28,15 +31,23 @@ three-dimensional pocket into a fingerprint and throws away what makes two pocke
 Our case is **CDK9 against CDK7**. Two kinases with ATP sites similar enough that telling them
 apart is the whole difficulty.
 
-## How we're measuring it
+## The trajectory
+
+Four tiers. Each gate has to be green before we move up.
+
+| Tier | Size | What it answers |
+| --- | --- | --- |
+| Smoke test | 5 ligands, 2 targets | Do the containers run, do the formats line up |
+| **Hackathon** | **12-20 ligands, 3 poses, 20-50 labels** | **Do parameter changes move the ranking** |
+| Useful pilot | 50-100 ligands, 4 targets | Ranking stability, cost per label |
+| Scale-up | thousands, after filtering | Throughput and prioritisation |
 
 The pipeline has about eight configurable choices and each combination costs GPU hours, so nobody
-explores it properly. Recent work suggests that's the thing that goes wrong: small experiments fail
-to transfer because they're under-explored, not because they're small.
+explores it properly. Recent work says that's the mistake. Small experiments fail to transfer
+because they're under-explored, not because they're small.
 
-So we start small and explore the parameter space in parallel across the phases, then try an
-integrated run. What we want to answer is whether this is even feasible, what data we'd need, and
-how small we can go while still being usefully robust.
+What we want answered: is this even feasible, what data would we need, and how small can we go
+while still being usefully robust.
 
 ## Who we need
 
