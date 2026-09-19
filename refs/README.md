@@ -6,8 +6,8 @@ Place local copies here (they are gitignored — check licensing before committi
 
 | File | Description |
 | --- | --- |
-| `diway-3D-chemistry-aware-selectivity-pipeline-options.pdf` | The origin document. Distilled in [pipeline-options.md](../docs/00-context/source-notes/pipeline-options.md) |
-| `2608.11859v1.pdf` | Lourie, Cho, Ullrich & Lotfi, *Small-Scale Experiments: Are We There Yet?* Distilled in [small-scale-experiments.md](../docs/00-context/source-notes/small-scale-experiments.md) |
+| `diway-3D-chemistry-aware-selectivity-pipeline-options.pdf` | The origin document. Distilled in [pipeline-options.md](../docs/01-context/source-notes/pipeline-options.md) |
+| `2608.11859v1.pdf` | Lourie, Cho, Ullrich & Lotfi, *Small-Scale Experiments: Are We There Yet?* Distilled in [small-scale-experiments.md](../docs/01-context/source-notes/small-scale-experiments.md) |
 
 Originals as supplied: `~/Downloads/diway-3D Chemistry-Aware Selectivity Pipeline Options-180926-094602.pdf`
 and `~/Downloads/2608.11859v1.pdf`.

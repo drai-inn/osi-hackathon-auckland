@@ -2,13 +2,28 @@
 
 ## What this repo is
 
-A **scoping, feasibility and planning repo** for a cross-disciplinary hackathon at the University
-of Auckland on a 3D chemistry-aware multi-fidelity surrogate pipeline for drug selectivity.
+The team repo for the **Auckland hub of the Open Scientific Intelligence Hackathon 2026** — a
+global, 16-hub event now in its fourth year. Our project is a 3D chemistry-aware multi-fidelity
+surrogate pipeline for drug-target selectivity.
 
-It is mostly documents. That is the current stage of the work, not an oversight. Do not
-"helpfully" scaffold a Python package, add CI, or implement pipeline stages unless asked — stage
-implementations land after owners agree on interfaces, and premature code would freeze decisions
-that are deliberately still open.
+Both halves matter. It is a research project *and* a public, cross-disciplinary event we are
+recruiting for, and the repo is structured to keep those visible at once.
+
+**Key dates:** hackathon **Mon 19 – Tue 20 Oct 2026** (2 days) · US relay 20–21 Oct · the month
+before it is the build ([docs/05-delivery/critical-path.md](docs/05-delivery/critical-path.md)).
+
+It is currently mostly documents, because the stage implementations land during the month against
+frozen interfaces. Do not scaffold a Python package or implement pipeline stages unprompted —
+premature code would freeze decisions that are deliberately still open. Check
+[critical-path.md](docs/05-delivery/critical-path.md) for what week we are in and what is due.
+
+## Hardware, which affects everything
+
+Two architectures: **dual GB10 (`aarch64`)** for development, pre-computation and the event's
+interactive load; **HGX H200 (`x86_64`)** for benchmarks and batch. Anything containerised must
+build for both. See [compute-plan.md](docs/06-feasibility/compute-plan.md) and
+[ADR-0005](docs/adr/0005-two-tier-compute-gb10-h200.md). This is the most commonly missed
+constraint in the repo.
 
 ## Conventions that matter
 
@@ -19,7 +34,7 @@ Every quantitative claim carries one of:
 | Tag | Meaning |
 | --- | --- |
 | `[measured]` | Someone ran it and recorded it |
-| `[source-doc]` | From the origin document — see `docs/00-context/source-notes/pipeline-options.md` |
+| `[source-doc]` | From the origin document — see `docs/01-context/source-notes/pipeline-options.md` |
 | `[literature]` | From a published source, cited |
 | `[estimate]` | A guess, and flagged as one |
 
@@ -28,18 +43,42 @@ says so loudly; day 1 of the hackathon converts those to `[measured]`.
 
 ### Two framings the docs are built on
 
-- **Every surrogate owes a fidelity contract** (`docs/02-pipeline/fidelity-contracts.md`) — a
+- **Every surrogate owes a fidelity contract** (`docs/03-pipeline/fidelity-contracts.md`) — a
   stated ground truth, validation set, agreement metric, and trust region. Four surrogates, four
   contracts.
 - **The pipeline is the model; its configuration is the hyperparameter vector**
-  (`docs/03-experiments/hpo-microtopic.md`). Crop radius and microstate count are the object of
+  (`docs/04-experiments/hpo-microtopic.md`). Crop radius and microstate count are the object of
   study, not settings to be guessed.
+
+### Engagement is a first-class concern
+
+Several participants will be new to AI for science. The design principle is that a newcomer's
+experience is good when they **personally own a result the group uses** — see
+[engagement.md](docs/00-event/engagement.md). When editing event-facing docs, keep the
+on-ramps and the host/owner split intact.
+
+### The structure, and the split that matters
+
+| | |
+| --- | --- |
+| `docs/00-event/` | **Outward-facing.** Narrative, the global event, public presence, engagement, outreach targets. What people outside the team read |
+| `docs/01-context` → `04-experiments` | The science |
+| `docs/05-delivery/` | **Inward-facing.** Critical path, plan, work packages, roles, US relay. How we run it |
+| `docs/06-feasibility/` | Compute, budget, risks, gates |
+| `outreach/` | The collateral itself |
+
+When adding something, ask whether an outsider reads it. If yes it belongs in `00-event` or
+`outreach`; if no, it belongs in `05-delivery`. Do not let event material drift into the science
+sections — that is what the restructure fixed.
+
+All recruitment copy is **cut from [narrative.md](docs/00-event/narrative.md)**. Rewrite the pitch
+there and re-cut, or the versions drift apart within a fortnight.
 
 ### Stage / work-package naming
 
-- **Stages** are technical: `S0`–`S8`, one page each under `docs/02-pipeline/stages/`
-- **Work packages** are people: `A`–`F`, in `docs/04-hackathon/work-packages.md`
-- Mapping in `docs/02-pipeline/architecture.md#stage-pages`. Don't invent a third scheme.
+- **Stages** are technical: `S0`–`S8`, one page each under `docs/03-pipeline/stages/`
+- **Work packages** are people: `A`–`F`, in `docs/05-delivery/work-packages.md`
+- Mapping in `docs/03-pipeline/architecture.md#stage-pages`. Don't invent a third scheme.
 
 ### Decisions
 
@@ -48,7 +87,7 @@ Anything that changes scope, an interface, or a methodological commitment gets a
 
 ### Open questions
 
-`docs/01-scope/open-questions.md` is the project's honest edge. When you discover something
+`docs/02-scope/open-questions.md` is the project's honest edge. When you discover something
 uncertain, add a row with an owner — don't paper over it with a plausible assumption. When
 something gets resolved, keep the row and add the answer.
 
@@ -72,11 +111,11 @@ python3 tools/compute_budget.py hackathon_minimum
 ```
 
 If you change the per-unit costs in `compute_budget.py`, reconcile the walkthrough tables in
-`docs/05-feasibility/compute-budget.md` — they are generated by hand from the tool's output and
+`docs/06-feasibility/compute-budget.md` — they are generated by hand from the tool's output and
 will drift otherwise.
 
 ## Source material
 
-Two documents seeded everything, distilled under `docs/00-context/source-notes/`. Read the source
+Two documents seeded everything, distilled under `docs/01-context/source-notes/`. Read the source
 notes before proposing changes to the pipeline design — most "new" ideas are already considered
 and rejected there, with reasons.

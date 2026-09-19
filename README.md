@@ -1,81 +1,117 @@
-# Chemistry-Aware Selectivity Surrogate Pipeline — Scoping Repo
+<div align="center">
 
-**Status:** pre-hackathon scoping · **Owner:** Nick Jones (njon001@aucklanduni.ac.nz) · **Last updated:** 2026-09-19
+### Open Scientific Intelligence Hackathon · **Auckland Hub** · Aotearoa New Zealand
 
-This repo is the shared ground for a cross-disciplinary team at the University of Auckland
-scoping a **3D, chemistry-aware, multi-fidelity surrogate pipeline** for drug-discovery
-selectivity problems — and for the hackathon that will test whether it is worth scaling up.
+# Can AI tell two near-identical drug targets apart?
 
-It contains **no production pipeline code yet, and that is deliberate.** What it contains is
-the scope, the stage decomposition, the parameter space, the metrics, the compute budget, and
-the gates that decide whether we go further. Code lands after the stage owners agree on
-interfaces.
+**Mon 19 – Tue 20 October 2026** · University of Auckland · Free · Cross-disciplinary
+*Two days ahead of the [global hackathon](docs/00-event/the-global-event.md) — we finish before the first hub anywhere opens*
+
+</div>
 
 ---
 
-## The one-paragraph version
+Most drugs fail on **selectivity**, not potency. A compound built for one protein hits its close
+relatives too, and the programme dies late and expensively. Conventional screening can't separate
+them: it flattens a three-dimensional pocket into a fingerprint and throws away exactly what makes
+two pockets different.
 
-Conventional 1D/2D screening answers *"does this chemotype bind something?"* It does badly at
-*"why would this bind **this** pocket and not its close paralog?"* — where the signal lives in
-local 3D geometry, induced fit, electrostatics and conformational ensembles. The proposal is a
-**staged funnel** in which cheap AI surrogates do the volume work (co-folding, learned
-ensembles, equivariant pocket scoring) and an expensive high-fidelity method (GPU quantum
-chemistry) is spent only where it buys the most information. The scientific bet is that a
-**small, well-chosen set of 3D labels beats a large, indiscriminate one**. The methodological
-bet — borrowed from [Lourie et al. 2026](docs/00-context/source-notes/small-scale-experiments.md) —
-is that we can **find the settings that matter at tiny scale and carry them up**, provided we
-search the configuration space far more thoroughly than teams usually do.
+We're building a **staged pipeline** where fast AI models do the volume work and **GPU quantum
+chemistry is spent only where it changes the answer**. Driving case: **CDK9 vs CDK7**.
 
-Driving case: **CDK9 vs. CDK7 / CDK12 / CDK13** paralog selectivity.
+The question underneath belongs to every field with expensive experiments:
+
+> **When does what you learn from a small experiment actually predict the large one?**
+
+📖 **[Read the narrative](docs/00-event/narrative.md)** — the whole story, ten minutes.
 
 ---
 
-## Start here
+## 👋 New here? Pick a ladder
 
-| If you are… | Read |
+Nobody should have to read this repo to be useful in it. Six pathways, each a set of **rungs** you
+climb in order — each small enough to finish in a sitting, each leaving you genuinely more useful.
+**You can stop at any rung.**
+
+| | Ladder | For you if… | Rung 1 is |
+| --- | --- | --- | --- |
+| **A** | [**New to AI for science**](docs/00-event/onboarding/newcomer.md) | You're expert in something else and have never done this | Running one configuration, your name on the dashboard |
+| **B** | [**Domain expert**](docs/00-event/onboarding/domain-expert.md) | Chemistry, pharmacology, structural biology | Judging five predicted poses |
+| **C** | [**ML & statistics**](docs/00-event/onboarding/ml-stats.md) | You model things; the methodology is the draw | Telling us where our small-data design breaks |
+| **D** | [**Builder**](docs/00-event/onboarding/builder.md) | RSE, HPC, or you want to write the pipeline | `make smoke` green on your machine |
+| **E** | [**Following along**](docs/00-event/onboarding/follower.md) | Can't commit, but want to know how it goes | Subscribing to the live log |
+| **F** | [**Stage owner**](docs/00-event/onboarding/stage-owner.md) | You've said yes to a work package | Filing three questions about your stage |
+
+Not sure? **[Start at Ladder A, rung 0](docs/00-event/onboarding/newcomer.md#rung-0--orient--10-minutes)** — ten
+minutes, and it'll point you somewhere better if you're in the wrong place.
+
+**New to AI for science?** Good. Within the first hour you'll own one configuration of the pipeline
+— one command, twenty minutes, and your run becomes a data point in the final analysis. Not a
+tutorial. The actual experiment. **Bring a laptop; that's all.**
+
+## 📡 Following without joining
+
+We keep a **[live event log](EVENT-LOG.md)** as a single pull request that stays open from now until
+the final presentations and reports are done. Subscribe to it and you'll get every update and
+nothing else. It closes when the work is finished.
+
+---
+
+## Where things are
+
+| | |
 | --- | --- |
-| New to the project | [Problem statement](docs/00-context/problem-statement.md) → [Architecture](docs/02-pipeline/architecture.md) |
-| Deciding whether to join | [Adjacent activities](docs/04-hackathon/adjacent-activities.md) |
-| Owning a pipeline stage | [Your stage page](docs/02-pipeline/stages/) → [Interfaces](docs/02-pipeline/interfaces.md) |
-| Here for the ML methodology | [Small-data HPO microtopic](docs/03-experiments/hpo-microtopic.md) |
-| Worried about feasibility | [Compute budget](docs/05-feasibility/compute-budget.md) → [Risks](docs/05-feasibility/risks.md) |
-| Running the hackathon | [Hackathon plan](docs/04-hackathon/plan.md) |
-| Looking for what's undecided | [Open questions](docs/01-scope/open-questions.md) |
-
----
-
-## Repo map
+| 🎯 **Doing something this week** | [Critical path](docs/05-delivery/critical-path.md) · [open issues](https://github.com/drai-inn/drugs-surrogate-pipeline/issues) |
+| 📣 **Inviting someone** | [`outreach/`](outreach/) — one-pager, seven templates, A3 poster, [brand](outreach/brand/README.md) |
+| 🌏 **How we fit the global event** | [the-global-event.md](docs/00-event/the-global-event.md) · [who to contact](docs/00-event/interested-parties.md) |
+| 🔬 **The science** | [Problem statement](docs/01-context/problem-statement.md) → [Architecture](docs/03-pipeline/architecture.md) → [Stages](docs/03-pipeline/stages/) |
+| 📐 **The methodology** | [Small-data HPO](docs/04-experiments/hpo-microtopic.md) · [Metrics](docs/04-experiments/metrics.md) |
+| 💻 **Compute** | [GB10 / H200 plan](docs/06-feasibility/compute-plan.md) · [Budget](docs/06-feasibility/compute-budget.md) |
+| ⚠️ **What's undecided** | [Open questions](docs/02-scope/open-questions.md) · [Risks](docs/06-feasibility/risks.md) |
+| 🤝 **How we work** | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| 📖 **Jargon** | [Glossary](docs/02-scope/glossary.md) |
 
 ```
 docs/
-  00-context/   why this problem, and distilled notes on the two source documents
-  01-scope/     what's in, what's out, what's still open, glossary
-  02-pipeline/  stage-by-stage technical decomposition + data contracts between stages
-  03-experiments/ methodology, parameter space, metrics, the small-data HPO microtopic
-  04-hackathon/ plan, work packages, cross-disciplinary engagement tracks, roles
-  05-feasibility/ compute budget, data sources, risk register, stage gates
-  adr/          architecture decision records — why we chose what we chose
-schemas/        JSON schemas for the shared benchmark manifest and run records
-data/manifest/  example manifest (real curation is work package A)
-tools/          small stdlib-only utilities: manifest validation, compute budgeting
-workflow/       Snakemake DAG sketch (not runnable yet — intentionally a sketch)
-refs/           pointers to the source PDFs and external references
+  00-event/       the front end — narrative, the global event, engagement,
+                  onboarding ladders, who to reach out to     OUTWARD-FACING
+  01-context/     why this problem; notes on the source documents
+  02-scope/       in, out, undecided, glossary
+  03-pipeline/    S0–S8 stages, fidelity contracts, data contracts
+  04-experiments/ methodology, parameter space, metrics, the HPO microtopic
+  05-delivery/    critical path, plan, work packages, roles   INWARD-FACING
+  06-feasibility/ compute, budget, data sources, risks, gates
+  adr/            six decision records
+outreach/         collateral + brand tokens and marks
+schemas/ data/ tools/ workflow/ refs/
 ```
 
-## Two ideas worth internalising before you read further
+## Three ideas the whole thing rests on
 
-1. **Every surrogate owes a fidelity contract.** A surrogate is only allowed into the pipeline
-   with a stated ground truth, a validation set, and a bound on where it may be trusted. See
-   [fidelity-contracts.md](docs/02-pipeline/fidelity-contracts.md). This is the difference
-   between a pipeline and a stack of hopeful approximations.
-2. **The pipeline *is* the model; its configuration is the hyperparameter vector.** Pocket crop
-   radius, number of retained microstates, quantum theory level and scorer depth are not
-   "settings" — they are the object of study. See
-   [hpo-microtopic.md](docs/03-experiments/hpo-microtopic.md).
+1. **Every surrogate owes a fidelity contract** — a stated ground truth, a validation set containing
+   close calls, and an explicit trust region. A surrogate can be fast, confident and wrong on
+   exactly the cases that matter. → [fidelity-contracts.md](docs/03-pipeline/fidelity-contracts.md)
+2. **The pipeline *is* the model; its configuration is the hyperparameter vector.** Crop radius and
+   microstate count are the object of study, not settings to guess.
+   → [hpo-microtopic.md](docs/04-experiments/hpo-microtopic.md)
+3. **A newcomer's experience is good when they personally own a result the group uses.** Not a
+   tutorial, not shadowing. → [engagement.md](docs/00-event/engagement.md)
 
-## Contributing
+## Try it now
 
-Work in the open, small commits, one topic per PR. Every stage owner maintains their own stage
-page. Decisions that change scope or interfaces get an [ADR](docs/adr/). Numbers in docs carry
-a provenance tag: `[measured]`, `[source-doc]`, `[literature]`, or `[estimate]` — an untagged
-number is a bug.
+Standard library only — no environment, no install:
+
+```bash
+make validate && make budget TIER=hackathon_minimum
+```
+
+---
+
+<div align="center">
+
+**A clean "no" is a successful outcome.** Six gates were written before any data existed.
+If the method doesn't work we'd like to know in two days rather than two years.
+
+Nick Jones · njon001@aucklanduni.ac.nz · [Global event](https://llmhackathon.github.io/)
+
+</div>

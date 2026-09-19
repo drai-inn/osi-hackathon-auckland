@@ -38,7 +38,7 @@ are interpretable to medicinal chemists.
 **Bad:** kinase-specific conclusions may not generalise to the cryptic/allosteric cases that
 motivated the approach. **State this limitation explicitly in every write-up.** Also: these
 structures are well-represented in every model's training data, so memorisation is a live concern
-(→ [R7](../05-feasibility/risks.md)).
+(→ [R7](../06-feasibility/risks.md)).
 
 **Revisit if:** the CDK family turns out to be separable by 2D methods alone (→ gate 2 red for a
 benchmark reason rather than a method reason), or a partner brings a target with better

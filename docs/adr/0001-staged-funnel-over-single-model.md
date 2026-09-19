@@ -21,7 +21,7 @@ wrong in a characterised way; the next stage corrects the errors the previous on
 Corollaries:
 - Roles are the design; model choices are implementation. Boltz-2, Nesso-1, MACE and cuEST occupy
   roles and are swappable behind interfaces.
-- Every surrogate carries a [fidelity contract](../02-pipeline/fidelity-contracts.md).
+- Every surrogate carries a [fidelity contract](../03-pipeline/fidelity-contracts.md).
 
 ## Alternatives considered
 
@@ -36,10 +36,10 @@ Corollaries:
 **Good:** expensive methods used where they pay. Stages developed in parallel. Each stage
 independently measurable and swappable. Negative results are localisable to a stage.
 
-**Bad:** integration risk (→ [R5](../05-feasibility/risks.md)). Errors compound across stages.
+**Bad:** integration risk (→ [R5](../06-feasibility/risks.md)). Errors compound across stages.
 More people needed. Six interfaces to maintain.
 
-**Revisit if:** the static baseline ([S1](../02-pipeline/stages/S1-complex-generation.md) →
-[S2](../02-pipeline/stages/S2-pocket-extraction.md) → [S5](../02-pipeline/stages/S5-equivariant-scoring.md))
+**Revisit if:** the static baseline ([S1](../03-pipeline/stages/S1-complex-generation.md) →
+[S2](../03-pipeline/stages/S2-pocket-extraction.md) → [S5](../03-pipeline/stages/S5-equivariant-scoring.md))
 captures essentially all the signal. Then the funnel's extra stages are unjustified complexity and
 we should say so.
