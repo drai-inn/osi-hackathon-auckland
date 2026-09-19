@@ -1,0 +1,220 @@
+# ==============================================================================================
+# SKETCH -- not runnable. Deliberately.
+#
+# This file exists to make the DAG shape, the artifact layout and the config namespace concrete
+# enough to argue about before the hackathon. WP-F replaces it with a real Snakefile plus stub
+# stage scripts on day 1, at which point `make smoke` must go green before lunch.
+#
+# Read alongside:
+#   docs/02-pipeline/interfaces.md   -- the data contracts these rules must honour
+#   docs/02-pipeline/architecture.md -- what each stage is for
+#   docs/02-pipeline/stages/S8-orchestration.md
+#
+# Design notes worth keeping when this is rewritten:
+#   * Snakemake's caching is what makes the cached-upstream sweep strategy work (ADR-0003):
+#     WP-C and WP-D sweep their own parameters against S1/S2 output produced once.
+#   * config_hash is part of the output path, so different configurations coexist and a rerun
+#     at an existing configuration is free.
+#   * Every rule writes cost telemetry. Gate 6 and half the compute budget depend on it.
+# ==============================================================================================
+
+configfile: "config/default.yaml"
+
+import hashlib, json
+
+CONFIG_HASH = hashlib.sha256(
+    json.dumps(config, sort_keys=True).encode()
+).hexdigest()[:12]
+
+ART = f"artifacts/{{run_id}}/{CONFIG_HASH}"
+
+
+# --- Terminal target ---------------------------------------------------------------------------
+
+rule all:
+    input:
+        f"{ART}/metrics/gate_report.json",
+        f"{ART}/provenance.json",
+
+
+# --- S0: benchmark -------------------------------------------------------------------------
+# Not a compute stage. WP-A produces the manifest out of band; this rule validates and snapshots
+# it so a run is reproducible even after data/ changes.
+
+rule s0_snapshot_manifest:
+    input:
+        manifest="data/manifest/benchmark_v1.csv",
+    output:
+        f"{ART}/manifest.csv",
+    shell:
+        "python3 tools/validate_manifest.py {input.manifest} && cp {input.manifest} {output}"
+
+
+# --- S1: complex generation --------------------------------------------------------------------
+# One GPU job per target-ligand batch. [source-doc]
+
+checkpoint s1_complexes:
+    input:
+        manifest=f"{ART}/manifest.csv",
+    output:
+        directory(f"{ART}/s1_complexes"),
+    params:
+        model=config["s1"]["model"],
+        n_poses=config["s1"]["n_poses"],
+        seed=config["s1"]["seed"],
+    resources:
+        gpu=1,
+    log:
+        f"{ART}/logs/s1.log",
+    script:
+        "scripts/s1_complex_generation.py"
+
+
+# --- S2: pocket extraction ---------------------------------------------------------------------
+# CPU-bound and cheap, but the crop radius is the parameter with the widest downstream reach.
+
+rule s2_pocket:
+    input:
+        complex=f"{ART}/s1_complexes/{{pose_id}}.cif",
+    output:
+        pocket=f"{ART}/s2_pockets/{{pose_id}}.pdb",
+        meta=f"{ART}/s2_pockets/{{pose_id}}.json",   # radius, residues, caps, protonation, net charge
+    params:
+        radius=config["s2"]["crop_radius_A"],
+        cap=config["s2"]["cap"],
+    script:
+        "scripts/s2_pocket_extraction.py"
+
+
+# --- S3: ensemble generation ---------------------------------------------------------------
+# Three modes. `static` is a no-op passthrough and must remain the cheap default, because it is
+# the baseline every other mode is measured against.
+
+rule s3_ensemble:
+    input:
+        pocket=f"{ART}/s2_pockets/{{pose_id}}.pdb",
+    output:
+        ensemble=f"{ART}/s3_ensembles/{{pose_id}}/frames.pdb",
+        meta=f"{ART}/s3_ensembles/{{pose_id}}/sampling.json",  # method, n_frames, independence
+    params:
+        mode=config["s3"]["mode"],          # static | relaxation | surrogate
+        method=config["s3"]["method"],
+        n_frames=config["s3"]["n_frames"],
+    resources:
+        gpu=lambda wc: 0 if config["s3"]["mode"] == "static" else 1,
+    script:
+        "scripts/s3_ensemble_generation.py"
+
+
+# --- S4: ensemble reduction ------------------------------------------------------------------
+# Emits population weights that MUST sum to 1.0 per pose -- S5's weighted score depends on it.
+# The bootstrap cluster-stability check is implemented here, not bolted on later.
+
+rule s4_states:
+    input:
+        ensemble=f"{ART}/s3_ensembles/{{pose_id}}/frames.pdb",
+    output:
+        states=directory(f"{ART}/s4_states/{{pose_id}}"),
+        table=f"{ART}/s4_states/{{pose_id}}/states.parquet",
+        stability=f"{ART}/s4_states/{{pose_id}}/bootstrap_stability.json",
+    params:
+        n_states=config["s4"]["n_states"],
+        clustering=config["s4"]["clustering"],
+    script:
+        "scripts/s4_ensemble_reduction.py"
+
+
+# --- S5: equivariant scoring -----------------------------------------------------------------
+# Produces both primary outputs: the ranking, and the acquisition list that decides where the
+# expensive labels go. The random_control rows in acquisition.csv are not optional.
+
+rule s5_score:
+    input:
+        states=expand(f"{ART}/s4_states/{{pose_id}}", pose_id=POSE_IDS),   # from the checkpoint
+        model=config["s5"]["model_path"],
+    output:
+        scores=f"{ART}/s5_scores/scores.parquet",
+        acquisition=f"{ART}/s5_scores/acquisition.csv",
+    params:
+        capacity=config["s5"]["capacity"],
+        cutoff=config["s5"]["graph_cutoff_A"],
+        aggregation=config["s5"]["aggregation"],
+        uncertainty=config["s5"]["uncertainty"],
+    resources:
+        gpu=1,
+    script:
+        "scripts/s5_scoring.py"
+
+
+# --- S6: quantum labelling -------------------------------------------------------------------
+# Independent GPU jobs on shortlisted cases only. [source-doc]
+# Hard budget ceiling: the rule must refuse to exceed config["s6"]["max_labels"].
+# Non-converged calculations are RETAINED with the flag set -- convergence rate is a metric.
+
+rule s6_label:
+    input:
+        state=f"{ART}/s4_states/{{pose_id}}/{{state_id}}.pdb",
+        acquisition=f"{ART}/s5_scores/acquisition.csv",
+    output:
+        label=f"{ART}/s6_labels/raw/{{state_id}}/result.json",
+    params:
+        theory=config["s6"]["theory"],
+        shell=config["s6"]["shell_A"],
+    resources:
+        gpu=1,
+    script:
+        "scripts/s6_quantum_labelling.py"
+
+
+rule s6_collect:
+    input:
+        labels=lambda wc: acquired_state_ids(wc),   # from acquisition.csv
+    output:
+        table=f"{ART}/s6_labels/labels.parquet",
+    script:
+        "scripts/s6_collect.py"
+
+
+# --- S7: feedback learning ---------------------------------------------------------------------
+# The holdout is reserved BEFORE the first label exists -- see fidelity-contracts.md contract 4.
+
+rule s7_feedback:
+    input:
+        labels=f"{ART}/s6_labels/labels.parquet",
+        scores=f"{ART}/s5_scores/scores.parquet",
+    output:
+        model=directory(f"{ART}/s7_models/{{iteration}}"),
+        card=f"{ART}/s7_models/{{iteration}}/model_card.md",
+        gain=f"{ART}/metrics/gain_per_label.json",
+    params:
+        acquisition=config["s7"]["acquisition"],
+        threshold=config["s7"]["threshold_pct"],
+        holdout=config["s7"]["holdout_pct"],
+    resources:
+        gpu=1,
+    script:
+        "scripts/s7_feedback_learning.py"
+
+
+# --- Evaluation and gates ----------------------------------------------------------------------
+# Every metric carries a bootstrap interval. See docs/03-experiments/metrics.md.
+
+rule evaluate:
+    input:
+        scores=f"{ART}/s5_scores/scores.parquet",
+        gain=f"{ART}/metrics/gain_per_label.json",
+        manifest=f"{ART}/manifest.csv",
+    output:
+        metrics=f"{ART}/metrics/metrics.json",
+        gates=f"{ART}/metrics/gate_report.json",
+    params:
+        n_bootstrap=1000,
+    script:
+        "scripts/evaluate.py"
+
+
+rule provenance:
+    output:
+        f"{ART}/provenance.json",
+    script:
+        "scripts/write_provenance.py"      # git sha, image digests, weight hashes, GPU type

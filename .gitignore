@@ -1,0 +1,34 @@
+# Run artifacts — large, and reproducible from config + manifest
+artifacts/
+*.xtc
+*.dcd
+*.trr
+
+# Source PDFs and downloaded references: check licensing before committing
+refs/*.pdf
+refs/*.epub
+
+# Real benchmark data lands via WP-A's process, not by accident
+data/structures/
+data/manifest/benchmark_v[1-9]*.csv
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Snakemake
+.snakemake/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
