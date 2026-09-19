@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 790" width="1340" height="790" font-family="Inter,Helvetica Neue,Arial,sans-serif" role="img" aria-label="The scale trajectory from smoke test to scale-up, with gates between tiers">
+<title>Start small, then scale what survives</title>
+<rect width="1340" height="790" fill="#141C36"/>
+<text x="48" y="56" fill="#EEF1FB" font-size="28" font-weight="800" letter-spacing="-.5">Start small. Then scale what survives.</text>
+<text x="48" y="84" fill="#9AA7CD" font-size="14.5">Explore the parameter space where it is cheap. Move up a tier only when the gate below it is green.</text>
+<rect x="80" y="459" width="256" height="97" rx="5" fill="#00D3F6" opacity="0.3"/>
+<rect x="80" y="459" width="256" height="4" rx="2" fill="#00D3F6"/>
+<text x="94" y="425" fill="#EEF1FB" font-size="16.5" font-weight="800">Smoke test</text>
+<text x="94" y="445" fill="#00D3F6" font-size="12">5 ligands · 2 targets · 1 pose</text>
+<text x="94" y="489" fill="#EEF1FB" font-size="12.5" opacity=".85">10–30 complexes</text>
+<text x="94" y="509" fill="#EEF1FB" font-size="12.5" opacity=".85">5–10 quantum labels</text>
+<text x="94" y="529" fill="#EEF1FB" font-size="12.5" opacity=".85">1–3 h on 8× H200</text>
+<text x="94" y="582" fill="#9AA7CD" font-size="11.5" font-weight="700" letter-spacing="1.2">WHAT IT ANSWERS</text>
+<text x="94" y="602" fill="#9AA7CD" font-size="12">Do the containers run, do the</text>
+<text x="94" y="619" fill="#9AA7CD" font-size="12">formats line up</text>
+<line x1="344" y1="162" x2="344" y2="572" stroke="#C79A4D" stroke-width="1.2" stroke-dasharray="5 5" opacity=".55"/>
+<circle cx="344" cy="150" r="13" fill="#141C36" stroke="#C79A4D" stroke-width="1.4"/>
+<text x="344" y="155" fill="#C79A4D" font-size="12" font-weight="800" text-anchor="middle">1</text>
+<text x="344" y="180" fill="#C79A4D" font-size="11" text-anchor="middle" opacity=".85">Reproducible? Costs measured?</text>
+<rect x="378" y="388" width="256" height="168" rx="5" fill="#00D3F6" opacity="0.3"/>
+<rect x="378" y="388" width="256" height="4" rx="2" fill="#00D3F6"/>
+<text x="392" y="354" fill="#EEF1FB" font-size="16.5" font-weight="800">Hackathon minimum</text>
+<text x="392" y="374" fill="#00D3F6" font-size="12">12–20 ligands · 2 targets · 3 poses</text>
+<text x="392" y="418" fill="#EEF1FB" font-size="12.5" opacity=".85">72–120 complexes</text>
+<text x="392" y="438" fill="#EEF1FB" font-size="12.5" opacity=".85">20–50 quantum labels</text>
+<text x="392" y="458" fill="#EEF1FB" font-size="12.5" opacity=".85">~290 H200-hours</text>
+<text x="392" y="582" fill="#9AA7CD" font-size="11.5" font-weight="700" letter-spacing="1.2">WHAT IT ANSWERS</text>
+<text x="392" y="602" fill="#9AA7CD" font-size="12">Do parameter changes move the</text>
+<text x="392" y="619" fill="#9AA7CD" font-size="12">ranking, is each stage feasible</text>
+<line x1="641" y1="162" x2="641" y2="572" stroke="#C79A4D" stroke-width="1.2" stroke-dasharray="5 5" opacity=".55"/>
+<circle cx="641" cy="150" r="13" fill="#141C36" stroke="#C79A4D" stroke-width="1.4"/>
+<text x="641" y="155" fill="#C79A4D" font-size="12" font-weight="800" text-anchor="middle">2</text>
+<text x="641" y="180" fill="#C79A4D" font-size="11" text-anchor="middle" opacity=".85">Ranking beats 2D baseline?</text>
+<text x="641" y="195" fill="#C79A4D" font-size="11" text-anchor="middle" opacity=".85">Motion and quantum earning their cost?</text>
+<rect x="675" y="313" width="256" height="243" rx="5" fill="#4A5C8C" opacity="0.2"/>
+<rect x="675" y="313" width="256" height="4" rx="2" fill="#4A5C8C"/>
+<text x="689" y="279" fill="#EEF1FB" font-size="16.5" font-weight="800">Useful pilot</text>
+<text x="689" y="299" fill="#9AA7CD" font-size="12">50–100 ligands · 4 targets · 3–5 states</text>
+<text x="689" y="343" fill="#EEF1FB" font-size="12.5" opacity=".85">600–2,000 complexes</text>
+<text x="689" y="363" fill="#EEF1FB" font-size="12.5" opacity=".85">200–1,000 labels</text>
+<text x="689" y="383" fill="#EEF1FB" font-size="12.5" opacity=".85">~1,600 H200-hours</text>
+<text x="689" y="582" fill="#9AA7CD" font-size="11.5" font-weight="700" letter-spacing="1.2">WHAT IT ANSWERS</text>
+<text x="689" y="602" fill="#9AA7CD" font-size="12">Ranking stability, selectivity</text>
+<text x="689" y="619" fill="#9AA7CD" font-size="12">trend, cost per label</text>
+<line x1="938" y1="162" x2="938" y2="572" stroke="#C79A4D" stroke-width="1.2" stroke-dasharray="5 5" opacity=".55"/>
+<circle cx="938" cy="150" r="13" fill="#141C36" stroke="#C79A4D" stroke-width="1.4"/>
+<text x="938" y="155" fill="#C79A4D" font-size="12" font-weight="800" text-anchor="middle">3</text>
+<text x="938" y="180" fill="#C79A4D" font-size="11" text-anchor="middle" opacity=".85">Predictable enough to schedule?</text>
+<rect x="972" y="232" width="256" height="324" rx="5" fill="#4A5C8C" opacity="0.2"/>
+<rect x="972" y="232" width="256" height="4" rx="2" fill="#4A5C8C"/>
+<text x="986" y="198" fill="#EEF1FB" font-size="16.5" font-weight="800">Scale-up</text>
+<text x="986" y="218" fill="#9AA7CD" font-size="12">1k–10k candidates after filtering</text>
+<text x="986" y="262" fill="#EEF1FB" font-size="12.5" opacity=".85">5k–50k complexes</text>
+<text x="986" y="282" fill="#EEF1FB" font-size="12.5" opacity=".85">5k–50k labels</text>
+<text x="986" y="302" fill="#EEF1FB" font-size="12.5" opacity=".85">campaign scale</text>
+<text x="986" y="582" fill="#9AA7CD" font-size="11.5" font-weight="700" letter-spacing="1.2">WHAT IT ANSWERS</text>
+<text x="986" y="602" fill="#9AA7CD" font-size="12">Operational throughput and</text>
+<text x="986" y="619" fill="#9AA7CD" font-size="12">candidate prioritisation</text>
+<text x="48" y="676" fill="#9AA7CD" font-size="12.5" font-weight="700" letter-spacing="1.4">THE POINT OF STARTING SMALL</text>
+<text x="48" y="700" fill="#EEF1FB" font-size="13" opacity=".8">Four configurations tell you nothing. Sixteen tell you nothing. A couple of hundred give a clean answer.</text>
+<text x="48" y="719" fill="#EEF1FB" font-size="13" opacity=".8">Small experiments fail to transfer because they are under-explored, not because they are small.</text>
+<text x="48" y="738" fill="#EEF1FB" font-size="13" opacity=".8">So the cheap tiers are where we search hard, and the expensive ones inherit what survived.</text>
+</svg>
