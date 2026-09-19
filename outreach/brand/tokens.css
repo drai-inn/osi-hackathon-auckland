@@ -20,15 +20,27 @@
   --font-mono:"Martian Mono","SFMono-Regular",Menlo,monospace;
   --radius-sm:4px; --radius-md:8px;
 
+  /* ---- University of Auckland ------------------------------------------
+     Sampled from the supplied brand assets. We are a UoA event, so the
+     institutional marks co-brand with the global event's palette rather than
+     replacing it. They turn out to be unusually compatible:
+       UoA navy  #0C0C48  sits a shade deeper than OSI --void-deep #0D1226
+       UoA cyan  #00D3F6  is a brighter, more saturated OSI --sp-cyan #5EC9E8
+     So: OSI palette for surfaces and type, UoA marks and cyan for identity. */
+  --uoa-navy:#0C0C48;         /* crest and wordmark */
+  --uoa-cyan:#00D3F6;         /* the motif. Never recoloured */
+  --uoa-cyan-dim:rgba(0,211,246,.14);
+
   /* ---- Ours -------------------------------------------------------------
      Two additions only. Resist adding more: the point of adopting their
      palette is that we look like part of the same event, not adjacent to it. */
 
-  /* Southern accent. Used sparingly — the "two days ahead" badge, the
-     Southern Cross mark, and nothing else. Distinguishes the Auckland hub
-     without breaking the family. */
-  --south:#5EC9E8;            /* = their --sp-cyan, promoted to a role */
-  --south-dim:rgba(94,201,232,.16);
+  /* Southern accent — now aligned to the UoA cyan rather than OSI's, since
+     the two are within a few degrees of hue and one accent is better than two.
+     Used for the Southern Cross, the "two days ahead" badge, and little else. */
+  --south:#00D3F6;            /* = --uoa-cyan */
+  --south-dim:rgba(0,211,246,.14);
+  --south-soft:#5EC9E8;       /* OSI's, for text on dark where full cyan glares */
 
   /* Selectivity pair. The two pockets in our diagrams: near-identical, and
      the whole problem is telling them apart. Deliberately close in hue. */
