@@ -22,6 +22,27 @@ listed in [plan.md](plan.md#what-genuinely-needs-people-in-a-room).
 The enabler is that we have **dual GB10 boxes for the whole month**. A month of unattended
 development and pre-computation on real hardware is worth more than three extra hackathon days.
 
+## Tracked as issues
+
+The highest-priority items are GitHub issues; this page stays the narrative, the issues carry the
+state.
+
+| Issue | Item | Due | |
+| --- | --- | --- | --- |
+| [#2](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/2) | W1.1 Architecture spike — `aarch64` **and** `x86_64` | Fri 25 Sep | 🔴 |
+| [#3](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/3) | W1.2 H200 access — with a job that actually ran | Fri 25 Sep | 🔴 |
+| [#4](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/4) | W1.3 cuEST reality check, or pick the fallback | Fri 25 Sep | 🔴 |
+| [#5](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/5) | W1.5 Invitations out | **Wed 23 Sep** | 🔴 |
+| [#6](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/6) | W1.6 Owner **and** host named per package | **Mon 21 Sep** | 🔴 |
+| [#7](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/7) | W2.3 Manifest v1 frozen | Fri 2 Oct | 🔴 |
+| [#8](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/8) | W2.2/W2.4 Smoke test, multi-arch images, interfaces frozen | Fri 2 Oct | 🟠 |
+| [#9](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/9) | W3.3/W3.4 Quantum convergence study on H200 | Fri 9 Oct | 🔴 |
+| [#10](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/10) | W4.2 Novice dry run, under 30 minutes | Fri 16 Oct | 🟠 |
+| [#11](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/11) | W1.8/W4.5 US relay and handoff package | Fri 25 Sep → Fri 16 Oct | 🟠 |
+
+Three of these have Monday-or-Wednesday deadlines: **#6 is Monday's session**, **#5 follows on
+Wednesday**, and everything in week 1 depends on #6 producing names.
+
 ---
 
 ## Five tracks
