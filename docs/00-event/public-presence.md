@@ -1,67 +1,58 @@
-# Public presence — micro-repo, the main event site, and a date to resolve
+# Public presence — our dates, the main event site, and the micro-repo
 
-**TL;DR:** Register Auckland as an **official hub of the OSI Hackathon**, run on the **official
-dates (21–22 Oct NZDT)** rather than 19–20, keep this repo private as the team's working space,
-and publish a **small public landing repo** for the Auckland hub. Do not fork the main site.
-
----
-
-## 🔴 First: the dates do not match, and it matters
-
-| Source | Dates |
-| --- | --- |
-| The flier you shared (`2026hackathon.pdf`) | **October 21–22, 2026** |
-| [llmhackathon.github.io](https://llmhackathon.github.io/) | **October 21–22, 2026** |
-| What this repo has been planning to | **19–20 Oct**, with US colleagues on 20–21 Oct |
-
-That is a two-day offset, not a timezone artifact. It needs one email to resolve, and it should be
-resolved before invitations go out on Wed 23 Sep — the date is on the poster.
-
-### The case for moving to 21–22 Oct
-
-**Auckland is already listed as a 2026 site in planning** on the
-[sites page](https://llmhackathon.github.io/sites/), alongside Sydney, Singapore, Toronto, MIT,
-Argonne, Johns Hopkins, NC State, UW–Madison, Chicago, Duke, New York and San Francisco. Someone
-has already put us on the map. Running two days early forfeits most of what that gets us:
-
-- the global Slack, the mentor pool, and 1000+ participants to interact with live
-- eligibility for the Lila and Abstrax prizes and the Visionary awards
-- **inclusion in the write-up paper** — the 2025 event produced a 120-project arXiv paper with
-  every team credited. That is a publication for everyone in the room, including students
-- the showcase session, and the audience that comes with it
-
-And here is the part worth pausing on:
-
-### On the official dates, Auckland is the first hub in the world to start
-
-New Zealand is the first time zone. On 21–22 Oct NZDT:
-
-| | NZDT | UTC | EDT | PDT |
-| --- | --- | --- | --- | --- |
-| **Auckland day 1 opens** | Wed 21 Oct 09:00 | Tue 20 Oct 20:00 | **Tue 20 Oct 16:00** | Tue 20 Oct 13:00 |
-| Auckland day 1 closes | Wed 21 Oct 17:00 | Wed 21 Oct 04:00 | Wed 21 Oct 00:00 | Tue 20 Oct 21:00 |
-| Auckland day 2 opens | Thu 22 Oct 09:00 | Wed 21 Oct 20:00 | Wed 21 Oct 16:00 | Wed 21 Oct 13:00 |
-| **Auckland day 2 closes** | Thu 22 Oct 17:00 | Thu 22 Oct 04:00 | **Thu 22 Oct 00:00** | Wed 21 Oct 21:00 |
-
-**Auckland opens the global hackathon**, sixteen hours before the US hubs wake up, and closes as
-the US enters its final day. The handoff you wanted works *better* on the official dates than on
-19–20 Oct: our close lands at midnight Eastern with the US teams' last day ahead of them, and
-**21 Oct 09:00 NZDT is already 20 Oct 16:00 EDT** — a natural live slot on either side.
-
-"First hub in the world to start" is also the single best line in every invitation and on the
-poster. It is true, it is specific, and it is the kind of thing people show up for.
-
-### If the 19–20 dates are deliberate
-
-They might be — a deliberate precursor, or a constraint we don't know about. If so, the framing
-changes but nothing breaks: Auckland becomes a **feeder event** that hands a working pipeline into
-the global hackathon two days later, which is a legitimate and interesting thing to be. Say so
-explicitly in the collateral, and consider sending one or two people into the global event to
-carry the work forward.
-
-**Either way: pick one, and pick it before Wednesday.** ([A7](../02-scope/open-questions.md))
+**TL;DR:** We run **19–20 October**, two days ahead of the global OSI Hackathon, as a deliberate
+precursor. Keep the connection to the global event, ask what a precursor can still join, publish a
+**small public landing repo** for the Auckland hub, and **do not fork the main site**. This repo
+stays private for now.
 
 ---
+
+## ✅ Resolved: we run 19–20 October, two days ahead of the global event
+
+The global [OSI Hackathon](the-global-event.md) is **21–22 October** and Auckland is listed as a
+2026 site in planning. We are not aligning with it, for a plain reason: **we cannot run past the
+21st, and the 21st itself collides with other commitments.** The two contiguous days we actually
+have are the 19th and 20th.
+
+**Extending into Wednesday 21 October is an option we keep, not a plan we make.** If the work is
+live and people want to keep going, the 21st is available — and it is the global hackathon's
+opening day, which makes the extension a bridge rather than an overrun.
+
+Recorded in [ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md).
+
+### What that timing actually gives us
+
+| | NZDT | UTC | EDT |
+| --- | --- | --- | --- |
+| Our day 1 opens | Mon 19 Oct 09:00 | Sun 18 Oct 20:00 | Sun 18 Oct 16:00 |
+| **Our day 2 closes** | **Tue 20 Oct 17:00** | **Tue 20 Oct 04:00** | **Tue 20 Oct 00:00** |
+| Earliest global hub opens | Wed 21 Oct 09:00 | Tue 20 Oct 20:00 | Tue 20 Oct 16:00 |
+| US east-coast hubs open | Thu 22 Oct 02:00 | Wed 21 Oct 13:00 | Wed 21 Oct 09:00 |
+
+**We finish 16 hours before the earliest hub in the world starts, and 33 hours before the US
+sites.** Everything we produce is on the table before anyone else begins.
+
+Frame it as the position it is: we are not hub number thirteen competing for attention mid-event.
+We are the **precursor** — we go first, we publish, and the global hackathon starts with our
+benchmark, our workflow and our results already available.
+
+**The line is "two days ahead of the world", not "first hub to start."** The second is no longer
+true and has been removed from the collateral.
+
+### What to ask the organisers
+
+A precursor is an unusual thing to be, so ask rather than assume
+([A10](../02-scope/open-questions.md)):
+
+- Can we still **submit projects** and be credited in the write-up paper?
+- Can we keep a presence in the Slack, and mentor access during our two days?
+- Can we still hold the Auckland site listing, marked with our own dates?
+- Would they like our outputs published into the event's opening — a benchmark and a working
+  workflow arriving before day 1 is useful to other hubs, not just to us
+
+Worst case all the answers are no, and we have still run a good two days with our own people and
+our own hardware. Best case we are a genuinely useful contributor to an event we are not formally
+inside.
 
 ## Micro-repo or contribute to the main site?
 
@@ -124,8 +115,9 @@ summary would be. ([E2](../02-scope/open-questions.md))
 
 | | By |
 | --- | --- |
-| **Resolve the dates** — email Ben Blaiszik (blaiszik@uchicago.edu) or ask on Slack | **Mon 21 Sep** |
-| Register the Auckland site; join Slack | Tue 22 Sep |
+| ~~Resolve the dates~~ | ✅ **19–20 Oct** ([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)) |
+| Email Ben Blaiszik (blaiszik@uchicago.edu): our dates, what a precursor can still join, and an intro to Valence Labs re: Nesso-1 | **Mon 21 Sep** |
+| Join Slack; sort out the site listing | Tue 22 Sep |
 | Micro-repo live with the one-pager and FAQ | **Wed 23 Sep**, before invitations |
 | Invitations out, pointing at the micro-repo | **Wed 23 Sep** |
 | Hub description to the sites page | Fri 25 Sep |

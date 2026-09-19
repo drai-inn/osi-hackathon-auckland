@@ -21,7 +21,7 @@ Four decisions. If we get these and nothing else, the session succeeded.
 
 | | | |
 | --- | --- | --- |
-| **0:00–0:05** | **🔴 The date question.** Official OSI Hackathon is 21–22 Oct; we were planning 19–20. Auckland is already a listed hub. Decide, or assign the email to be sent today ([public-presence.md](../00-event/public-presence.md)) | Nick |
+| **0:00–0:05** | **✅ Dates locked: Mon 19 – Tue 20 Oct**, two days ahead of the global event, Wed 21 optional. Note what changes: we are a precursor, and the collateral now says *"two days ahead of the world"* ([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)) | Nick |
 | **0:05–0:15** | **Framing.** Two days, not five. The month is the project; the event is the experiment. 20 working days | Nick |
 | **0:15–0:25** | **The compute picture.** GB10 now through the end; H200 for benchmarks. The `aarch64`/`x86_64` split and why it is the most under-appreciated risk ([compute-plan.md](../06-feasibility/compute-plan.md)) | Nick / WP-F candidate |
 | **0:25–0:50** | **🔴 People.** Walk the six packages. Name an owner and a host for each. Identify gaps honestly and decide what we cut rather than hoping ([work-packages.md](work-packages.md), [roles.md](roles.md)) | all |
@@ -44,7 +44,7 @@ Bring a recommendation to every decision so the room is editing rather than inve
 | D5 | Where does development happen? | **GB10, validated on H200 weekly** | Iterating behind an H200 queue wastes the month |
 | D6 | Pre-register the analysis plan? | **Yes, one page per package by week 4** | Cheap, and it is the difference between a finding and a story at n≈20 |
 | D7 | What do we hand the US team? | **A ranked list of open questions with costs**, not a status report | Their constraint is the same as ours. Make their two days extend ours ([us-handoff.md](us-handoff.md)) |
-| **D8** | **Which dates?** | **Move to the official 21–22 Oct** | Auckland is already a listed hub. Running early forfeits the Slack, mentors, prizes, showcase and the write-up paper — and on the official dates we are the *first hub in the world to start*, which is the best line in every invitation |
+| ~~D8~~ | ~~Which dates?~~ | ✅ **Resolved: 19–20 Oct.** We cannot run past the 21st and the 21st has competing agendas. Extending into Wed 21 stays an option we take in the moment, not a plan | [ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md) |
 | D9 | Micro-repo, or contribute to the main site? | **Both, differently.** Register the hub upstream and publish a small public Auckland landing page. **Do not fork the main site** | Different audiences ([public-presence.md](../00-event/public-presence.md)) |
 
 ## What not to spend the two hours on
@@ -65,7 +65,7 @@ is names and dates.**
 | --- | --- | --- |
 | Update [open-questions.md](../02-scope/open-questions.md) with owners and dates from the session | Mon evening | Nick |
 | Update [roles.md](roles.md) with names | Mon evening | Nick |
-| **Email Ben Blaiszik about the dates and the hub listing** | **Mon evening** | Nick |
+| **Email Ben Blaiszik** — our dates, what a precursor can still join ([A10](../02-scope/open-questions.md)), and an intro to Valence Labs re: Nesso-1 | **Mon evening** | Nick |
 | Micro-repo live | Wed 23 Sep | Nick |
 | Send invitations (templates in [`outreach/`](../../outreach/)) | Wed 23 Sep | Nick |
 | Book the H200 week-3 block | Tue 22 Sep | Nick + WP-F |

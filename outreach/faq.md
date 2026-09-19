@@ -47,10 +47,14 @@ H200 access for benchmarks and batch work. GB10 is the participant-facing machin
 your first run will not queue behind someone's sweep.
 
 **Is this part of something bigger?**
-Yes — the 4th annual global Open Scientific Intelligence Hackathon. 16 hubs across 4 continents,
-1000+ participants in 2025, 120 projects. Previous years produced peer-reviewed papers crediting
-every team. Auckland is one of the hubs, and because New Zealand is the first time zone, we are the
-first in the world to start.
+Yes — the 4th annual global Open Scientific Intelligence Hackathon runs 21–22 October. 16 hubs
+across 4 continents, 1000+ participants in 2025, 120 projects, and a paper each year crediting
+every team.
+
+**We run two days ahead of it, on 19–20 October.** That is deliberate: we finish sixteen hours
+before the earliest hub in the world opens, so what we build is available to every other hub from
+the moment they start. If you want to keep going, Wednesday the 21st is the global event's opening
+day and you can roll straight into it.
 
 **Will I be an author on anything?**
 If we submit a project, the global write-up credits every team member. The 2025 paper documented 88

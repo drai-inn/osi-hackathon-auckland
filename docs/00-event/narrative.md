@@ -137,8 +137,12 @@ If you are already deep in this: we have dual GB10 boxes for a month beforehand 
 the benchmarks, a pipeline that will already run when you arrive, and a genuinely open methodological
 question at the centre of it.
 
-And on the official dates, **Auckland is the first hub in the world to start** — sixteen hours
-ahead of the US sites. Whatever we produce goes into the global event's first morning.
+And if two days isn't enough, Wednesday the 21st is the global hackathon's opening day — you can
+carry whatever we build straight into it.
+
+And we go first. Auckland runs **two days ahead of the global hackathon**, closing sixteen hours
+before the earliest hub in the world opens — so whatever we produce is available to every other
+hub from the moment they start.
 
 ## 8. What happens afterwards
 

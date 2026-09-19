@@ -155,8 +155,8 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 >
 > Nick
 >
-> *Auckland is the first hub in the world to start — New Zealand is the first time zone, so we open
-> sixteen hours ahead of everyone else.*
+> *We run two days ahead of the global hackathon — we finish before the first hub anywhere in the
+> world opens, and what we build goes in with them.*
 
 ## 7 · Tier-1 cold email to a previous hackathon participant
 
@@ -174,8 +174,8 @@ Send four of these, not forty. Read their project first — the specificity is t
 > rediscover it.
 >
 > Would you spend 30 minutes with our team during the event? We're on {{DATES}} NZDT, which is
-> {{THEIR_LOCAL_TIME}} — the first hub to start, so it may actually be a convenient slot before
-> your own site opens.
+> {{THEIR_LOCAL_TIME}} — we run two days *before* the global hackathon, so it may actually be a
+> convenient slot before your own site opens.
 >
 > Happy to send our plan beforehand; it's fairly detailed and we're not precious about it.
 >

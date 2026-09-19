@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSI Hackathon — Auckland Hub</title>
+<meta name="description" content="Can AI tell two near-identical drug targets apart? The Auckland hub of the global Open Scientific Intelligence Hackathon, 19–20 October 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Palette and type inherited from llmhackathon.github.io — see ../brand/README.md */
+:root{
+  --void:#141C36; --void-deep:#0D1226; --void-panel:#1D2A4F;
+  --bg-top:#F6F6F2; --bg-bot:#DFE3EE;
+  --ink:#1E2A4A; --ink-deep:#142042; --ink-soft:#5C6470;
+  --on-void:#EEF1FB; --on-void-soft:#9AA7CD; --line-on-void:rgba(154,167,205,.30);
+  --line:rgba(186,193,214,.65);
+  --action:#3F5FBC; --action-hover:#314C98; --gold:#C79A4D; --south:#5EC9E8;
+  --font:Inter,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--bg-top);line-height:1.55;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--action)}
+
+/* hero */
+header{background:var(--void);color:var(--on-void);padding:56px 0 52px;position:relative;overflow:hidden}
+header .motif{position:absolute;right:-30px;bottom:-40px;width:420px;opacity:.09;pointer-events:none}
+.eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+  color:var(--on-void-soft);margin-bottom:22px}
+.crux{width:22px;color:var(--south);flex-shrink:0}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(94,201,232,.14);
+  border:1px solid rgba(94,201,232,.45);color:var(--south);padding:6px 13px;border-radius:4px;
+  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(30px,5.6vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.04;
+  margin-bottom:18px;position:relative}
+h1 em{font-style:normal;color:var(--south)}
+.lede{font-size:clamp(16px,2.1vw,19px);max-width:50ch;color:#D5DCF0;position:relative}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;position:relative}
+.btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:700;
+  text-decoration:none;font-size:15px}
+.btn-primary{background:var(--action);color:#fff}
+.btn-primary:hover{background:var(--action-hover)}
+.btn-ghost{border:1px solid var(--line-on-void);color:var(--on-void)}
+.btn-ghost:hover{border-color:var(--south);color:var(--south)}
+
+/* facts strip */
+.facts{background:var(--void-panel);color:var(--on-void);padding:20px 0}
+.facts .wrap{display:flex;gap:34px;flex-wrap:wrap}
+.fact .k{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-void-soft);
+  font-weight:700;margin-bottom:3px}
+.fact .v{font-size:16px;font-weight:700}
+
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
+  color:var(--ink-soft);margin-bottom:20px}
+h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:7px}
+p{max-width:64ch;margin-bottom:14px}
+.big{font-size:21px;font-weight:600;letter-spacing:-.01em;max-width:58ch;line-height:1.4}
+.q{border-left:4px solid var(--south);padding-left:20px;margin:26px 0}
+
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px 30px}
+.who .r .d{font-weight:700;margin-bottom:2px}
+.who .r .t{color:var(--ink-soft);font-size:15px}
+
+.newcomer{background:var(--void);color:var(--on-void);border-radius:8px;padding:28px 30px;margin:8px 0}
+.newcomer h3{color:var(--south);font-size:22px}
+.newcomer p{color:#D5DCF0;margin-bottom:0}
+.newcomer b{color:#fff}
+
+.ladders{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:8px;padding:18px 19px;background:#fff;
+  text-decoration:none;color:inherit;display:block}
+.card:hover{border-color:var(--action)}
+.card .n{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--action);
+  font-weight:800;margin-bottom:7px}
+.card .h{font-weight:700;margin-bottom:5px}
+.card .b{font-size:14.5px;color:var(--ink-soft)}
+
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ ";color:var(--action);font-weight:800}
+details[open] summary::before{content:"– "}
+details p{margin:10px 0 0;color:var(--ink-soft)}
+
+footer{background:var(--void-deep);color:var(--on-void-soft);padding:36px 0;font-size:14px}
+footer a{color:var(--south)}
+footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
+@media(max-width:600px){ header{padding:40px 0 36px} section{padding:38px 0} }
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="motif" viewBox="0 0 220 120" aria-hidden="true">
+    <g fill="none" stroke="#EEF1FB" stroke-width="1.6">
+      <path d="M52 14 L90 36 L90 80 L52 102 L14 80 L14 36 Z M52 14 L52 102 M14 36 L90 80 M90 36 L14 80"/>
+      <path d="M160 14 L198 36 L198 80 L160 102 L122 80 L122 36 Z M160 14 L160 102 M122 36 L198 80 M198 36 L122 80"/>
+    </g>
+    <g fill="#EEF1FB">
+      <circle cx="52" cy="14" r="4"/><circle cx="90" cy="36" r="4"/><circle cx="90" cy="80" r="4"/>
+      <circle cx="52" cy="102" r="4"/><circle cx="14" cy="80" r="4"/><circle cx="14" cy="36" r="4"/>
+      <circle cx="160" cy="14" r="4"/><circle cx="198" cy="80" r="4"/>
+      <circle cx="160" cy="102" r="4"/><circle cx="122" cy="80" r="4"/><circle cx="122" cy="36" r="4"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">
+      <svg class="crux" viewBox="0 0 80 110" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.5" opacity=".35"><path d="M44 8 L38 96 M12 46 L70 34"/></g>
+        <g fill="currentColor"><circle cx="44" cy="8" r="7"/><circle cx="38" cy="96" r="9"/>
+        <circle cx="12" cy="46" r="6"/><circle cx="70" cy="34" r="7.5"/><circle cx="52" cy="60" r="4" opacity=".7"/></g>
+      </svg>
+      <span>Auckland Hub · Aotearoa New Zealand</span>
+    </div>
+    <div class="badge">● {{DATES}} · Free</div>
+    <h1>Can AI tell two near-identical drug targets <em>apart</em>?</h1>
+    <p class="lede">Two days at the University of Auckland, building a pipeline where fast AI models
+      do the volume work and GPU quantum chemistry is spent only where it changes the answer.
+      Part of the global Open Scientific Intelligence Hackathon.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="{{REGISTER}}">Register — free</a>
+      <a class="btn btn-ghost" href="#who">Who we need</a>
+      <a class="btn btn-ghost" href="#follow">Follow along</a>
+    </div>
+  </div>
+</header>
+
+<div class="facts"><div class="wrap">
+  <div class="fact"><div class="k">When</div><div class="v">{{DATES}}</div></div>
+  <div class="fact"><div class="k">Where</div><div class="v">{{VENUE}}</div></div>
+  <div class="fact"><div class="k">Cost</div><div class="v">Free</div></div>
+  <div class="fact"><div class="k">Bring</div><div class="v">A laptop</div></div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>The problem</h2>
+  <p class="big">Most drugs fail on <b>selectivity</b>, not potency.</p>
+  <p>A compound designed for one protein hits its close relatives too, and the programme dies late
+    and expensively. Conventional screening can't separate them: it flattens a three-dimensional
+    pocket into a fingerprint and throws away exactly what makes two pockets different — local
+    geometry, induced fit, electrostatics, the way both protein and ligand move.</p>
+  <p>Our driving case is <b>CDK9 against CDK7</b>: two kinases similar enough that telling them
+    apart is the whole problem.</p>
+  <div class="q">
+    <h2 style="margin-bottom:8px">The question underneath</h2>
+    <p class="big" style="margin:0">When does what you learn from a <b>small</b> experiment actually
+      predict the <b>large</b> one?</p>
+  </div>
+  <p>That question belongs to ecology with one field season, clinical work with small cohorts,
+    materials with slow synthesis. Every one of them has a pipeline of configurable choices, an
+    expensive evaluation and no ability to grid-search. We happen to have a convenient testbed —
+    which is why this is a cross-disciplinary event rather than a computational chemistry one.</p>
+</div></section>
+
+<section id="who"><div class="wrap">
+  <h2>Who we need</h2>
+  <div class="who">
+    <div class="r"><div class="d">Medicinal chemistry &amp; pharmacology</div><div class="t">Break our benchmark before we build a week of results on it</div></div>
+    <div class="r"><div class="d">Structural biology</div><div class="t">Judge predicted poses — we genuinely cannot do this without you</div></div>
+    <div class="r"><div class="d">Quantum chemistry &amp; physics</div><div class="t">When is a cheap approximation good enough, and how would you know?</div></div>
+    <div class="r"><div class="d">Statistics &amp; machine learning</div><div class="t">Bring your own small-data problem to the clinic</div></div>
+    <div class="r"><div class="d">Research software engineering</div><div class="t">Make a multi-stage GPU pipeline someone else can actually run</div></div>
+    <div class="r"><div class="d">Any expensive science</div><div class="t">Slow experiments, too many parameters, no budget — same problem</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="newcomer">
+    <h3>New to AI for science?</h3>
+    <p><b>Good.</b> Within the first hour you'll own one configuration of the pipeline — one command,
+      about twenty minutes, and your run appears on the shared dashboard as a data point in the
+      final analysis. Not a tutorial. The actual experiment, which needs many configurations and is
+      better with a room of people each running one. <b>Bring a laptop; that's all.</b></p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Pick your ladder</h2>
+  <p>Each pathway is a set of rungs — before you arrive, your first thirty minutes, your first day,
+    and where it goes afterwards. Start at rung 0 and stop wherever you like.</p>
+  <div class="ladders">
+    <a class="card" href="{{REPO}}/blob/main/docs/00-event/onboarding/newcomer.md"><div class="n">Ladder A</div><div class="h">New to AI for science</div><div class="b">Own a configuration in your first hour</div></a>
+    <a class="card" href="{{REPO}}/blob/main/docs/00-event/onboarding/domain-expert.md"><div class="n">Ladder B</div><div class="h">Chemist or biologist</div><div class="b">Your judgement is the input, not your code</div></a>
+    <a class="card" href="{{REPO}}/blob/main/docs/00-event/onboarding/ml-stats.md"><div class="n">Ladder C</div><div class="h">ML or statistics</div><div class="b">Bring your own small-data problem</div></a>
+    <a class="card" href="{{REPO}}/blob/main/docs/00-event/onboarding/builder.md"><div class="n">Ladder D</div><div class="h">Engineer or RSE</div><div class="b">Build the thing, from week 1</div></a>
+    <a class="card" href="{{REPO}}/blob/main/docs/00-event/onboarding/follower.md"><div class="n">Ladder E</div><div class="h">Just following along</div><div class="b">An hour, or five minutes a week</div></a>
+    <a class="card" href="{{REPO}}/blob/main/docs/00-event/onboarding/"><div class="n">All</div><div class="h">See every pathway</div><div class="b">The full map</div></a>
+  </div>
+</div></section>
+
+<section id="follow"><div class="wrap">
+  <h2>Follow along</h2>
+  <p>You don't have to come to keep up. We run a <b>live event log</b> as a single open pull request
+    that stays open from now until the final presentations and reports are done. Subscribe to it and
+    you'll get every update; nothing else will reach your inbox.</p>
+  <p><a class="btn btn-primary" href="{{EVENT_LOG_PR}}" style="margin-top:6px">Subscribe to the live log</a></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Do I need to know anything about drug discovery?</summary><p>No. Several roles need the opposite — someone who will ask why we're doing it that way.</p></details>
+  <details><summary>Do I need to be able to code?</summary><p>No. Pose triage and benchmark critique involve none. The "own a configuration" path is one command, with someone beside you.</p></details>
+  <details><summary>Two days is a lot. Is there a smaller version?</summary><p>Three levels: full participant, 90-minute clinic on day 1, or reviewer — read the plan, tell us what's wrong with it, come to the close. The third costs an hour and is how several of the most useful contributions arrive.</p></details>
+  <details><summary>What if it doesn't work?</summary><p>Then we know in two days rather than two years. Six gates were written before any data existed. A clean "no" is a successful outcome.</p></details>
+  <details><summary>What hardware?</summary><p>Dual NVIDIA GB10 boxes, ours for the month beforehand and during the event, plus HGX H200 for benchmarks. Your first run won't queue behind someone's sweep.</p></details>
+  <details><summary>Why are you two days before the main event?</summary><p>Local scheduling — we can't run past the 21st. It turns out to be an advantage: we finish sixteen hours before the earliest hub in the world opens, so what we build is available to everyone else from their first minute. If you want more, Wednesday the 21st is the global event's opening day and you can carry the work straight in.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <div><b style="color:var(--on-void)">Auckland Hub · Open Scientific Intelligence Hackathon</b></div>
+  <div>Nick Jones · <a href="mailto:njon001@aucklanduni.ac.nz">njon001@aucklanduni.ac.nz</a> ·
+    <a href="{{REPO}}">Repo</a> · <a href="https://llmhackathon.github.io/">Global event</a></div>
+  <div class="r">Part of the 4th annual global hackathon for the physical sciences and mathematics —
+    16 hubs, 4 continents. We run two days ahead of it. Palette and type follow the global event;
+    the Southern Cross and the paired-pocket motif are ours.</div>
+</div></footer>
+
+</body>
+</html>

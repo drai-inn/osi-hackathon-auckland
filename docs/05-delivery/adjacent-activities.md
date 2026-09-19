@@ -146,8 +146,8 @@ publishable. Activity 4's work happens regardless under WP-F.
 
 ## Running them across two days
 
-The event is **19–20 Oct**, so the clinics compress and most of each activity's substance has to be
-prepared during the month.
+The event is **Mon 19 – Tue 20 Oct**, so the clinics compress and most of each activity's substance
+has to be prepared during the month.
 
 - **Day 1, 10:00–11:30:** the three clinics run in parallel as
   [on-ramps](../00-event/engagement.md#the-on-ramps). Activity 1 is on-ramp C, Activity 2 is on-ramp E,

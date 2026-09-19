@@ -22,7 +22,7 @@ Site: [llmhackathon.github.io](https://llmhackathon.github.io/).
 | **2023** | 14 | online | — | [Digital Discovery 10.1039/D3DD00113J](https://doi.org/10.1039/D3DD00113J) · [arXiv:2306.06283](https://arxiv.org/abs/2306.06283) |
 | **2024** | 34 | 7 (Toronto, Montreal, San Francisco, Berlin, Lausanne, Tokyo + online) | 556 registered, 120 active | [arXiv:2411.15221](https://arxiv.org/abs/2411.15221) |
 | **2025** | **120 submitted, 88 documented** | **16** | 350+ | [arXiv:2605.03205](https://arxiv.org/abs/2605.03205) |
-| **2026** | — | 13+ listed, incl. **Auckland** | — | 21–22 Oct |
+| **2026** | — | 13+ listed, incl. **Auckland** | — | **21–22 Oct** — we run 19–20 |
 
 **Every event produces a peer-reviewed or arXiv paper crediting every team.** The 2025 paper runs
 to 140+ pages and lists every contributor. For a student in the room, that is a real publication
@@ -43,9 +43,12 @@ prizes, compute, documentation support.
 workspace, mentorship from academics and industry, and post-event recognition.
 
 **How to become one:** an express-interest form, then confirm requirements, promote locally, run
-the event. Auckland is already listed as a **site in planning** — someone has put us on the map,
-and confirming the listing with a named lead is a
-[Wednesday task](../05-delivery/critical-path.md).
+the event. Auckland is already listed as a **site in planning** — someone has put us on the map.
+
+**We run 19–20 Oct, two days before the official window**, because we cannot run past the 21st
+([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)). That makes us a precursor rather
+than a concurrent hub, and raises questions only the organisers can answer — see
+[public-presence.md](public-presence.md#what-to-ask-the-organisers).
 
 **2026 sites.** Confirmed: Durham NC (Duke, Defne Çirci). In planning: Baltimore (JHU) · Boston
 (MIT) · Chicago · Lemont (Argonne) · Madison · New York · Raleigh (NC State) · San Francisco ·
@@ -104,14 +107,22 @@ interesting claim is about the method, not the heroics.
 
 ## What we owe and what we get
 
-**We owe:** a confirmed site listing with a named lead; a Slack presence; a room that works; and —
-afterwards — documented submissions with code and demos.
+As a precursor rather than a concurrent hub, some of this is to be negotiated rather than assumed.
 
-**We get:** 1000+ participants to interact with, a mentor pool, prize eligibility, the showcase, a
-route to the write-up paper for everyone in the room, and a standing relationship with the groups
-in [interested-parties.md](interested-parties.md).
+**We owe:** a Slack presence and honesty about our dates; a room that works; and — afterwards —
+documented submissions with code and demos, if they will have them.
 
-**And the thing to lead with:** on the official dates, **New Zealand is the first time zone, so
-Auckland is the first hub in the world to start** — sixteen hours ahead of the US sites. We open
-the global event. See [public-presence.md](public-presence.md) for the timing table and the
-unresolved date question.
+**We hope to keep:** a route to the write-up paper for everyone in the room, the mentor pool and
+Slack, the site listing marked with our own dates, and a standing relationship with the groups in
+[interested-parties.md](interested-parties.md). Prizes and the live showcase are probably out, and
+we should not plan around them.
+
+**What we uniquely offer:** we finish before anyone else starts. A working benchmark, a reproducible
+workflow and a set of results, published into the global event's opening, is worth more to the other
+hubs than another team competing alongside them.
+
+**And the thing to lead with:** we run **two days ahead of it**. Auckland closes on 20 Oct, sixteen
+hours before the earliest hub in the world opens and 33 hours before the US sites. We are not
+hub number thirteen competing for attention mid-event — we are the precursor supplying it.
+See [public-presence.md](public-presence.md) for the timing table and
+[ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md) for why.

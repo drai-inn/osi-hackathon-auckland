@@ -1,7 +1,12 @@
 # Hackathon plan — Mon 19 & Tue 20 Oct 2026
 
-**Two days.** US colleagues run 20–21 Oct; we hand our outcomes to them as they start
-([us-handoff.md](us-handoff.md)). Compute: dual GB10 for the room, HGX H200 for batch
+**Two days**, with **Wednesday 21 October as an option we take in the moment, not a plan we make**
+([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)). The global OSI Hackathon opens on
+the 21st, so an extension is a bridge into it rather than an overrun.
+
+We run as a **precursor**: we close 16 hours before the earliest hub in the world opens, and our
+outputs are published into the global event's opening ([us-handoff.md](us-handoff.md)).
+Compute: dual GB10 for the room, HGX H200 for batch
 ([compute-plan.md](../06-feasibility/compute-plan.md)).
 
 > Read [critical-path.md](critical-path.md) first. **This plan is only achievable if the month
@@ -74,11 +79,12 @@ first sensitivity ranking; overnight jobs running.
 | **14:30** | **Adjacent-activity presentations** — each artifact presented separately from the pipeline result | activity leads |
 | **15:30** | **Handoff brief written live**, on screen, with everyone in the room ([us-handoff.md](us-handoff.md)) | Nick + owners |
 | **16:30** | Recommendation: go / no-go / go-differently. Phase-2 plan or a documented stop | Nick |
-| **17:00** | **Close. Handoff package published** — 00:00 EDT, as the US team's day 1 begins | — |
-| *21 Oct 09:00* | *Live handoff call — 16:00 EDT, their day-1 afternoon* | Nick + owners |
+| **17:00** | **Close. Outputs published** — 04:00 UTC, 16 h before the first global hub opens | — |
+| *Wed 21 Oct* | *Optional day 3 — and the global hackathon's opening day. Anyone continuing rolls straight in* | whoever wants it |
 
 **Reserve 15:00–16:30 for the integrated run failing and being re-run.** It will, and a two-day
-event has no other slack.
+event has no other slack — the optional Wednesday is a bridge into the global event, not a buffer
+for us to rely on.
 
 ---
 

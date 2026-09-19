@@ -32,9 +32,9 @@ rewrite it there and re-cut, or the versions will drift apart within a fortnight
 
 ## Three things to keep in every version
 
-1. **"Auckland is the first hub in the world to start."** True on the official dates — New Zealand
-   is the first time zone, so we open sixteen hours before the US sites. It is specific, it is
-   checkable, and it is the line people repeat.
+1. **"We go two days ahead of the world."** Auckland runs 19–20 Oct and closes sixteen hours
+   before the earliest hub in the global hackathon opens, 33 before the US sites. Specific,
+   checkable, and it explains why we exist rather than just when.
 2. **"You will personally own a result the group uses."** The engagement promise. Do not soften it
    into "you will learn about AI for science", which is what everyone else's invitation says.
 3. **Name the discipline's own question.** Nobody outside computational chemistry wants to attend a

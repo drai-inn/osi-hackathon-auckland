@@ -1,25 +1,29 @@
-# US relay — handing over at the moment they start
+# Handing over — publishing into the global event's opening
 
-**Us:** Mon 19 – Tue 20 Oct, Auckland (NZDT, UTC+13)
-**Them:** Tue 20 – Wed 21 Oct, US
-**Counterparts:** _names TBC_ ([W1.8](critical-path.md#week-1--2127-sep--unblock))
+**Us:** Mon 19 – Tue 20 Oct, Auckland (NZDT, UTC+13) — a deliberate precursor
+([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md))
+**The global OSI Hackathon:** 21–22 Oct, 16 hubs
+**US counterparts:** _names TBC_ ([W1.8](critical-path.md#week-1--2127-sep--unblock))
 
 ---
 
 ## The timing is unusually good
 
-| Moment | NZDT | UTC | EDT | PDT |
-| --- | --- | --- | --- | --- |
-| Our day-2 close | **20 Oct 17:00** | 20 Oct 04:00 | **20 Oct 00:00** | 19 Oct 21:00 |
-| Their day 1 begins | 20 Oct 22:00–01:00 | 20 Oct 09:00–12:00 | **20 Oct 05:00–08:00** | 20 Oct 02:00–05:00 |
-| **Live handoff call** | **21 Oct 09:00** | 20 Oct 20:00 | **20 Oct 16:00** | 20 Oct 13:00 |
+| Moment | NZDT | UTC | EDT |
+| --- | --- | --- | --- |
+| **Our day-2 close** | **Tue 20 Oct 17:00** | **Tue 20 Oct 04:00** | **Tue 20 Oct 00:00** |
+| Earliest global hub opens (NZ/Sydney) | Wed 21 Oct 09:00 | Tue 20 Oct 20:00 | Tue 20 Oct 16:00 |
+| US east-coast hubs open | Thu 22 Oct 02:00 | Wed 21 Oct 13:00 | Wed 21 Oct 09:00 |
 
-Our close lands at midnight Eastern, hours before they start. **The handoff package is waiting for
-them when they wake up**, and the live call sits in their day-1 afternoon — after they have read it
-and formed questions, early enough to change what they do on day 2.
+**We finish 16 hours before the earliest hub in the world starts, and 33 hours before the US
+sites.** Everything we produce is on the table before anyone else begins — which is the whole
+argument for running early rather than an apology for it.
 
-This is about as clean a relay as two-timezone scheduling allows. It is worth designing for
-deliberately rather than treating as a coincidence.
+Two audiences, then:
+
+1. **The global event**, which opens 16 hours after we close. Our benchmark, workflow and results
+   are available to every hub from their first minute
+2. **The US counterparts specifically**, for the deeper conversation
 
 ## What "handing over" should mean
 

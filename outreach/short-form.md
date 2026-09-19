@@ -18,9 +18,12 @@ Drop-in text for the places where nobody reads a one-pager.
 >
 > Hardware: dual GB10 for the month beforehand, HGX H200 for benchmarks.
 >
-> Being in NZDT we're the first hub to start — happy to be the canary on anything, and glad to
-> compare notes with Sydney and Singapore. If you worked on **UMADock, DynaAgent, F.A.D.E, MIDAS,
-> DFTPilot or LARA-HPC** last year, we'd genuinely like 30 minutes of your time.
+We run **19–20 Oct, two days ahead of the main event** — local scheduling, but it means we finish
+> before the first hub anywhere opens and can put our benchmark, workflow and results on the table
+> for everyone else's day 1. Happy to be the canary on anything.
+>
+> If you worked on **UMADock, DynaAgent, F.A.D.E, MIDAS, DFTPilot or LARA-HPC** last year, we'd
+> genuinely like 30 minutes of your time.
 
 ## University mailing list / newsletter
 
@@ -38,7 +41,7 @@ Drop-in text for the places where nobody reads a one-pager.
 > researchers and research software engineers** — and people new to AI for science, for whom we've
 > built specific on-ramps. Free. Dedicated GPUs. No prior experience required for several roles.
 >
-> Because New Zealand is the first time zone, Auckland is the first hub in the world to start.
+> We run two days ahead of the global event, so what we build is ready for every other hub's day one.
 >
 > Details {{LINK}} · Register {{REGISTER}} · njon001@aucklanduni.ac.nz
 
@@ -56,13 +59,14 @@ Drop-in text for the places where nobody reads a one-pager.
 >
 > Cross-disciplinary by design. Newcomers genuinely welcome — you'll own a result, not watch one.
 >
-> And being first in the world by time zone, we open the global event. {{LINK}}
+> We run two days ahead of the global event — what we build is ready for everyone else's day one.
+> {{LINK}}
 
 ## Social — short
 
 > Auckland hosts NZ's hub of the global AI-for-science hackathon, {{DATES}}. Can AI tell two
 > near-identical drug targets apart? Chemists, physicists, statisticians, RSEs — and anyone new to
-> this. First hub in the world to start. {{LINK}}
+> this. We go two days ahead of the world. {{LINK}}
 
 ## Calendar invite
 
@@ -98,4 +102,5 @@ Drop-in text for the places where nobody reads a one-pager.
 > computational tools can't tell near-identical targets apart, because they throw away the 3D
 > information that makes them different. We're testing whether AI can put it back, with quantum
 > chemistry spent only where it changes the answer. Two days, cross-disciplinary, dedicated GPUs.
-> And because New Zealand is the first time zone, we're the first hub in the world to start.
+> And we run two days ahead of the global event, so what we build is ready for everyone else's
+> day one.

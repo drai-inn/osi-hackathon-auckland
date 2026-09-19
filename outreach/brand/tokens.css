@@ -1,0 +1,37 @@
+/* ============================================================================
+   Auckland Hub — design tokens
+   Aligned with the global OSI Hackathon site (llmhackathon.github.io), whose
+   palette and type we adopt so our collateral reads as part of the same event.
+   Values below the divider are ours; everything above is theirs, verbatim.
+   ========================================================================== */
+:root{
+  /* ---- Inherited from the global event ---------------------------------- */
+  --void:#141C36; --void-deep:#0D1226; --void-panel:#1D2A4F;
+  --paper:#FFFFFF; --paper-dim:#EEF1F8; --cream:#FFFDF8;
+  --bg-top:#F6F6F2; --bg-mid:#EDEDEA; --bg-bot:#DFE3EE;
+  --ink:#1E2A4A; --ink-deep:#142042; --ink-soft:#5C6470; --ink-subtle:#667085;
+  --line:rgba(186,193,214,.65); --line-on-void:rgba(154,167,205,.30);
+  --on-void:#EEF1FB; --on-void-soft:#9AA7CD;
+  --action:#3F5FBC; --action-hover:#314C98; --action-pressed:#263C79;
+  --gold:#C79A4D; --gold-soft:#EAD8AA; --ink-gold:#7A4D14;
+  --sp-violet:#8B7CF6; --sp-blue:#8AA0E6; --sp-cyan:#5EC9E8; --sp-green:#3FA3C4;
+
+  --font-display:"Inter","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"Martian Mono","SFMono-Regular",Menlo,monospace;
+  --radius-sm:4px; --radius-md:8px;
+
+  /* ---- Ours -------------------------------------------------------------
+     Two additions only. Resist adding more: the point of adopting their
+     palette is that we look like part of the same event, not adjacent to it. */
+
+  /* Southern accent. Used sparingly — the "two days ahead" badge, the
+     Southern Cross mark, and nothing else. Distinguishes the Auckland hub
+     without breaking the family. */
+  --south:#5EC9E8;            /* = their --sp-cyan, promoted to a role */
+  --south-dim:rgba(94,201,232,.16);
+
+  /* Selectivity pair. The two pockets in our diagrams: near-identical, and
+     the whole problem is telling them apart. Deliberately close in hue. */
+  --target:#8AA0E6;           /* CDK9  */
+  --counter:#8B7CF6;          /* CDK7  */
+}

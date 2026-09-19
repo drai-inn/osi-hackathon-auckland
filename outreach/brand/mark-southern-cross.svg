@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 110" role="img"
+     aria-label="The Southern Cross">
+  <title>Crux — the southern hemisphere hub</title>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity=".28">
+    <path d="M44 8 L38 96 M12 46 L70 34"/>
+  </g>
+  <g fill="currentColor">
+    <circle cx="44" cy="8"  r="4.2"/>
+    <circle cx="38" cy="96" r="5.4"/>
+    <circle cx="12" cy="46" r="3.6"/>
+    <circle cx="70" cy="34" r="4.6"/>
+    <circle cx="52" cy="60" r="2.4" opacity=".7"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" role="img"
+     aria-label="Two near-identical binding pockets differing at a single position">
+  <title>Selectivity — two near-identical pockets</title>
+  <defs>
+    <style>
+      .edge{fill:none;stroke:currentColor;stroke-width:1.6;opacity:.55}
+      .node{fill:currentColor;opacity:.75}
+      .lig{fill:none;stroke:currentColor;stroke-width:2.2;opacity:.9}
+      .diff{fill:#5EC9E8}
+      .lbl{font:700 9px Inter,Helvetica,Arial,sans-serif;fill:currentColor;
+           letter-spacing:.14em;opacity:.6}
+    </style>
+  </defs>
+
+  <!-- pocket A -->
+  <g transform="translate(6,8)">
+    <path class="edge" d="M52 6 L90 28 L90 72 L52 94 L14 72 L14 28 Z"/>
+    <path class="edge" d="M52 6 L52 94 M14 28 L90 72 M90 28 L14 72"/>
+    <g class="node">
+      <circle cx="52" cy="6" r="4"/><circle cx="90" cy="28" r="4"/><circle cx="90" cy="72" r="4"/>
+      <circle cx="52" cy="94" r="4"/><circle cx="14" cy="72" r="4"/><circle cx="14" cy="28" r="4"/>
+    </g>
+    <path class="lig" d="M38 42 q14 -10 28 0 q6 12 -6 18 q-14 6 -22 -4 z"/>
+    <text class="lbl" x="52" y="112" text-anchor="middle">TARGET</text>
+  </g>
+
+  <!-- pocket B: identical but for one position -->
+  <g transform="translate(114,8)">
+    <path class="edge" d="M52 6 L90 28 L90 72 L52 94 L14 72 L14 28 Z"/>
+    <path class="edge" d="M52 6 L52 94 M14 28 L90 72 M90 28 L14 72"/>
+    <g class="node">
+      <circle cx="52" cy="6" r="4"/><circle cx="90" cy="72" r="4"/>
+      <circle cx="52" cy="94" r="4"/><circle cx="14" cy="72" r="4"/><circle cx="14" cy="28" r="4"/>
+    </g>
+    <circle class="diff" cx="90" cy="28" r="5.5"/>
+    <path class="lig" d="M38 42 q14 -10 28 0 q6 12 -6 18 q-14 6 -22 -4 z"/>
+    <text class="lbl" x="52" y="112" text-anchor="middle">COUNTER-TARGET</text>
+  </g>
+</svg>

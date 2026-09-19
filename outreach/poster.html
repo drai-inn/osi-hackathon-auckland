@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OSI Hackathon Auckland — Poster</title>
 <!--
@@ -12,13 +13,19 @@
 -->
 <style>
   @page { size: A3 portrait; margin: 0; }
+  /* Palette inherited from the global OSI Hackathon site — see brand/README.md */
   :root{
-    --ink:#0a0e17; --paper:#f4f1ea; --accent:#e8502e; --accent2:#2e7de8;
-    --muted:#5d6472; --rule:#0a0e17;
+    --void:#141C36; --void-deep:#0D1226; --void-panel:#1D2A4F;
+    --bg-top:#F6F6F2; --ink:#1E2A4A; --ink-deep:#142042; --ink-soft:#5C6470;
+    --on-void:#EEF1FB; --on-void-soft:#9AA7CD;
+    --action:#3F5FBC; --gold:#C79A4D; --south:#5EC9E8;
+    /* poster-local aliases */
+    --paper:var(--bg-top); --accent:var(--action); --accent2:var(--south);
+    --muted:var(--ink-soft); --rule:var(--ink-deep);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
-    background:var(--muted); font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background:var(--void-deep); font-family:Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;
     display:flex; justify-content:center; padding:24px;
   }
   .sheet{
@@ -27,15 +34,19 @@
     position:relative; overflow:hidden;
   }
   /* faint pocket-geometry motif, bottom right */
-  .motif{position:absolute;right:-40mm;bottom:-40mm;width:170mm;height:170mm;opacity:.055;pointer-events:none}
+  .motif{position:absolute;right:6mm;bottom:8mm;width:145mm;pointer-events:none}
+  .motif .faint{opacity:.075}
+  .motif .diff{opacity:.55}
+  .crux{width:9mm;flex-shrink:0;color:var(--south)}
 
   .eyebrow{display:flex;justify-content:space-between;align-items:baseline;
     border-bottom:2.5px solid var(--rule);padding-bottom:3mm;margin-bottom:7mm}
   .eyebrow .l{font-size:11.5pt;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
-  .eyebrow .r{font-size:9.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .eyebrow .r{font-size:9.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;display:flex;align-items:center;gap:3.5mm}
 
   h1{font-size:51pt;line-height:.98;letter-spacing:-.025em;font-weight:800;margin-bottom:6mm}
-  h1 em{font-style:normal;color:var(--accent)}
+  h1 em{font-style:normal;color:var(--action)}
   .sub{font-size:15.5pt;line-height:1.38;max-width:215mm;color:#242a36;margin-bottom:10mm}
   .sub b{font-weight:700;color:var(--ink)}
 
@@ -44,12 +55,12 @@
   .when .box .k{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:1.5mm}
   .when .box .v{font-size:16pt;font-weight:800;line-height:1.15}
   .when .box .v small{display:block;font-size:10pt;font-weight:600;color:var(--muted);margin-top:1mm}
-  .when .flag{background:var(--accent);color:var(--paper);border-color:var(--accent);display:flex;
+  .when .flag{background:var(--action);color:#fff;border-color:var(--action);display:flex;
     flex-direction:column;justify-content:center;flex:1}
   .when .flag .v{font-size:14pt}
-  .when .flag .k{color:rgba(244,241,234,.75)}
+  .when .flag .k{color:rgba(255,255,255,.72)}
 
-  .q{border-left:5px solid var(--accent2);padding:1mm 0 1mm 6mm;margin-bottom:10mm}
+  .q{border-left:5px solid var(--south);padding:1mm 0 1mm 6mm;margin-bottom:10mm}
   .q .lead{font-size:9pt;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:2mm}
   .q p{font-size:18.5pt;line-height:1.25;font-weight:600;letter-spacing:-.01em}
 
@@ -67,9 +78,9 @@
   .get .card .h{font-size:12pt;font-weight:800;margin-bottom:2mm;line-height:1.2}
   .get .card .b{font-size:10.5pt;line-height:1.38;color:#2c333f}
 
-  .newcomer{background:var(--ink);color:var(--paper);padding:7mm 8mm;margin:9mm 0 9mm;
+  .newcomer{background:var(--void);color:var(--on-void);padding:7mm 8mm;margin:9mm 0 9mm;
     display:flex;gap:8mm;align-items:center}
-  .newcomer .big{font-size:25pt;font-weight:800;line-height:1.05;white-space:nowrap;color:var(--accent)}
+  .newcomer .big{font-size:25pt;font-weight:800;line-height:1.05;white-space:nowrap;color:var(--south)}
   .newcomer .txt{font-size:12pt;line-height:1.45}
   .newcomer .txt b{color:#fff}
 
@@ -87,23 +98,36 @@
 <body>
 <div class="sheet">
 
-  <svg class="motif" viewBox="0 0 200 200" aria-hidden="true">
-    <g fill="none" stroke="#0a0e17" stroke-width="1.1">
-      <circle cx="100" cy="100" r="78"/><circle cx="100" cy="100" r="58"/><circle cx="100" cy="100" r="38"/>
-      <path d="M100 22 L168 61 L168 139 L100 178 L32 139 L32 61 Z"/>
-      <path d="M62 78 L100 58 L138 78 L138 122 L100 142 L62 122 Z"/>
-      <path d="M100 58 L100 142 M62 78 L138 122 M138 78 L62 122"/>
+  <!-- topic: two near-identical pockets, one position different.  brand/mark-pocket-pair.svg -->
+  <svg class="motif" viewBox="0 0 220 120" aria-hidden="true">
+    <g class="faint" fill="none" stroke="#1E2A4A" stroke-width="1.6">
+      <path d="M52 14 L90 36 L90 80 L52 102 L14 80 L14 36 Z M52 14 L52 102 M14 36 L90 80 M90 36 L14 80"/>
+      <path d="M160 14 L198 36 L198 80 L160 102 L122 80 L122 36 Z M160 14 L160 102 M122 36 L198 80 M198 36 L122 80"/>
+      <path d="M38 50 q14 -10 28 0 q6 12 -6 18 q-14 6 -22 -4 z" stroke-width="2.2"/>
+      <path d="M146 50 q14 -10 28 0 q6 12 -6 18 q-14 6 -22 -4 z" stroke-width="2.2"/>
     </g>
-    <g fill="#0a0e17">
-      <circle cx="100" cy="58" r="3.4"/><circle cx="138" cy="78" r="3.4"/><circle cx="138" cy="122" r="3.4"/>
-      <circle cx="100" cy="142" r="3.4"/><circle cx="62" cy="122" r="3.4"/><circle cx="62" cy="78" r="3.4"/>
-      <circle cx="100" cy="100" r="5"/>
+    <g class="faint" fill="#1E2A4A">
+      <circle cx="52" cy="14" r="4"/><circle cx="90" cy="36" r="4"/><circle cx="90" cy="80" r="4"/>
+      <circle cx="52" cy="102" r="4"/><circle cx="14" cy="80" r="4"/><circle cx="14" cy="36" r="4"/>
+      <circle cx="160" cy="14" r="4"/><circle cx="198" cy="80" r="4"/>
+      <circle cx="160" cy="102" r="4"/><circle cx="122" cy="80" r="4"/><circle cx="122" cy="36" r="4"/>
     </g>
-  </svg>
+    <g class="diff"><circle cx="198" cy="36" r="6.5" fill="#5EC9E8"/></g>
+  
 
   <div class="eyebrow">
     <div class="l">Open Scientific Intelligence Hackathon</div>
-    <div class="r">Auckland Hub · 4th Annual · Free</div>
+    <div class="r">
+      <!-- place: Crux.  brand/mark-southern-cross.svg -->
+      <svg class="crux" viewBox="0 0 80 110" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.5" opacity=".35"><path d="M44 8 L38 96 M12 46 L70 34"/></g>
+        <g fill="currentColor">
+          <circle cx="44" cy="8" r="7"/><circle cx="38" cy="96" r="9"/><circle cx="12" cy="46" r="6"/>
+          <circle cx="70" cy="34" r="7.5"/><circle cx="52" cy="60" r="4" opacity=".7"/>
+        </g>
+      </svg>
+      <span>Auckland Hub · Aotearoa NZ · Free</span>
+    </div>
   </div>
 
   <h1>Can AI tell two<br>near-identical drug<br>targets <em>apart</em>?</h1>
@@ -125,9 +149,9 @@
       <div class="v">{{VENUE}}<small>University of Auckland</small></div>
     </div>
     <div class="box flag">
-      <div class="k">Worldwide</div>
-      <div class="v">16 hubs · 4 continents · 1000+ participants —<br>and Auckland is the
-        <b>first hub in the world to start</b>.</div>
+      <div class="k">Two days ahead of the world</div>
+      <div class="v">The global hackathon starts 21 Oct —<br>we finish
+        <b>before the first hub anywhere opens</b>.</div>
     </div>
   </div>
 

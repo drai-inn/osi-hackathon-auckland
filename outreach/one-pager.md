@@ -57,8 +57,8 @@ That question is not ours alone, which is why this is a cross-disciplinary event
 
 ## Why Auckland
 
-New Zealand is the first time zone. **We are the first hub in the world to start** — sixteen hours
-before the US sites wake up. What we build goes into the global event's first morning.
+We run **two days ahead of the global hackathon** (21–22 Oct) and finish sixteen hours before the
+earliest hub in the world opens. What we build is on the table before anyone else starts.
 
 ## Commit as much or as little as you like
 
