@@ -10,12 +10,12 @@ only signal you need.
 **To post:** commit to `event-log`. Newest at the top. Short, dated, honest — including what broke.
 A log that only records progress isn't worth following, and isn't what happened.
 
-Cadence: **weekly** through the month, **daily** during 19–20 October.
+Cadence: weekly through the month, daily during 19-20 October.
 
 | | |
 | --- | --- |
-| **Event** | Mon 19 – Tue 20 Oct 2026, University of Auckland |
-| **Global event** | 21–22 Oct — we run two days ahead |
+| **Event** | Mon 19 - Tue 20 Oct 2026, University of Auckland |
+| **Global event** | 21-22 Oct, [registration open to anyone](https://luma.com/ku88xh92) |
 | **What this is** | [The narrative](docs/00-event/narrative.md) · [Pick a ladder](docs/00-event/onboarding/README.md) |
 | **Plan** | [Critical path](docs/05-delivery/critical-path.md) · [Issues](https://github.com/drai-inn/drugs-surrogate-pipeline/issues) |
 
@@ -27,56 +27,41 @@ Updated with each entry. The honest version, not the reassuring one.
 
 | | |
 | --- | --- |
-| **Week** | Week 0 — pre-kickoff |
-| **Next gate** | Fri 25 Sep — *we know what runs where* |
+| **Week** | Week 0, pre-kickoff |
+| **Next gate** | Fri 25 Sep, we know what runs where |
 | **🔴 Blocking** | Owners and hosts unnamed · architecture spike unclaimed · cuEST unresolved · H200 unbooked |
-| **Recently resolved** | ✅ Dates: **19–20 Oct** ([ADR-0006](docs/adr/0006-run-19-20-october-as-a-precursor.md)) |
 | **Compute** | GB10 ×2 assumed available, unconfirmed · H200 unbooked |
 | **People** | 0 of 6 packages have a named owner |
 
 ---
 
-## 2026-09-19 · Week 0 — the repo exists, and the dates are locked
+## 2026-09-19 · Week 0, repo up and dates set
 
-**Dates settled: Mon 19 – Tue 20 October.** We can't run past the 21st and the 21st has competing
-agendas, so we go two days ahead of the global hackathon rather than alongside it. Extending into
-Wednesday the 21st stays an option we take in the moment — and since that's the global event's
-opening day, an extension is a bridge rather than an overrun.
-[ADR-0006](docs/adr/0006-run-19-20-october-as-a-precursor.md).
+**Dates.** Mon 19 to Tue 20 October, which are the two days we have. Wednesday the 21st is left
+open, and it's the global event's opening day, so that's a reasonable way to carry the work across
+if people want to keep going. The global event runs 21-22 October and registration is open to
+anyone, so sign up for that regardless.
 
-That turns out to be a better position than it first looked. We close 16 hours before the earliest
-hub in the world opens and 33 before the US sites, so everything we produce is on the table before
-anyone else starts. We're not hub number thirteen competing for attention mid-event — we're the
-precursor supplying it. The line is **"two days ahead of the world"**; *"first hub to start"* was
-true only on the official dates and has been removed everywhere.
+**What landed.** Scope, the stage decomposition S0 to S7, parameter space, metrics and six stage
+gates, all written before any data exists. The month-long critical path, because two days can't
+absorb a build and the dual GB10 boxes give us roughly 180 H200-equivalent hours beforehand. Six
+onboarding ladders. Outreach collateral, brand aligned to the global event and co-branded with
+Waipapa Taumata Rau. An isometric figure of the pipeline with the gates marked.
 
-**What landed this week**
+**Framing.** Settled on the baseline argument. We're handing every expensive step to a learned
+surrogate and measuring how far the whole chain gets. Individual steps have been done well by
+others, we haven't found the whole chain attempted, and it might not be good enough yet. We'd still
+like the number, because each step is improving quickly and at some point it crosses a threshold.
 
-- Scope, stage decomposition (S0–S8), parameter space, metrics and six stage gates — all written
-  before any data exists, which is the point
-- The month-long critical path. Two days can't absorb a build, so everything a five-day event would
-  have put on "day 1" moves into the four weeks before. Dual GB10 boxes for the month are what make
-  that possible: ~180 H200-equivalent hours, over half the whole workload
-- Six onboarding ladders, because nobody should have to read this repo to be useful in it
-- Outreach collateral, brand aligned to the global event, and an A3 poster
-- Reviewed three years of the global hackathon — 14, 34 and 120 projects — and tabulated who to
-  talk to
+**Two things worth knowing.** GB10 is aarch64 and H200 is x86_64, so anything containerised has to
+build for both. It'll work fine on GB10 through weeks 2 and 3 and then the H200 run won't start.
+One day of spike work removes it, and it's unclaimed, [#2](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/2).
+Separately, Michael Craig of Valence Labs was on the 2024 kickoff panel, and Valence make Nesso-1,
+which is currently a blocker. The organisers have a route to them.
 
-**Two things worth knowing**
-
-**The architecture split.** GB10 is `aarch64`; H200 is `x86_64`. Everything will work beautifully on
-GB10 through weeks 2 and 3 and then the H200 run won't start. One day of spike work removes it
-entirely. It's the most under-appreciated risk in the project and it's unclaimed —
-[#2](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/2).
-
-**Valence Labs.** Michael Craig of Valence Labs — who make Nesso-1 — was on the 2024 kickoff panel.
-Whether Nesso-1 is fine-tunable is currently a 🔴 blocker, and the organisers have a route to them.
-
-**Next**
-
-Monday's 2-hour planning session: name an owner *and* a host for every package, assign the three
-week-1 spikes, and get invitations out by Wednesday. The chain is
-*invitations → people → chemistry judgement → manifest → everything*, and it starts on Monday.
+**Next.** Monday's planning session. Name an owner and a host for every work package, assign the
+three week-1 spikes, invitations out by Wednesday. The chain is invitations, then people, then
+chemistry judgement, then the manifest, then everything else.
 
 *— Nick*
 
