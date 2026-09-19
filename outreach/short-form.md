@@ -8,17 +8,17 @@ Drop-in text for the places where nobody reads a one-pager.
 
 > 👋 Auckland, New Zealand hub checking in — University of Auckland.
 >
-> We're building a **chemistry-aware selectivity pipeline**: open-weight co-folding → pocket crop →
+> **Start small. Search hard. Scale only what survives.** We're testing whether a deliberately small
+> experiment can predict what a large one would do — treating the pipeline *configuration* as the
+> object of study rather than something to guess.
+>
+> The testbed is a **chemistry-aware selectivity pipeline**: open-weight co-folding → pocket crop →
 > learned ensembles → equivariant scoring → GPU quantum chemistry only on the genuinely uncertain
 > cases → learn from those labels. Driving case is CDK9 vs CDK7 paralog selectivity.
 >
-> The methodological question we actually care about: **when does a small experiment predict the
-> large one?** We're treating the pipeline configuration as the object of study rather than
-> something to guess.
->
 > Hardware: dual GB10 for the month beforehand, HGX H200 for benchmarks.
 >
-We run **19–20 Oct, two days ahead of the main event** — local scheduling, but it means we finish
+> We run **19–20 Oct, two days ahead of the main event** — local scheduling, but it means we finish
 > before the first hub anywhere opens and can put our benchmark, workflow and results on the table
 > for everyone else's day 1. Happy to be the canary on anything.
 >
@@ -29,13 +29,14 @@ We run **19–20 Oct, two days ahead of the main event** — local scheduling, b
 
 > **AI for Science Hackathon — Auckland hub, {{DATES}}**
 >
-> Can AI tell two near-identical drug targets apart? The University of Auckland is hosting the New
-> Zealand hub of the 4th annual global Open Scientific Intelligence Hackathon — 16 hubs across 4
-> continents, 1000+ participants.
+> **Start small. Search hard. Scale only what survives.** We're testing whether a deliberately small
+> experiment can predict what a large one would do — a question that belongs to every field with
+> slow, expensive experiments.
 >
-> We're building a pipeline that combines open-weight 3D structure models with GPU quantum
-> chemistry to tackle drug selectivity, and testing a broader question: when does a small,
-> affordable experiment actually predict the large, expensive one?
+> The testbed: can AI tell two near-identical drug targets apart? The University of Auckland is
+> hosting the New Zealand hub of the 4th annual global Open Scientific Intelligence Hackathon — 16
+> hubs across 4 continents, 1000+ participants — building a pipeline that combines open-weight 3D
+> structure models with GPU quantum chemistry.
 >
 > **We need medicinal chemists, structural biologists, quantum chemists, statisticians, ML
 > researchers and research software engineers** — and people new to AI for science, for whom we've
@@ -50,12 +51,13 @@ We run **19–20 Oct, two days ahead of the main event** — local scheduling, b
 > 🇳🇿 Auckland is hosting the New Zealand hub of the global Open Scientific Intelligence Hackathon,
 > {{DATES}}.
 >
-> We're asking whether AI can distinguish two near-identical drug targets — the selectivity problem
-> that kills more programmes than potency ever does. Fast AI models do the volume; GPU quantum
-> chemistry gets spent only where it changes the answer.
+> **Start small. Search hard. Scale only what survives.** We're testing whether a deliberately small
+> experiment can predict what a large one would do — a question every empirical field has, and one
+> the evidence says most of us get wrong by under-exploring.
 >
-> The deeper question is one every empirical field has: **when does a small experiment predict the
-> large one?**
+> The testbed: whether AI can distinguish two near-identical drug targets — the selectivity problem
+> that kills more programmes than potency ever does. Fast AI models do the volume; GPU quantum
+> chemistry is spent only where it changes the answer.
 >
 > Cross-disciplinary by design. Newcomers genuinely welcome — you'll own a result, not watch one.
 >
@@ -64,17 +66,19 @@ We run **19–20 Oct, two days ahead of the main event** — local scheduling, b
 
 ## Social — short
 
-> Auckland hosts NZ's hub of the global AI-for-science hackathon, {{DATES}}. Can AI tell two
-> near-identical drug targets apart? Chemists, physicists, statisticians, RSEs — and anyone new to
-> this. We go two days ahead of the world. {{LINK}}
+> Start small, search hard, scale only what survives — can a tiny experiment predict a big one?
+> Auckland's hub of the global AI-for-science hackathon, {{DATES}}. Testbed: telling two
+> near-identical drug targets apart. Chemists, physicists, statisticians, RSEs — and anyone new to
+> this. {{LINK}}
 
 ## Calendar invite
 
 > **OSI Hackathon — Auckland Hub**
 > {{DATES}} · {{VENUE}}
 >
-> Building an AI + quantum-chemistry pipeline for drug-target selectivity, as part of the global
-> Open Scientific Intelligence Hackathon.
+> Start small, search hard, scale only what survives — testing whether a small experiment can
+> predict a large one, on an AI + quantum-chemistry pipeline for drug-target selectivity. Part of
+> the global Open Scientific Intelligence Hackathon.
 >
 > **Bring:** a laptop. That's it — everything else is set up.
 > **Day 1:** framing, on-ramp clinics, parameter sweeps.
@@ -87,20 +91,21 @@ We run **19–20 Oct, two days ahead of the main event** — local scheduling, b
 
 > ---
 > Organising the **Auckland hub** of the Open Scientific Intelligence Hackathon, {{DATES}} —
-> AI + quantum chemistry for drug-target selectivity. Cross-disciplinary, free, newcomers welcome.
+> start small, search hard, scale only what survives. Cross-disciplinary, free, newcomers welcome.
 > {{LINK}}
 
 ## Poster tear-off strip
 
-> **AI for Science Hackathon · Auckland · {{DATES}} · Free**
+> **Start small. Search hard. Scale only what survives.**
+> AI for Science Hackathon · Auckland · {{DATES}} · Free
 > Chemists · Physicists · Statisticians · Engineers · Newcomers
 > {{LINK}}
 
 ## Lift pitch, 30 seconds
 
-> Most drugs fail because they hit the wrong protein, not because they miss the right one — and the
-> computational tools can't tell near-identical targets apart, because they throw away the 3D
-> information that makes them different. We're testing whether AI can put it back, with quantum
-> chemistry spent only where it changes the answer. Two days, cross-disciplinary, dedicated GPUs.
-> And we run two days ahead of the global event, so what we build is ready for everyone else's
-> day one.
+> Start small, search hard, scale only what survives. We're testing whether a deliberately small
+> experiment can predict what a large one would do — because most people guess their settings, and
+> the evidence says that's exactly why small experiments fail to transfer. Our testbed is drug
+> selectivity: most drugs fail because they hit the wrong protein, and the tools can't tell
+> near-identical targets apart. Two days, cross-disciplinary, dedicated GPUs. And we go two days
+> ahead of the global event, so what we build is ready for everyone else's day one.
