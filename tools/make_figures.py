@@ -551,8 +551,153 @@ def _wrap(text: str, n: int) -> list[str]:
     return lines
 
 
+
+# =============================================================================
+# Figure 4 — the protein space
+# Where our targets sit in the CDK family, and why whole-domain identity
+# understates the problem. Numbers from data/protein-space.json, which
+# tools/fetch_protein_space.py produces.
+# =============================================================================
+
+OUT4 = OUT.parent / "protein-space.svg"
+DATA = Path(__file__).resolve().parent.parent / "data" / "protein-space.json"
+
+
+def _ramp(v, lo=35.0, hi=100.0):
+    """Identity to a colour on the panel-to-cyan ramp."""
+    t = max(0.0, min(1.0, (v - lo) / (hi - lo)))
+    a = (0x1D, 0x2A, 0x4F)
+    b = (0x00, 0xD3, 0xF6)
+    return "#%02X%02X%02X" % tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
+
+
+def build_protein_space() -> str:
+    import json
+    d = json.loads(DATA.read_text())
+    order, reg, sid = d["order"], d["region_identity"], d["site_identity"]
+    sres, spos = d["site_residues"], d["site_positions"]
+    ours = {"CDK9", "CDK7", "CDK12", "CDK13"}
+
+    W, H = 1340, 1040
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
+         f'font-family="Inter,Helvetica Neue,Arial,sans-serif" role="img" '
+         f'aria-label="Where CDK9 and its counter-targets sit in the CDK family">',
+         '<title>The protein space</title>',
+         f'<rect width="{W}" height="{H}" fill="{VOID}"/>']
+    o.append(f'<text x="48" y="56" fill="{ON}" font-size="28" font-weight="800" '
+             f'letter-spacing="-.5">The protein space</text>')
+    o.append(f'<text x="48" y="84" fill="{SOFT}" font-size="14.5">Sequence identity across the CDK '
+             f'family. Whole kinase region on the left, the 18 ATP-site positions on the right.</text>')
+
+    # ---- heatmap -------------------------------------------------------------
+    cell, hx, hy = 44, 150, 190
+    o.append(f'<text x="48" y="{hy-40}" fill="{SOFT}" font-size="11.5" font-weight="700" '
+             f'letter-spacing="1.5">WHOLE KINASE REGION</text>')
+    for j, b in enumerate(order):
+        o.append(f'<text x="{hx+j*cell+cell/2:.0f}" y="{hy-10}" fill="{SOUTH if b in ours else SOFT}" '
+                 f'font-size="10.5" font-weight="{800 if b in ours else 600}" '
+                 f'text-anchor="middle" transform="rotate(-50 {hx+j*cell+cell/2:.0f} {hy-10})">{b}</text>')
+    for i, a in enumerate(order):
+        o.append(f'<text x="{hx-10}" y="{hy+i*cell+cell/2+4:.0f}" '
+                 f'fill="{SOUTH if a in ours else SOFT}" font-size="10.5" '
+                 f'font-weight="{800 if a in ours else 600}" text-anchor="end">{a}</text>')
+        for j, b in enumerate(order):
+            v = 100.0 if a == b else reg[f"{a}|{b}"]
+            x, y = hx + j * cell, hy + i * cell
+            o.append(f'<rect x="{x}" y="{y}" width="{cell-2}" height="{cell-2}" rx="2" '
+                     f'fill="{_ramp(v)}" opacity="{0.35 if a==b else 0.95}"/>')
+            if v >= 60 and a != b:
+                o.append(f'<text x="{x+(cell-2)/2:.0f}" y="{y+(cell-2)/2+4:.0f}" fill="#062430" '
+                         f'font-size="10.5" font-weight="800" text-anchor="middle">{v:.0f}</text>')
+    # ring our four
+    for i, a in enumerate(order):
+        for j, b in enumerate(order):
+            if a in ours and b in ours and a != b:
+                o.append(f'<rect x="{hx+j*cell-1}" y="{hy+i*cell-1}" width="{cell}" height="{cell}" '
+                         f'rx="3" fill="none" stroke="{GOLD}" stroke-width="1.6" opacity=".8"/>')
+    o.append(f'<text x="{hx}" y="{hy+len(order)*cell+30}" fill="{GOLD}" font-size="12">'
+             f'gold: our four targets</text>')
+
+    # ---- paired bars ---------------------------------------------------------
+    bx, by = 660, 190
+    o.append(f'<text x="{bx}" y="{by-40}" fill="{SOFT}" font-size="11.5" font-weight="700" '
+             f'letter-spacing="1.5">CDK9 AGAINST EACH COUNTER-TARGET</text>')
+    for k, b in enumerate(["CDK7", "CDK12", "CDK13"]):
+        y = by + k * 74
+        o.append(f'<text x="{bx}" y="{y+4}" fill="{ON}" font-size="13.5" font-weight="700">{b}</text>')
+        for m, (lab, v, col) in enumerate([("region", reg[f"CDK9|{b}"], "#4A5C8C"),
+                                           ("ATP site", sid[f"CDK9|{b}"], SOUTH)]):
+            yy = y + 18 + m * 22
+            o.append(f'<text x="{bx+80}" y="{yy+9}" fill="{SOFT}" font-size="11" '
+                     f'text-anchor="end">{lab}</text>')
+            o.append(f'<rect x="{bx+90}" y="{yy}" width="380" height="13" rx="3" fill="{PANEL}"/>')
+            o.append(f'<rect x="{bx+90}" y="{yy}" width="{380*v/100:.0f}" height="13" rx="3" '
+                     f'fill="{col}" opacity=".95"/>')
+            o.append(f'<text x="{bx+480}" y="{yy+11}" fill="{ON}" font-size="11.5" '
+                     f'font-weight="700">{v:.0f}%</text>')
+    o.append(f'<text x="{bx}" y="{by+232}" fill="{ON}" font-size="13.5" opacity=".9">'
+             f'The pocket is far more conserved than the domain around it.</text>')
+    o.append(f'<text x="{bx}" y="{by+252}" fill="{SOFT}" font-size="13">'
+             f'Whole-region identity understates how hard this is.</text>')
+
+    # ---- ATP-site residue strip ---------------------------------------------
+    sy = 800
+    o.append(f'<text x="48" y="{sy-52}" fill="{SOFT}" font-size="11.5" font-weight="700" '
+             f'letter-spacing="1.5">THE 18 ATP-SITE POSITIONS</text>')
+    keys = sorted(spos, key=int)
+    cw2, sx = 46, 160
+    for j, p in enumerate(keys):
+        x = sx + j * cw2
+        role = spos[p]
+        o.append(f'<text x="{x+cw2/2:.0f}" y="{sy+2}" fill="{SOFT}" font-size="9" '
+                 f'text-anchor="middle" opacity=".7">{p}</text>')
+        if role not in ("—",):
+            o.append(f'<text x="{x+cw2/2:.0f}" y="{sy-14}" fill="{GOLD if "hinge" in role or "gate" in role else SOFT}" '
+                     f'font-size="8.5" text-anchor="middle" opacity=".8" '
+                     f'transform="rotate(-45 {x+cw2/2:.0f} {sy-14})">{role}</text>')
+    for i, n in enumerate(["CDK9", "CDK7", "CDK12", "CDK13"]):
+        y = sy + 18 + i * 30
+        o.append(f'<text x="{sx-12}" y="{y+16}" fill="{SOUTH if n=="CDK9" else ON}" '
+                 f'font-size="12" font-weight="{800 if n=="CDK9" else 600}" '
+                 f'text-anchor="end">{n}</text>')
+        for j, p in enumerate(keys):
+            x = sx + j * cw2
+            r = sres[n].get(p, "?")
+            same = (r == sres["CDK9"].get(p))
+            fill = SOUTH if (n == "CDK9") else (PANEL if same else "#8A5A2B")
+            op = ".85" if n == "CDK9" else (".5" if same else ".95")
+            o.append(f'<rect x="{x}" y="{y}" width="{cw2-4}" height="24" rx="3" fill="{fill}" '
+                     f'opacity="{op}"/>')
+            o.append(f'<text x="{x+(cw2-4)/2:.0f}" y="{y+17}" '
+                     f'fill="{"#062430" if n=="CDK9" else ON}" font-size="12.5" '
+                     f'font-weight="{800 if not same and n!="CDK9" else 600}" '
+                     f'text-anchor="middle">{r}</text>')
+    o.append(f'<text x="{sx}" y="{sy+160}" fill="{SOFT}" font-size="12">'
+             f'orange: differs from CDK9. The hinge is where CDK12 and CDK13 diverge; '
+             f'CDK7 matches CDK9 there and differs elsewhere.</text>')
+
+    # ---- the harder pair -----------------------------------------------------
+    o.append(f'<rect x="{bx}" y="{by+282}" width="622" height="86" rx="6" fill="{PANEL}" opacity=".5"/>')
+    o.append(f'<text x="{bx+20}" y="{by+310}" fill="{GOLD}" font-size="13.5" font-weight="800">'
+             f'A harder pair sits in the same family</text>')
+    o.append(f'<text x="{bx+20}" y="{by+332}" fill="{ON}" font-size="13">'
+             f'CDK8 and CDK19 are identical at all 18 ATP-site positions '
+             f'({sid["CDK8|CDK19"]:.0f}%).</text>')
+    o.append(f'<text x="{bx+20}" y="{by+352}" fill="{SOFT}" font-size="12.5">'
+             f'CDK4 / CDK6 sit at {sid["CDK4|CDK6"]:.0f}%. Natural scale-up targets once the '
+             f'chain holds on ours.</text>')
+
+    o.append(f'<text x="48" y="{H-26}" fill="{SOFT}" font-size="11" opacity=".65">'
+             f'UniProt sequences. ATP-site positions mapped from CDK2 by sequence alignment, not '
+             f'structural superposition, so treat as indicative. '
+             f'tools/fetch_protein_space.py → data/protein-space.json</text>')
+    o.append('</svg>')
+    return "\n".join(o)
+
+
 if __name__ == "__main__":
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    for path, fn in ((OUT, build), (OUT2, build_objects), (OUT3, build_trajectory)):
+    for path, fn in ((OUT, build), (OUT2, build_objects), (OUT3, build_trajectory),
+                     (OUT4, build_protein_space)):
         path.write_text(fn())
         print(f"wrote {path.relative_to(Path.cwd())}  ({path.stat().st_size:,} bytes)")

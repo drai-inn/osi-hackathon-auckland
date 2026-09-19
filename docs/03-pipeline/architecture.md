@@ -1,5 +1,14 @@
 # Pipeline architecture
 
+## The shape of it
+
+![The eight steps, what passes between them, and where the gates sit](figures/pipeline-isometric.svg)
+
+![What each phase actually holds, and what is measured on it](figures/objects-of-study.svg)
+
+Figures regenerate from [`tools/make_figures.py`](../../tools/make_figures.py). The protein space
+they operate in is in [visualisation.md](visualisation.md).
+
 ## Design principle
 
 **A staged funnel with monotonically increasing cost per candidate and monotonically decreasing

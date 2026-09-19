@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDK9 and CDK7 — the pockets, side by side</title>
+<!--
+  Interactive structure viewer for community updates. No build step: one script
+  tag, structures fetched from RCSB at load. Open it in a browser, or drop the
+  two <div>s into the landing page.
+
+  3Dmol.js, BSD licensed.  https://3dmol.csb.pitt.edu/
+  3BLR  2.8 A  human CDK9 / cyclin T1 with flavopiridol
+  1UA2  3.0 A  human CDK7
+  See docs/03-pipeline/visualisation.md
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.1.0/3Dmol-min.js"></script>
+<style>
+  :root{ --void:#141C36; --panel:#1D2A4F; --on:#EEF1FB; --soft:#9AA7CD;
+         --south:#00D3F6; --target:#8AA0E6; --counter:#8B7CF6; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--void);color:var(--on);
+       font-family:Inter,"Helvetica Neue",Arial,sans-serif;padding:28px}
+  h1{font-size:23px;font-weight:800;letter-spacing:-.4px;margin-bottom:6px}
+  .lede{color:var(--soft);font-size:14px;margin-bottom:22px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:18px}
+  .card{background:var(--panel);border-radius:8px;overflow:hidden}
+  .card h2{font-size:15px;font-weight:700;padding:14px 16px 4px}
+  .card .meta{font-size:12px;color:var(--soft);padding:0 16px 12px}
+  .view{width:100%;height:380px;position:relative}
+  .controls{padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;
+            border-top:1px solid rgba(154,167,205,.18)}
+  button{background:none;border:1px solid rgba(154,167,205,.35);color:var(--on);
+         border-radius:4px;padding:6px 11px;font-size:12px;font-weight:600;cursor:pointer;
+         font-family:inherit}
+  button:hover{border-color:var(--south);color:var(--south)}
+  button.on{background:var(--south);border-color:var(--south);color:#062430}
+  footer{margin-top:22px;font-size:12px;color:var(--soft);max-width:80ch;line-height:1.5}
+</style>
+</head>
+<body>
+
+<h1>CDK9 and CDK7, the pockets side by side</h1>
+<p class="lede">Same fold, same ligand, different answer. Drag to rotate, scroll to zoom. The
+crop-radius buttons show the shell we actually feed to the scorer, which is one of the parameters
+we sweep.</p>
+
+<div class="grid">
+  <div class="card">
+    <h2>CDK9 · 3BLR</h2>
+    <div class="meta">2.8 Å · with cyclin T1 and flavopiridol · our target</div>
+    <div class="view" id="v9"></div>
+    <div class="controls" id="c9"></div>
+  </div>
+  <div class="card">
+    <h2>CDK7 · 1UA2</h2>
+    <div class="meta">3.0 Å · our counter-target</div>
+    <div class="view" id="v7"></div>
+    <div class="controls" id="c7"></div>
+  </div>
+</div>
+
+<footer>
+  Structures fetched live from the RCSB PDB. Colouring follows the repo palette: cyan is the
+  ligand, and the shell is what a given crop radius would include.
+  Built with <a href="https://3dmol.csb.pitt.edu/" style="color:var(--south)">3Dmol.js</a>.
+  See <code>docs/03-pipeline/visualisation.md</code>.
+</footer>
+
+<script>
+function panel(divId, ctrlId, pdb, chain, cartoonColor, hasLigand) {
+  const v = $3Dmol.createViewer(document.getElementById(divId),
+                                {backgroundColor: "#141C36"});
+  let radius = 12, showShell = false;
+
+  $3Dmol.download("pdb:" + pdb, v, {}, function () {
+    draw();
+    v.zoomTo(hasLigand ? {not: {resn: ["HOH"]}, hetflag: true} : {chain: chain});
+    v.zoom(0.85);
+    v.render();
+  });
+
+  function draw() {
+    v.setStyle({}, {});
+    v.setStyle({chain: chain, cartoon: {color: cartoonColor, opacity: 0.72}});
+    if (hasLigand) {
+      const lig = {hetflag: true, not: {resn: ["HOH", "SO4", "GOL", "EDO", "CL", "NA", "MG"]}};
+      v.setStyle(lig, {stick: {colorscheme: "cyanCarbon", radius: 0.22}});
+      if (showShell) {
+        v.setStyle({within: {distance: radius, sel: lig}, byres: true, chain: chain},
+                   {stick: {colorscheme: "whiteCarbon", radius: 0.1},
+                    cartoon: {color: cartoonColor, opacity: 0.72}});
+      }
+    }
+    v.render();
+  }
+
+  const c = document.getElementById(ctrlId);
+  function btn(label, fn, active) {
+    const b = document.createElement("button");
+    b.textContent = label;
+    if (active) b.classList.add("on");
+    b.onclick = () => { fn(); [...c.children].forEach(x => x.classList.remove("on"));
+                        b.classList.add("on"); draw(); };
+    c.appendChild(b);
+    return b;
+  }
+  if (hasLigand) {
+    btn("no shell", () => { showShell = false; }, true);
+    [10, 12, 15].forEach(r => btn(r + " Å", () => { showShell = true; radius = r; }));
+  } else {
+    btn("cartoon", () => {}, true);
+  }
+}
+
+panel("v9", "c9", "3blr", "A", "0x8AA0E6", true);
+panel("v7", "c7", "1ua2", "A", "0x8B7CF6", false);
+</script>
+</body>
+</html>

@@ -26,6 +26,16 @@ Scale only what survives.
 
 📖 **[Read the narrative](docs/00-event/narrative.md)**, about ten minutes.
 
+> ### 🌏 The global event
+> We're one local site of the **Open Scientific Intelligence Hackathon**. Fourth year, hubs on four
+> continents, over a thousand participants last year, and a write-up each year crediting every team.
+>
+> **It runs 21–22 October and [registration is open to anyone](https://luma.com/ku88xh92).** Sign up
+> for that whether or not you come to ours. Auckland runs 19–20 October, which are the two days we
+> have, and Wednesday the 21st is open if people want to carry the work across.
+>
+> [llmhackathon.github.io](https://llmhackathon.github.io/) · [how we fit in](docs/00-event/the-global-event.md)
+
 <br>
 
 <img src="outreach/brand/uoa-motif.svg" width="40" alt="">
@@ -59,6 +69,30 @@ ensemble. A few weighted states. A graph. An electron density. A correction.
 ![The four CDK targets, and the object of study at each phase](docs/03-pipeline/figures/objects-of-study.svg)
 
 The testbed is **CDK9 against CDK7**. Same fold, same ligand, different answer.
+
+<br>
+
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
+
+<br>
+
+## The protein space we're in
+
+![Identity across the CDK family, whole kinase region against the 18 ATP-site positions](docs/03-pipeline/figures/protein-space.svg)
+
+Whole-domain identity understates the problem. CDK9 against its counter-targets is 44–50% identical
+over the kinase region, but **67–72% across the ATP site**.
+
+And a harder pair sits in the same family. **CDK8 and CDK19 are identical at all 18 pocket
+positions.** CDK4 and CDK6 are at 94%. Natural scale-up targets once the chain holds on ours.
+
+Numbers from [`tools/fetch_protein_space.py`](tools/fetch_protein_space.py) into
+[`data/protein-space.json`](data/protein-space.json), so they regenerate and can be checked. Site
+positions are mapped from CDK2 by sequence alignment, not structural superposition, so treat them
+as indicative.
+
+🔬 **[Open the structures](tools/render/viewer.html)** — CDK9 and CDK7 side by side, rotatable, with
+the crop radius as a button. More in [visualisation.md](docs/03-pipeline/visualisation.md).
 
 <br>
 
@@ -141,6 +175,23 @@ carry the work across.
 
 <br>
 
+## How the work is tracked
+
+Six phases run in parallel, so issues carry two axes.
+
+**Work package**, which is who owns it: `wp:A-benchmark` · `wp:B-structure` · `wp:C-ensembles` ·
+`wp:D-scoring` · `wp:E-quantum` · `wp:F-workflow` · `wp:methodology`. Maps to
+[work-packages.md](docs/05-delivery/work-packages.md).
+
+**Milestone**, which is when: W1 unblock (25 Sep) · W2 skeleton (2 Oct) · W3 make it real (9 Oct) ·
+W4 rehearse (16 Oct) · Event (20 Oct). These are the weekly gates from the
+[critical path](docs/05-delivery/critical-path.md).
+
+[Issues by milestone](https://github.com/drai-inn/drugs-surrogate-pipeline/milestones) ·
+[open issues](https://github.com/drai-inn/drugs-surrogate-pipeline/issues)
+
+**B, C and D currently have no issues**, which is the same gap as the unnamed owners, just visible.
+
 ## Where things are
 
 | | |
@@ -148,6 +199,7 @@ carry the work across.
 | Doing something this week | [Critical path](docs/05-delivery/critical-path.md) · [open issues](https://github.com/drai-inn/drugs-surrogate-pipeline/issues) |
 | Inviting someone | [`outreach/`](outreach/), one-pager, templates, poster, [brand](outreach/brand/README.md) |
 | The science | [Problem statement](docs/01-context/problem-statement.md) → [Architecture](docs/03-pipeline/architecture.md) → [Stages](docs/03-pipeline/stages/) |
+| Structures and figures | [Visualisation](docs/03-pipeline/visualisation.md) · [render scripts](tools/render/) · [figures](docs/03-pipeline/figures/) |
 | The method | [Small-data HPO](docs/04-experiments/hpo-microtopic.md) · [Methodology](docs/04-experiments/methodology.md) · [Metrics](docs/04-experiments/metrics.md) |
 | Compute | [GB10 / H200 plan](docs/06-feasibility/compute-plan.md) · [Budget](docs/06-feasibility/compute-budget.md) |
 | What's undecided | [Open questions](docs/02-scope/open-questions.md) · [Risks](docs/06-feasibility/risks.md) |
@@ -175,7 +227,9 @@ Standard library only, nothing to install:
 
 ```bash
 make validate && make budget TIER=hackathon_minimum
-python3 tools/make_figures.py
+python3 tools/make_figures.py            # all four figures
+python3 tools/fetch_protein_space.py     # refresh the CDK family numbers, needs biopython
+open tools/render/viewer.html            # CDK9 and CDK7, rotatable
 ```
 
 <br>

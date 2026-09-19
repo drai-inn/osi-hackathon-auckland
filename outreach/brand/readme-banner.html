@@ -12,11 +12,25 @@
     --action:#3F5FBC; --south:#00D3F6;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{width:1200px;height:400px;overflow:hidden;
+  body{width:1200px;height:452px;overflow:hidden;
        font-family:Inter,"Helvetica Neue",Arial,sans-serif;
        background:var(--void);color:var(--on-void);position:relative}
-  .pockets{position:absolute;right:-30px;top:34px;width:460px;opacity:.12}
-  .inner{position:relative;padding:38px 46px;height:100%;display:flex;flex-direction:column}
+  .pockets{position:absolute;right:-30px;top:86px;width:440px;opacity:.12}
+  /* Top arch: borrowed from the global event's masthead, so our banner reads as
+     part of the same event. Their wordmark treatment, their edition pill, their
+     action colour. */
+  .arch{position:relative;background:var(--void-deep);height:52px;display:flex;
+        align-items:center;justify-content:space-between;padding:0 46px;
+        border-bottom:1px solid rgba(154,167,205,.14)}
+  .arch .mark{display:flex;align-items:flex-end;gap:2.5px;height:15px}
+  .arch .mark i{display:block;width:3.5px;background:var(--south);border-radius:1px}
+  .arch .wm{display:flex;align-items:center;gap:11px}
+  .arch .wm span{font-size:12px;font-weight:800;letter-spacing:.2em;color:#C9D3EE}
+  .arch .edition{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;
+        letter-spacing:.12em;color:#fff;background:var(--action);padding:5px 12px;border-radius:4px}
+  .arch .edition b{width:5px;height:5px;border-radius:50%;background:var(--south);display:block}
+  .inner{position:relative;padding:30px 46px 34px;height:calc(100% - 52px);
+         display:flex;flex-direction:column}
   /* The motif sits on its own line with clear air. Nothing inline beside it. */
   .motif{width:40px;display:block;margin-bottom:22px}
   .top{margin-bottom:16px}
@@ -49,6 +63,14 @@
     <circle cx="198" cy="36" r="7" fill="#00D3F6" opacity=".85"/>
   </svg>
 
+  <div class="arch">
+    <div class="wm">
+      <span class="mark"><i style="height:6px"></i><i style="height:11px"></i><i style="height:15px"></i><i style="height:9px"></i></span>
+      <span>OPEN SCIENTIFIC INTELLIGENCE HACKATHON</span>
+    </div>
+    <span class="edition"><b></b>4TH EDITION · 21–22 OCTOBER 2026 · GLOBAL</span>
+  </div>
+
   <div class="inner">
     <svg class="motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6">
       <path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/>
@@ -56,7 +78,7 @@
     </g></svg>
 
     <div class="top">
-      <span class="kicker">Open Scientific Intelligence Hackathon · Auckland site</span>
+      <span class="kicker">Auckland site · Aotearoa New Zealand · 19–20 October</span>
     </div>
 
     <h1>How far can a chain<br>of <em>surrogates</em> get us?</h1>
@@ -66,7 +88,7 @@
 
     <div class="meta">
       <div class="chips">
-        <span class="chip pri">Mon 19 – Tue 20 October 2026</span>
+        <span class="chip pri">Auckland: Mon 19 – Tue 20 October</span>
         <span class="chip">Free</span>
         <span class="chip">All welcome</span>
         <span class="chip acc">Cross-disciplinary</span>

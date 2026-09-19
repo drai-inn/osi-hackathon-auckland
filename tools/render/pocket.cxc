@@ -1,0 +1,46 @@
+# CDK9 and CDK7 ATP pockets, side by side.
+#
+#   chimerax --nogui --script tools/render/pocket.cxc
+#
+# Produces docs/03-pipeline/figures/pockets-cdk9-cdk7.png
+#
+# 3BLR  2.8 A  human CDK9 / cyclin T1 with flavopiridol
+# 1UA2  3.0 A  human CDK7
+# Verified against the RCSB API 2026-09-19. See docs/03-pipeline/visualisation.md.
+
+open 3BLR
+open 1UA2
+
+# CDK9 is chain A in 3BLR; flavopiridol is the ligand of interest
+select #1/A
+hide all target m
+show #1/A cartoons
+color #1/A #4A5C8C
+
+# the bound ligand, and everything within the crop radius we sweep
+select #1 & ligand & ~solvent
+show sel atoms
+style sel stick
+color sel #00D3F6
+name frozen lig9 sel
+
+select zone lig9 12 #1/A residues true
+show sel atoms
+style sel stick
+color sel byhetero
+transparency #1/A 60 cartoons
+
+# CDK7, same treatment, no ligand present in 1UA2
+show #2 cartoons
+color #2 #8B7CF6
+transparency #2 60 cartoons
+
+lighting soft
+graphics silhouettes true width 1.5
+set bgColor #141C36
+view
+
+# side by side
+tile
+save docs/03-pipeline/figures/pockets-cdk9-cdk7.png width 1600 supersample 3 transparentBackground false
+exit
