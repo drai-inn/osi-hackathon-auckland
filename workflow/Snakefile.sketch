@@ -6,9 +6,9 @@
 # stage scripts on day 1, at which point `make smoke` must go green before lunch.
 #
 # Read alongside:
-#   docs/02-pipeline/interfaces.md   -- the data contracts these rules must honour
-#   docs/02-pipeline/architecture.md -- what each stage is for
-#   docs/02-pipeline/stages/S8-orchestration.md
+#   docs/03-pipeline/interfaces.md   -- the data contracts these rules must honour
+#   docs/03-pipeline/architecture.md -- what each stage is for
+#   docs/03-pipeline/stages/S8-orchestration.md
 #
 # Design notes worth keeping when this is rewritten:
 #   * Snakemake's caching is what makes the cached-upstream sweep strategy work (ADR-0003):
@@ -197,7 +197,7 @@ rule s7_feedback:
 
 
 # --- Evaluation and gates ----------------------------------------------------------------------
-# Every metric carries a bootstrap interval. See docs/03-experiments/metrics.md.
+# Every metric carries a bootstrap interval. See docs/04-experiments/metrics.md.
 
 rule evaluate:
     input:

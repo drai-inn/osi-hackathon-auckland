@@ -25,7 +25,7 @@ uncontended and ours; H200 is queued and booked.
    iterating behind an H200 queue wastes the month.
 2. **The month runs a pre-computation campaign**, so the event starts with complexes, ensembles,
    reference MD, baselines and the quantum convergence study already done. Only work that needs
-   people present happens in the room ([plan.md](../04-hackathon/plan.md#what-genuinely-needs-people-in-a-room)).
+   people present happens in the room ([plan.md](../05-delivery/plan.md#what-genuinely-needs-people-in-a-room)).
 3. **During the event, GB10 is the participant-facing resource and H200 is the batch resource.** A
    newcomer's first run must not queue behind a sweep.
 
@@ -52,7 +52,7 @@ dedicated, uncontended machine, which is what makes a sub-30-minute first result
 
 **Bad:** every container is built twice, and every dependency needs an `aarch64` story. The
 GB10:H200 ratio is currently an `[estimate]` with wide error bars, so all month-capacity planning
-is soft until [W2.7](../04-hackathon/critical-path.md) measures it. Artifacts may need copying
+is soft until [W2.7](../05-delivery/critical-path.md) measures it. Artifacts may need copying
 between architectures, which nobody has budgeted time for yet.
 
 **Revisit if:** the week-1 spike finds that a material fraction of the stack has no `aarch64`

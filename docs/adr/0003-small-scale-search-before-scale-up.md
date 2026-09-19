@@ -9,7 +9,7 @@ what happens. That produces one point in an eight-dimensional configuration spac
 with no way to know whether a different configuration would have worked much better — or whether
 the result would survive at a larger scale.
 
-[Lourie et al. (2026)](../00-context/source-notes/small-scale-experiments.md) argue this is the
+[Lourie et al. (2026)](../01-context/source-notes/small-scale-experiments.md) argue this is the
 central methodological error in small-scale ML experimentation: results are dismissed as
 "unreliable at small scale" when they were simply undertuned. Their evidence: the regularity they
 sought was invisible at 4 and 16 configurations, clear at 64, accurate at 256. `[literature]`
@@ -23,7 +23,7 @@ sought was invisible at 4 and 16 configurations, clear at 64, accurate at 256. `
 2. **Random search, not grids.**
 3. Integrate only settings showing stable signal.
 4. Treat the configuration space as the object of study, not as settings to be guessed
-   ([microtopic](../03-experiments/hpo-microtopic.md)).
+   ([microtopic](../04-experiments/hpo-microtopic.md)).
 5. Diagnostics over extrapolation. We do **not** fit scaling curves and project to production.
 
 This also commits us to testing whether the underlying assumption holds here — whether
@@ -43,7 +43,7 @@ theirs. That is diagnostic D2 and it is a headline deliverable.
 **Good:** sensitivity information for every parameter from one budget. Packages proceed in
 parallel. A negative result is localisable. Produces a transferable methodological contribution.
 
-**Bad:** assumes stage effects are approximately separable (→ [R11](../05-feasibility/risks.md)).
+**Bad:** assumes stage effects are approximately separable (→ [R11](../06-feasibility/risks.md)).
 Needs a methodology lead and real statistical discipline. No single impressive end-to-end demo
 until day 4.
 

@@ -34,7 +34,7 @@ Level 3 costs an hour and is how several of the most useful contributions will a
 Most drugs fail on selectivity, not potency. We are building a staged pipeline where fast AI models
 do the volume work and GPU quantum chemistry is spent only where it changes the answer, and testing
 it on CDK9 versus CDK7 — two kinases similar enough that conventional methods cannot separate them.
-Full version: [narrative.md](../docs/00-context/narrative.md).
+Full version: [narrative.md](../docs/00-event/narrative.md).
 
 **What if it doesn't work?**
 Then we will know in two days rather than two years, which is the point. Six gates were written

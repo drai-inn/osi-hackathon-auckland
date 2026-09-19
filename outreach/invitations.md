@@ -8,7 +8,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 
 ---
 
-## 1 · Medicinal chemistry / pharmacology → [Activity 1](../docs/04-hackathon/adjacent-activities.md#activity-1--selectivity-benchmark-clinic)
+## 1 · Medicinal chemistry / pharmacology → [Activity 1](../docs/05-delivery/adjacent-activities.md#activity-1--selectivity-benchmark-clinic)
 
 > **Subject: Come and tell us our selectivity benchmark is wrong**
 >
@@ -56,7 +56,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 >
 > Nick
 
-## 3 · Statistics / ML / any field with expensive experiments → [Activity 2](../docs/04-hackathon/adjacent-activities.md#activity-2--small-data-hyperparameter-science)
+## 3 · Statistics / ML / any field with expensive experiments → [Activity 2](../docs/05-delivery/adjacent-activities.md#activity-2--small-data-hyperparameter-science)
 
 *The widest net. Send this one broadly — the recipient needs no chemistry at all.*
 
@@ -85,7 +85,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 >
 > Nick
 
-## 4 · Quantum chemistry / physics / UQ → [Activity 3](../docs/04-hackathon/adjacent-activities.md#activity-3--the-fidelity-ladder-quantum-surrogates-and-knowing-when-to-trust-them)
+## 4 · Quantum chemistry / physics / UQ → [Activity 3](../docs/05-delivery/adjacent-activities.md#activity-3--the-fidelity-ladder-quantum-surrogates-and-knowing-when-to-trust-them)
 
 > **Subject: Your surrogate has a correlation coefficient. Does it have a trust region?**
 >
@@ -110,7 +110,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 >
 > Nick
 
-## 5 · RSE / eResearch / HPC → [Activity 4](../docs/04-hackathon/adjacent-activities.md#activity-4-alternate--reproducible-gpu-research-workflows)
+## 5 · RSE / eResearch / HPC → [Activity 4](../docs/05-delivery/adjacent-activities.md#activity-4-alternate--reproducible-gpu-research-workflows)
 
 > **Subject: A GPU research pipeline someone else can actually run**
 >
@@ -160,7 +160,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 
 ## 7 · Tier-1 cold email to a previous hackathon participant
 
-*For the four people in [interested-parties.md](../docs/04-hackathon/interested-parties.md#tier-1--directly-adjacent-work).
+*For the four people in [interested-parties.md](../docs/00-event/interested-parties.md#tier-1--directly-adjacent-work).
 Send four of these, not forty. Read their project first — the specificity is the whole message.*
 
 > **Subject: {{THEIR_PROJECT}} — we're building the next stage of it in Auckland**

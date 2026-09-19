@@ -31,7 +31,7 @@ scope boundary, not a preference, and WP-F owns enforcing it.
 ## Consequences
 
 **Good:** low setup cost. Familiar to RSE/eResearch communities, so it is a transferable artifact
-([Activity 4](../04-hackathon/adjacent-activities.md#activity-4-alternate--reproducible-gpu-research-workflows)).
+([Activity 4](../05-delivery/adjacent-activities.md#activity-4-alternate--reproducible-gpu-research-workflows)).
 Resumable. Snakemake's caching directly enables the cached-upstream sweep strategy in
 [ADR-0003](0003-small-scale-search-before-scale-up.md).
 

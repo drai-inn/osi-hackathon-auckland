@@ -151,7 +151,7 @@ def main(argv: list[str]) -> int:
               f"({len(set(measured) & set(COSTS))} of {len(COSTS)} keys overridden)")
     else:
         print("using DEFAULT costs -- every figure below is [estimate]. "
-              "Replace with measurements on day 1 (see docs/05-feasibility/compute-budget.md).")
+              "Replace with measurements on day 1 (see docs/06-feasibility/compute-budget.md).")
 
     for name in ([args.tier] if args.tier else TIERS):
         report(name, TIERS[name], costs)

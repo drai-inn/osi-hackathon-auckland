@@ -8,12 +8,12 @@ hackathon starts.
 
 1. A real `Snakefile` derived from the sketch
 2. Stub scripts for every stage — each produces well-formed fake output matching
-   [interfaces.md](../docs/02-pipeline/interfaces.md)
+   [interfaces.md](../docs/03-pipeline/interfaces.md)
 3. `make smoke` — five synthetic ligand–target pairs through every stage, green before lunch
 4. A failing contract test handed to each stage owner
 
 Real implementations then replace stubs one at a time, behind a passing test. That ordering is the
-whole defence against [R5 (integration fails on day 4)](../docs/05-feasibility/risks.md).
+whole defence against [R5 (integration fails on day 4)](../docs/06-feasibility/risks.md).
 
 ## Design commitments in the sketch
 
@@ -33,7 +33,7 @@ whole defence against [R5 (integration fails on day 4)](../docs/05-feasibility/r
 One YAML, defaults expanded and written to `config.yaml` in the run directory. Stages read their
 own sub-tree and must not read another's. Key names are part of the interface — the sensitivity
 analysis operates on them. See
-[interfaces.md](../docs/02-pipeline/interfaces.md#configuration).
+[interfaces.md](../docs/03-pipeline/interfaces.md#configuration).
 
 ## Open
 

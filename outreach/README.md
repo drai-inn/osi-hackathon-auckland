@@ -1,7 +1,7 @@
 # Outreach collateral
 
 Everything here is **ready to send** but **dates are unresolved** — see
-[public-presence.md](../docs/04-hackathon/public-presence.md). The flier and the event site both
+[public-presence.md](../docs/00-event/public-presence.md). The flier and the event site both
 say **21–22 Oct**; this repo had been planning to 19–20. Fix that before anything leaves the
 building, because the date is on the poster.
 
@@ -27,7 +27,7 @@ Placeholders to replace, all marked `{{LIKE_THIS}}`:
 
 ## Where the words come from
 
-All of it is cut from [narrative.md](../docs/00-context/narrative.md). If you rewrite the pitch,
+All of it is cut from [narrative.md](../docs/00-event/narrative.md). If you rewrite the pitch,
 rewrite it there and re-cut, or the versions will drift apart within a fortnight.
 
 ## Three things to keep in every version

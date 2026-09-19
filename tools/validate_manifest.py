@@ -7,7 +7,7 @@ without setting up an environment.
     python3 tools/validate_manifest.py data/manifest/benchmark_v0.example.csv
 
 Beyond schema conformance it applies the cross-row checks that catch the failure modes in
-docs/02-pipeline/stages/S0-benchmark.md -- duplicate ids, selectivity ratios built from
+docs/03-pipeline/stages/S0-benchmark.md -- duplicate ids, selectivity ratios built from
 incomparable assays, and decoy sets that a 2D model would separate trivially.
 """
 from __future__ import annotations
