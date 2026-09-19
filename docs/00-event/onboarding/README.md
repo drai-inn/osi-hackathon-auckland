@@ -35,7 +35,7 @@ November onwards.
 | **E** | **[Following along](follower.md)** | You can't commit but want to know how it goes | Subscribing to the live log |
 | **F** | **[Stage owner](stage-owner.md)** | You've said yes to owning a work package | Reading your stage page and filing three questions |
 
-Not sure? **Start at [Ladder A rung 0](newcomer.md#rung-0--orient).** It takes ten minutes and it
+Not sure? **Start at [Ladder A rung 0](newcomer.md#rung-0--orient--10-minutes).** It takes ten minutes and it
 will point you somewhere better if you're in the wrong place.
 
 ## If you're hosting someone

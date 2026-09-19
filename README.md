@@ -42,7 +42,7 @@ climb in order — each small enough to finish in a sitting, each leaving you ge
 | **E** | [**Following along**](docs/00-event/onboarding/follower.md) | Can't commit, but want to know how it goes | Subscribing to the live log |
 | **F** | [**Stage owner**](docs/00-event/onboarding/stage-owner.md) | You've said yes to a work package | Filing three questions about your stage |
 
-Not sure? **[Start at Ladder A, rung 0](docs/00-event/onboarding/newcomer.md#rung-0--orient)** — ten
+Not sure? **[Start at Ladder A, rung 0](docs/00-event/onboarding/newcomer.md#rung-0--orient--10-minutes)** — ten
 minutes, and it'll point you somewhere better if you're in the wrong place.
 
 **New to AI for science?** Good. Within the first hour you'll own one configuration of the pipeline
