@@ -1,12 +1,28 @@
 # Open Scientific Intelligence Hackathon — Auckland Hub
 
-### Can AI tell two near-identical drug targets apart?
+# Start small. Search hard. Scale only what survives.
+
+### We're testing whether a deliberately small experiment can predict what a large one would do.
+
 **{{DATES}} · {{VENUE}} · University of Auckland · Free**
 *Part of the 4th annual global OSI Hackathon — 16 hubs, 4 continents, 1000+ participants*
 
 ---
 
-## The problem
+## Why it's a real question
+
+You can afford the small version of your experiment. Under what conditions does what you learn from
+it transfer to the scale you care about?
+
+Recent work argues the usual answer is wrong: small experiments fail to transfer not because they
+are small but because they are **undertuned**. Four configurations showed nothing. Sixteen showed
+nothing. **256 gave a clean, predictive answer.**
+
+So we treat the **configuration as the object of study**. That question belongs to ecology with one
+field season, clinical work with small cohorts, materials with slow synthesis. We happen to have a
+good testbed.
+
+## The testbed — can AI tell two near-identical drug targets apart?
 
 Most drugs fail on **selectivity**, not potency. A compound designed for one protein hits its close
 relatives too, and the programme dies late and expensively. Conventional screening cannot separate
@@ -22,17 +38,6 @@ of them has to declare where it may be trusted.
 
 Driving case: **CDK9 against CDK7** — two kinases so similar that telling them apart is the whole
 problem.
-
-## The question underneath
-
-A pipeline like this has eight configurable choices and nobody can afford to explore them at scale.
-So everyone guesses. Recent work suggests that is precisely the mistake — that small experiments
-fail to transfer not because they are small but because they are **undertuned**.
-
-> **When does what you learn from a small experiment actually predict the large one?**
-
-Ecology with one field season. Clinical work with small cohorts. Materials with slow synthesis.
-That question is not ours alone, which is why this is a cross-disciplinary event.
 
 ## Who we need
 

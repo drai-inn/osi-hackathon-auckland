@@ -30,8 +30,11 @@ Placeholders to replace, all marked `{{LIKE_THIS}}`:
 All of it is cut from [narrative.md](../docs/00-event/narrative.md). If you rewrite the pitch,
 rewrite it there and re-cut, or the versions will drift apart within a fortnight.
 
-## Three things to keep in every version
+## Four things to keep in every version
 
+0. **"Start small. Search hard. Scale only what survives."** The lead. We're testing whether a
+   deliberately small experiment can predict what a large one would do; drug selectivity is the
+   testbed, not the purpose. **It goes first, above the chemistry, in every piece.**
 1. **"We go two days ahead of the world."** Auckland runs 19–20 Oct and closes sixteen hours
    before the earliest hub in the global hackathon opens, 33 before the US sites. Specific,
    checkable, and it explains why we exist rather than just when.

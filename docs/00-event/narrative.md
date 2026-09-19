@@ -6,7 +6,22 @@ funder, a journalist. Everything in [`outreach/`](../../outreach/) is cut from t
 
 ---
 
-## 1. The question
+## 0. The one sentence
+
+> ### Start small. Search hard. Scale only what survives.
+>
+> **We're testing whether a deliberately small experiment can predict what a large one would do.**
+
+That is the project. The pipeline, the gates, the two days, the shape of the month before them —
+all of it orients around that sentence, and **[§4](#4-the-idea-the-whole-thing-orients-around)** is
+where it gets precise.
+
+Everything between here and there is the testbed: a real problem, hard enough that the answer
+matters, small enough that we can afford to explore it properly.
+
+---
+
+## 1. The testbed, and why it's worth using
 
 A drug that works is not the hard part any more. A drug that works **only where you want it to** is.
 
@@ -64,9 +79,9 @@ impose a rule: **every surrogate owes a fidelity contract** — a stated ground 
 set that actually contains close calls, and an explicit trust region beyond which it may not be
 believed. A surrogate without a trust region is not a method, it is a hope.
 
-## 4. The second idea, which is the interesting one
+## 4. The idea the whole thing orients around
 
-Here is the problem nobody talks about. That pipeline has about eight configurable choices — how
+Back to the lead. Here is the problem nobody talks about. That pipeline has about eight configurable choices — how
 much protein to include, how many conformations to sample, how accurate the quantum calculation
 needs to be, how aggressively to spend the expensive budget. Each combination costs GPU-hours.
 Nobody can afford to explore them at production scale.
@@ -83,10 +98,13 @@ nothing. Two hundred and fifty-six gave a clean, predictive answer. Most publish
 results are not wrong; they are undertuned.
 
 **So we are treating the pipeline itself as the object of study.** The configuration is not a set of
-settings to be guessed — it is the thing we are measuring. And that reframes the whole exercise
-into a question that reaches far beyond drug discovery:
+settings to be guessed — it is the thing we are measuring. Hence the lead:
 
+> ### Start small. Search hard. Scale only what survives.
+>
 > **When does what you learn from a small experiment actually transfer to the scale you care about?**
+
+That reaches far beyond drug discovery.
 
 An ecologist with one field season has that question. A clinical researcher with a small cohort has
 it. A materials group whose synthesis takes three weeks has it. Every one of them has a pipeline of
@@ -164,8 +182,8 @@ small experiment first.
 
 ## The short versions
 
-**One sentence:** We are testing whether AI surrogates plus targeted quantum chemistry can tell two
-near-identical drug targets apart — and whether a small experiment can predict what happens at scale.
+**One sentence:** We're testing whether a deliberately small experiment can predict what a large one
+would do — on an AI-surrogate pipeline for drug-target selectivity.
 
 **One paragraph:** Most drugs fail on selectivity, not potency, and conventional screening cannot
 distinguish a target from its close relatives because it discards the 3D information that makes

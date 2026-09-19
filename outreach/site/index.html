@@ -39,7 +39,8 @@ header .motif{position:absolute;right:-30px;bottom:-40px;width:420px;opacity:.09
 h1{font-size:clamp(30px,5.6vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.04;
   margin-bottom:18px;position:relative}
 h1 em{font-style:normal;color:var(--south)}
-.lede{font-size:clamp(16px,2.1vw,19px);max-width:50ch;color:#D5DCF0;position:relative}
+.lede{font-size:clamp(16px,2.1vw,19px);max-width:52ch;color:#D5DCF0;position:relative}
+.lede b{color:#fff;font-weight:600}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;position:relative}
 .btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:700;
   text-decoration:none;font-size:15px}
@@ -124,10 +125,10 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     </div>
     <svg class="uoa-motif hero-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
     <div class="badge">● {{DATES}} · Free</div>
-    <h1>Can AI tell two near-identical drug targets <em>apart</em>?</h1>
-    <p class="lede">Two days at the University of Auckland, building a pipeline where fast AI models
-      do the volume work and GPU quantum chemistry is spent only where it changes the answer.
-      Part of the global Open Scientific Intelligence Hackathon.</p>
+    <h1>Start small. Search hard.<br><em>Scale only what survives.</em></h1>
+    <p class="lede"><b>We're testing whether a deliberately small experiment can predict what a large
+      one would do</b> — on an AI-surrogate pipeline for drug-target selectivity. Two days at the
+      University of Auckland, part of the global Open Scientific Intelligence Hackathon.</p>
     <div class="cta">
       <a class="btn btn-primary" href="{{REGISTER}}">Register — free</a>
       <a class="btn btn-ghost" href="#who">Who we need</a>
@@ -144,7 +145,19 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 </div></div>
 
 <section><div class="wrap">
-  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>The problem</span></h2>
+  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>Why it's a real question</span></h2>
+  <p class="big">You can afford the small version of your experiment. When does what you learn from
+    it transfer to the scale you care about?</p>
+  <p>Recent work argues the usual answer is wrong: small experiments fail to transfer not because
+    they are small but because they are <b>undertuned</b>. Four configurations showed nothing.
+    Sixteen showed nothing. <b>256 gave a clean, predictive answer.</b></p>
+  <p>So we treat the <b>configuration as the object of study</b>, not as settings to guess. That
+    question belongs to ecology with one field season, clinical work with small cohorts, materials
+    with slow synthesis. We happen to have a good testbed.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>The testbed</span></h2>
   <p class="big">Most drugs fail on <b>selectivity</b>, not potency.</p>
   <p>A compound designed for one protein hits its close relatives too, and the programme dies late
     and expensively. Conventional screening can't separate them: it flattens a three-dimensional
@@ -152,15 +165,10 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     geometry, induced fit, electrostatics, the way both protein and ligand move.</p>
   <p>Our driving case is <b>CDK9 against CDK7</b>: two kinases similar enough that telling them
     apart is the whole problem.</p>
-  <div class="q">
-    <h2 style="margin-bottom:8px"><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>The question underneath</span></h2>
-    <p class="big" style="margin:0">When does what you learn from a <b>small</b> experiment actually
-      predict the <b>large</b> one?</p>
-  </div>
-  <p>That question belongs to ecology with one field season, clinical work with small cohorts,
-    materials with slow synthesis. Every one of them has a pipeline of configurable choices, an
-    expensive evaluation and no ability to grid-search. We happen to have a convenient testbed —
-    which is why this is a cross-disciplinary event rather than a computational chemistry one.</p>
+  <p>We're building a staged pipeline where fast AI models do the volume work and GPU quantum
+    chemistry is spent only where it changes the answer. Four times in that chain a learned
+    surrogate stands in for something expensive — and every one has to declare where it may be
+    trusted.</p>
 </div></section>
 
 <section id="who"><div class="wrap">
