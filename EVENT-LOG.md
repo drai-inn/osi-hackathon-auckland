@@ -15,7 +15,7 @@ record here and closes the loop.
 
 | | |
 | --- | --- |
-| **Cadence** | Weekly through the month · daily during 19–20 Oct · full write-up at the close |
+| **Cadence** | Weekly through the month · daily during 19-20 Oct · full write-up at the close |
 | **Contents** | What landed, what slipped, what we learned, the numbers — including what broke |
 | **Status board** | Current week, next gate, what's blocking, where compute and people actually stand |
 
