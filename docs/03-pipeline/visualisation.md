@@ -66,13 +66,38 @@ Verified against the RCSB API on 2026-09-19.
 | **3BLR** | 2.8 | Human CDK9 / cyclin T1 with flavopiridol. Our primary CDK9 holo structure |
 | 3BLQ | 2.9 | Human CDK9 / cyclin T1 with ATP |
 | 4BCG | 3.1 | CDK9 / cyclin T with a 2-amino-4-heteroaryl inhibitor |
-| **1UA2** | 3.0 | Human CDK7. Our counter-target |
+| **1UA2** | 3.0 | Human CDK7 with ATP. Counter-target. Three copies in the asymmetric unit |
+| **4NST** | 2.2 | CDK12 / cyclin K with ADP-AlF. Counter-target |
+| **5EFQ** | 2.0 | CDK13 / cyclin K with ADP-AlF. Counter-target |
+| 5HBE | 2.4 | CDK8 / cyclin C. The harder pair |
+| 9H8S | 2.2 | CDK8 / cyclin C with an inhibitor |
 | 6XBZ | 2.8 | The CDK-activating kinase, containing CDK7 |
+
+All four targets have structures, which was not guaranteed. CDK12 and CDK13 at 2.2 and 2.0 Å are
+better than CDK9's own 2.8 Å.
 
 WP-A owns the final selection and the cleaning protocol
 ([S0](stages/S0-benchmark.md), [C5](../02-scope/open-questions.md)). Note the resolutions: 2.8 to
 3.1 Å is modest, which matters when we compare a predicted pose against one of these and call the
 difference an error.
+
+## The structures
+
+![CDK9, CDK7, CDK12 and CDK13, superposed and drawn from deposited coordinates](figures/structures-cdk-family.svg)
+
+[`tools/render_structures.py`](../../tools/render_structures.py) fetches the entries, superposes
+them onto CDK9 with CEalign, and draws a depth-cued Cα trace straight to SVG. No renderer needed,
+runs anywhere Python does including the GB10 boxes, and the output is text so it diffs.
+
+It is a schematic. For publication figures use [`tools/render/pocket.cxc`](../../tools/render/pocket.cxc).
+
+Two things the script has to get right, and both caught real problems on the first pass:
+
+- **Modified residues are not ligands.** TPO, the activation-loop phosphothreonine, is part of the
+  chain. Drawn as a ligand it looks like a second binding event. It's marked with an open circle
+  instead
+- **Entries hold several copies.** Without a proximity filter, a neighbouring copy's ADP floats in
+  the panel looking meaningful. Ligands are filtered to within 10 Å of the chain being drawn
 
 ## The protein space
 
