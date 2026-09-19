@@ -1,0 +1,18 @@
+<!-- Waipapa Taumata Rau · University of Auckland motif.
+     Faithful redraw of outreach/brand/uoa-motif.png (36x18) for scalable inline use —
+     the raster is only 36px wide. Geometry and colour match the supplied asset.
+     REPLACE with the official vector from UoA brand resources when we have it.
+     Used as a lead-in or separator. Do not restyle, recolour or rearrange. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 18" role="img"
+     aria-label="University of Auckland motif">
+  <g fill="#00D3F6">
+    <!-- upper row: three bars leaning right -->
+    <path d="M0 2h7l4 4H4z"/>
+    <path d="M12 2h7l4 4h-7z"/>
+    <path d="M24 2h7l4 4h-7z"/>
+    <!-- lower row: three bars leaning left -->
+    <path d="M4 11h7l-4 4H0z"/>
+    <path d="M16 11h7l-4 4h-7z"/>
+    <path d="M28 11h7l-4 4h-7z"/>
+  </g>
+</svg>
