@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSI Hackathon Auckland — Poster</title>
+<!--
+  A3 portrait print poster for the Auckland hub.
+  Open in a browser -> Print -> Destination "Save as PDF" -> Paper size A3 -> Margins: None
+  -> Background graphics: ON.
+  Replace every {{PLACEHOLDER}} before printing. See outreach/README.md.
+-->
+<style>
+  @page { size: A3 portrait; margin: 0; }
+  :root{
+    --ink:#0a0e17; --paper:#f4f1ea; --accent:#e8502e; --accent2:#2e7de8;
+    --muted:#5d6472; --rule:#0a0e17;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--muted); font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    display:flex; justify-content:center; padding:24px;
+  }
+  .sheet{
+    width:297mm; height:420mm; background:var(--paper); color:var(--ink);
+    padding:18mm 16mm 14mm; display:flex; flex-direction:column;
+    position:relative; overflow:hidden;
+  }
+  /* faint pocket-geometry motif, bottom right */
+  .motif{position:absolute;right:-40mm;bottom:-40mm;width:170mm;height:170mm;opacity:.055;pointer-events:none}
+
+  .eyebrow{display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:2.5px solid var(--rule);padding-bottom:3mm;margin-bottom:7mm}
+  .eyebrow .l{font-size:11.5pt;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+  .eyebrow .r{font-size:9.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+
+  h1{font-size:51pt;line-height:.98;letter-spacing:-.025em;font-weight:800;margin-bottom:6mm}
+  h1 em{font-style:normal;color:var(--accent)}
+  .sub{font-size:15.5pt;line-height:1.38;max-width:215mm;color:#242a36;margin-bottom:10mm}
+  .sub b{font-weight:700;color:var(--ink)}
+
+  .when{display:flex;gap:9mm;align-items:stretch;margin-bottom:10mm}
+  .when .box{border:2.5px solid var(--rule);padding:4.5mm 6mm}
+  .when .box .k{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:1.5mm}
+  .when .box .v{font-size:16pt;font-weight:800;line-height:1.15}
+  .when .box .v small{display:block;font-size:10pt;font-weight:600;color:var(--muted);margin-top:1mm}
+  .when .flag{background:var(--accent);color:var(--paper);border-color:var(--accent);display:flex;
+    flex-direction:column;justify-content:center;flex:1}
+  .when .flag .v{font-size:14pt}
+  .when .flag .k{color:rgba(244,241,234,.75)}
+
+  .q{border-left:5px solid var(--accent2);padding:1mm 0 1mm 6mm;margin-bottom:10mm}
+  .q .lead{font-size:9pt;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:2mm}
+  .q p{font-size:18.5pt;line-height:1.25;font-weight:600;letter-spacing:-.01em}
+
+  .who{margin-bottom:9mm}
+  .who h2,.get h2{font-size:9.5pt;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
+    margin-bottom:4.5mm;padding-bottom:2mm;border-bottom:1.5px solid var(--rule)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5mm 9mm}
+  .row{display:flex;gap:4mm;font-size:11.5pt;line-height:1.3}
+  .row .d{font-weight:800;min-width:46mm;flex-shrink:0}
+  .row .t{color:#2c333f}
+
+  .get{}
+  .gets{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+  .get .card{border:1.5px solid var(--rule);padding:5mm 5mm}
+  .get .card .h{font-size:12pt;font-weight:800;margin-bottom:2mm;line-height:1.2}
+  .get .card .b{font-size:10.5pt;line-height:1.38;color:#2c333f}
+
+  .newcomer{background:var(--ink);color:var(--paper);padding:7mm 8mm;margin:9mm 0 9mm;
+    display:flex;gap:8mm;align-items:center}
+  .newcomer .big{font-size:25pt;font-weight:800;line-height:1.05;white-space:nowrap;color:var(--accent)}
+  .newcomer .txt{font-size:12pt;line-height:1.45}
+  .newcomer .txt b{color:#fff}
+
+  footer{margin-top:auto;border-top:2.5px solid var(--rule);padding-top:5mm;display:flex;
+    justify-content:space-between;align-items:flex-end;gap:8mm}
+  footer .reg .k{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:800}
+  footer .reg .v{font-size:16.5pt;font-weight:800;word-break:break-all}
+  footer .reg .c{font-size:10.5pt;color:var(--muted);margin-top:2mm}
+  footer .note{font-size:9pt;line-height:1.45;color:var(--muted);max-width:96mm;text-align:right}
+
+  @media print{ body{background:#fff;padding:0} .sheet{box-shadow:none} }
+  @media screen{ .sheet{box-shadow:0 8px 40px rgba(0,0,0,.45)} }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <svg class="motif" viewBox="0 0 200 200" aria-hidden="true">
+    <g fill="none" stroke="#0a0e17" stroke-width="1.1">
+      <circle cx="100" cy="100" r="78"/><circle cx="100" cy="100" r="58"/><circle cx="100" cy="100" r="38"/>
+      <path d="M100 22 L168 61 L168 139 L100 178 L32 139 L32 61 Z"/>
+      <path d="M62 78 L100 58 L138 78 L138 122 L100 142 L62 122 Z"/>
+      <path d="M100 58 L100 142 M62 78 L138 122 M138 78 L62 122"/>
+    </g>
+    <g fill="#0a0e17">
+      <circle cx="100" cy="58" r="3.4"/><circle cx="138" cy="78" r="3.4"/><circle cx="138" cy="122" r="3.4"/>
+      <circle cx="100" cy="142" r="3.4"/><circle cx="62" cy="122" r="3.4"/><circle cx="62" cy="78" r="3.4"/>
+      <circle cx="100" cy="100" r="5"/>
+    </g>
+  </svg>
+
+  <div class="eyebrow">
+    <div class="l">Open Scientific Intelligence Hackathon</div>
+    <div class="r">Auckland Hub · 4th Annual · Free</div>
+  </div>
+
+  <h1>Can AI tell two<br>near-identical drug<br>targets <em>apart</em>?</h1>
+
+  <p class="sub">
+    Most drugs fail on <b>selectivity</b>, not potency. Conventional screening can't separate a
+    target from its close relatives — it flattens a 3D pocket into a fingerprint and discards
+    exactly what makes them different. Two days to find out whether AI can put it back, with
+    <b>GPU quantum chemistry spent only where it changes the answer</b>.
+  </p>
+
+  <div class="when">
+    <div class="box">
+      <div class="k">When</div>
+      <div class="v">{{DATES}}<small>Two days · 09:00 start</small></div>
+    </div>
+    <div class="box">
+      <div class="k">Where</div>
+      <div class="v">{{VENUE}}<small>University of Auckland</small></div>
+    </div>
+    <div class="box flag">
+      <div class="k">Worldwide</div>
+      <div class="v">16 hubs · 4 continents · 1000+ participants —<br>and Auckland is the
+        <b>first hub in the world to start</b>.</div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="lead">The question underneath</div>
+    <p>When does what you learn from a <b>small</b> experiment actually predict the <b>large</b> one?</p>
+  </div>
+
+  <div class="who">
+    <h2>Who we need</h2>
+    <div class="grid">
+      <div class="row"><span class="d">Medicinal chemistry</span><span class="t">Break our benchmark before we build on it</span></div>
+      <div class="row"><span class="d">Structural biology</span><span class="t">Judge predicted poses — we can't do this without you</span></div>
+      <div class="row"><span class="d">Quantum chemistry</span><span class="t">When is a cheap approximation good enough?</span></div>
+      <div class="row"><span class="d">Statistics &amp; ML</span><span class="t">Bring your own small-data problem</span></div>
+      <div class="row"><span class="d">Research software eng.</span><span class="t">Make a GPU pipeline someone else can run</span></div>
+      <div class="row"><span class="d">Any expensive science</span><span class="t">Slow experiments, too many parameters — same problem</span></div>
+    </div>
+  </div>
+
+  <div class="newcomer">
+    <div class="big">New to this?</div>
+    <div class="txt"><b>Good.</b> Within the first hour you'll own one configuration of the pipeline —
+      one command, twenty minutes, and your run becomes a data point in the final analysis.
+      Not a tutorial. The actual experiment. <b>Bring a laptop; that's all.</b></div>
+  </div>
+
+  <div class="get">
+    <h2>What you get</h2>
+    <div class="gets">
+      <div class="card"><div class="h">Real hardware</div><div class="b">Dual NVIDIA GB10 boxes and HGX H200 access — and a pipeline that already works when you walk in.</div></div>
+      <div class="card"><div class="h">Your name on a result</div><div class="b">Every participant's contribution lands in an artifact. Previous years produced papers crediting every team.</div></div>
+      <div class="card"><div class="h">An honest answer</div><div class="b">Six gates written before any data exists. A clean "no" is a successful outcome.</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="reg">
+      <div class="k">Register free</div>
+      <div class="v">{{LINK}}</div>
+      <div class="c">Nick Jones · njon001@aucklanduni.ac.nz · Full participant, 90-minute clinic, or reviewer</div>
+    </div>
+    <div class="note">
+      Part of the global Open Scientific Intelligence Hackathon for the Physical Sciences &amp;
+      Mathematics. Driving case: CDK9 vs CDK7 paralog selectivity. Cross-disciplinary by design —
+      no prior AI experience required for several roles.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

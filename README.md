@@ -3,8 +3,11 @@
 **Status:** pre-hackathon build · **Owner:** Nick Jones (njon001@aucklanduni.ac.nz) · **Last updated:** 2026-09-19
 
 > ## ⏱ 20 working days to go
-> **Hackathon: Mon 19 – Tue 20 Oct 2026** (2 days) · **US relay: 20–21 Oct** ·
-> **Planning session: Mon 21 Sep, 2 h**
+> **Hackathon: 2 days in October** · **Planning session: Mon 21 Sep, 2 h**
+>
+> 🔴 **The dates need resolving before Wednesday.** The official OSI Hackathon is **21–22 Oct**;
+> this repo had been planning to 19–20. Auckland is already listed as a 2026 hub.
+> See [public-presence.md](docs/04-hackathon/public-presence.md).
 >
 > Two days is enough to *run* this pipeline and nowhere near enough to *build* it, so the month
 > is the project and the event is the experiment. Start at
@@ -43,7 +46,10 @@ Driving case: **CDK9 vs. CDK7 / CDK12 / CDK13** paralog selectivity.
 | --- | --- |
 | **Coming to Monday's session** | [Monday agenda](docs/04-hackathon/monday-session.md) → [critical path](docs/04-hackathon/critical-path.md) |
 | **Doing something this week** | [Critical path, week 1](docs/04-hackathon/critical-path.md#week-1--2127-sep--unblock) |
+| Want the story | **[The narrative](docs/00-context/narrative.md)** — everything in `outreach/` is cut from it |
 | New to the project | [Problem statement](docs/00-context/problem-statement.md) → [Architecture](docs/02-pipeline/architecture.md) |
+| Inviting someone | [`outreach/`](outreach/) — one-pager, seven invitation templates, poster, FAQ |
+| Reaching out beyond Auckland | [Interested parties](docs/04-hackathon/interested-parties.md) — three years of hackathon projects and people |
 | New to AI for science, coming to the event | [Engagement and on-ramps](docs/04-hackathon/engagement.md) → [Glossary](docs/01-scope/glossary.md) |
 | Hosting newcomers | [Engagement](docs/04-hackathon/engagement.md) |
 | Deciding whether to join | [Adjacent activities](docs/04-hackathon/adjacent-activities.md) |
@@ -68,6 +74,7 @@ docs/
   04-hackathon/ critical path, plan, work packages, engagement, US relay, roles
   05-feasibility/ compute plan (GB10/H200), compute budget, data, risks, stage gates
   adr/          architecture decision records — why we chose what we chose
+outreach/       invitations, one-pager, A3 poster, short-form copy, FAQ
 schemas/        JSON schemas for the shared benchmark manifest and run records
 data/manifest/  example manifest (real curation is work package A)
 tools/          small stdlib-only utilities: manifest validation, compute budgeting
