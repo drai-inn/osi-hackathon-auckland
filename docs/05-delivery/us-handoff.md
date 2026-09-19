@@ -1,13 +1,12 @@
-# Handing over — publishing into the global event's opening
+# Handing over
 
-**Us:** Mon 19 – Tue 20 Oct, Auckland (NZDT, UTC+13) — a deliberate precursor
-([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md))
-**The global OSI Hackathon:** 21–22 Oct, 16 hubs
+**Us:** Mon 19 - Tue 20 Oct, Auckland (NZDT, UTC+13)
+**The global OSI Hackathon:** 21-22 Oct, hubs on four continents
 **US counterparts:** _names TBC_ ([W1.8](critical-path.md#week-1--2127-sep--unblock))
 
 ---
 
-## The timing is unusually good
+## Timing
 
 | Moment | NZDT | UTC | EDT |
 | --- | --- | --- | --- |
@@ -15,15 +14,14 @@
 | Earliest global hub opens (NZ/Sydney) | Wed 21 Oct 09:00 | Tue 20 Oct 20:00 | Tue 20 Oct 16:00 |
 | US east-coast hubs open | Thu 22 Oct 02:00 | Wed 21 Oct 13:00 | Wed 21 Oct 09:00 |
 
-**We finish 16 hours before the earliest hub in the world starts, and 33 hours before the US
-sites.** Everything we produce is on the table before anyone else begins — which is the whole
-argument for running early rather than an apology for it.
+We close before the global event opens, so whatever we produce is available from its first day if
+the organisers want it.
 
-Two audiences, then:
+Two audiences:
 
-1. **The global event**, which opens 16 hours after we close. Our benchmark, workflow and results
-   are available to every hub from their first minute
-2. **The US counterparts specifically**, for the deeper conversation
+1. **The global event.** Benchmark, workflow and results, published in a state someone else can
+   pick up
+2. **The US counterparts**, for the deeper conversation
 
 ## What "handing over" should mean
 

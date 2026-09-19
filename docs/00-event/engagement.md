@@ -1,4 +1,4 @@
-# Engagement design — high-impact experiences for people new to AI for science
+# Engagement design, high-impact experiences for people new to AI for science
 
 **Priority, stated plainly:** several participants will be experts in their own field and new to
 this way of working. A two-day event can give them a genuinely formative experience or two days of
@@ -19,7 +19,7 @@ Three corollaries that shape everything below:
    ([W4.2](../05-delivery/critical-path.md#week-4--1218-oct--rehearse-and-pre-compute)). If it takes longer, the
    on-ramp is broken, not the person.
 2. **Their domain expertise is the input, not their coding.** A medicinal chemist contributes by
-   looking at poses and saying which are wrong — a judgement we cannot generate computationally and
+   looking at poses and saying which are wrong, a judgement we cannot generate computationally and
    genuinely need.
 3. **Visible contribution to the shared result.** Their run appears on the dashboard. Their
    annotations appear in the metrics. Their name is on it.
@@ -40,7 +40,7 @@ contribution lands in the output. It is a real job and it should be assigned by 
 
 Six, each independently valuable. Pre-built during the month; none require setup on the day.
 
-### A — "Your run, your parameter" · *anyone, including non-coders* · 20 min
+### A, "Your run, your parameter" · *anyone, including non-coders* · 20 min
 
 Each person is allocated one configuration from the random search. One command on a GB10 box. Their
 run appears on the live dashboard within twenty minutes, and their data point is in the day-2
@@ -53,7 +53,7 @@ each owning one is a better use of the room than a queue script.
 **Build (month):** launcher script, allocation scheme, live dashboard ([W3.6](../05-delivery/critical-path.md)).
 **Owner:** WP-F.
 
-### B — Pose triage · *structural biology, medicinal chemistry* · zero code
+### B. Pose triage · *structural biology, medicinal chemistry* · zero code
 
 A viewer showing co-folded poses. Mark each plausible / implausible / uncertain, with a one-line
 reason. Produces the human ground truth for
@@ -66,7 +66,7 @@ worse without it.** That is true, and it is the difference between feeling usefu
 **Build (month):** pre-generate poses; simple web or PyMOL-based viewer with a results file
 ([W4.4](../05-delivery/critical-path.md)). **Owner:** WP-B + host.
 
-### C — Break the benchmark · *medicinal chemistry, pharmacology* · 60 min
+### C. Break the benchmark · *medicinal chemistry, pharmacology* · 60 min
 
 Here are the 2D baseline's predictions on our compounds. Find the ones it gets wrong for reasons a
 chemist would call obvious. Every hit is a benchmark improvement, a talking point, and evidence
@@ -78,13 +78,13 @@ risk in the register.
 **Build (month):** baseline computed and presented as a browsable table ([W2.6](../05-delivery/critical-path.md)).
 **Owner:** WP-A + host.
 
-### D — Sealed forecast · *everyone* · 10 min, day 1 opening
+### D. Sealed forecast · *everyone* · 10 min, day 1 opening
 
 Before any results, everyone writes down their predictions on six binary questions matching the
 [gates](../06-feasibility/stage-gates.md): *Will motion-awareness improve ranking stability? Will
 uncertainty-guided labelling beat random?* Sealed. Opened on day 2.
 
-Costs nothing, creates investment, makes the day-2 reveal a moment — and it teaches the single most
+Costs nothing, creates investment, makes the day-2 reveal a moment, and it teaches the single most
 transferable lesson in AI for science, which is that expert intuition about what will work is
 poorly calibrated and worth checking. A newcomer who discovers they predicted better than the
 experts has had a very good two days.
@@ -92,18 +92,18 @@ experts has had a very good two days.
 **Build (month):** six questions drafted ([W3.7](../05-delivery/critical-path.md)), a form, sealed envelopes or a
 locked sheet. **Owner:** Nick.
 
-### E — Bring your own small-data problem · *visiting researchers, statisticians, any empirical field* · 90 min
+### E. Bring your own small-data problem · *visiting researchers, statisticians, any empirical field* · 90 min
 
 The [Activity 2 clinic](../05-delivery/adjacent-activities.md#activity-2--small-data-hyperparameter-science).
 Participants map their own expensive-experiment problem onto the search-space spec and leave with a
 protocol for their own work.
 
-The widest door in the programme: the question — *when does a small experiment predict the large
-one?* — belongs to ecology, clinical research, materials and education just as much as to us.
+The widest door in the programme: the question, *when does a small experiment predict the large
+one?*, belongs to ecology, clinical research, materials and education just as much as to us.
 
 **Build (month):** the spec format and a worked example. **Owner:** methodology lead.
 
-### F — Explainer pairs · *everyone* · 5 min per package, day 1
+### F. Explainer pairs · *everyone* · 5 min per package, day 1
 
 Each work package explains itself to a newcomer in five minutes, no slides. The newcomer's questions
 are the deliverable.
@@ -119,13 +119,13 @@ shares them are exactly the ones a smart outsider asks about in the first two mi
 
 | Background | Start with | Then |
 | --- | --- | --- |
-| Medicinal chemistry / pharmacology | C — break the benchmark | B, then embed in WP-A |
-| Structural biology | B — pose triage | Embed in WP-B |
-| Quantum chemistry / physics | A — your run | [Activity 3](../05-delivery/adjacent-activities.md#activity-3--the-fidelity-ladder-quantum-surrogates-and-knowing-when-to-trust-them), embed in WP-E |
-| Statistics / ML methods | E — bring your own problem | A, then the sensitivity analysis |
-| RSE / eResearch | A — your run | Embed in WP-F |
+| Medicinal chemistry / pharmacology | C, break the benchmark | B, then embed in WP-A |
+| Structural biology | B, pose triage | Embed in WP-B |
+| Quantum chemistry / physics | A, your run | [Activity 3](../05-delivery/adjacent-activities.md#activity-3--the-fidelity-ladder-quantum-surrogates-and-knowing-when-to-trust-them), embed in WP-E |
+| Statistics / ML methods | E, bring your own problem | A, then the sensitivity analysis |
+| RSE / eResearch | A, your run | Embed in WP-F |
 | Empirical researcher from an unrelated field | D, then E | A |
-| Student / early career, any field | A — your run | B or C depending on background |
+| Student / early career, any field | A, your run | B or C depending on background |
 
 Everyone does D. Nobody does more than two on-ramps before embedding.
 

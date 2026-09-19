@@ -1,4 +1,4 @@
-# Onboarding — the ladders
+# Onboarding, the ladders
 
 Nobody should have to read this repo to be useful in it. So instead of one door, there are six
 pathways, each built as a **ladder**: numbered rungs you climb in order, each one small enough to
@@ -19,7 +19,7 @@ Every ladder has the same five, so you always know where you are:
 | **1 · First contact** | 30 min | Having done one real thing |
 | **2 · Contribute** | half a day | Owning something that lands in the output |
 | **3 · Own** | the event | Responsible for a piece of it |
-| **4 · Carry** | after | Taking it somewhere — your own work, the next phase, a paper |
+| **4 · Carry** | after | Taking it somewhere, your own work, the next phase, a paper |
 
 Rungs 0 and 1 are designed for **before the event**. Rung 2 is day 1. Rung 3 is day 2. Rung 4 is
 November onwards.
@@ -35,13 +35,13 @@ November onwards.
 | **E** | **[Following along](follower.md)** | You can't commit but want to know how it goes | Subscribing to the live log |
 | **F** | **[Stage owner](stage-owner.md)** | You've said yes to owning a work package | Reading your stage page and filing three questions |
 
-Not sure? **Start at [Ladder A rung 0](newcomer.md#rung-0--orient--10-minutes).** It takes ten minutes and it
+Not sure? **Start at [Ladder A rung 0](newcomer.md#rung-0--orient-10-minutes).** It takes ten minutes and it
 will point you somewhere better if you're in the wrong place.
 
 ## If you're hosting someone
 
 You are responsible for their rungs 0 to 2, not for their work. Read
-[engagement.md](../engagement.md) — especially
+[engagement.md](../engagement.md), especially
 [why the host role is separate from the owner role](../engagement.md#the-structural-fix-split-the-host-role).
 
 The one rule: **nobody is stuck for more than fifteen minutes.** If they are, that's yours, not
@@ -49,7 +49,7 @@ theirs.
 
 ## If you're writing a new ladder
 
-Keep the five rungs. Make rung 1 take under thirty minutes and produce something real — not a
+Keep the five rungs. Make rung 1 take under thirty minutes and produce something real, not a
 tutorial, not a setup step. Say plainly what each rung *gets* the person, and be honest about which
 rungs need someone beside them.
 

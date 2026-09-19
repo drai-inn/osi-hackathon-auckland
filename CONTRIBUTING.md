@@ -21,7 +21,7 @@ Three consequences that shape everything below.
 and 19 October does not move. A contribution that lands on the 21st is a contribution to phase 2.
 
 **A negative result is a success.** Six [gates](docs/06-feasibility/stage-gates.md) were written
-before any data existed. Nobody here is trying to make the method work — we're trying to find out
+before any data existed. Nobody here is trying to make the method work, we're trying to find out
 whether it does. If your analysis kills a stage, you have done the most valuable thing available.
 
 **Most contributions are not code.** A medicinal chemist saying "those two IC50s aren't comparable"
@@ -35,7 +35,7 @@ All of these. In rough order of how often they're undervalued:
 | | How to make it |
 | --- | --- |
 | **Telling us something is wrong** | Issue, PR comment, or the surprises board. No format required |
-| **Domain judgement** — pose annotations, benchmark critique, assay calls | Your host records it; it lands in an artifact with your name |
+| **Domain judgement**, pose annotations, benchmark critique, assay calls | Your host records it; it lands in an artifact with your name |
 | **A question from outside your discipline** | Surprises board. Assumptions survive because everyone in a subfield shares them |
 | **Running a configuration** | The launcher. Your run is a data point in the analysis |
 | **A measurement replacing an `[estimate]`** | PR to the relevant doc, tagged `[measured]` |
@@ -70,7 +70,7 @@ plausible story.
 ### Interfaces are frozen; decisions get an ADR
 
 [interfaces.md](docs/03-pipeline/interfaces.md) freezes on **2 Oct**. Object before then, freely.
-Afterwards, changing one needs an [ADR](docs/adr/) — cheap to write, and it stops the same argument
+Afterwards, changing one needs an [ADR](docs/adr/), cheap to write, and it stops the same argument
 recurring every three weeks. Same for anything that moves scope.
 
 ### Open questions stay open
@@ -115,7 +115,7 @@ environment.
 We keep **[`EVENT-LOG.md`](EVENT-LOG.md)** as a single pull request that stays open from now until
 the final presentations and reports are done. It is the project's public heartbeat.
 
-**To follow:** open the PR, click **Subscribe**. You'll get every update and nothing else — no issue
+**To follow:** open the PR, click **Subscribe**. You'll get every update and nothing else, no issue
 noise, no CI. It closes when the work is finished, which is the only signal anyone needs.
 
 **To post an update:** commit to the `event-log` branch. Newest entry at the top, dated, short.
@@ -128,12 +128,12 @@ is not what happened.
 
 - **Everyone in the room is named in the artifacts.** That's a design goal, tracked as one of the
   three [engagement outcomes](docs/00-event/engagement.md#how-we-know-it-worked)
-- If we submit to the global event's write-up, previous years have **credited every team member** —
+- If we submit to the global event's write-up, previous years have **credited every team member** -
   the 2025 paper documented 88 projects and listed every contributor
 - Anything published out of this credits contributors by contribution, not by seniority. If you
   curated the benchmark, you're on the benchmark paper
 - Ownership and IP: [E1](docs/02-scope/open-questions.md), being resolved before invitations go out.
-  Ask if it matters to you — better now than after
+  Ask if it matters to you, better now than after
 
 ## Conduct
 

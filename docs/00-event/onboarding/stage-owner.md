@@ -1,6 +1,6 @@
 # Ladder F · Stage owner
 
-**For you if:** you've agreed to own a work package. This is the shortest ladder and the steepest —
+**For you if:** you've agreed to own a work package. This is the shortest ladder and the steepest -
 you're not being onboarded so much as handed a scope.
 
 **Your first week matters more than your event days.** Two days cannot absorb a build
@@ -9,20 +9,20 @@ you're not being onboarded so much as handed a scope.
 
 ---
 
-## Rung 0 · Orient — 30 minutes
+## Rung 0 · Orient, 30 minutes
 
-1. **[Your stage page](../../03-pipeline/stages/)** — purpose, inputs, outputs, parameters, metrics,
+1. **[Your stage page](../../03-pipeline/stages/)**, purpose, inputs, outputs, parameters, metrics,
    failure modes, candidate software, first-day task
-2. **[interfaces.md](../../03-pipeline/interfaces.md)** — what you owe downstream and what you can
+2. **[interfaces.md](../../03-pipeline/interfaces.md)**, what you owe downstream and what you can
    assume from upstream. Frozen on 2 Oct; object before then
-3. **[Your work package](../../05-delivery/work-packages.md)** — dependencies and dated obligations
-4. **[critical-path.md](../../05-delivery/critical-path.md)** — which week we're in
+3. **[Your work package](../../05-delivery/work-packages.md)**, dependencies and dated obligations
+4. **[critical-path.md](../../05-delivery/critical-path.md)**, which week we're in
 
 **You now know:** your scope, your deadlines and your interfaces.
 
-## Rung 1 · First contact — this week
+## Rung 1 · First contact, this week
 
-**File three questions.** As issues, or on the surprises board. Not "is this right?" — specifically:
+**File three questions.** As issues, or on the surprises board. Not "is this right?", specifically:
 
 - One thing on your stage page that is **wrong**
 - One thing that is **missing**
@@ -31,7 +31,7 @@ you're not being onboarded so much as handed a scope.
 Every stage page was written without its owner. They are drafts with opinions, and the fastest way
 to make yours real is to disagree with it in writing.
 
-## Rung 2 · Contribute — weeks 1 to 3
+## Rung 2 · Contribute, weeks 1 to 3
 
 Hit your dated obligations in
 [work-packages.md](../../05-delivery/work-packages.md#these-were-day-1-obligations-now-they-are-month-obligations).
@@ -46,9 +46,9 @@ Two things that are easy to defer and shouldn't be:
 - **Your pre-registration page.** One page: primary question, primary metric, comparison, threshold.
   Before data. It's the difference between a finding and a story at n≈20
 
-## Rung 3 · Own — the event
+## Rung 3 · Own, the event
 
-- Drive your package's work. **You are not the host** — someone else owns the newcomers attached to
+- Drive your package's work. **You are not the host**, someone else owns the newcomers attached to
   you, and that separation is deliberate
   ([why](../engagement.md#the-structural-fix-split-the-host-role)). In a two-day sprint you would
   choose the technical work every time, and nobody would have done anything wrong
@@ -57,10 +57,10 @@ Two things that are easy to defer and shouldn't be:
 - Present your gate evidence on day 2, **with intervals**
 - Write your section of the handoff package live, 15:30–16:30, with the room present
 
-## Rung 4 · Carry — afterwards
+## Rung 4 · Carry, afterwards
 
 - **Your stage's write-up section**, and co-authorship on whatever comes out
-- **Phase 2 scope for your stage** — if your gate came back amber, what sample size would resolve it
+- **Phase 2 scope for your stage**, if your gate came back amber, what sample size would resolve it
   and what would it cost?
 - **Hand your stage over cleanly** if you're not continuing. The stage page is the handover document;
   keep it current

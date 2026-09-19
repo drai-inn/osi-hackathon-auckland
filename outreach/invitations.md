@@ -1,6 +1,6 @@
 # Invitation templates
 
-Seven, by audience. Each opens with **the question that discipline owns**, not with ours — a
+Seven, by audience. Each opens with **the question that discipline owns**, not with ours, a
 medicinal chemist has no reason to attend "a hackathon", and every reason to attend an argument
 about whether your benchmark is valid.
 
@@ -15,7 +15,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 > Dear {{NAME}},
 >
 > We're running the Auckland hub of the global Open Scientific Intelligence Hackathon on
-> {{DATES}}, building a pipeline that tries to distinguish CDK9 from CDK7 — two kinases similar
+> {{DATES}}, building a pipeline that tries to distinguish CDK9 from CDK7, two kinases similar
 > enough that most computational methods can't.
 >
 > The whole thing rests on a benchmark, and we are acutely aware that we could get it wrong in a
@@ -29,7 +29,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 >
 > Concretely: a 90-minute clinic on day 1, or both days if you're interested. There's also an
 > hour-long session where we hand you our baseline's predictions and ask you to find the compounds
-> it gets wrong for reasons a chemist would call obvious — every hit improves the benchmark.
+> it gets wrong for reasons a chemist would call obvious, every hit improves the benchmark.
 >
 > One-pager attached. Happy to talk it through.
 >
@@ -45,7 +45,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 > for CDK9 and CDK7 using open-weight co-folding models, then scoring them.
 >
 > The models are confident. That's the problem. We have no way to tell a memorised pose from a
-> generalised one, and most CDK co-crystals are in these models' training data — so a good RMSD may
+> generalised one, and most CDK co-crystals are in these models' training data, so a good RMSD may
 > mean nothing at all.
 >
 > We'd like you to look at them and tell us which are nonsense. No code: a viewer, a
@@ -58,7 +58,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 
 ## 3 · Statistics / ML / any field with expensive experiments → [Activity 2](../docs/05-delivery/adjacent-activities.md#activity-2--small-data-hyperparameter-science)
 
-*The widest net. Send this one broadly — the recipient needs no chemistry at all.*
+*The widest net. Send this one broadly, the recipient needs no chemistry at all.*
 
 > **Subject: When does a small experiment actually predict the large one?**
 >
@@ -68,14 +68,14 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 > conditions does what you learn from it transfer to the scale you actually care about?
 >
 > Work published this August argues the usual answer is wrong. Small-scale experiments fail to
-> transfer not because they are small but because they are **undertuned** — and, counterintuitively,
+> transfer not because they are small but because they are **undertuned**, and, counterintuitively,
 > small systems are *more* sensitive to their configuration than large ones. Searching four
 > configurations showed nothing; sixteen showed nothing; 256 gave a clean predictive answer. Most
 > published small-scale results, on this account, are not wrong so much as under-explored.
 >
 > We're testing whether that holds in a completely different domain. Our testbed is a drug-target
 > selectivity pipeline with eight configurable choices, an expensive evaluation, and no ability to
-> grid-search — structurally the same problem as yours, whatever yours is.
+> grid-search, structurally the same problem as yours, whatever yours is.
 >
 > The Auckland hub of the global OSI Hackathon, {{DATES}}. There's a 90-minute clinic where you map
 > your own pipeline onto our search-space format and leave with a protocol for your own work, and
@@ -91,7 +91,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 >
 > Dear {{NAME}},
 >
-> We're building a multi-fidelity pipeline with four learned surrogates in it — one replacing
+> We're building a multi-fidelity pipeline with four learned surrogates in it, one replacing
 > structure determination, one replacing MD, one replacing physics-based scoring, one replacing
 > running DFT on everything.
 >
@@ -100,12 +100,12 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 > multi-fidelity modelling has met this. Few of us write down where the approximation stops being
 > allowed.
 >
-> At the Auckland OSI Hackathon ({{DATES}}) we're making that a hard rule — no surrogate enters
+> At the Auckland OSI Hackathon ({{DATES}}) we're making that a hard rule, no surrogate enters
 > without a stated ground truth, a validation set containing close calls, and an explicit trust
 > region. We'd like your help making those honest rather than decorative.
 >
 > There's also a real piece of computational chemistry in it: a convergence study on pocket-shell
-> DFT — does the *ordering* of known selective and non-selective pairs survive the cheap theory
+> DFT, does the *ordering* of known selective and non-selective pairs survive the cheap theory
 > level, and do the energies plateau with shell size, or are we amputating real interactions?
 >
 > Nick
@@ -123,7 +123,7 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 > You have opinions about all of this. We'd like them.
 >
 > The Auckland hub of the global OSI Hackathon, {{DATES}}. The artifact is a reusable template for
-> GPU research pipelines at UoA — Snakemake, multi-arch containers, provenance that survives, and
+> GPU research pipelines at UoA. Snakemake, multi-arch containers, provenance that survives, and
 > cost telemetry as a first-class output. That generalises to every GPU-using group on campus.
 >
 > There's real work in the month beforehand too, if you want it.
@@ -141,12 +141,12 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 > We're running Auckland's hub of a global AI-for-science hackathon on {{DATES}}, and I'd like you
 > to come.
 >
-> You don't need to have done this before — that's rather the point. Within the first hour you'll
+> You don't need to have done this before, that's rather the point. Within the first hour you'll
 > own one configuration of our pipeline: one command, about twenty minutes, and your run appears on
 > the shared dashboard as a data point in the final analysis. Not an exercise. The actual
 > experiment, which needs many configurations and is better with a room of people each running one.
 >
-> If you'd rather use what you already know, there are other ways in — looking at predicted
+> If you'd rather use what you already know, there are other ways in, looking at predicted
 > molecular structures and telling us which are wrong, or going through our benchmark for the
 > things a chemist would spot.
 >
@@ -155,27 +155,27 @@ Keep them short. The [one-pager](one-pager.md) carries the detail.
 >
 > Nick
 >
-> *We run two days ahead of the global hackathon — we finish before the first hub anywhere in the
-> world opens, and what we build goes in with them.*
+> *We're a local site for the global Open Scientific Intelligence Hackathon, which runs 21-22
+> October with registration open to anyone. Worth signing up for that too.*
 
 ## 7 · Tier-1 cold email to a previous hackathon participant
 
-*For the four people in [interested-parties.md](../docs/00-event/interested-parties.md#tier-1--directly-adjacent-work).
-Send four of these, not forty. Read their project first — the specificity is the whole message.*
+*For the four people in [interested-parties.md](../docs/00-event/interested-parties.md#tier-1-directly-adjacent-work).
+Send four of these, not forty. Read their project first, the specificity is the whole message.*
 
-> **Subject: {{THEIR_PROJECT}} — we're building the next stage of it in Auckland**
+> **Subject: {{THEIR_PROJECT}}, we're building the next stage of it in Auckland**
 >
 > Dear {{NAME}},
 >
-> I've been reading {{THEIR_PROJECT}} from the 2025 OSI Hackathon — {{ONE_SPECIFIC_THING}}.
+> I've been reading {{THEIR_PROJECT}} from the 2025 OSI Hackathon, {{ONE_SPECIFIC_THING}}.
 >
 > We're running the Auckland hub this year, building {{OUR_OVERLAPPING_THING}}. {{THEIR_WORK}} is
 > the closest existing thing to it that I've found, and we'd rather learn from what you hit than
 > rediscover it.
 >
 > Would you spend 30 minutes with our team during the event? We're on {{DATES}} NZDT, which is
-> {{THEIR_LOCAL_TIME}} — we run two days *before* the global hackathon, so it may actually be a
-> convenient slot before your own site opens.
+> {{THEIR_LOCAL_TIME}} for you, and a few days before the global event, so it might be a convenient
+> slot.
 >
 > Happy to send our plan beforehand; it's fairly detailed and we're not precious about it.
 >
@@ -185,7 +185,7 @@ Send four of these, not forty. Read their project first — the specificity is t
 
 ## Follow-up, one week later, once only
 
-> Hi {{NAME}} — following up briefly on the hackathon on {{DATES}}. No pressure at all if it's not
+> Hi {{NAME}}, following up briefly on the hackathon on {{DATES}}. No pressure at all if it's not
 > the right time; if it's the format rather than the topic, there's a 90-minute version and a
 > read-the-plan-and-tell-us-what's-wrong version, both of which are genuinely useful to us.
 >

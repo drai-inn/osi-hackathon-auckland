@@ -1,7 +1,7 @@
-# Ladder B · Domain expert — chemistry, pharmacology, structural biology
+# Ladder B · Domain expert, chemistry, pharmacology, structural biology
 
 **For you if:** you know molecules, assays or structures. You may or may not code, and it doesn't
-much matter — **your judgement is the input, not your code.**
+much matter, **your judgement is the input, not your code.**
 
 The honest framing: there are two or three points in this project where a wrong call by the
 computational team would invalidate everything downstream, silently, and nobody would notice until
@@ -9,9 +9,9 @@ the write-up. Those calls are yours.
 
 ---
 
-## Rung 0 · Orient — 15 minutes
+## Rung 0 · Orient, 15 minutes
 
-Read the **[problem statement](../../01-context/problem-statement.md)** — one page on why
+Read the **[problem statement](../../01-context/problem-statement.md)**, one page on why
 selectivity is the hard part and why 2D methods fail at it.
 
 Then skim **[S0 Benchmark](../../03-pipeline/stages/S0-benchmark.md)**, and specifically its
@@ -20,13 +20,13 @@ what we need.
 
 **You now know:** what we're claiming and where it could go wrong chemically.
 
-## Rung 1 · First contact — 30 minutes · *before the event, by email, or day 1*
+## Rung 1 · First contact, 30 minutes · *before the event, by email, or day 1*
 
 Pick whichever you'd rather:
 
 - **Five poses.** We show you five predicted CDK9 complexes. Plausible, implausible, uncertain, and
   a line on why. That's it. See
-  [on-ramp B](../engagement.md#b--pose-triage--structural-biology-medicinal-chemistry--zero-code)
+  [on-ramp B](../engagement.md#b-pose-triage--structural-biology-medicinal-chemistry--zero-code)
 - **The harmonisation question.** We have CDK9 and CDK7 activity data from multiple sources at
   different ATP concentrations. Tell us what can legitimately be compared. See
   [C1](../../02-scope/open-questions.md) and
@@ -37,14 +37,14 @@ Pick whichever you'd rather:
 which we cannot produce computationally. The harmonisation answer determines whether our headline
 metric means anything at all.
 
-## Rung 2 · Contribute — half a day · *day 1*
+## Rung 2 · Contribute, half a day · *day 1*
 
-**[Break the benchmark](../engagement.md#c--break-the-benchmark--medicinal-chemistry-pharmacology--60-min).**
+**[Break the benchmark](../engagement.md#c-break-the-benchmark--medicinal-chemistry-pharmacology--60-min).**
 We hand you the 2D baseline's predictions. You find the compounds it gets wrong for reasons a
 chemist would call obvious.
 
 Every hit is a benchmark improvement and a slide. This directly attacks
-[R2](../../06-feasibility/risks.md) — the highest probability-times-impact risk in the register,
+[R2](../../06-feasibility/risks.md), the highest probability-times-impact risk in the register,
 and the one most likely to go unnoticed until after the write-up.
 
 Also at this rung:
@@ -53,7 +53,7 @@ Also at this rung:
 - **Activity cliffs.** Which of our pairs are real cliffs and which are assay noise? Those are the
   discriminating cases and they look like errors
 
-## Rung 3 · Own — day 2
+## Rung 3 · Own, day 2
 
 - **Own the benchmark's limitations statement.** One page: what this benchmark can and cannot
   support. It goes in the write-up and it is the difference between a citable asset and a CSV
@@ -62,7 +62,7 @@ Also at this rung:
 - **Sanity-check the result.** If the pipeline ranks something highly that you know is wrong, that
   is the most valuable sentence spoken on day 2
 
-## Rung 4 · Carry — afterwards
+## Rung 4 · Carry, afterwards
 
 - **Co-author the benchmark release.** There is a real gap here: a curated, documented,
   honestly-caveated CDK selectivity benchmark. Other groups would use it

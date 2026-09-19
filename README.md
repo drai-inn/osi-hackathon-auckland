@@ -1,147 +1,168 @@
-<div align="center">
+<img src="outreach/brand/readme-banner.png" alt="How far can a chain of surrogates get us? Open Scientific Intelligence Hackathon, Auckland site, Mon 19 – Tue 20 October 2026" width="100%">
 
-<img src="outreach/brand/readme-banner.png" alt="Start small. Search hard. Scale only what survives. — Open Scientific Intelligence Hackathon, Auckland Hub, Mon 19 – Tue 20 October 2026" width="100%">
+<br>
 
-</div>
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
 
-## Start small. Search hard. Scale only what survives.
+<br>
 
-> **We're testing whether a deliberately small experiment can predict what a large one would do.**
+## How far can a chain of surrogates get us?
 
-That sentence is the whole project. Everything below — the pipeline, the gates, the two days, the
-way we've structured the month — orients around it.
+We want to try a more AI-intensive approach to a structure-based pipeline, where every expensive
+step is handed to a learned surrogate, and see how far that actually gets us today.
 
-<img src="outreach/brand/uoa-motif.svg" width="36" alt="">
+Other groups have done individual steps well. We haven't found anyone who has run the whole chain
+end to end, with the expensive physics kept only for the places where it changes the answer.
 
-### Why it's a real question
+It might not be good enough yet. We'd still like the number. Every step in the chain is improving
+quickly, and at some point the chain crosses a threshold and becomes useful. Without a measured
+starting point we won't know when that happens. So this is a baseline, taken carefully enough to be
+worth repeating.
 
-You can afford the small version of your experiment. Under what conditions does what you learn from
-it transfer to the scale you actually care about?
+📖 **[Read the narrative](docs/00-event/narrative.md)** for the whole thing, about ten minutes.
 
-Work published this August argues the usual answer is wrong. Small-scale experiments fail to
-transfer not because they are small but because they are **undertuned** — and, counterintuitively,
-small systems are *more* sensitive to their configuration than large ones. Searching four
-configurations showed nothing. Sixteen showed nothing. **256 gave a clean, predictive answer.** Most
-published small-scale results, on that account, aren't wrong so much as under-explored.
+<br>
 
-So we treat the **configuration as the object of study**, not as settings to guess. Crop radius,
-ensemble size, theory level, acquisition policy — those *are* the experiment.
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
 
-That question belongs to ecology with one field season, clinical work with small cohorts, materials
-with slow synthesis. We happen to have a good testbed.
+<br>
 
-<img src="outreach/brand/uoa-motif.svg" width="36" alt="">
+## The chain
 
-### The testbed — can AI tell two near-identical drug targets apart?
+Eight steps. Each one cheap enough to run on everything that reaches it, and each allowed to be
+wrong in a characterised way that the next step corrects.
 
-Most drugs fail on **selectivity**, not potency. A compound built for one protein hits its close
-relatives too, and the programme dies late and expensively. Conventional screening can't separate
-them: it flattens a three-dimensional pocket into a fingerprint and throws away exactly what makes
-two pockets different.
+![The eight steps, what passes between them, and where the gates sit](docs/03-pipeline/figures/pipeline-isometric.svg)
 
-We're building a **staged pipeline** where fast AI models do the volume work and **GPU quantum
-chemistry is spent only where it changes the answer**. Four times in that chain a learned surrogate
-stands in for something expensive, and every one has to declare where it may be trusted.
+Four steps hand an expensive calculation to a learned model. A surrogate can be fast, confident and
+wrong, and it can be accurate on average while being wrong on the close calls the pipeline exists to
+resolve. So each one has to declare where it can be trusted, which is what the
+[fidelity contracts](docs/03-pipeline/fidelity-contracts.md) are for.
 
-Driving case: **CDK9 vs CDK7** — two kinases similar enough that telling them apart is the whole
-problem.
+The testbed is **CDK9 against CDK7**. Two kinases with ATP sites similar enough that telling them
+apart is the whole difficulty.
 
-📖 **[Read the narrative](docs/00-event/narrative.md)** — the whole story, ten minutes.
+<br>
 
-<div align="center"><img src="outreach/brand/uoa-motif.svg" width="44" alt=""></div>
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
 
-## 👋 New here? Pick a ladder
+<br>
 
-Nobody should have to read this repo to be useful in it. Six pathways, each a set of **rungs** you
-climb in order — each small enough to finish in a sitting, each leaving you genuinely more useful.
-**You can stop at any rung.**
+## How we're measuring it
+
+The pipeline has about eight configurable choices, each combination costs GPU hours, and nobody can
+explore that at production scale. The usual approach is to guess most of it and tune two or three
+knobs on a small grid. Recent work suggests that's the thing that goes wrong: small experiments fail
+to transfer because they're under-explored, not because they're small.
+
+So we start small and explore the parameter space properly, in parallel across the phases, before
+trying an integrated run. The questions we actually want answered are: is this even feasible, what
+data would we need, and how small can we go while still being usefully robust.
+
+That last one isn't chemistry-specific. Anyone with one field season, a small cohort or a three-week
+synthesis has the same problem, which is part of why this is cross-disciplinary.
+[More on the method](docs/04-experiments/hpo-microtopic.md).
+
+<br>
+
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
+
+<br>
+
+## New here? Pick a ladder
+
+You shouldn't have to read this repo to be useful in it. Six pathways, each a set of rungs you climb
+in order. Each rung is small enough to finish in a sitting, and you can stop at any of them.
 
 | | Ladder | For you if… | Rung 1 is |
 | --- | --- | --- | --- |
-| **A** | [**New to AI for science**](docs/00-event/onboarding/newcomer.md) | You're expert in something else and have never done this | Running one configuration, your name on the dashboard |
-| **B** | [**Domain expert**](docs/00-event/onboarding/domain-expert.md) | Chemistry, pharmacology, structural biology | Judging five predicted poses |
-| **C** | [**ML & statistics**](docs/00-event/onboarding/ml-stats.md) | You model things; the methodology is the draw | Telling us where our small-data design breaks |
-| **D** | [**Builder**](docs/00-event/onboarding/builder.md) | RSE, HPC, or you want to write the pipeline | `make smoke` green on your machine |
-| **E** | [**Following along**](docs/00-event/onboarding/follower.md) | Can't commit, but want to know how it goes | Subscribing to the live log |
-| **F** | [**Stage owner**](docs/00-event/onboarding/stage-owner.md) | You've said yes to a work package | Filing three questions about your stage |
+| **A** | [New to AI for science](docs/00-event/onboarding/newcomer.md) | You're expert in something else and haven't done this | Running one configuration, your name on the dashboard |
+| **B** | [Domain expert](docs/00-event/onboarding/domain-expert.md) | Chemistry, pharmacology, structural biology | Judging five predicted poses |
+| **C** | [ML and statistics](docs/00-event/onboarding/ml-stats.md) | You model things, and the method is the draw | Telling us where our small-data design breaks |
+| **D** | [Builder](docs/00-event/onboarding/builder.md) | RSE, HPC, or you want to write the pipeline | `make smoke` green on your machine |
+| **E** | [Following along](docs/00-event/onboarding/follower.md) | Can't commit, but want to know how it goes | Subscribing to the live log |
+| **F** | [Stage owner](docs/00-event/onboarding/stage-owner.md) | You've said yes to a work package | Filing three questions about your stage |
 
-Not sure? **[Start at Ladder A, rung 0](docs/00-event/onboarding/newcomer.md#rung-0--orient--10-minutes)**
-— ten minutes, and it'll point you somewhere better if you're in the wrong place.
+Not sure, start at [Ladder A rung 0](docs/00-event/onboarding/newcomer.md#rung-0--orient-10-minutes).
+Ten minutes, and it'll point you somewhere better if you're in the wrong place.
 
-> **New to AI for science? Good.** Within the first hour you'll own one configuration of the
-> pipeline — one command, twenty minutes, and your run becomes a data point in the final analysis.
-> Not a tutorial. The actual experiment. **Bring a laptop; that's all.**
+**New to AI for science?** Within the first hour you'll own one configuration of the pipeline. One
+command, twenty minutes, and your run becomes a data point in the final analysis. Bring a laptop,
+that's all.
 
-### 📡 Following without joining
+### Following without joining
 
-We keep a **[live event log](EVENT-LOG.md)** as a single pull request that stays open from now until
-the final presentations and reports are done. Subscribe and you'll get every update and nothing
-else. **When it closes, the work is finished.**
+We keep a [live event log](EVENT-LOG.md) as a single pull request that stays open until the final
+presentations and reports are done. Subscribe and you'll get every update and nothing else.
 
-<div align="center"><img src="outreach/brand/uoa-motif.svg" width="44" alt=""></div>
+<br>
+
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
+
+<br>
+
+## The global event
+
+We're a local site for the [Open Scientific Intelligence Hackathon](docs/00-event/the-global-event.md),
+now in its fourth year, with hubs on four continents and over a thousand participants last year.
+
+**The global event runs 21-22 October and [registration is open to anyone](https://luma.com/ku88xh92).**
+If you're interested in this space at all, sign up for that whether or not you come to ours. We're
+running 19-20 October because those are the two days we have. Wednesday the 21st is open if people
+want to keep going, and it's the global event's opening day, so that's a straightforward way to
+carry the work across.
+
+<br>
+
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
+
+<br>
 
 ## Where things are
 
 | | |
 | --- | --- |
-| 🎯 **Doing something this week** | [Critical path](docs/05-delivery/critical-path.md) · [open issues](https://github.com/drai-inn/drugs-surrogate-pipeline/issues) |
-| 📣 **Inviting someone** | [`outreach/`](outreach/) — one-pager, seven templates, A3 poster, [brand](outreach/brand/README.md) |
-| 🌏 **How we fit the global event** | [the-global-event.md](docs/00-event/the-global-event.md) · [who to contact](docs/00-event/interested-parties.md) |
-| 📐 **The method** | [Small-data HPO](docs/04-experiments/hpo-microtopic.md) · [Methodology](docs/04-experiments/methodology.md) · [Metrics](docs/04-experiments/metrics.md) |
-| 🔬 **The science** | [Problem statement](docs/01-context/problem-statement.md) → [Architecture](docs/03-pipeline/architecture.md) → [Stages](docs/03-pipeline/stages/) |
-| 💻 **Compute** | [GB10 / H200 plan](docs/06-feasibility/compute-plan.md) · [Budget](docs/06-feasibility/compute-budget.md) |
-| ⚠️ **What's undecided** | [Open questions](docs/02-scope/open-questions.md) · [Risks](docs/06-feasibility/risks.md) |
-| 🤝 **How we work** | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| 📖 **Jargon** | [Glossary](docs/02-scope/glossary.md) |
+| Doing something this week | [Critical path](docs/05-delivery/critical-path.md) · [open issues](https://github.com/drai-inn/drugs-surrogate-pipeline/issues) |
+| Inviting someone | [`outreach/`](outreach/), one-pager, templates, poster, [brand](outreach/brand/README.md) |
+| The science | [Problem statement](docs/01-context/problem-statement.md) → [Architecture](docs/03-pipeline/architecture.md) → [Stages](docs/03-pipeline/stages/) |
+| The method | [Small-data HPO](docs/04-experiments/hpo-microtopic.md) · [Methodology](docs/04-experiments/methodology.md) · [Metrics](docs/04-experiments/metrics.md) |
+| Compute | [GB10 / H200 plan](docs/06-feasibility/compute-plan.md) · [Budget](docs/06-feasibility/compute-budget.md) |
+| What's undecided | [Open questions](docs/02-scope/open-questions.md) · [Risks](docs/06-feasibility/risks.md) |
+| Who to talk to elsewhere | [Interested parties](docs/00-event/interested-parties.md) |
+| How we work | [CONTRIBUTING.md](CONTRIBUTING.md) · [Glossary](docs/02-scope/glossary.md) |
 
 ```
 docs/
-  00-event/       the front end — narrative, the global event, engagement,
-                  onboarding ladders, who to reach out to     OUTWARD-FACING
+  00-event/       narrative, the global event, engagement, onboarding ladders,
+                  who to reach out to                         OUTWARD-FACING
   01-context/     why this problem; notes on the source documents
   02-scope/       in, out, undecided, glossary
-  03-pipeline/    S0–S8 stages, fidelity contracts, data contracts
+  03-pipeline/    S0–S8 stages, fidelity contracts, data contracts, figures
   04-experiments/ methodology, parameter space, metrics, the HPO microtopic
   05-delivery/    critical path, plan, work packages, roles   INWARD-FACING
   06-feasibility/ compute, budget, data sources, risks, gates
-  adr/            six decision records
-outreach/         collateral + brand tokens, marks and UoA assets
+  adr/            decision records
+outreach/         collateral, brand tokens, marks, UoA assets
 schemas/ data/ tools/ workflow/ refs/
 ```
 
-<div align="center"><img src="outreach/brand/uoa-motif.svg" width="44" alt=""></div>
-
-## Three ideas the whole thing rests on
-
-**1 · The pipeline *is* the model; its configuration is the hyperparameter vector.**
-Crop radius and microstate count are the object of study, not settings to guess. This is the lead,
-restated. → [hpo-microtopic.md](docs/04-experiments/hpo-microtopic.md)
-
-**2 · Every surrogate owes a fidelity contract.**
-A stated ground truth, a validation set containing close calls, and an explicit trust region. A
-surrogate can be fast, confident and wrong on exactly the cases that matter.
-→ [fidelity-contracts.md](docs/03-pipeline/fidelity-contracts.md)
-
-**3 · A newcomer's experience is good when they personally own a result the group uses.**
-Not a tutorial, not shadowing. → [engagement.md](docs/00-event/engagement.md)
-
 ## Try it now
 
-Standard library only — no environment, no install:
+Standard library only, nothing to install:
 
 ```bash
 make validate && make budget TIER=hackathon_minimum
+python3 tools/make_figures.py
 ```
 
-<div align="center">
+<br>
 
-<img src="outreach/brand/uoa-motif.svg" width="44" alt="">
+<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
 
-**A clean "no" is a successful outcome.**
-Six gates were written before any data existed.
-If the method doesn't work we'd like to know in two days rather than two years.
+<br>
 
-Nick Jones · njon001@aucklanduni.ac.nz
+A clean "no" is a good outcome. Six gates were written before any data existed, and if the chain
+doesn't hold we'd rather know in two days than two years.
+
+Nick Jones · njon001@aucklanduni.ac.nz ·
 [Global event](https://llmhackathon.github.io/) · [Live log](EVENT-LOG.md) · [Contributing](CONTRIBUTING.md)
-
-</div>

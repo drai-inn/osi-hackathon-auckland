@@ -1,6 +1,6 @@
 # Critical path — 20 working days to 19 Oct
 
-**Event:** Mon 19 – Tue 20 Oct 2026 (2 days, Wed 21 optional) · **Global event:** 21–22 Oct ·
+**Event:** Mon 19 - Tue 20 Oct 2026, two days, Wed 21 left open · **Global event:** 21-22 Oct ·
 **Today:** Sat 19 Sep · **Planning session:** Mon 21 Sep, 2 h ([agenda](monday-session.md))
 
 ---
@@ -29,7 +29,6 @@ state.
 
 | Issue | Item | Due | |
 | --- | --- | --- | --- |
-| ~~[#12](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/12)~~ | ~~W1.0 Resolve the dates~~ | — | ✅ **19–20 Oct** |
 | [#2](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/2) | W1.1 Architecture spike — `aarch64` **and** `x86_64` | Fri 25 Sep | 🔴 |
 | [#3](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/3) | W1.2 H200 access — with a job that actually ran | Fri 25 Sep | 🔴 |
 | [#4](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/4) | W1.3 cuEST reality check, or pick the fallback | Fri 25 Sep | 🔴 |
@@ -42,9 +41,9 @@ state.
 | [#11](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/11) | W1.8/W4.5 US relay and handoff package | Fri 25 Sep → Fri 16 Oct | 🟠 |
 | [#13](https://github.com/drai-inn/drugs-surrogate-pipeline/issues/13) | Public micro-repo live before invitations go out | **Wed 23 Sep** | 🔴 |
 
-Dates are settled, which unblocks the chain: **#6 is Monday**, then **#13 and #5 are Wednesday** —
-the micro-repo must be live before invitations go out, because every invitation carries the link.
-Everything else in week 1 depends on #6 producing names.
+**#6 is Monday**, then **#13 and #5 are Wednesday**. The micro-repo needs to be live before
+invitations go out, because every invitation carries the link. Everything else in week 1 depends on
+#6 producing names.
 
 ---
 
@@ -73,7 +72,7 @@ The week is about removing uncertainty, not producing science. Three spikes and 
 | **W1.2** | **🔴 H200 access secured** — booking mechanism, quota, queue policy, container runtime, a *test job that actually ran* | 1 | Nick + eResearch | A job ID, not an email promise |
 | **W1.3** | **🔴 cuEST reality check** — licence, `aarch64` and/or `x86_64` builds, supported methods. Pick the fallback now if the answer is no | 1 | WP-E | Either a working container or a decided fallback ([S6](../03-pipeline/stages/S6-quantum-labelling.md#candidate-software)) |
 | **W1.4** | **Model licences and weights** — Boltz-2, Nesso-1 (and is Nesso-1 fine-tunable at all?) | 3 | WP-B, WP-D | Weights downloaded, hashes recorded |
-| **W1.0** | ✅ ~~Resolve the dates~~ — **19–20 Oct, locked** ([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)). Now: email the organisers about what a precursor can still join, and ask for a Valence Labs intro re: Nesso-1 | 5 | Nick | Reply received, or asked on Slack. **Monday** ([A10](../02-scope/open-questions.md)) |
+| **W1.0** | Email the organisers: our dates, what we can still take part in, and an intro to Valence Labs re: Nesso-1 | 5 | Nick | Reply received, or asked on Slack. **Monday** ([A10](../02-scope/open-questions.md)) |
 | **W1.4b** | **Register Auckland as an official hub**; join the global Slack; stand up the public micro-repo | 5 | Nick | Listing confirmed with a named lead, as Duke's is. Micro-repo live **before** invitations |
 | **W1.5** | **🔴 Invitations out** | 5 | Nick | Sent by Wed 23 Sep, pointing at the micro-repo. [Templates ready](../../outreach/invitations.md). Four weeks is already short notice |
 | **W1.5b** | Four targeted Tier-1 emails to previous hackathon teams whose work overlaps ours | 5 | Nick | [interested-parties.md](../00-event/interested-parties.md). Four specific emails, not forty generic |

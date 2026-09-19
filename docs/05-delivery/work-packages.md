@@ -90,8 +90,8 @@ What each package actually does in the room, now that the build is behind us:
 
 | WP | Day 1 | Day 2 |
 | --- | --- | --- |
-| A | Host [break-the-benchmark](../00-event/engagement.md#c--break-the-benchmark--medicinal-chemistry-pharmacology--60-min); fold findings into the manifest | Benchmark limitations section of the handoff |
-| B | Host [pose triage](../00-event/engagement.md#b--pose-triage--structural-biology-medicinal-chemistry--zero-code); collect human pose labels | Close fidelity contract 1 with real human ground truth |
+| A | Host [break-the-benchmark](../00-event/engagement.md#c-break-the-benchmark--medicinal-chemistry-pharmacology--60-min); fold findings into the manifest | Benchmark limitations section of the handoff |
+| B | Host [pose triage](../00-event/engagement.md#b-pose-triage--structural-biology-medicinal-chemistry--zero-code); collect human pose labels | Close fidelity contract 1 with real human ground truth |
 | C | Mode comparison sweeps | Motion-value gate evidence |
 | D | Scoring sweeps; uncertainty and acquisition | Acquisition-value gate; feedback round |
 | E | Production labels from the acquisition list | Quantum-value gate |

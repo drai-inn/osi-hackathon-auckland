@@ -62,7 +62,7 @@ Explicitly, so nobody spends a day on them:
 | **0 — Scoping** | to 21 Sep | This repo. Shape, gates and parameter space agreed | Owners named at Monday's session |
 | **0.5 — Build** *(now)* | 21 Sep – 18 Oct | The month. Stack built on GB10, benchmark curated, stages implemented, pre-computation campaign run ([critical-path.md](../05-delivery/critical-path.md)) | Clean clone runs end-to-end; a novice reaches a result in <30 min |
 | **1 — Hackathon** | **Mon 19 – Tue 20 Oct** | Two days: on-ramps, sweeps, integrated run, gates, publish. Wed 21 optional ([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)) | Technical reproducibility + ranking signal |
-| **1b — Global event** | 21–22 Oct | Our outputs land in its opening; anyone who wants to continue rolls in ([us-handoff.md](../05-delivery/us-handoff.md)) | Published before the first hub opens |
+| **1b — Global event** | 21-22 Oct | Outputs published in a state someone else can pick up; anyone who wants to continue carries the work across ([us-handoff.md](../05-delivery/us-handoff.md)) | Handoff published |
 | **2 — Motion & quantum value** | post-event | Does motion-awareness help? Does uncertainty-guided labelling beat random? | Motion value + quantum value + acquisition value |
 | **3 — Useful pilot** | — | 50–100 ligands × 4 targets; 200–1,000 labels `[source-doc]` | Operational cost predictable |
 | **4 — Scale-up** | — | 1k–10k candidates post-filtering | All gates green |
