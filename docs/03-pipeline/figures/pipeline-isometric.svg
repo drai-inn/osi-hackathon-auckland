@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 1230" width="1320" height="1230" font-family="Inter,Helvetica Neue,Arial,sans-serif" role="img" aria-label="Isometric diagram of the eight-stage surrogate pipeline">
+<title>The surrogate pipeline, stage by stage</title>
+<rect width="1320" height="1230" fill="#141C36"/>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9AA7CD"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#00D3F6"/></marker></defs>
+<text x="56" y="62" fill="#EEF1FB" font-size="30" font-weight="800" letter-spacing="-.5">How far can a chain of surrogates get us?</text>
+<text x="56" y="92" fill="#9AA7CD" font-size="15">Eight steps. Four of them hand an expensive calculation to a learned model. Quantum chemistry is kept for the cases where it changes the answer.</text>
+<polygon points="284.4,166.3 352.8,205.8 352.8,215.9 284.4,176.3" fill="#28324D" /><polygon points="398.5,179.4 352.8,205.8 352.8,215.9 398.5,189.5" fill="#364467" /><polygon points="330.0,139.9 398.5,179.4 352.8,205.8 284.4,166.3" fill="#4A5C8C" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="341" y="178" fill="#EEF1FB" font-size="15" font-weight="800" text-anchor="middle">S0</text>
+<line x1="322" y1="194" x2="382" y2="277" stroke="#9AA7CD" stroke-width="1.5" opacity=".45" marker-end="url(#ar)"/>
+<path d="M398 179 L634 148" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="398" cy="179" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="152" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#9AA7CD">S0</tspan><tspan dx="10">Benchmark</tspan></text>
+<text x="660" y="174" font-size="13.5" fill="#9AA7CD">Curate ligands, targets, decoys;</text>
+<text x="660" y="191" font-size="13.5" fill="#9AA7CD">harmonise activity labels</text>
+<text x="660" y="211" font-size="12.5" fill="#EEF1FB" opacity=".62">→ manifest.csv</text>
+<polygon points="311.1,277.0 379.5,316.6 379.5,331.0 311.1,291.4" fill="#007487" /><polygon points="420.5,292.9 379.5,316.6 379.5,331.0 420.5,307.3" fill="#009CB6" /><polygon points="352.0,253.4 420.5,292.9 379.5,316.6 311.1,277.0" fill="#00D3F6" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="366" y="290" fill="#062430" font-size="15" font-weight="800" text-anchor="middle">S1</text>
+<line x1="349" y1="307" x2="404" y2="393" stroke="#9AA7CD" stroke-width="1.5" opacity=".45" marker-end="url(#ar)"/>
+<path d="M420 293 L634 266" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="420" cy="293" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="270" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#00D3F6">S1</tspan><tspan dx="10">Complex generation</tspan><tspan dx="12" font-size="10.5" font-weight="700" fill="#00D3F6" letter-spacing="1.2">SURROGATE</tspan></text>
+<text x="660" y="292" font-size="13.5" fill="#9AA7CD">Co-fold target-ligand complexes</text>
+<text x="660" y="309" font-size="13.5" fill="#9AA7CD">where no crystal exists</text>
+<text x="660" y="329" font-size="12.5" fill="#EEF1FB" opacity=".62">→ predicted complexes + confidence</text>
+<polygon points="333.1,399.2 401.5,438.7 401.5,448.8 333.1,409.2" fill="#28324D" /><polygon points="442.5,415.0 401.5,438.7 401.5,448.8 442.5,425.1" fill="#364467" /><polygon points="374.0,375.5 442.5,415.0 401.5,438.7 333.1,399.2" fill="#4A5C8C" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="388" y="412" fill="#EEF1FB" font-size="15" font-weight="800" text-anchor="middle">S2</text>
+<line x1="371" y1="426" x2="426" y2="513" stroke="#9AA7CD" stroke-width="1.5" opacity=".45" marker-end="url(#ar)"/>
+<path d="M442 415 L634 384" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="442" cy="415" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="388" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#9AA7CD">S2</tspan><tspan dx="10">Pocket extraction</tspan></text>
+<text x="660" y="410" font-size="13.5" fill="#9AA7CD">Crop the binding-site shell,</text>
+<text x="660" y="427" font-size="13.5" fill="#9AA7CD">assign protonation</text>
+<text x="660" y="447" font-size="12.5" fill="#EEF1FB" opacity=".62">→ cropped pockets</text>
+<polygon points="355.1,504.0 423.6,543.5 423.6,566.6 355.1,527.0" fill="#007487" /><polygon points="464.5,519.9 423.6,543.5 423.6,566.6 464.5,542.9" fill="#009CB6" /><polygon points="396.0,480.4 464.5,519.9 423.6,543.5 355.1,504.0" fill="#00D3F6" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="410" y="517" fill="#062430" font-size="15" font-weight="800" text-anchor="middle">S3</text>
+<line x1="393" y1="538" x2="448" y2="625" stroke="#9AA7CD" stroke-width="1.5" opacity=".45" marker-end="url(#ar)"/>
+<path d="M465 520 L634 502" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="465" cy="520" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="506" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#00D3F6">S3</tspan><tspan dx="10">Ensemble generation</tspan><tspan dx="12" font-size="10.5" font-weight="700" fill="#00D3F6" letter-spacing="1.2">SURROGATE</tspan></text>
+<text x="660" y="528" font-size="13.5" fill="#9AA7CD">Sample how the pocket moves:</text>
+<text x="660" y="545" font-size="13.5" fill="#9AA7CD">static, relaxation or learned</text>
+<text x="660" y="565" font-size="12.5" fill="#EEF1FB" opacity=".62">→ conformer ensembles</text>
+<rect x="992" y="550" width="150" height="21" rx="4" fill="none" stroke="#C79A4D" stroke-width="1" opacity=".75"/>
+<text x="1067" y="565" font-size="11" font-weight="700" fill="#C79A4D" text-anchor="middle" letter-spacing=".6">GATE · Motion value</text>
+<polygon points="381.1,631.9 449.6,671.4 449.6,682.0 381.1,642.5" fill="#28324D" /><polygon points="486.5,650.1 449.6,671.4 449.6,682.0 486.5,660.7" fill="#364467" /><polygon points="418.1,610.6 486.5,650.1 449.6,671.4 381.1,631.9" fill="#4A5C8C" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="434" y="646" fill="#EEF1FB" font-size="15" font-weight="800" text-anchor="middle">S4</text>
+<line x1="419" y1="659" x2="470" y2="748" stroke="#9AA7CD" stroke-width="1.5" opacity=".45" marker-end="url(#ar)"/>
+<path d="M487 650 L634 620" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="487" cy="650" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="624" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#9AA7CD">S4</tspan><tspan dx="10">Ensemble reduction</tspan></text>
+<text x="660" y="646" font-size="13.5" fill="#9AA7CD">Cluster to a few representative</text>
+<text x="660" y="663" font-size="13.5" fill="#9AA7CD">microstates with weights</text>
+<text x="660" y="683" font-size="12.5" fill="#EEF1FB" opacity=".62">→ microstates + weights</text>
+<polygon points="407.9,744.3 476.3,783.8 476.3,797.1 407.9,757.6" fill="#007487" /><polygon points="508.5,765.2 476.3,783.8 476.3,797.1 508.5,778.5" fill="#009CB6" /><polygon points="440.1,725.7 508.5,765.2 476.3,783.8 407.9,744.3" fill="#00D3F6" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="458" y="760" fill="#062430" font-size="15" font-weight="800" text-anchor="middle">S5</text>
+<line x1="446" y1="773" x2="492" y2="865" stroke="#9AA7CD" stroke-width="1.5" opacity=".45" marker-end="url(#ar)"/>
+<path d="M509 765 L634 738" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="509" cy="765" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="742" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#00D3F6">S5</tspan><tspan dx="10">Equivariant scoring</tspan><tspan dx="12" font-size="10.5" font-weight="700" fill="#00D3F6" letter-spacing="1.2">SURROGATE</tspan></text>
+<text x="660" y="764" font-size="13.5" fill="#9AA7CD">Score the local 3D graph;</text>
+<text x="660" y="781" font-size="13.5" fill="#9AA7CD">rank, and estimate uncertainty</text>
+<text x="660" y="801" font-size="12.5" fill="#EEF1FB" opacity=".62">→ scores + acquisition list</text>
+<rect x="992" y="786" width="150" height="21" rx="4" fill="none" stroke="#C79A4D" stroke-width="1" opacity=".75"/>
+<text x="1067" y="801" font-size="11" font-weight="700" fill="#C79A4D" text-anchor="middle" letter-spacing=".6">GATE · Ranking signal</text>
+<polygon points="443.3,804.6 511.8,844.2 511.8,907.2 443.3,867.6" fill="#28324D" /><polygon points="530.5,833.3 511.8,844.2 511.8,907.2 530.5,896.3" fill="#364467" /><polygon points="462.1,793.8 530.5,833.3 511.8,844.2 443.3,804.6" fill="#4A5C8C" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="487" y="824" fill="#EEF1FB" font-size="15" font-weight="800" text-anchor="middle">S6</text>
+<line x1="481" y1="861" x2="514" y2="960" stroke="#9AA7CD" stroke-width="1.5" opacity=".45" marker-end="url(#ar)"/>
+<path d="M531 833 L634 856" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="531" cy="833" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="860" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#9AA7CD">S6</tspan><tspan dx="10">Quantum labelling</tspan></text>
+<text x="660" y="882" font-size="13.5" fill="#9AA7CD">DFT on the genuinely uncertain</text>
+<text x="660" y="899" font-size="13.5" fill="#9AA7CD">cases only</text>
+<text x="660" y="919" font-size="12.5" fill="#EEF1FB" opacity=".62">→ electronic-structure labels</text>
+<rect x="992" y="904" width="150" height="21" rx="4" fill="none" stroke="#C79A4D" stroke-width="1" opacity=".75"/>
+<text x="1067" y="919" font-size="11" font-weight="700" fill="#C79A4D" text-anchor="middle" letter-spacing=".6">GATE · Quantum value</text>
+<polygon points="467.3,970.4 535.8,1010.0 535.8,1023.8 467.3,984.3" fill="#007487" /><polygon points="552.6,1000.3 535.8,1010.0 535.8,1023.8 552.6,1014.1" fill="#009CB6" /><polygon points="484.1,960.7 552.6,1000.3 535.8,1010.0 467.3,970.4" fill="#00D3F6" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+<text x="510" y="990" fill="#062430" font-size="15" font-weight="800" text-anchor="middle">S7</text>
+<path d="M553 1000 L634 974" fill="none" stroke="#9AA7CD" stroke-width="1" opacity=".28"/>
+<circle cx="553" cy="1000" r="3" fill="#9AA7CD" opacity=".6"/>
+<text x="660" y="978" font-size="17" font-weight="800" fill="#EEF1FB"><tspan fill="#00D3F6">S7</tspan><tspan dx="10">Feedback learning</tspan><tspan dx="12" font-size="10.5" font-weight="700" fill="#00D3F6" letter-spacing="1.2">SURROGATE</tspan></text>
+<text x="660" y="1000" font-size="13.5" fill="#9AA7CD">Correct the cheap scorer from</text>
+<text x="660" y="1017" font-size="13.5" fill="#9AA7CD">expensive labels</text>
+<text x="660" y="1037" font-size="12.5" fill="#EEF1FB" opacity=".62">→ improved scorer  →  back to S5</text>
+<rect x="992" y="1022" width="150" height="21" rx="4" fill="none" stroke="#C79A4D" stroke-width="1" opacity=".75"/>
+<text x="1067" y="1037" font-size="11" font-weight="700" fill="#C79A4D" text-anchor="middle" letter-spacing=".6">GATE · Acquisition value</text>
+<text x="56" y="400" fill="#9AA7CD" font-size="12" font-weight="700" letter-spacing="1.6" opacity=".8">CANDIDATES</text>
+<text x="56" y="418" fill="#9AA7CD" font-size="12" opacity=".6">slab width, falling</text>
+<text x="56" y="456" fill="#9AA7CD" font-size="12" font-weight="700" letter-spacing="1.6" opacity=".8">COST EACH</text>
+<text x="56" y="474" fill="#9AA7CD" font-size="12" opacity=".6">slab height, rising</text>
+<text x="56" y="518" fill="#00D3F6" font-size="12" font-weight="700" letter-spacing="1.6" opacity=".9">CYAN</text>
+<text x="56" y="536" fill="#9AA7CD" font-size="12" opacity=".6">a surrogate stands in</text>
+<text x="56" y="554" fill="#9AA7CD" font-size="12" opacity=".6">for something expensive</text>
+<path d="M1152 1036 L1186 1036 L1186 734 L1152 734" fill="none" stroke="#00D3F6" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#ar2)" opacity=".8"/>
+<text x="1190" y="893" fill="#00D3F6" font-size="11.5" font-weight="700">retrain</text>
+<line x1="56" y1="1134" x2="1264" y2="1134" stroke="#9AA7CD" opacity=".22"/>
+<text x="56" y="1164" fill="#9AA7CD" font-size="12.5" font-weight="700" letter-spacing="1.4">ACROSS THE WHOLE RUN</text>
+<rect x="56" y="1176" width="16" height="16" rx="3" fill="none" stroke="#C79A4D" stroke-width="1.2" opacity=".75"/>
+<text x="82" y="1182" fill="#EEF1FB" font-size="13" font-weight="700">Technical reproducibility</text>
+<text x="82" y="1199" fill="#9AA7CD" font-size="12">same manifest, same artifacts</text>
+<rect x="436" y="1176" width="16" height="16" rx="3" fill="none" stroke="#C79A4D" stroke-width="1.2" opacity=".75"/>
+<text x="462" y="1182" fill="#EEF1FB" font-size="13" font-weight="700">Operational cost</text>
+<text x="462" y="1199" fill="#9AA7CD" font-size="12">GPU-hours per informative label</text>
+<text x="1264" y="1192" fill="#9AA7CD" font-size="11.5" text-anchor="end" opacity=".7">Every surrogate carries a fidelity contract: ground truth, validation set, trust region.</text>
+</svg>

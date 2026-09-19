@@ -1,11 +1,9 @@
 # Hackathon plan — Mon 19 & Tue 20 Oct 2026
 
-**Two days**, with **Wednesday 21 October as an option we take in the moment, not a plan we make**
-([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)). The global OSI Hackathon opens on
-the 21st, so an extension is a bridge into it rather than an overrun.
+Two days, with Wednesday 21 October left open
+([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)). The global event opens on the 21st,
+so continuing is a way to carry the work across rather than an overrun.
 
-We run as a **precursor**: we close 16 hours before the earliest hub in the world opens, and our
-outputs are published into the global event's opening ([us-handoff.md](us-handoff.md)).
 Compute: dual GB10 for the room, HGX H200 for batch
 ([compute-plan.md](../06-feasibility/compute-plan.md)).
 
@@ -55,8 +53,8 @@ The filter for what stays in the two days. Everything else belongs in the month.
 | Time | What | Who |
 | --- | --- | --- |
 | **09:00** | Welcome and framing: the three questions, the gates, what a negative result looks like | Nick |
-| **09:20** | **Sealed forecast** — six binary predictions, sealed until tomorrow ([on-ramp D](../00-event/engagement.md#d--sealed-forecast--everyone--10-min-day-1-opening)) | all |
-| **09:30** | **Explainer pairs** — each package explains itself to a newcomer in 5 minutes, no slides ([on-ramp F](../00-event/engagement.md#f--explainer-pairs--everyone--5-min-per-package-day-1)) | hosts |
+| **09:20** | **Sealed forecast** — six binary predictions, sealed until tomorrow ([on-ramp D](../00-event/engagement.md#d-sealed-forecast--everyone--10-min-day-1-opening)) | all |
+| **09:30** | **Explainer pairs** — each package explains itself to a newcomer in 5 minutes, no slides ([on-ramp F](../00-event/engagement.md#f-explainer-pairs--everyone--5-min-per-package-day-1)) | hosts |
 | **10:00** | **On-ramps run in parallel.** Pose triage · break the benchmark · your run, your parameter · bring-your-own-problem clinic | hosts |
 | **11:30** | First results on the dashboard. Everyone has a name against something | — |
 | **12:30** | Lunch, and the first look at the pose-triage and benchmark-critique findings | all |

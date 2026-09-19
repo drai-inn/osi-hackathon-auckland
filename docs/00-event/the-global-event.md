@@ -7,7 +7,7 @@ we should build, how we should present it, and what we get back.
 
 ## What it is
 
-The **Open Scientific Intelligence (OSI) Hackathon for the Physical Sciences & Mathematics** —
+The **Open Scientific Intelligence (OSI) Hackathon for the Physical Sciences & Mathematics** -
 until this year the *LLM Hackathon for Applications in Materials Science and Chemistry*. Fourth
 annual. Free. Hybrid: physical hubs worldwide plus an online hub.
 
@@ -19,18 +19,18 @@ Site: [llmhackathon.github.io](https://llmhackathon.github.io/).
 
 | | Projects | Hubs | Participants | Output |
 | --- | --- | --- | --- | --- |
-| **2023** | 14 | online | — | [Digital Discovery 10.1039/D3DD00113J](https://doi.org/10.1039/D3DD00113J) · [arXiv:2306.06283](https://arxiv.org/abs/2306.06283) |
+| **2023** | 14 | online |, | [Digital Discovery 10.1039/D3DD00113J](https://doi.org/10.1039/D3DD00113J) · [arXiv:2306.06283](https://arxiv.org/abs/2306.06283) |
 | **2024** | 34 | 7 (Toronto, Montreal, San Francisco, Berlin, Lausanne, Tokyo + online) | 556 registered, 120 active | [arXiv:2411.15221](https://arxiv.org/abs/2411.15221) |
 | **2025** | **120 submitted, 88 documented** | **16** | 350+ | [arXiv:2605.03205](https://arxiv.org/abs/2605.03205) |
-| **2026** | — | 13+ listed, incl. **Auckland** | — | **21–22 Oct** — we run 19–20 |
+| **2026** |, | 13+ listed, incl. **Auckland** |, | **21-22 Oct**, we run 19-20 |
 
 **Every event produces a peer-reviewed or arXiv paper crediting every team.** The 2025 paper runs
 to 140+ pages and lists every contributor. For a student in the room, that is a real publication
-for two days' work — and it is the single most persuasive line in a recruitment email.
+for two days' work, and it is the single most persuasive line in a recruitment email.
 
 The trend the organisers themselves identify, 2023 → 2025: **from single-purpose LLM tools toward
 integrated multi-agent workflows** that combine retrieval, reasoning, tool use and domain-specific
-validation. They classify 2025's projects into two families — **Knowledge Infrastructure** (new
+validation. They classify 2025's projects into two families, **Knowledge Infrastructure** (new
 ways to *know* things) and **Action Systems** (new ways to *do* things).
 
 ## How the hub model works
@@ -43,11 +43,11 @@ prizes, compute, documentation support.
 workspace, mentorship from academics and industry, and post-event recognition.
 
 **How to become one:** an express-interest form, then confirm requirements, promote locally, run
-the event. Auckland is already listed as a **site in planning** — someone has put us on the map.
+the event. Auckland is already listed as a **site in planning**, someone has put us on the map.
 
-**We run 19–20 Oct, two days before the official window**, because we cannot run past the 21st
-([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)). That makes us a precursor rather
-than a concurrent hub, and raises questions only the organisers can answer — see
+We run 19-20 Oct, because those are the two days we have
+([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)). That raises a few questions only the
+organisers can answer, listed in
 [public-presence.md](public-presence.md#what-to-ask-the-organisers).
 
 **2026 sites.** Confirmed: Durham NC (Duke, Defne Çirci). In planning: Baltimore (JHU) · Boston
@@ -66,14 +66,14 @@ Hugging Face, AIChemy, Cerebras, Fum, NSF, Abstrax Tech, biostate.AI, Advaita Ca
 Green Dynamics.
 
 A submission is: a description, a **public code repository**, and a **video demo**. The 2025 paper
-excluded 32 of 120 submissions for incomplete documentation — so the documentation is not optional
+excluded 32 of 120 submissions for incomplete documentation, so the documentation is not optional
 overhead, it is the difference between being in the paper and not.
 
-## Where our project sits — and what nobody has done
+## Where our project sits, and what nobody has done
 
 Ours is an **Action System** in their taxonomy, tagged *Agentic Workflows · Simulations · Property
 Prediction*. Several 2025 teams built adjacent pieces
-([the full list](interested-parties.md#tier-1--directly-adjacent-work)):
+([the full list](interested-parties.md#tier-1-directly-adjacent-work)):
 
 | Their project | What it did | Our stage |
 | --- | --- | --- |
@@ -86,7 +86,7 @@ Prediction*. Several 2025 teams built adjacent pieces
 
 So the pieces exist. **What does not exist in 88 documented projects is the thing we are building:**
 
-1. **A multi-fidelity funnel with an explicit budget discipline** — cheap surrogates for volume,
+1. **A multi-fidelity funnel with an explicit budget discipline**, cheap surrogates for volume,
    quantum only where uncertainty says it changes the answer. Others built individual stages;
    nobody assembled the cascade with the spend deliberately allocated.
 2. **Fidelity contracts.** Not one of the 88 states a trust region for its surrogate. This is the
@@ -102,14 +102,14 @@ worth presenting.
 **It also implies a scoping decision.** Most hackathon projects are built in two days. Ours is
 built over a month and *run* in two days
 ([ADR-0005](../adr/0005-two-tier-compute-gb10-h200.md)). We will arrive with more infrastructure
-than anyone else and should say so plainly rather than pretending it was a two-day sprint — the
+than anyone else and should say so plainly rather than pretending it was a two-day sprint, the
 interesting claim is about the method, not the heroics.
 
 ## What we owe and what we get
 
-As a precursor rather than a concurrent hub, some of this is to be negotiated rather than assumed.
+Running on other dates means some of this is to be negotiated rather than assumed.
 
-**We owe:** a Slack presence and honesty about our dates; a room that works; and — afterwards —
+**We owe:** a Slack presence and honesty about our dates; a room that works; and, afterwards -
 documented submissions with code and demos, if they will have them.
 
 **We hope to keep:** a route to the write-up paper for everyone in the room, the mentor pool and
@@ -117,12 +117,9 @@ Slack, the site listing marked with our own dates, and a standing relationship w
 [interested-parties.md](interested-parties.md). Prizes and the live showcase are probably out, and
 we should not plan around them.
 
-**What we uniquely offer:** we finish before anyone else starts. A working benchmark, a reproducible
-workflow and a set of results, published into the global event's opening, is worth more to the other
-hubs than another team competing alongside them.
+**What we can offer back:** a working benchmark, a reproducible workflow and a set of results,
+published before the global event opens, which other sites can pick up if useful.
 
-**And the thing to lead with:** we run **two days ahead of it**. Auckland closes on 20 Oct, sixteen
-hours before the earliest hub in the world opens and 33 hours before the US sites. We are not
-hub number thirteen competing for attention mid-event — we are the precursor supplying it.
-See [public-presence.md](public-presence.md) for the timing table and
-[ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md) for why.
+**What to lead with:** the global event itself. It runs 21-22 October, registration is open to
+anyone, and it's worth signing up for whether or not someone comes to ours. We're a local site and
+the copy should read that way.

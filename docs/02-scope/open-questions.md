@@ -11,14 +11,12 @@ Status key: 🔴 blocking · 🟠 shapes design · 🟡 nice to resolve early ·
 
 | # | Question | Why it matters | Owner | By | Status |
 | --- | --- | --- | --- | --- | --- |
-| A1 | ~~When is the hackathon?~~ | — | Nick | — | ✅ **Mon 19 – Tue 20 Oct 2026, 2 days.** US relay 20–21 Oct. Drove the rewrite of [plan.md](../05-delivery/plan.md) and the creation of [critical-path.md](../05-delivery/critical-path.md) |
 | A2 | **Is the H200 bookable — mechanism, quota, queue policy?** Need blocks in weeks 2, 3, 4 *and* 19–20 Oct | Without a week-3 block the quantum convergence study cannot happen before the event, and gates 4–5 become unassessable | Nick + eResearch | **Fri 25 Sep** ([W1.2](../05-delivery/critical-path.md)) | 🔴 |
 | A2b | Dual GB10 — confirmed ours continuously to 18 Oct and during the event? Exact spec? | The whole month's plan rests on it ([compute-plan.md](../06-feasibility/compute-plan.md)) | Nick + WP-F | Fri 25 Sep | 🟠 |
 | A3 | **How many people, and from which disciplines?** | Six packages need an owner *and* a host each. Below ~10 we cut WP-C's surrogate arm | Nick | **Mon 21 Sep** ([session](../05-delivery/monday-session.md)) | 🔴 |
 | A4 | Is there budget for cloud burst if a block slips? | Schedule risk, now with only four weeks of slack | Nick | Fri 2 Oct | 🟠 |
 | A5 | **Which research leaders are we inviting?** | Invitations must go out by **Wed 23 Sep** — four weeks is already short notice | Nick | **Wed 23 Sep** | 🔴 |
-| A7 | ~~Which dates?~~ | — | Nick | — | ✅ **Mon 19 – Tue 20 Oct.** We cannot run past the 21st and the 21st has competing agendas. Extending into Wed 21 is an option taken in the moment, not a plan. We run as a precursor, finishing 16 h before the earliest global hub opens ([ADR-0006](../adr/0006-run-19-20-october-as-a-precursor.md)) |
-| **A10** | **What can a precursor hub still take part in?** Project submission, the write-up paper, Slack, mentors, the site listing | The write-up route is the most persuasive line in every recruitment email. **Ask, do not assume** | Nick | **Mon 21 Sep** ([what to ask](../00-event/public-presence.md#what-to-ask-the-organisers)) | 🟠 |
+| **A10** | **What can a site running on other dates still take part in?** Project submission, the write-up paper, Slack, mentors, the site listing | The write-up route is the most persuasive line in every recruitment email. **Ask, do not assume** | Nick | **Mon 21 Sep** ([what to ask](../00-event/public-presence.md#what-to-ask-the-organisers)) | 🟠 |
 | **A8** | Register Auckland as an official hub, and stand up the public micro-repo? | Every invitation needs a link, and invitations go out Wednesday | Nick | **Wed 23 Sep** | 🔴 |
 | A9 | Can the organisers introduce us to Valence Labs re: Nesso-1? | Michael Craig of Valence Labs was on the 2024 kickoff panel — a warm route to unblocking [B3](#b-software-and-licensing) | Nick | Fri 25 Sep | 🟠 |
 | A6 | Who are the US counterparts, and what can they run? | Item 7 of the handoff ranks questions against *their* compute ([us-handoff.md](../05-delivery/us-handoff.md)) | Nick | Fri 25 Sep | 🟠 |

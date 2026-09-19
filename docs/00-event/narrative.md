@@ -1,198 +1,181 @@
 # The narrative
 
-What this is, why it matters, and why anyone should give it two days. Written to be read start to
-finish by someone who has never heard of it — a prospective participant, a head of department, a
-funder, a journalist. Everything in [`outreach/`](../../outreach/) is cut from this.
+What we're doing and why. All the outreach copy in [`outreach/`](../../outreach/) is cut from
+this, so change it here first.
 
 ---
 
-## 0. The one sentence
+## The short version
 
-> ### Start small. Search hard. Scale only what survives.
->
-> **We're testing whether a deliberately small experiment can predict what a large one would do.**
+> ### How far can a chain of surrogates get us?
 
-That is the project. The pipeline, the gates, the two days, the shape of the month before them —
-all of it orients around that sentence, and **[§4](#4-the-idea-the-whole-thing-orients-around)** is
-where it gets precise.
+We want to try a more AI-intensive approach to a structure-based pipeline, where every expensive
+step is handed to a learned surrogate, and see how far that actually gets us today.
 
-Everything between here and there is the testbed: a real problem, hard enough that the answer
-matters, small enough that we can afford to explore it properly.
+Other groups have done individual steps well. We haven't found anyone who has run the whole chain
+end to end, with the expensive physics kept only for the places where it changes the answer.
+
+It might not be good enough yet. We'd still like the number. Every step in the chain is improving
+quickly, and at some point the chain crosses a threshold and becomes useful. Without a measured
+starting point we won't know when that happens.
+
+So this is a baseline, taken carefully enough to be worth repeating.
 
 ---
 
-## 1. The testbed, and why it's worth using
+## 1. The problem we're testing it on
 
-A drug that works is not the hard part any more. A drug that works **only where you want it to** is.
+Most drugs fail on selectivity rather than potency. A compound built for one protein also hits its
+close relatives, and the programme fails late and expensively.
 
-Most modern therapeutics fail not because they miss their target but because they also hit
-something adjacent — a protein so similar that no amount of chemical intuition separates them. In
-the CDK family, the enzyme CDK9 sits beside CDK7, CDK12 and CDK13 with binding pockets so alike
-that a compound designed for one routinely hits all four. The consequence is toxicity, a narrow
-therapeutic window, and a programme that dies late and expensively.
+Conventional screening is good at "does this bind something" and poor at "why would this bind this
+pocket and not its near-twin". It flattens a three-dimensional pocket into a fingerprint, which
+throws away the things that separate two similar pockets: local geometry, induced fit,
+electrostatics, and how both protein and ligand move.
 
-Conventional computational screening is very good at the first question — *does this molecule bind
-something?* — and close to useless at the second. It flattens a three-dimensional pocket into a
-chemical fingerprint, and in doing so throws away precisely the information that distinguishes one
-pocket from its near-twin: local geometry, induced fit, electrostatics, the way both protein and
-ligand move.
+Our case is CDK9 against CDK7. Two kinases with ATP sites similar enough that telling them apart is
+the whole difficulty. There's enough public data to build a defensible benchmark, and there are
+known selective and known pan-CDK compounds, so we have real discriminating cases rather than
+actives against random decoys.
 
-**We want to know whether AI can put that information back, cheaply enough to be useful.**
+## 2. The chain
 
-## 2. Why now
+Eight steps. Each one cheap enough to run on everything that reaches it, and each allowed to be
+wrong in a characterised way that the next step is there to correct.
 
-Three things became true in the last eighteen months, and none of them individually is enough.
+Generate plausible complexes, crop the pocket, sample how it moves, score the geometry, send only
+the genuinely uncertain cases to quantum chemistry, learn from those labels, repeat.
 
-**Structure prediction became routine.** Open-weight co-folding models now produce plausible
-protein–ligand complexes for targets with no crystal structure. Not truth — but a usable starting
-hypothesis, generated in minutes, where previously there was nothing.
+![The eight steps, what passes between them, and where the gates sit](../03-pipeline/figures/pipeline-isometric.svg)
 
-**Geometry-aware scoring started to generalise.** Equivariant neural networks that operate on the
-local binding pocket transfer to pockets they have never seen, because geometry is a shared
-language in a way that chemical descriptors are not.
+Four of those steps hand an expensive calculation to a learned model: co-folding instead of
+experimental structure determination, learned ensembles instead of molecular dynamics, an
+equivariant network instead of physics-based rescoring, and a learned correction instead of running
+quantum chemistry on everything.
 
-**Quantum chemistry moved onto the GPU.** Electronic-structure calculations at a level that
-actually distinguishes two similar pockets are now tractable in batch — not for millions of
-compounds, but for the few thousand where the answer is genuinely in doubt.
+Versions of each exist. At the 2025 hackathon alone there was a docking tool using a machine-learned
+potential as its scoring function, an agent that ran protein-ligand MD end to end, and an assistant
+for setting up DFT calculations. What we haven't found is the four assembled into one chain with a
+budget discipline across it, which is the thing we'd like to measure.
 
-Put together, those three permit a shape of workflow that was not previously affordable: **cheap AI
-does the volume, expensive physics does the discrimination, and the expensive part is spent only
-where it changes the answer.**
+## 3. Why it's worth measuring even if it fails
 
-## 3. The idea
+A surrogate can be fast, confident and wrong. It can also be accurate on average while being wrong
+on exactly the close calls the pipeline exists to resolve. Chain four of them together and the
+errors compound in ways nobody has characterised, because nobody has chained them.
 
-A staged funnel. Each stage is allowed to be wrong in a characterised way, and the next stage exists
-to correct the errors the previous one is known to make.
+So each one has to declare where it can be trusted. Every surrogate in the pipeline carries a
+fidelity contract: a stated ground truth, a validation set that contains close calls, and a region
+outside which it isn't believed. A surrogate with a correlation coefficient and no trust region
+isn't a method, it's a hope.
 
-> Generate plausible complexes → crop the pocket → sample how it moves → score the geometry →
-> send only the genuinely uncertain cases to quantum chemistry → learn from those labels → repeat.
+What we expect to come out is a number for how far the chain gets, and which links are dragging.
+That's useful now for deciding where to spend, and useful later as the comparison point when we run
+it again with better components.
 
-At four points in that chain, a learned model stands in for something expensive: co-folding for
-crystallography, learned ensembles for molecular dynamics, an equivariant network for physics-based
-scoring, and a learned correction for running quantum chemistry on everything.
+## 4. How we're measuring it
 
-That is where it gets interesting, and where most projects of this shape quietly fail.
+The pipeline has around eight configurable choices. How much protein to include, how many
+conformations to sample, how accurate the quantum calculation needs to be, how aggressively to
+spend the expensive budget. Each combination costs GPU hours, and nobody can explore that at
+production scale, so the usual approach is to guess most of it and tune two or three knobs on a
+small grid.
 
-**A surrogate can be fast, confident and wrong.** Worse, it can be accurate *on average* while
-being systematically wrong on exactly the close calls the whole pipeline exists to resolve. So we
-impose a rule: **every surrogate owes a fidelity contract** — a stated ground truth, a validation
-set that actually contains close calls, and an explicit trust region beyond which it may not be
-believed. A surrogate without a trust region is not a method, it is a hope.
+Recent work on small-scale machine learning experiments suggests that's the thing that goes wrong.
+Small experiments fail to transfer not because they're small, but because they're under-explored,
+and small systems turn out to be more sensitive to their settings than large ones. In that work,
+four configurations showed nothing, sixteen showed nothing, and 256 gave a clean predictive answer.
 
-## 4. The idea the whole thing orients around
+So we're treating the configuration as the object of study rather than a set of settings to guess.
+Start small, explore the parameter space properly, and carry up only what survives. The questions
+we actually want answered are: is this even feasible, what data would we need, and how small can we
+go while still being usefully robust.
 
-Back to the lead. Here is the problem nobody talks about. That pipeline has about eight configurable choices — how
-much protein to include, how many conformations to sample, how accurate the quantum calculation
-needs to be, how aggressively to spend the expensive budget. Each combination costs GPU-hours.
-Nobody can afford to explore them at production scale.
+That last one travels well beyond drug discovery. Anyone with one field season, a small cohort, or
+a three-week synthesis has the same problem. A pipeline of choices, an expensive evaluation, and no
+way to grid-search. It's part of why this is a cross-disciplinary event.
 
-So everyone does the same thing: guess most of it, tune two or three knobs on a small grid, and
-hope the result transfers when they scale up.
+*(This thread came out of a conversation with Jack Flanagan, who suggested hyperparameter
+optimisation on small datasets as a microtopic and asked where the big wins are that scale. It's
+written up in [hpo-microtopic.md](../04-experiments/hpo-microtopic.md).)*
 
-There is now good evidence that this is exactly the wrong move. Work published this August on
-small-scale machine-learning experiments found that **thorough exploration of the configuration
-space is the single ingredient that determines whether small experiments transfer at all** — and,
-counterintuitively, that small-scale systems are *more* sensitive to their settings than large
-ones, not less. In their experiments, searching four configurations showed nothing. Sixteen showed
-nothing. Two hundred and fifty-six gave a clean, predictive answer. Most published small-scale
-results are not wrong; they are undertuned.
+## 5. What we'll actually do
 
-**So we are treating the pipeline itself as the object of study.** The configuration is not a set of
-settings to be guessed — it is the thing we are measuring. Hence the lead:
+Twelve to twenty compounds, CDK9 against one close counter-target, and a deliberately small budget
+of quantum calculations. Small enough for a room of people to explore in two days, large enough to
+show whether there's real selectivity signal.
 
-> ### Start small. Search hard. Scale only what survives.
->
-> **When does what you learn from a small experiment actually transfer to the scale you care about?**
+The phases get worked on in parallel first, so each one is understood on its own, and then we do an
+integrated small-scale run.
 
-That reaches far beyond drug discovery.
-
-An ecologist with one field season has that question. A clinical researcher with a small cohort has
-it. A materials group whose synthesis takes three weeks has it. Every one of them has a pipeline of
-configurable choices, an expensive evaluation, and no ability to grid-search. We happen to have a
-convenient testbed.
-
-## 5. What we are actually doing on the day
-
-Not building a drug. Running an experiment about a method, and finding out whether it deserves to
-be scaled.
-
-Concretely: twelve to twenty compounds, CDK9 against one close counter-target, and a deliberately
-small budget of expensive quantum calculations. Small enough that a room of people can explore it
-in two days; large enough to reveal whether there is real selectivity signal.
-
-Six pre-specified gates decide what happens next, and they were written before any data existed —
-which is the difference between a finding and a story. **A clean "no" against those gates is a
-successful event.** The outcome we are actively trying to avoid is the ambiguous one that lets a
-project drift forward on optimism.
+Six gates decide what happens next, and they were written before any data existed. A clean "no"
+against those gates is a good outcome. The result we're trying to avoid is the ambiguous one that
+lets a project drift forward on optimism.
 
 ## 6. Why a hackathon, and why Auckland
 
-Because the interesting parts of this cannot be done by one discipline.
+The interesting parts can't be done by one discipline.
 
 The benchmark needs a medicinal chemist who knows that two IC50 values measured at different ATP
-concentrations do not form a valid ratio — a fact that, if missed, invalidates everything
-downstream, silently, for the entire event. The pocket predictions need a structural biologist to
-look at them and say which are nonsense. The quantum layer needs someone who knows when a
-calculation has converged and when it has merely stopped. The statistics need someone willing to
-say out loud that a difference of 0.05 on twenty compounds is nothing. And the whole thing needs a
-research software engineer, or it will not run twice.
+concentrations don't form a valid ratio. Get that wrong and everything downstream is an artefact,
+quietly, until the write-up. The pocket predictions need a structural biologist to say which are
+nonsense. The quantum layer needs someone who knows when a calculation has converged and when it
+has merely stopped. The statistics need someone willing to say out loud that a difference of 0.05
+on twenty compounds is nothing. And the whole thing needs a research software engineer or it won't
+run twice.
 
-Those people exist at the University of Auckland. They mostly have not worked together.
+Those people are at the University of Auckland and mostly haven't worked together. This is the
+excuse.
 
-This event is the excuse. And the thing being built — a reusable benchmark, a reproducible GPU
-workflow, a methodology for small-data experimentation — outlasts the two days regardless of what
-the pipeline does.
+## 7. The global event
 
-## 7. Why you should come, specifically
+We're a local site for the [Open Scientific Intelligence Hackathon](the-global-event.md), which is
+in its fourth year with hubs on four continents and over a thousand participants last year. Three
+years of write-ups, every team credited.
 
-If you are new to AI for science, the honest pitch is this: **you will personally own a result the
-group uses.** Not a tutorial, not shadowing someone else's screen. Within the first hour you will
-either be running a configuration that becomes a data point in the final analysis, or looking at
-predicted molecular structures and telling the computational team which ones are wrong — a
-judgement they cannot make without you, and the result is worse without it.
+**The global event runs 21-22 October and registration is open to anyone.** If you're interested in
+this space at all, sign up for that whether or not you come to ours.
 
-If you are already deep in this: we have dual GB10 boxes for a month beforehand and H200 access for
-the benchmarks, a pipeline that will already run when you arrive, and a genuinely open methodological
-question at the centre of it.
+We're running 19-20 October because those are the two days we have. Wednesday the 21st is open if
+people want to keep going, and it's the global event's opening day, so that's a straightforward way
+to carry the work across.
 
-And if two days isn't enough, Wednesday the 21st is the global hackathon's opening day — you can
-carry whatever we build straight into it.
+## 8. What you get out of it
 
-And we go first. Auckland runs **two days ahead of the global hackathon**, closing sixteen hours
-before the earliest hub in the world opens — so whatever we produce is available to every other
-hub from the moment they start.
+If you're new to this, you'll own a result the group uses. In the first hour you'll be running a
+configuration that becomes a data point in the final analysis, or looking at predicted structures
+and telling the computational people which ones are wrong, which is a judgement they can't make
+without you.
 
-## 8. What happens afterwards
+If you already work in this area: dual GB10 boxes for the month beforehand and H200 access for the
+benchmarks, a pipeline that runs when you arrive, and an open question in the middle of it.
 
-Three things, in increasing order of ambition:
+## 9. Afterwards
 
-1. **A benchmark other people use.** There is a real gap: a curated, documented, honestly-caveated
-   CDK selectivity benchmark with a written statement of what it can and cannot support.
-2. **A methods contribution.** The small-data configuration question is publishable on its own, and
-   it is discipline-agnostic.
-3. **A capability and a group.** A cross-disciplinary team at Auckland that has actually built
-   something together, and a reproducible GPU workflow that the next project starts from instead of
-   rebuilding.
+A curated CDK selectivity benchmark with a written statement of what it can and can't support.
+There's a real gap there and other groups would use it.
 
-If the gates come back green, there is a pilot and then a campaign. If they come back red, we will
-have found that out in two days for the cost of two days — which is the entire point of running the
-small experiment first.
+A methods note on small-data configuration search, which isn't chemistry-specific.
+
+A measured baseline for the surrogate chain, and a workflow that makes re-running it cheap. That
+last one matters most. The components will improve, and we want to be able to answer "has it
+crossed the threshold yet" without rebuilding everything.
 
 ---
 
 ## The short versions
 
-**One sentence:** We're testing whether a deliberately small experiment can predict what a large one
-would do — on an AI-surrogate pipeline for drug-target selectivity.
+**One line.** How far can a chain of surrogates get us? We're measuring it on drug-target
+selectivity and setting a baseline we'll come back to.
 
-**One paragraph:** Most drugs fail on selectivity, not potency, and conventional screening cannot
-distinguish a target from its close relatives because it discards the 3D information that makes
-them different. We are building a staged pipeline where fast AI models do the volume work and
-GPU quantum chemistry is spent only where it changes the answer — and where every surrogate has to
-declare where it may be trusted. The deeper question is methodological: when does a small,
-affordable experiment actually predict the large, expensive one? That question belongs to every
-field with slow experiments, which is why this is a cross-disciplinary event rather than a
-computational chemistry one.
+**A paragraph.** Most drugs fail on selectivity, and conventional screening can't separate a target
+from its close relatives because it discards the 3D information that distinguishes them. We're
+building a pipeline that hands every expensive step to a learned surrogate and keeps quantum
+chemistry for the cases where it changes the answer. Other groups have built individual steps, but
+we haven't found the whole chain attempted. It might not be good enough yet, which is still worth
+knowing, because each step is improving quickly and we want a measured starting point to compare
+against. We're exploring the parameter space properly rather than guessing settings, which is a
+problem every field with slow experiments shares.
 
-**For a newcomer:** Two days, dedicated GPUs, a pipeline that already works when you walk in, and a
-job that uses what you already know. You will own a piece of the result.
+**For someone new.** Two days, dedicated GPUs, a pipeline that already works when you arrive, and a
+job that uses what you already know.

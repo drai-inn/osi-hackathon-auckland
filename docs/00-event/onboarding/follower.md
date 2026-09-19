@@ -8,24 +8,24 @@ like this arrive from people who read the plan and said "that won't work, becaus
 
 ---
 
-## Rung 0 · Orient — 10 minutes
+## Rung 0 · Orient, 10 minutes
 
 Read **[the narrative](../narrative.md)**, or just
 [the short versions](../narrative.md#the-short-versions) at the foot if you're skimming.
 
 **You now know:** what we're doing and whether you want to keep hearing about it.
 
-## Rung 1 · First contact — 2 minutes
+## Rung 1 · First contact, 2 minutes
 
 **Subscribe to the [live event log](../../../EVENT-LOG.md).**
 
 It's a single pull request that stays open from now until the final presentations and reports are
 done. Every meaningful update is a commit to it. Click **Subscribe** on the PR and you'll get those
-and nothing else — no issue noise, no CI, no pings from the rest of the repo.
+and nothing else, no issue noise, no CI, no pings from the rest of the repo.
 
 It closes when the work is finished. That's the only signal you need.
 
-## Rung 2 · Contribute — an hour, once
+## Rung 2 · Contribute, an hour, once
 
 **Read something and tell us it's wrong.** Genuinely the most valuable hour available at this
 distance. Pick whichever you'd actually enjoy:
@@ -41,20 +41,20 @@ distance. Pick whichever you'd actually enjoy:
 Comment on the event-log PR, or email njon001@aucklanduni.ac.nz. Unvarnished is fine; we'd rather
 hear it in September than in November.
 
-## Rung 3 · Own — 90 minutes, on the day
+## Rung 3 · Own, 90 minutes, on the day
 
-Come to **one clinic on day 1** — 10:00 to 11:30 — or the **day-2 closing session** where the gates
+Come to **one clinic on day 1**, 10:00 to 11:30, or the **day-2 closing session** where the gates
 are assessed and each activity presents. Both are worth the time on their own; days of debugging in
 between are not spectator sport.
 
 If you're remote, ask and we'll put a link up.
 
-## Rung 4 · Carry — afterwards
+## Rung 4 · Carry, afterwards
 
 - **Read the write-up** and the gate assessment. Whichever way it goes, the honest version will be
   there
 - **Take the benchmark**, if we release it. It's designed to be usable by other groups
-- **Come to phase 2** if the gates go green — or tell us what you'd do differently if they don't
+- **Come to phase 2** if the gates go green, or tell us what you'd do differently if they don't
 - **Run your own version.** Especially if you're at another institution: the
   [small-data protocol](../../04-experiments/hpo-microtopic.md) is discipline-agnostic and we would
   genuinely like a second domain to compare against

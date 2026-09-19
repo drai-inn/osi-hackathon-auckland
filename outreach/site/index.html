@@ -58,9 +58,11 @@ h1 em{font-style:normal;color:var(--south)}
 
 section{padding:52px 0;border-bottom:1px solid var(--line)}
 h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
-  color:var(--ink-soft);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-/* Waipapa Taumata Rau motif — lead-in only, at supplied size. ../brand/uoa-motif.svg */
-.uoa-motif{width:28px;flex-shrink:0}
+  color:var(--ink-soft);margin-bottom:20px}
+/* Waipapa Taumata Rau motif. Sits on its own line with clear air above and below.
+   Nothing inline beside it. ../brand/uoa-motif.svg */
+.uoa-motif{width:30px;display:block;margin:0 0 20px}
+.hero-motif{margin-bottom:26px}
 .uoa-logo{height:48px;margin-bottom:14px}
 .hero-motif{width:44px;margin-bottom:18px;display:block}
 h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:7px}
@@ -121,14 +123,14 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
         <g fill="currentColor"><circle cx="44" cy="8" r="7"/><circle cx="38" cy="96" r="9"/>
         <circle cx="12" cy="46" r="6"/><circle cx="70" cy="34" r="7.5"/><circle cx="52" cy="60" r="4" opacity=".7"/></g>
       </svg>
-      <span>Auckland Hub · Aotearoa New Zealand</span>
+      <span>Auckland site · Aotearoa New Zealand</span>
     </div>
     <svg class="uoa-motif hero-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
     <div class="badge">● {{DATES}} · Free</div>
-    <h1>Start small. Search hard.<br><em>Scale only what survives.</em></h1>
-    <p class="lede"><b>We're testing whether a deliberately small experiment can predict what a large
-      one would do</b> — on an AI-surrogate pipeline for drug-target selectivity. Two days at the
-      University of Auckland, part of the global Open Scientific Intelligence Hackathon.</p>
+    <h1>How far can a chain of <em>surrogates</em> get us?</h1>
+    <p class="lede">Every expensive step in a drug-selectivity pipeline handed to a learned
+      surrogate. Nobody seems to have run the whole chain. We're measuring where it lands today, as
+      a baseline we'll come back to. Two days at the University of Auckland.</p>
     <div class="cta">
       <a class="btn btn-primary" href="{{REGISTER}}">Register — free</a>
       <a class="btn btn-ghost" href="#who">Who we need</a>
@@ -145,19 +147,20 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 </div></div>
 
 <section><div class="wrap">
-  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>Why it's a real question</span></h2>
-  <p class="big">You can afford the small version of your experiment. When does what you learn from
-    it transfer to the scale you care about?</p>
-  <p>Recent work argues the usual answer is wrong: small experiments fail to transfer not because
-    they are small but because they are <b>undertuned</b>. Four configurations showed nothing.
-    Sixteen showed nothing. <b>256 gave a clean, predictive answer.</b></p>
-  <p>So we treat the <b>configuration as the object of study</b>, not as settings to guess. That
-    question belongs to ecology with one field season, clinical work with small cohorts, materials
-    with slow synthesis. We happen to have a good testbed.</p>
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>Why we're doing it</h2>
+  <p class="big">It might not be good enough yet. We'd still like the number.</p>
+  <p>Other groups have done individual steps in this chain well. We haven't found anyone who has run
+    the whole thing end to end, with the expensive physics kept only for the places where it changes
+    the answer.</p>
+  <p>Every step is improving quickly, and at some point the chain crosses a threshold and becomes
+    useful. Without a measured starting point we won't know when that happens. So this is a
+    baseline, taken carefully enough to be worth repeating.</p>
 </div></section>
 
 <section><div class="wrap">
-  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>The testbed</span></h2>
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>The testbed</h2>
   <p class="big">Most drugs fail on <b>selectivity</b>, not potency.</p>
   <p>A compound designed for one protein hits its close relatives too, and the programme dies late
     and expensively. Conventional screening can't separate them: it flattens a three-dimensional
@@ -172,7 +175,8 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 </div></section>
 
 <section id="who"><div class="wrap">
-  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>Who we need</span></h2>
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>Who we need</h2>
   <div class="who">
     <div class="r"><div class="d">Medicinal chemistry &amp; pharmacology</div><div class="t">Break our benchmark before we build a week of results on it</div></div>
     <div class="r"><div class="d">Structural biology</div><div class="t">Judge predicted poses — we genuinely cannot do this without you</div></div>
@@ -194,7 +198,8 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 </div></section>
 
 <section><div class="wrap">
-  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>Pick your ladder</span></h2>
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>Pick your ladder</h2>
   <p>Each pathway is a set of rungs — before you arrive, your first thirty minutes, your first day,
     and where it goes afterwards. Start at rung 0 and stop wherever you like.</p>
   <div class="ladders">
@@ -208,7 +213,8 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 </div></section>
 
 <section id="follow"><div class="wrap">
-  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>Follow along</span></h2>
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>Follow along</h2>
   <p>You don't have to come to keep up. We run a <b>live event log</b> as a single open pull request
     that stays open from now until the final presentations and reports are done. Subscribe to it and
     you'll get every update; nothing else will reach your inbox.</p>
@@ -216,13 +222,14 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 </div></section>
 
 <section><div class="wrap">
-  <h2><svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg><span>Questions</span></h2>
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>Questions</h2>
   <details><summary>Do I need to know anything about drug discovery?</summary><p>No. Several roles need the opposite — someone who will ask why we're doing it that way.</p></details>
   <details><summary>Do I need to be able to code?</summary><p>No. Pose triage and benchmark critique involve none. The "own a configuration" path is one command, with someone beside you.</p></details>
   <details><summary>Two days is a lot. Is there a smaller version?</summary><p>Three levels: full participant, 90-minute clinic on day 1, or reviewer — read the plan, tell us what's wrong with it, come to the close. The third costs an hour and is how several of the most useful contributions arrive.</p></details>
   <details><summary>What if it doesn't work?</summary><p>Then we know in two days rather than two years. Six gates were written before any data existed. A clean "no" is a successful outcome.</p></details>
   <details><summary>What hardware?</summary><p>Dual NVIDIA GB10 boxes, ours for the month beforehand and during the event, plus HGX H200 for benchmarks. Your first run won't queue behind someone's sweep.</p></details>
-  <details><summary>Why are you two days before the main event?</summary><p>Local scheduling — we can't run past the 21st. It turns out to be an advantage: we finish sixteen hours before the earliest hub in the world opens, so what we build is available to everyone else from their first minute. If you want more, Wednesday the 21st is the global event's opening day and you can carry the work straight in.</p></details>
+  <details><summary>Why are you on different days to the main event?</summary><p>Those are the two days we have. The global event runs 21-22 October and registration is open to anyone, so sign up for that too. Wednesday the 21st is open if you want to keep going, and it's the global event's opening day.</p></details>
 </div></section>
 
 <footer><div class="wrap">
@@ -232,7 +239,7 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   <div>Nick Jones · <a href="mailto:njon001@aucklanduni.ac.nz">njon001@aucklanduni.ac.nz</a> ·
     <a href="{{REPO}}">Repo</a> · <a href="https://llmhackathon.github.io/">Global event</a></div>
   <div class="r">Part of the 4th annual global hackathon for the physical sciences and mathematics —
-    16 hubs, 4 continents. We run two days ahead of it. Palette and type follow the global event;
+    hubs on four continents, running 21-22 October. Palette and type follow the global event;
     the Southern Cross and the paired-pocket motif are ours.</div>
 </div></footer>
 

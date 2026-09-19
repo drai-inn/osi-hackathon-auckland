@@ -27,12 +27,12 @@ output. [Why the split is mandatory](../00-event/engagement.md#the-structural-fi
 
 | Package | Host | Their on-ramps |
 | --- | --- | --- |
-| A | _unassigned_ | [C break the benchmark](../00-event/engagement.md#c--break-the-benchmark--medicinal-chemistry-pharmacology--60-min) |
-| B | _unassigned_ | [B pose triage](../00-event/engagement.md#b--pose-triage--structural-biology-medicinal-chemistry--zero-code) |
-| C | _unassigned_ | [A your run](../00-event/engagement.md#a--your-run-your-parameter--anyone-including-non-coders--20-min) |
-| D | _unassigned_ | [A your run](../00-event/engagement.md#a--your-run-your-parameter--anyone-including-non-coders--20-min) |
+| A | _unassigned_ | [C break the benchmark](../00-event/engagement.md#c-break-the-benchmark--medicinal-chemistry-pharmacology--60-min) |
+| B | _unassigned_ | [B pose triage](../00-event/engagement.md#b-pose-triage--structural-biology-medicinal-chemistry--zero-code) |
+| C | _unassigned_ | [A your run](../00-event/engagement.md#a-your-run-your-parameter--anyone-including-non-coders--20-min) |
+| D | _unassigned_ | [A your run](../00-event/engagement.md#a-your-run-your-parameter--anyone-including-non-coders--20-min) |
 | E | _unassigned_ | [Activity 3](adjacent-activities.md#activity-3--the-fidelity-ladder-quantum-surrogates-and-knowing-when-to-trust-them) |
-| F | _unassigned_ | [A your run](../00-event/engagement.md#a--your-run-your-parameter--anyone-including-non-coders--20-min) |
+| F | _unassigned_ | [A your run](../00-event/engagement.md#a-your-run-your-parameter--anyone-including-non-coders--20-min) |
 
 ## Skills needed, by discipline
 
