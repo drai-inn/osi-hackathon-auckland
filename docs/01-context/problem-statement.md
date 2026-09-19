@@ -20,6 +20,14 @@ For these, the discriminating signal lives in **local 3D geometry, induced fit, 
 polarization and conformational ensembles** — none of which survive the projection down to a 2D
 fingerprint. `[source-doc]`
 
+![Identity across the CDK family, whole region against the ATP site](../03-pipeline/figures/protein-space.svg)
+
+The numbers are worth sitting with. CDK9 against its counter-targets is 44–50% identical over the
+kinase region, and 67–72% across the ATP site. The pocket is where the conservation concentrates,
+which is exactly the part that has to be told apart. And CDK8 / CDK19 are identical at all 18 site
+positions, so the family contains a harder pair than ours.
+See [visualisation.md](../03-pipeline/visualisation.md).
+
 ## Why now, and why this shape of solution
 
 Three things have changed enough to make a different pipeline shape plausible:
