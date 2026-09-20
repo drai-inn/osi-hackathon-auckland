@@ -99,6 +99,32 @@ Two things the script has to get right, and both caught real problems on the fir
 - **Entries hold several copies.** Without a proximity filter, a neighbouring copy's ADP floats in
   the panel looking meaningful. Ligands are filtered to within 10 Å of the chain being drawn
 
+## Zooming in
+
+A whole-protein picture is the least informative view we have, because no stage operates on a
+whole protein. Each one works at its own scale.
+
+![One site at six scales, from the complex down to the quantum region](figures/zoom-ladder.svg)
+
+Same structure, same camera, same centre. Only the radius changes. Bright is kept, dim is
+discarded, and the heavy-atom count under each panel is the cost driver for the stage named in its
+corner. The counts are `[measured]`; the cost multipliers are a cubic scaling and are `[estimate]`.
+
+Then the scale below that, where the selectivity question is actually settled:
+
+![The twenty residues lining the CDK9 ATP site, and the equivalent residue in the three counter-targets](figures/pocket-anatomy.svg)
+
+**This one supersedes the caveat on the protein-space figure.** Equivalence across targets is by
+CEalign superposition and nearest Cα, not by sequence alignment. It confirms what the sequence pass
+guessed: CDK9 carries **Cys106** at the hinge where CDK7, CDK12 and CDK13 all carry methionine, and
+it sits 3.2 Å from flavopiridol. Read the asterisks — CDK7 superposes at 3.87 Å RMSD, so a handful
+of its assignments are approximate.
+
+Both come from [`tools/render_components.py`](../../tools/render_components.py), with every number
+written to [`data/pocket-anatomy.json`](../../data/pocket-anatomy.json) so the tables in
+[S2](stages/S2-pocket-extraction.md) and [S6](stages/S6-quantum-labelling.md) can be checked
+without rerunning anything.
+
 ## The protein space
 
 Before any rendering, the sequence-level picture is worth having:

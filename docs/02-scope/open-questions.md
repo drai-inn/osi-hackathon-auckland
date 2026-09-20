@@ -42,6 +42,7 @@ Status key: 🔴 blocking · 🟠 shapes design · 🟡 nice to resolve early ·
 | C3 | Do we include known *non-selective* pan-CDK inhibitors as a distinct class? | Strongly recommended: they are the discriminating cases, and the ones a 2D baseline gets wrong | WP-A owner | Fri 2 Oct | 🟠 |
 | C4 | Protonation, tautomer and metal/cofactor handling at the pocket boundary | Quantum labels are highly sensitive to this. Get it wrong and WP-E produces confident nonsense | WP-E + WP-A | Fri 9 Oct | 🟠 |
 | C5 | Apo vs. holo starting structures; which PDB entries; how to handle the DFG/activation loop state | Induced fit is part of the selectivity signal we claim to capture | WP-B owner | Fri 2 Oct | 🟠 |
+| C7 | **The crop drops the cyclin.** No cyclin T1 residue is within 15 Å of the ligand; the first appears at 18 Å `[measured]`. The cyclin holds the αC helix in the active position | We crop away what sets the conformation we are scoring. Either the cropped pocket is rigid enough not to care, or restraints are needed, or the radius has to go to 18 Å and pay ≈800× on the quantum stage. Nobody has checked which | WP-B + WP-E | Fri 2 Oct | 🔴 |
 | C6 | What is the honest 2D baseline? (ECFP4+RF? A published CDK selectivity model?) | Without a real baseline, "better than 2D" is unfalsifiable | WP-A + WP-D | Fri 2 Oct | 🔴 |
 
 ## D. Methodology
@@ -52,6 +53,8 @@ Status key: 🔴 blocking · 🟠 shapes design · 🟡 nice to resolve early ·
 | D2 | What is the cheap proxy metric that tracks selectivity enrichment, and does it? | Our analogue of the perplexity–capability correspondence. Without one, every configuration evaluation costs a full pipeline run | Methodology lead | during the event | 🟠 |
 | D3 | How many random-search configurations can we actually afford per stage? | Lourie et al. needed 256 for a clean signal `[literature]`. We will not get 256 full-pipeline runs. Which stages can be searched densely in isolation? | Methodology + WP-F | Fri 9 Oct | 🟠 |
 | D4 | Bootstrap/permutation protocol for ranking metrics on n≈20 | Determines whether any observed difference is reportable | Methodology lead | Fri 9 Oct | 🟠 |
+| D6 | **Does an agent pick a different acquisition set, and is the difference informative?** Run on paper against the three existing arms, spending no labels ([review](../05-delivery/proposals/2026-09-21-agentic-dev-ops.md)) | The only version of "agentic" that is an experiment rather than infrastructure. Needs a stated trust region, which nobody in the field writes down. Blocked until WP-D produces rankings in week 3 | WP-D + methodology lead | **Fri 9 Oct** | 🟡 |
+| D7 | Is our agent-written [CLAUDE.md](../../CLAUDE.md) helping or costing us? A 2026 study over 138 repos found LLM-generated context files reduce agent success and add >20% inference cost `[literature]` | We wrote a long one. If the finding holds here, it is actively slowing the month's development work, and the fix is half an hour | WP-F | Fri 2 Oct | 🟡 |
 | D5 | Do we pre-register the analysis plan? | Cheap, and it is the difference between a finding and a story | Nick | Fri 16 Oct | 🟡 |
 
 ## D2. Engagement (new — the event is 2 days and several participants are new to AI for science)

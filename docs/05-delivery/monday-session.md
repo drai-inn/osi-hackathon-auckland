@@ -44,6 +44,7 @@ Bring a recommendation to every decision so the room is editing rather than inve
 | D6 | Pre-register the analysis plan? | **Yes, one page per package by week 4** | Cheap, and it is the difference between a finding and a story at n≈20 |
 | D7 | What do we hand the US team? | **A ranked list of open questions with costs**, not a status report | Their constraint is the same as ours. Make their two days extend ours ([us-handoff.md](us-handoff.md)) |
 | D8 | Micro-repo, or contribute to the main site? | **Both, differently.** Register the hub upstream and publish a small public Auckland landing page. **Do not fork the main site** | Different audiences ([public-presence.md](../00-event/public-presence.md)) |
+| **D9** | Do we take [agentic development and operations](proposals/2026-09-21-agentic-dev-ops.md), and at what scope? | **Development yes, now.** One operations experiment — the S5→S6 acquisition agent, run on paper, owed a fidelity contract. **No** to agentic orchestration, job-submission rights, or new middleware before the event | Eight stages; compounding error makes full autonomy arithmetic we cannot win. One decision point against a control we already run is an experiment. The trust region is the part nobody else states |
 
 ## What not to spend the two hours on
 

@@ -1,0 +1,653 @@
+{
+  "generated": "2026-09-19",
+  "tool": "tools/render_components.py",
+  "reference": {
+    "target": "CDK9",
+    "pdb": "3BLR",
+    "resolution": "2.8 \u00c5",
+    "ligand": "CPB",
+    "ligand_name": "flavopiridol",
+    "ligand_heavy_atoms": 28
+  },
+  "counter_targets": [
+    {
+      "target": "CDK7",
+      "pdb": "1UA2",
+      "resolution": "3.0 \u00c5",
+      "cealign_rms_A": 3.87
+    },
+    {
+      "target": "CDK12",
+      "pdb": "4NST",
+      "resolution": "2.2 \u00c5",
+      "cealign_rms_A": 2.43
+    },
+    {
+      "target": "CDK13",
+      "pdb": "5EFQ",
+      "resolution": "2.0 \u00c5",
+      "cealign_rms_A": 1.83
+    }
+  ],
+  "method": "Whole residues with any heavy atom within the cutoff of any ligand heavy atom. Hydrogens excluded throughout; deposited structures at this resolution do not have them. Cross-target equivalence by CEalign superposition, nearest C\u03b1.",
+  "levels": [
+    {
+      "key": "complex",
+      "label": "Complex",
+      "radius": null,
+      "stage": "S1",
+      "caption": "what co-folding hands us",
+      "residues": 552,
+      "atoms": 4516,
+      "chains": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "key": "crop15",
+      "label": "Crop 15 \u00c5",
+      "radius": 15,
+      "stage": "S2",
+      "caption": "outer crop",
+      "residues": 130,
+      "atoms": 1067,
+      "chains": [
+        "A"
+      ]
+    },
+    {
+      "key": "crop10",
+      "label": "Crop 10 \u00c5",
+      "radius": 10,
+      "stage": "S2",
+      "caption": "the value we sweep",
+      "residues": 62,
+      "atoms": 504,
+      "chains": [
+        "A"
+      ]
+    },
+    {
+      "key": "crop6",
+      "label": "Crop 6 \u00c5",
+      "radius": 6,
+      "stage": "S5",
+      "caption": "what scoring sees",
+      "residues": 26,
+      "atoms": 237,
+      "chains": [
+        "A"
+      ]
+    },
+    {
+      "key": "crop4",
+      "label": "Crop 4 \u00c5",
+      "radius": 4,
+      "stage": "S6",
+      "caption": "what quantum gets",
+      "residues": 16,
+      "atoms": 153,
+      "chains": [
+        "A"
+      ]
+    },
+    {
+      "key": "ligand",
+      "label": "Ligand",
+      "radius": 0,
+      "stage": "S7",
+      "caption": "the thing being labelled",
+      "residues": 1,
+      "atoms": 28,
+      "chains": []
+    }
+  ],
+  "radius_sweep": [
+    {
+      "radius_A": 4,
+      "residues": 16,
+      "heavy_atoms": 153,
+      "chains": [
+        "A"
+      ],
+      "relative_cost_n3": 1.0
+    },
+    {
+      "radius_A": 5,
+      "residues": 20,
+      "heavy_atoms": 185,
+      "chains": [
+        "A"
+      ],
+      "relative_cost_n3": 1.8
+    },
+    {
+      "radius_A": 6,
+      "residues": 26,
+      "heavy_atoms": 237,
+      "chains": [
+        "A"
+      ],
+      "relative_cost_n3": 3.7
+    },
+    {
+      "radius_A": 8,
+      "residues": 49,
+      "heavy_atoms": 408,
+      "chains": [
+        "A"
+      ],
+      "relative_cost_n3": 19.0
+    },
+    {
+      "radius_A": 10,
+      "residues": 62,
+      "heavy_atoms": 504,
+      "chains": [
+        "A"
+      ],
+      "relative_cost_n3": 35.7
+    },
+    {
+      "radius_A": 12,
+      "residues": 89,
+      "heavy_atoms": 733,
+      "chains": [
+        "A"
+      ],
+      "relative_cost_n3": 110.0
+    },
+    {
+      "radius_A": 15,
+      "residues": 130,
+      "heavy_atoms": 1067,
+      "chains": [
+        "A"
+      ],
+      "relative_cost_n3": 339.2
+    },
+    {
+      "radius_A": 18,
+      "residues": 173,
+      "heavy_atoms": 1419,
+      "chains": [
+        "A",
+        "B"
+      ],
+      "relative_cost_n3": 797.8
+    },
+    {
+      "radius_A": 20,
+      "residues": 201,
+      "heavy_atoms": 1650,
+      "chains": [
+        "A",
+        "B"
+      ],
+      "relative_cost_n3": 1254.2
+    }
+  ],
+  "pocket": [
+    {
+      "position": 25,
+      "resname": "ILE",
+      "role": "roof",
+      "min_dist_A": 3.46,
+      "equivalents": {
+        "CDK7": {
+          "resname": "LEU",
+          "number": 18,
+          "ca_offset_A": 1.57
+        },
+        "CDK12": {
+          "resname": "ILE",
+          "number": 733,
+          "ca_offset_A": 1.23
+        },
+        "CDK13": {
+          "resname": "ILE",
+          "number": 711,
+          "ca_offset_A": 1.0
+        }
+      }
+    },
+    {
+      "position": 26,
+      "resname": "GLY",
+      "role": "roof",
+      "min_dist_A": 4.0,
+      "equivalents": {
+        "CDK7": {
+          "resname": "GLY",
+          "number": 19,
+          "ca_offset_A": 2.0
+        },
+        "CDK12": {
+          "resname": "GLY",
+          "number": 734,
+          "ca_offset_A": 1.46
+        },
+        "CDK13": {
+          "resname": "GLY",
+          "number": 712,
+          "ca_offset_A": 1.3
+        }
+      }
+    },
+    {
+      "position": 30,
+      "resname": "PHE",
+      "role": "roof",
+      "min_dist_A": 3.46,
+      "equivalents": {
+        "CDK7": {
+          "resname": "PHE",
+          "number": 23,
+          "ca_offset_A": 2.58
+        },
+        "CDK12": {
+          "resname": "GLY",
+          "number": 736,
+          "ca_offset_A": 2.35
+        },
+        "CDK13": {
+          "resname": "GLY",
+          "number": 714,
+          "ca_offset_A": 2.42
+        }
+      }
+    },
+    {
+      "position": 33,
+      "resname": "VAL",
+      "role": "roof",
+      "min_dist_A": 3.85,
+      "equivalents": {
+        "CDK7": {
+          "resname": "VAL",
+          "number": 26,
+          "ca_offset_A": 0.98
+        },
+        "CDK12": {
+          "resname": "VAL",
+          "number": 741,
+          "ca_offset_A": 1.19
+        },
+        "CDK13": {
+          "resname": "VAL",
+          "number": 719,
+          "ca_offset_A": 1.13
+        }
+      }
+    },
+    {
+      "position": 46,
+      "resname": "ALA",
+      "role": "cat",
+      "min_dist_A": 3.18,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ALA",
+          "number": 39,
+          "ca_offset_A": 0.85
+        },
+        "CDK12": {
+          "resname": "ALA",
+          "number": 754,
+          "ca_offset_A": 0.64
+        },
+        "CDK13": {
+          "resname": "ALA",
+          "number": 732,
+          "ca_offset_A": 0.58
+        }
+      }
+    },
+    {
+      "position": 48,
+      "resname": "LYS",
+      "role": "cat",
+      "min_dist_A": 3.16,
+      "equivalents": {
+        "CDK7": {
+          "resname": "LYS",
+          "number": 41,
+          "ca_offset_A": 0.56
+        },
+        "CDK12": {
+          "resname": "LYS",
+          "number": 756,
+          "ca_offset_A": 0.38
+        },
+        "CDK13": {
+          "resname": "LYS",
+          "number": 734,
+          "ca_offset_A": 0.33
+        }
+      }
+    },
+    {
+      "position": 79,
+      "resname": "VAL",
+      "role": "cat",
+      "min_dist_A": 3.43,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ILE",
+          "number": 75,
+          "ca_offset_A": 0.35
+        },
+        "CDK12": {
+          "resname": "VAL",
+          "number": 787,
+          "ca_offset_A": 0.93
+        },
+        "CDK13": {
+          "resname": "ILE",
+          "number": 765,
+          "ca_offset_A": 0.19
+        }
+      }
+    },
+    {
+      "position": 103,
+      "resname": "PHE",
+      "role": "gate",
+      "min_dist_A": 3.12,
+      "equivalents": {
+        "CDK7": {
+          "resname": "PHE",
+          "number": 91,
+          "ca_offset_A": 0.8
+        },
+        "CDK12": {
+          "resname": "PHE",
+          "number": 813,
+          "ca_offset_A": 0.49
+        },
+        "CDK13": {
+          "resname": "PHE",
+          "number": 791,
+          "ca_offset_A": 0.34
+        }
+      }
+    },
+    {
+      "position": 104,
+      "resname": "ASP",
+      "role": "hinge",
+      "min_dist_A": 3.79,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ASP",
+          "number": 92,
+          "ca_offset_A": 0.99
+        },
+        "CDK12": {
+          "resname": "GLU",
+          "number": 814,
+          "ca_offset_A": 0.95
+        },
+        "CDK13": {
+          "resname": "GLU",
+          "number": 792,
+          "ca_offset_A": 0.72
+        }
+      }
+    },
+    {
+      "position": 105,
+      "resname": "PHE",
+      "role": "hinge",
+      "min_dist_A": 3.88,
+      "equivalents": {
+        "CDK7": {
+          "resname": "PHE",
+          "number": 93,
+          "ca_offset_A": 0.94
+        },
+        "CDK12": {
+          "resname": "TYR",
+          "number": 815,
+          "ca_offset_A": 0.95
+        },
+        "CDK13": {
+          "resname": "TYR",
+          "number": 793,
+          "ca_offset_A": 0.74
+        }
+      }
+    },
+    {
+      "position": 106,
+      "resname": "CYS",
+      "role": "hinge",
+      "min_dist_A": 3.15,
+      "equivalents": {
+        "CDK7": {
+          "resname": "MET",
+          "number": 94,
+          "ca_offset_A": 0.98
+        },
+        "CDK12": {
+          "resname": "MET",
+          "number": 816,
+          "ca_offset_A": 0.97
+        },
+        "CDK13": {
+          "resname": "MET",
+          "number": 794,
+          "ca_offset_A": 0.92
+        }
+      }
+    },
+    {
+      "position": 107,
+      "resname": "GLU",
+      "role": "hinge",
+      "min_dist_A": 3.63,
+      "equivalents": {
+        "CDK7": {
+          "resname": "GLU",
+          "number": 95,
+          "ca_offset_A": 1.01
+        },
+        "CDK12": {
+          "resname": "ASP",
+          "number": 817,
+          "ca_offset_A": 0.82
+        },
+        "CDK13": {
+          "resname": "ASP",
+          "number": 795,
+          "ca_offset_A": 0.65
+        }
+      }
+    },
+    {
+      "position": 108,
+      "resname": "HIS",
+      "role": "hinge",
+      "min_dist_A": 4.13,
+      "equivalents": {
+        "CDK7": {
+          "resname": "THR",
+          "number": 96,
+          "ca_offset_A": 1.08
+        },
+        "CDK12": {
+          "resname": "HIS",
+          "number": 818,
+          "ca_offset_A": 1.42
+        },
+        "CDK13": {
+          "resname": "HIS",
+          "number": 796,
+          "ca_offset_A": 1.26
+        }
+      }
+    },
+    {
+      "position": 109,
+      "resname": "ASP",
+      "role": "hinge",
+      "min_dist_A": 4.04,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ASP",
+          "number": 97,
+          "ca_offset_A": 0.64
+        },
+        "CDK12": {
+          "resname": "ASP",
+          "number": 819,
+          "ca_offset_A": 0.77
+        },
+        "CDK13": {
+          "resname": "ASP",
+          "number": 797,
+          "ca_offset_A": 0.75
+        }
+      }
+    },
+    {
+      "position": 151,
+      "resname": "LYS",
+      "role": "floor",
+      "min_dist_A": 4.97,
+      "equivalents": {
+        "CDK7": {
+          "resname": "LYS",
+          "number": 139,
+          "ca_offset_A": 0.67
+        },
+        "CDK12": {
+          "resname": "LYS",
+          "number": 861,
+          "ca_offset_A": 0.53
+        },
+        "CDK13": {
+          "resname": "LYS",
+          "number": 839,
+          "ca_offset_A": 0.42
+        }
+      }
+    },
+    {
+      "position": 153,
+      "resname": "ALA",
+      "role": "floor",
+      "min_dist_A": 3.24,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ASN",
+          "number": 141,
+          "ca_offset_A": 0.82
+        },
+        "CDK12": {
+          "resname": "SER",
+          "number": 863,
+          "ca_offset_A": 0.81
+        },
+        "CDK13": {
+          "resname": "SER",
+          "number": 841,
+          "ca_offset_A": 0.62
+        }
+      }
+    },
+    {
+      "position": 154,
+      "resname": "ASN",
+      "role": "floor",
+      "min_dist_A": 2.97,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ASN",
+          "number": 142,
+          "ca_offset_A": 0.8
+        },
+        "CDK12": {
+          "resname": "ASN",
+          "number": 864,
+          "ca_offset_A": 0.69
+        },
+        "CDK13": {
+          "resname": "ASN",
+          "number": 842,
+          "ca_offset_A": 0.61
+        }
+      }
+    },
+    {
+      "position": 156,
+      "resname": "LEU",
+      "role": "floor",
+      "min_dist_A": 3.23,
+      "equivalents": {
+        "CDK7": {
+          "resname": "LEU",
+          "number": 144,
+          "ca_offset_A": 0.11
+        },
+        "CDK12": {
+          "resname": "LEU",
+          "number": 866,
+          "ca_offset_A": 0.68
+        },
+        "CDK13": {
+          "resname": "LEU",
+          "number": 844,
+          "ca_offset_A": 0.61
+        }
+      }
+    },
+    {
+      "position": 166,
+      "resname": "ALA",
+      "role": "dfg",
+      "min_dist_A": 4.05,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ALA",
+          "number": 154,
+          "ca_offset_A": 0.09
+        },
+        "CDK12": {
+          "resname": "ALA",
+          "number": 876,
+          "ca_offset_A": 0.45
+        },
+        "CDK13": {
+          "resname": "ALA",
+          "number": 854,
+          "ca_offset_A": 0.33
+        }
+      }
+    },
+    {
+      "position": 167,
+      "resname": "ASP",
+      "role": "dfg",
+      "min_dist_A": 2.91,
+      "equivalents": {
+        "CDK7": {
+          "resname": "ASP",
+          "number": 155,
+          "ca_offset_A": 3.12
+        },
+        "CDK12": {
+          "resname": "ASP",
+          "number": 877,
+          "ca_offset_A": 0.58
+        },
+        "CDK13": {
+          "resname": "ASP",
+          "number": 855,
+          "ca_offset_A": 0.47
+        }
+      }
+    }
+  ]
+}

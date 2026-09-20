@@ -83,7 +83,13 @@ there and re-cut, or the versions drift apart within a fortnight.
 ### Decisions
 
 Anything that changes scope, an interface, or a methodological commitment gets an ADR in
-`docs/adr/`. Four exist. Use `0000-template.md`.
+`docs/adr/`. Six exist. Use `0000-template.md`.
+
+Reasoning that is not a formal decision — what was tried, what was rejected, why the copy reads the
+way it does — goes in `docs/05-delivery/sessions/`. **That is the only place in the repo that shows
+the evolution of our thinking.** Everywhere else states the current position, with no
+strikethroughs and no before-and-after. Read the latest session file before rewriting framing or
+copy; most of it has been argued once already.
 
 ### Open questions
 

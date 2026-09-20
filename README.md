@@ -95,8 +95,32 @@ positions.** CDK4 and CDK6 are at 94%. Natural scale-up targets once the chain h
 
 Numbers from [`tools/fetch_protein_space.py`](tools/fetch_protein_space.py) into
 [`data/protein-space.json`](data/protein-space.json), so they regenerate and can be checked. Site
-positions are mapped from CDK2 by sequence alignment, not structural superposition, so treat them
-as indicative.
+positions there are mapped from CDK2 by sequence alignment, so treat them as indicative — the
+figure below does it properly, by superposition.
+
+### Zoom in and it comes down to one residue
+
+Twenty residues line the CDK9 site within 5 Å of the ligand. Across those twenty, **two** are
+positions where CDK9 differs from all three counter-targets.
+
+![The twenty residues lining the CDK9 ATP site, and the equivalent residue in CDK7, CDK12 and CDK13](docs/03-pipeline/figures/pocket-anatomy.svg)
+
+**Cys106 sits at the hinge. CDK7, CDK12 and CDK13 all have methionine there.** It is 3.2 Å from
+flavopiridol. Equivalence is by structural superposition, not sequence alignment.
+
+That is the discrimination problem stated exactly: not "these proteins are similar" but *this atom,
+here, is the difference*.
+
+### Every stage works at a different scale
+
+![One site at six scales, from the whole complex down to the region a quantum code receives](docs/03-pipeline/figures/zoom-ladder.svg)
+
+Same structure, same camera. Only the radius changes. Bright is kept, dim is discarded, and the
+heavy-atom count under each panel is what that stage pays.
+
+Between a 4 Å region and a 15 Å crop the quantum cost moves by **more than two orders of
+magnitude**, and nobody has told us where the accuracy stops improving. That is the reason
+`s2.crop_radius_A` is swept rather than chosen.
 
 🔬 **[Open the structures](tools/render/viewer.html)** in a browser: all four rotatable, plus a
 superposed view, with the crop radius as a button. GitHub can't run the viewer inline, so the SVGs

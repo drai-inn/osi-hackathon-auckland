@@ -32,6 +32,20 @@ high-uncertainty, and **random control**.
 
 No large theory-level grid. `[source-doc]`
 
+## How big is the thing we are sending to a quantum code
+
+`[measured]`, CDK9 with flavopiridol. At a 4 Å shell the region is **16 residues and 153 heavy
+atoms**, which is roughly 300 atoms once hydrogens are added — already at the upper end of what is
+comfortable for hybrid DFT. At the 10 Å shell S2 inherits from, it is **504 heavy atoms**, which is
+not a DFT calculation anyone runs 50 of in two days.
+
+So "pocket-shell size inherited from S2, possibly further reduced" in the table above is not a
+detail. It is the difference between a label budget we can meet and one we cannot. Whatever S2
+settles on, **S6 needs its own smaller shell and a stated capping scheme**, and the truncation has
+to be shown not to move the relative ordering. See
+[the ladder](../figures/zoom-ladder.svg) and
+[`data/pocket-anatomy.json`](../../../data/pocket-anatomy.json).
+
 ## The convergence check comes first
 
 Before a single production label: **do the labels change the answer when you change the
