@@ -27,11 +27,60 @@ Updated with each entry. The honest version, not the reassuring one.
 
 | | |
 | --- | --- |
-| **Week** | Week 0, pre-kickoff |
+| **Week** | Week 1 · 21–27 Sep · *unblock* |
 | **Next gate** | Fri 25 Sep, we know what runs where |
-| **🔴 Blocking** | Owners and hosts unnamed · architecture spike unclaimed · cuEST unresolved · H200 unbooked |
+| **🔴 Blocking** | Owners and hosts unnamed · architecture spike unclaimed · cuEST unresolved · H200 unbooked · invitations out Wednesday |
 | **Compute** | GB10 ×2 assumed available, unconfirmed · H200 unbooked |
-| **People** | 0 of 6 packages have a named owner |
+| **People** | 0 of 6 packages have a named owner. Today is when that changes |
+
+---
+
+## 2026-09-21 · Planning session this morning — here is the agenda
+
+**👉 [The agenda](docs/05-delivery/monday-session.md)**, two hours, and it is a pre-read if you are
+coming. Also worth twenty minutes beforehand: the [critical path](docs/05-delivery/critical-path.md)
+and [engagement](docs/00-event/engagement.md). Not the whole repo.
+
+**Four things have to be true when we walk out.** Every work package has an owner *and* a host, and
+they are different people. The three week-1 spikes are assigned with a Friday deadline. The
+invitation list is written and goes out Wednesday. And we have decided what we are explicitly not
+doing in two days.
+
+Nine decisions are on the table with a recommendation against each, so the room is editing rather
+than inventing. If a technical argument starts we are noting it and moving on. **The session's
+product is names and dates**, not a settled architecture.
+
+**Since Saturday.** Two component-scale figures, both drawn from deposited coordinates. One is the
+same site at six scales, from the whole complex down to what a quantum code actually receives, with
+the heavy-atom count at each. Between a 4 Å region and a 15 Å crop the quantum cost moves by more
+than two orders of magnitude, which is why the crop radius is swept rather than chosen. The other is
+the twenty residues lining the CDK9 pocket against the same positions in the three counter-targets.
+Two of the twenty are positions where CDK9 differs from all three, and one of them — Cys106 at the
+hinge, 3.2 Å from the ligand — is the whole selectivity argument in one atom.
+
+That one is worth a note on method. The sequence pass guessed it and said the mapping was indicative
+only. The structures confirmed it. Guess, then check.
+
+**One thing the crop figure turned up that we had not thought about.** No cyclin T1 residue falls
+within 15 Å of the ligand, so every radius we are considering drops the cyclin — and the cyclin is
+what holds the αC helix in the active position. We are cropping away the thing that sets the
+conformation we are trying to score. Nobody has checked whether it matters. It is now
+[C7](docs/02-scope/open-questions.md), and it is red.
+
+**New on the agenda: agentic development and operations.** Reviewed properly rather than waved
+through, because it was the dominant theme at last year's event and four of the 2025 projects sit
+directly on our stages. [The review](docs/05-delivery/proposals/2026-09-21-agentic-dev-ops.md) says
+yes to the development half now, yes to exactly one narrow experiment, and no to letting an agent
+drive the pipeline or submit jobs. Eight stages compound: an agent running the whole chain is the
+worst place to put one. What we think is ours is smaller and more interesting — an agent at a
+decision point is another surrogate, so it owes a fidelity contract, and nobody in that field writes
+down a trust region.
+
+**Next.** Owners and hosts named by tonight, [roles.md](docs/05-delivery/roles.md) and the
+[open questions](docs/02-scope/open-questions.md) updated with them, and the email to the organisers
+about our dates and a Valence Labs introduction. Invitations Wednesday.
+
+*— Nick*
 
 ---
 
