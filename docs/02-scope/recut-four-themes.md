@@ -20,23 +20,99 @@ each a real piece of work in its own right.**
 | Engagement | 4 activities alongside the work | The themes *are* the engagement |
 | Integration | One chain, 8 links | One chain, 3 links, plus one parallel track |
 | Testbed | CDK9 vs CDK7 | CDK9 vs CDK7 for T1–T3; T4 brings its own |
+| Domain | One funnel, structure to ranking | Systems to pharmacology |
+| What we ask of people | Come and take part; on-ramps for non-coders | **Come hands-on with agents and code, in your own area** |
+| What it produces | A scoping answer plus a community | The same, framed as the **seed** of a UoA capability |
 
 The stages do not disappear. They become the interior of themes 1 and 2, where they belong.
 
-## The question, recut
+## The question
 
-Before: *how far can a chain of surrogates get us?*
+The headline does not change. The domain widens.
 
-That still holds, but it only describes two of the four themes. The generalisation:
-
-> ### Where does a learned model earn the right to replace physics?
+> ### How far can a chain of surrogates take us in biomolecular interactions?
 >
-> Four groups, four scales, one question. Every theme swaps an expensive physical calculation for a
-> model that is supposed to stay physically honest. In all four the interesting part is the same:
-> **where does it stop being honest, and would you notice?**
+> Systems · proteins · ligand binding · drug discovery · pharmacology
 
-The four themes are four answers at four scales — 10⁹ molecules, 10⁴ atoms in motion, one binding
-event to a whole system, and a few thousand approved drugs across many genotypes.
+Same sentence we already argued for, now covering the whole span rather than one funnel. That
+matters for continuity: nothing written in the last week has to be thrown away, and people who
+already know the pitch still recognise it.
+
+### Why those five words are one chain and not a list
+
+Physiological outcomes come from molecules interacting. Those interactions produce functional
+change. Function is driven by spatial and structural change. Pharmacology is the effect of drugs on
+that system.
+
+So it reads bottom-up — **structure → interaction → function → physiology** — with the drug entering
+at the bottom and its effect read at the top. Selectivity is a structural question with a
+physiological answer, and at the moment nobody can carry the signal from one end to the other.
+
+### Two ladders, and they line up
+
+Biology has a scale ladder. ML now has a fidelity ladder that runs alongside it:
+
+| Biology | Model class that claims that rung |
+| --- | --- |
+| Sequence, phenotype, association | Statistical and association models, language models over sequence |
+| Structure, pose, recognition | 3D-aware and equivariant models |
+| Atoms, motion, energy | Machine-learned interatomic potentials |
+| Cell, tissue, organism | Multi-scale and physics-aware system models |
+
+**The question in every theme is where on the right-hand column you have to be to get an answer you
+can trust on the left.** Higher is not automatically better — it is more expensive, and past some
+point it stops buying accuracy. Nobody has measured where that point is for any of these rungs.
+
+That is the unifying frame, and it is why the four themes are one experiment: each takes a rung and
+asks the same question of it.
+
+### What we are actually trying to build
+
+The four themes let a group go deep in its own field. Linked, they are the start of something UoA
+does not currently have.
+
+**Be honest about the noun at each stage, or the promise outruns the result.**
+
+| After | What exists | Call it |
+| --- | --- | --- |
+| The two days | A working chain across three themes, four worked examples, and a group who have built together | **A seed.** Not a platform |
+| Six months | Frozen interfaces, a reusable benchmark, two or three groups still running it | **A capability** |
+| Two years, with funding | Something other people at UoA use without us | **A platform** |
+
+Using "platform" in a September invitation to senior people is how the whole thing loses
+credibility in the first meeting. The honest recruitment line is the seed, plus a credible route to
+the rest.
+
+## What we are asking of people
+
+This is new, and it changes the engagement design.
+
+> **Come and explore the broader opportunity while being hands-on with AI in your own area.**
+> Come prepared to work with AI agents and with code, to find out where your own methods are moving
+> under the new models.
+
+Two things at once, deliberately. Depth in your own field, and a link into something larger. The
+ask is partly introspective — **come and find out what these models are doing to your discipline** —
+which is a better reason for a senior person to give up two days than "help us with our pipeline".
+
+### This raises the bar and lowers it at the same time, and we have to say which
+
+Our existing [engagement design](../00-event/engagement.md#the-on-ramps) promises on-ramps for
+non-coders and a novice reaching a first result in under 30 minutes. "Come prepared to work with
+code" reads like a contradiction, and people will quietly self-select out of it.
+
+The resolution is the point, not a fudge: **agents lower the code bar rather than raising it.** You
+do not need to be a programmer. You need to be willing to sit with an agent that writes the code
+while you supply the judgement about whether it is right. A pharmacologist who has never written
+Python can now contribute working code, and their contribution is the part that was always scarce.
+
+If that is the position, it has to be stated in the invitation in those words, because the default
+reading of "come prepared to work with code" is "not for me".
+
+It also promotes the
+[agentic development review](../05-delivery/proposals/2026-09-21-agentic-dev-ops.md) from an internal
+tooling choice to the **participation model**. That was D9's cautious half — agents for development,
+guardrailed by tests — and it is now load-bearing for engagement, which raises its priority.
 
 ---
 
@@ -45,24 +121,64 @@ event to a whole system, and a few thousand approved drugs across many genotypes
 **From data-driven screening of ultra-large libraries to physically aware pre-filters ahead of
 physics-based docking.**
 
-> **Owns:** *At the top of a ten-billion-compound library, what does a physically aware filter throw
-> away — and how would you ever know?*
+**Closest to what we already have.** S0–S2 and S5 carry over largely intact. Two things are new: we
+run it small to learn the parameter space before scaling, and **model class becomes one of the
+things we vary rather than something we pick at the start.**
+
+> **Owns:** *At the top of a very large library, what does a physically aware filter throw away —
+> and when does the class of model you chose actually matter?*
 
 | | |
 | --- | --- |
 | **Communities** | Cheminformatics · virtual screening · ML · industrial medicinal chemistry |
-| **Contributes** | The shortlist everything downstream runs on |
-| **Takes home** | A protocol for measuring recall at the top of a funnel, which nobody can currently do |
+| **Contributes** | The shortlist everything downstream runs on, and the model-class answer the other three themes need |
+| **Takes home** | A protocol for measuring recall at the top of a funnel, and an equal-budget comparison across model classes that the field mostly runs unfairly |
 | **Compute** | Embarrassingly parallel, GPU-hungry. The best fit for GB10 pre-computation in the month |
-| **On-ramp** | Excellent. A newcomer can own a filter and see what it kept and dropped inside an hour |
+| **On-ramp** | Excellent. A newcomer can own one cell of the grid and see what it kept and dropped inside an hour |
 | **Interior** | S0, S1, S2, S5 |
 
-**The honest failure mode.** A filter trained on docking scores inherits docking's errors, and you
-never look at the discards, so the error is invisible by construction. Recall at 10⁹ is not
+### Model class is a hyperparameter
+
+We already argue that [the pipeline is the model and its configuration is the hyperparameter
+vector](../04-experiments/hpo-microtopic.md). Model class belongs in that vector. Two axes, and they
+are independent:
+
+| | **Sequence / 2D** | **3D-aware** |
+| --- | --- | --- |
+| **Small, task-trained** | Fingerprint + GBM, small GCNN | Equivariant GNN on the pocket |
+| **Large, pretrained** | Protein and molecular language models | Foundation 3D models, MLIP-derived features |
+
+Four quadrants, two questions. **When does 3D earn its cost?** And **when does scale earn its
+cost?** The received answer to the second is "the big pretrained model wins", and we have good
+reason to think that answer is measured badly.
+
+**Why it is measured badly, and why we are unusually well placed to say so.**
+[Lourie et al.](../01-context/source-notes/small-scale-experiments.md) `[literature]`: small-scale
+experiments are *more* hyperparameter-sensitive than large ones, and tuning budget dominates every
+other methodological choice — 4 configurations give no signal, 64 give a visible one, 256 give an
+accurate one. Most published model-class comparisons tune one arm properly and the other arm
+hardly at all. That systematically favours whichever class needed less tuning, not whichever class
+is better.
+
+**So the experiment is equal tuning budget per quadrant, at two or three data scales, reported with
+intervals.** If a well-tuned small GCNN matches a large pretrained model on this task, that is a
+real and useful negative, it is cheap to establish, and it is directly actionable for every group
+on campus deciding what to run. If it does not, we have quantified what the scale premium buys.
+
+This is the same microtopic we already had, pointed at a more interesting knob. It is also the one
+place in the programme where the comparison is cheap enough to run honestly.
+
+*Terminology check: reading PILM as protein-informed / protein language models. If you meant
+physics-informed, it lands in the right-hand column instead and the design is unchanged.*
+
+### The honest failure modes
+
+**The filter's error is invisible by construction.** A pre-filter trained on docking scores inherits
+docking's errors, and nobody looks at the discards. Recall at the top of a very large library is not
 measurable the usual way.
 
 **The trick that makes it measurable.** Spike a known set into a large library and measure recall
-directly. Cheap, honest, and rarely done — which makes it a result rather than a demo.
+directly. Cheap, honest, and rarely done — which is what turns this from a demo into a result.
 
 ---
 
@@ -161,20 +277,24 @@ extension as a separate, properly-resourced follow-on.
 
 Four themes is a conference unless something makes it one experiment. Four things do.
 
-**1. Every theme is a surrogate, so every theme owes a
+**1. The two ladders.** Each theme takes one rung of the biology ladder and asks how far up the
+model ladder it has to climb. Same question, four places. That is what makes it an experiment rather
+than a programme of unrelated work.
+
+**2. Every theme is a surrogate, so every theme owes a
 [fidelity contract](../03-pipeline/fidelity-contracts.md).** Stated ground truth, a validation set
 containing close calls, an agreement metric, and a **trust region**. This is already our discipline
 and it generalises without modification.
 
-**2. Every theme has an unmeasured error at its handoff.** T1 discards without measuring recall. T2
+**3. Every theme has an unmeasured error at its handoff.** T1 discards without measuring recall. T2
 extrapolates without knowing it. T3 has no validated link. T4 has no hold-out. Naming that in all
 four is the shared methodological contribution.
 
-**3. Start small, explore properly, then scale.** The
+**4. Start small, explore properly, then scale.** The
 [HPO microtopic](../04-experiments/hpo-microtopic.md) applies unchanged to all four, and it is still
 the thread that interests people who will never care about CDK9.
 
-**4. A shared testbed.** CDK9 vs CDK7 for T1–T3. Theme 4 brings its own, and can include CDK
+**5. A shared testbed.** CDK9 vs CDK7 for T1–T3. Theme 4 brings its own, and can include CDK
 inhibitors so the two halves can still talk.
 
 ## The chain, and the risk that comes with it
@@ -222,9 +342,14 @@ clinics.
 are inviting and what we are inviting them to. Themes 3 and 4 open genuinely new doors — ABI,
 clinical genetics, pharmacy — and those are cold contacts with four weeks' notice.
 
-**The sharp question gets blunter.** One sentence is what made the old framing travel. *Where does a
-learned model earn the right to replace physics?* is broader and therefore weaker as a recruitment
-line. It needs testing on a real person before it goes in an email.
+**The participation bar is the biggest untested assumption.** "Come prepared to work with AI agents
+and code" is either the most attractive line in the invitation or the one that halves the response
+rate, and we will not know which until it is in front of someone. Test it on two people this week —
+one who codes and one who does not — before Wednesday.
+
+**Two of the four themes are where the domain experts are, and neither is written.** T3 and T4 carry
+the systems and pharmacology end of the framing. If they stay empty, the chain is structure and
+interaction only, which is the old scope with a new sentence over it.
 
 **Scope.** Four themes is more ambitious than one pipeline, not less, and the two days did not get
 longer.
@@ -233,7 +358,10 @@ longer.
 
 | # | Decision | Recommendation |
 | --- | --- | --- |
-| **R1** | Is the surrogate-chain headline retired or generalised? | **Generalised.** T1→T2→T3 is still a chain of surrogates. Keep the continuity |
+| ~~R1~~ | Headline retired or generalised? | **Settled.** Generalised — *how far can a chain of surrogates take us in biomolecular interactions?* Same sentence, wider domain |
+| **R7** | Do we state the agent-assisted participation model explicitly in the invitation? | **Yes, in those words.** "Come prepared to work with code" without "the agent writes it, you judge it" will lose exactly the domain experts we most need |
+| **R8** | What do we call the outcome in recruitment copy? | **A seed, with a route to a platform.** Not a platform. Over-promising to senior people costs more than it wins |
+| **R9** | Does T1 run the model-class comparison, or just build the filter? | **Both.** The comparison is the methods result and it is nearly free once the filter exists. Equal tuning budget per quadrant or it is not worth running |
 | **R2** | Four full tracks, or two tracks and two clinics? | **Depends only on headcount.** Set a floor of three people per theme and decide against the actual list |
 | **R3** | Does CDK9/CDK7 stay the shared testbed for T1–T3? | **Yes.** It is the only thing preventing four unrelated projects |
 | **R4** | Are the T1→T2 and T2→T3 handoffs mandatory or best-effort? | **Mandatory, and schema-frozen in week 2.** Otherwise the recut has no integrated result |
@@ -244,4 +372,13 @@ longer.
 
 Only this file. The README, narrative, outreach copy, onboarding ladders, work packages, stage gates
 and critical path all still describe the old structure. **Nothing should be re-cut from
-`narrative.md` until R1–R6 are settled**, or we will rewrite the recruitment copy twice.
+`narrative.md` until R2–R9 are settled**, or we will rewrite the recruitment copy twice.
+
+Two that will need real work rather than a find-and-replace:
+
+- **[engagement.md](../00-event/engagement.md) and the six onboarding ladders.** They were designed
+  around a promise of zero-code on-ramps. The agent-assisted model does not break that promise, but
+  it does change every ladder's first rung, and the 30-minute novice dry run now has to be run with
+  an agent in the loop or it tests the wrong thing
+- **[hpo-microtopic.md](../04-experiments/hpo-microtopic.md).** Model class joins the hyperparameter
+  vector, which is a genuine extension of the argument rather than an edit to it
