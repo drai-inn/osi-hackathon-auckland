@@ -23,6 +23,7 @@ each a real piece of work in its own right.**
 | Domain | One funnel, structure to ranking | Systems to pharmacology |
 | What we ask of people | Come and take part; on-ramps for non-coders | **Come hands-on with agents and code, in your own area** |
 | What it produces | A scoping answer plus a community | The same, framed as the **seed** of a UoA capability |
+| Key measure of success | An integrated run, and newcomers who owned a result | **Both, plus group leaders who personally got hands-on** |
 
 The stages do not disappear. They become the interior of themes 1 and 2, where they belong.
 
@@ -115,6 +116,79 @@ tooling choice to the **participation model**. That was D9's cautious half — a
 guardrailed by tests — and it is now load-bearing for engagement, which raises its priority.
 
 ---
+
+## The measure of success we had not been writing down
+
+**The number of senior research leaders who personally get hands-on.** Not attendance, not the
+pipeline result.
+
+Methodological change needs champions. A PI who has produced something themselves becomes one. A PI
+who watched a demo does not, however impressed they were on the day.
+
+This also settles how the [seed becomes a capability](#what-we-are-actually-trying-to-build). PIs are
+the people who can commit a postdoc, a dataset or a grant line to a follow-on. Every other measure
+of success expires when the event ends; this one is the mechanism by which it does not.
+
+### Why the agentic piece is the right door
+
+Not a gimmick, and worth being precise about why it works on this particular audience.
+
+**It removes the disadvantage.** A group leader who last wrote code fifteen years ago is not behind
+in a room where an agent writes it. Twenty years of judgement about what a right answer looks like
+is worth more than current fluency in a framework.
+
+**The division of labour flatters them honestly.** What the agent lacks is exactly what they have.
+That is not a courtesy, it is the actual state of the technology, and senior people can tell the
+difference.
+
+**Their real objection is ours too.** A PI's scepticism is not "can it write the code". It is
+*"can I stand behind what it produced"*. That is a rigour question, and rigour is what this whole
+project is organised around. **The trust region is the pitch.** Come and find out what these tools
+can do, from the group that will also tell you where they break. To a senior scientist that is a
+credible invitation in a way that enthusiasm is not.
+
+### The barrier nobody names
+
+**A PI will not risk looking incompetent in front of their own group.** Time, scepticism and
+competing priorities are all real and all solvable. This one is not, unless it is designed for. Five
+rules follow from it:
+
+1. **Never a group leader's first attempt in front of their own students.** Separate session, or
+   separate room
+2. **Pair PI with PI, across disciplines.** Both equally out of their depth in the other's field and
+   equally new to the tool. Nobody is the expert, so nobody loses face
+3. **Their own question, prepared beforehand.** CDK9 will not move a physiologist. Their own data
+   will. This has to be asked for at invitation time, which means **this week**
+4. **Ninety minutes, bounded, with staying optional and clearly legitimate.** A group leader will not
+   give two days, and treating the short version as a consolation prize guarantees a no
+5. **Show a failure inside the first thirty minutes**
+
+That last one runs against the instinct to make it impressive. A sceptical senior scientist buys
+credibility from seeing the limits, not the highlight reel — and showing the limits is the only
+version consistent with what we say everywhere else in this repo.
+
+### What we would count
+
+| Measure | Why it is the one to count |
+| --- | --- |
+| Group leaders hands-on for **an hour or more on their own question** | Hands on keys, not watching. The threshold is arbitrary; the distinction is not |
+| How many produced something **in their own domain** | Transfer. A result on our testbed proves nothing about theirs |
+| How many commit to a **named follow-on** — a person, a dataset, a date | The real signal. Everything else is a good afternoon |
+| How many leave with a founded **"not yet for my problem, and here is why"** | **Counts as success** |
+
+That last row is load-bearing. Without it the measure rewards hype and we end up doing the thing we
+criticise every other group for. A PI who leaves with a well-grounded no is a champion of rigour and
+will be believed by their peers next time.
+
+### The failure mode
+
+A room of senior people being shown impressive things. They have to type, on their own problem, and
+watch it break at least once. If nobody's hands were on a keyboard, it did not happen — whatever the
+feedback forms say.
+
+It also changes who hosts. Our [host/owner split](../00-event/engagement.md#the-structural-fix-split-the-host-role)
+assumed the newcomer is junior. **A group leader needs a peer-level host**, not a PhD student, and we
+do not currently have that role written down.
 
 ## Theme 1 · Filter before you dock
 
@@ -347,6 +421,10 @@ and code" is either the most attractive line in the invitation or the one that h
 rate, and we will not know which until it is in front of someone. Test it on two people this week —
 one who codes and one who does not — before Wednesday.
 
+**The PI clinic is the most likely thing to quietly become a demo.** It is easier to present than to
+facilitate, the room will be polite about it, and we will not find out until the follow-ons do not
+happen. The only defence is the hands-on-hours count, taken honestly on the day.
+
 **Two of the four themes are where the domain experts are, and neither is written.** T3 and T4 carry
 the systems and pharmacology end of the framing. If they stay empty, the chain is structure and
 interaction only, which is the old scope with a new sentence over it.
@@ -362,6 +440,9 @@ longer.
 | **R7** | Do we state the agent-assisted participation model explicitly in the invitation? | **Yes, in those words.** "Come prepared to work with code" without "the agent writes it, you judge it" will lose exactly the domain experts we most need |
 | **R8** | What do we call the outcome in recruitment copy? | **A seed, with a route to a platform.** Not a platform. Over-promising to senior people costs more than it wins |
 | **R9** | Does T1 run the model-class comparison, or just build the filter? | **Both.** The comparison is the methods result and it is nearly free once the filter exists. Equal tuning budget per quadrant or it is not worth running |
+| **R10** | Do we run a dedicated group-leader clinic, separate from the newcomer on-ramps? | **Yes.** Ninety minutes, cross-discipline PI pairs, their own questions, a failure shown early. Mixing it into the general on-ramps loses them |
+| **R11** | Do invitations ask each invited PI for one question or dataset from their own area? | **Yes, and it is the reason to delay Wednesday by a day if the copy is not ready.** Without it they arrive with nothing to be hands-on *about*, and the clinic becomes a demo |
+| **R12** | Who hosts a group leader? | **A peer.** A senior person or an experienced facilitator from outside their group. This role does not exist in `roles.md` yet |
 | **R2** | Four full tracks, or two tracks and two clinics? | **Depends only on headcount.** Set a floor of three people per theme and decide against the actual list |
 | **R3** | Does CDK9/CDK7 stay the shared testbed for T1–T3? | **Yes.** It is the only thing preventing four unrelated projects |
 | **R4** | Are the T1→T2 and T2→T3 handoffs mandatory or best-effort? | **Mandatory, and schema-frozen in week 2.** Otherwise the recut has no integrated result |
