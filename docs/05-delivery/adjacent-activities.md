@@ -121,10 +121,16 @@ GPU-using group on campus, and the RSE/eResearch community is a real and underus
 - Snakemake + containers + Kubernetes GPU jobs: a working pattern, not a lecture
 - Provenance that survives: image digests, weight hashes, config resolution
 - Cost telemetry as a first-class output — measuring GPU-seconds per scientific unit
+- **What does it take to let an agent operate a research pipeline safely?** Guardrails, rehearsal
+  modes, irreversible actions, and the trust region ([the review](proposals/2026-09-21-agentic-dev-ops.md))
 - Reproducibility clinic: clone-to-smoke-test on someone else's laptop
 
 **Artifact:** a reusable template repo for GPU research pipelines at UoA, plus this project's
 reproducibility report.
+
+**The agentic session is what makes this track current rather than worthy.** It is the question the
+RSE and e-research community is being asked right now — DOE facilities spent this year on it, and
+every group on campus is about to face it. Same audience, same artifact, a reason to come.
 
 **Recommendation:** run this as a **half-day clinic rather than a full track** if team size is
 tight. WP-F must happen regardless; the question is only whether it is also an engagement vehicle.
