@@ -1,5 +1,9 @@
 # Scope
 
+> **⚠️ Under revision.** A [four-theme recut](recut-four-themes.md) is on the table, organised around
+> the research communities we want in the room rather than around the pipeline. This page still
+> describes the current structure. Six decisions (R1–R6) settle which one stands.
+
 ## Objective
 
 Determine, with evidence, whether a 3D chemistry-aware multi-fidelity surrogate pipeline
