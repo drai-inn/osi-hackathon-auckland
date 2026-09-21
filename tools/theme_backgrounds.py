@@ -40,6 +40,9 @@ NEG = ("text, words, letters, numbers, watermark, signature, logo, cluttered, bu
        "centred composition, symmetrical")
 
 PROMPTS = {
+    # Theme 1 does not use this one. The generated version worked, but terrain
+    # from outreach/imagery is better — the cages hovering and half-engulfed in
+    # the surface are the most distinctive thing we have made. Kept for reference.
     1: ("screening at scale — an immense dark plain densely covered with many thousands of tiny "
         "points of light receding to a far horizon, a dense glittering field, a small cluster of "
         f"them lit bright cyan and standing out from the rest, {RAMP}, {FRAME}"),

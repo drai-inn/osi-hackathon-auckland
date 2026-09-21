@@ -144,5 +144,15 @@ poster is built to print correctly either way.
    what makes us the Auckland hub. Not both competing.
 3. **Heavy headings, tight tracking.** Inter 800, `letter-spacing:-.02em`. Matches theirs.
 4. **Small radii.** 4px, 8px. Nothing rounder, it reads as a different product.
-5. **No gradients, no glows, no stock photography.** Neither do they.
+5. **No gradients or glows in the chrome, and no stock photography.** Buttons, panels, rules and type stay flat, the way the global event's do. The generated imagery in [`../imagery/`](../imagery/) is the exception and is full of both — it sits behind things rather than being one of them.
 6. **The UoA motif gets clear air.** Own line, nothing inline beside it, one per section at most.
+
+## Type weight
+
+**Headings run light, not bold.** The inherited OSI spec sets headings in Inter 800. We use
+**Inter 300 at a larger size** instead, so the words carry rather than the weight.
+
+Small caps labels — eyebrows, scale labels, section heads — stay at 700 or 800, where the weight is
+doing legibility work at 11–12px.
+
+The font link has to load 200 and 300 or the browser synthesises a fake light and it looks wrong.

@@ -118,8 +118,10 @@ def build(n, title, scale, blurb, models) -> str:
              f'font-weight="800" letter-spacing="1.8">THEME {n}</text>')
     o.append(f'<text x="{W-34}" y="52" text-anchor="end" fill="{ON}" font-size="11.5" '
              f'font-weight="700" letter-spacing="1.4" opacity=".62">{esc(scale)}</text>')
-    o.append(f'<text x="34" y="86" fill="{ON}" font-size="27" font-weight="800" '
-             f'letter-spacing="-.4">{esc(title)}</text>')
+    # Light and large. The words are the thing being foregrounded, not the picture
+    # behind them, so the weight comes off and the size goes up.
+    o.append(f'<text x="34" y="92" fill="{ON}" font-size="37" font-weight="300" '
+             f'letter-spacing="-.6">{esc(title)}</text>')
     for i, line in enumerate(wrap(blurb, 56)):
         o.append(f'<text x="34" y="{H - 96 + i*23}" fill="{ON}" font-size="15.5" '
                  f'opacity=".92">{esc(line)}</text>')
