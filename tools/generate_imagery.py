@@ -59,6 +59,21 @@ PROVENANCE = {
                "energy, deep navy background, playful, wet, techno-futurist, generous space, "
                "soft gradients"),
 
+    # Round 4, 21 Sep 2026. Seeds 31, 47 and 89 of one prompt, at 1664x928 and
+    # 34 steps. The 16:9 frame does much of the work of making it feel expansive,
+    # and "deep black navy void" plus the pale-background negatives fixed the
+    # washed-out sky that round 3 produced.
+    "outreach/imagery/terrain-{31,47,89}.png": dict(
+        prompt="a vast expansive undulating free energy surface receding to a distant horizon, seen "
+               "from above and far back, fine topographic contour bands following every peak and "
+               "trough, " + "RAMP" + ", set against a deep black navy void, dark background, glossy "
+               "organic droplets resting on the surface, some half sunk with a meniscus where they "
+               "meet it, one fully engulfed and glowing beneath, translucent isosurface buckyball "
+               "cages and fullerene lattices floating above and partly embedded in the ridges, fine "
+               "whispery biological filaments and threads drifting across, around and through the "
+               "surface, soft gradients, luminous, techno-futurist, expansive, minimal, elegant",
+        size=(1664, 928), steps=34, seeds=(31, 47, 89)),
+
     "outreach/imagery/field-lines.png": dict(
         prompt="minimal biophysics art, smooth electrostatic field lines curving around an unseen "
                "molecule, thin cyan contours on deep navy, one violet node, techno-futurist, airy, "
@@ -74,7 +89,8 @@ RAMP = ("a perceptually uniform colour ramp running deep navy in the troughs thr
 # away from stock-illustration science.
 NEGATIVE = ("text, words, letters, numbers, watermark, signature, logo, cluttered, busy, "
             "stock illustration, bohr atom, staircase, bar chart, arrow, infographic, "
-            "gemstone, cut crystal, double helix, 3d render, photorealistic, harsh edges")
+            "gemstone, cut crystal, double helix, photorealistic, harsh edges, "
+            "pale sky, white background, bright background, washed out, daylight")
 
 DEFAULTS = dict(steps=30, seed=11, size=(1328, 1328), true_cfg_scale=4.0,
                 dtype="bfloat16", model=MODEL, date="2026-09-21")
