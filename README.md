@@ -65,9 +65,10 @@ that everyone answers [the same four questions](docs/taking-part.md#the-four-que
 whatever they picked, reported back at the end of day 1. Schema-guided extraction with an LLM is a
 quick way to get a dataset together.
 
-**Language models are in scope everywhere**, not just as the agent writing your code. ESM and
-AMPLIFY over protein sequence, Evo 2 over DNA, ChemBERTa over molecules as text, Geneformer and
-scGPT over gene expression. In several of these places they're the thing to beat.
+**Language models are in scope everywhere.** ESM and AMPLIFY over protein sequence, Evo 2 over DNA,
+ChemBERTa over molecules as text, Geneformer and scGPT over gene expression, and physics-informed
+frameworks that build and steer a simulation from a description. In several of these places they're
+the thing to beat.
 
 **[The themes in full](docs/themes.md)** · **[a worked example](docs/worked-example.md)** if you'd
 rather start with something ready to go.
@@ -84,8 +85,8 @@ rather start with something ready to go.
 prepared to work with agents and with code, to find out where your own methods are moving under the
 new models.
 
-The agent writes the code. You bring the judgement about whether the answer is any good, which is
-the scarce half. Everyone is welcome here, whatever you last wrote and whenever you last wrote it.
+The agent writes the code. You bring the judgement about whether the answer is any good. Everyone is
+welcome here, whatever you last wrote and whenever you last wrote it.
 
 We're inviting **project teams**. A group leader brings their team, their expertise, and a problem
 or candidate. **If you can only come for the opening, come for the opening** and leave your team to
@@ -143,23 +144,15 @@ presentations and reports are done. Subscribe and you'll get every update and no
 | Who to talk to elsewhere | [interested-parties.md](docs/interested-parties.md) |
 | Decisions | [`docs/adr/`](docs/adr/) · [glossary](docs/glossary.md) |
 
-## Try it
-
-```bash
-make check                            # links and anchors across the repo
-python3 tools/make_cards.py           # the four theme cards
-open tools/render/viewer.html         # four kinase structures, rotatable
-```
-
 <br>
 
 <img src="outreach/brand/uoa-motif.svg" width="40" alt="">
 
 <br>
 
-We don't know how far this gets, and finding out is the work. Some of these models may land level
-with much simpler things on the problems we care about. We'd like the number either way, and a
-well-founded *"not yet, and here's why"* is a result we'd be happy to present.
+We don't know how far this gets. Some of these models may land level with much simpler things on the
+problems we care about, and we'd like the number either way. A well-founded *"not yet, and here's
+why"* is a result we'd be happy to present.
 
 Nick Jones · njon001@aucklanduni.ac.nz ·
 [Global event](https://llmhackathon.github.io/) · [Live log](EVENT-LOG.md) · [Contributing](CONTRIBUTING.md)

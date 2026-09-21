@@ -15,7 +15,7 @@ actually have are the 19th and the 20th.
 Run **Monday 19 to Tuesday 20 October**, two days.
 
 Wednesday the 21st is left open. If the work is live and people want to keep going, it's available,
-and it's the global event's opening day, so continuing is a straightforward way to carry the work
+and it is the global event's opening day, so continuing is a straightforward way to carry the work
 into the global event rather than an overrun.
 
 We stay a local site and point people at the global event, which runs 21-22 October with

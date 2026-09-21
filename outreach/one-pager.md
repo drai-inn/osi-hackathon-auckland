@@ -44,8 +44,8 @@ hardware, work out what to measure and report it back.
 prepared to work with agents and with code, to find out where your own methods are moving under the
 new models.
 
-The agent writes the code. You bring the judgement about whether the answer is any good, which is
-the scarce half. Everyone is welcome here, whatever you last wrote and whenever you last wrote it.
+The agent writes the code. You bring the judgement about whether the answer is any good. Everyone is
+welcome here, whatever you last wrote and whenever you last wrote it.
 
 We're inviting **project teams**. A group leader brings their team, their expertise, and a problem
 or candidate. If you can only come for the opening, come for the opening and leave your team to it.

@@ -13,6 +13,19 @@ For GPU-hour arithmetic per run tier see compute-budget.md; this page is about
 
 ## The two resources
 
+### A third tier
+
+Development happens on **Coder dev workspaces** carrying **2× RTX PRO 6000 Blackwell Max-Q**, 96 GB
+GDDR7 each at ~1.79 TB/s `[literature]`. Fast memory in a small amount, and the right place for
+everyday work and for serving an agent model that fits in 192 GB. See
+[agentic-models.md](agentic-models.md).
+
+**The GB10s are for the domain models** — Boltz, Nesso-1, MLIPs — where 128 GB is plenty and the
+models are small. The large agent LLMs belong on the H200 node or the workspaces.
+
+**The HGX H200 is a whole node**, so roughly 1.1 TB across eight GPUs. That takes any open-weight
+model we are likely to want, and agent serving competes with benchmark runs for it.
+
 | | **Dual GB10** | **HGX H200** |
 | --- | --- | --- |
 | Availability | **Now through the end** — ours, uncontended | Bookable blocks; benchmarks + the event |

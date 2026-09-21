@@ -65,11 +65,11 @@ precise about, because the phrase covers two different things:
 - **Physics is fused into the representation.** Physics-informed equivariant graph networks aligned
   with a language model through cross-modal fusion, as in 3D-MolGL.
 
-And a result that makes this an open question rather than a settled choice: **a general transformer
-with no built-in physical constraints can match or beat physics-constrained models on molecular
-dynamics when it has enough data**, learning approximate equivariance instead of having it imposed
-`[literature]`. Whether the physics prior earns its keep at our data scale is exactly the kind of
-thing two days can answer, and it's the same question theme 1 asks about model class.
+One result keeps this open. **A general transformer with no built-in physical constraints can match
+or beat physics-constrained models on molecular dynamics when it has enough data** `[literature]`,
+learning approximate equivariance instead of having it imposed. Whether the physics prior earns its
+keep at our data scale is a good two days of work, and theme 1 asks the same question about model
+class.
 
 The [Awesome Physics-Informed LLMs](https://github.com/qiaosun22/AwesomePhysicsInformedLLMs) list is
 the best single starting point.

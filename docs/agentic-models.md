@@ -1,76 +1,87 @@
 # Open-weight models for agentic development
 
 Agents write a lot of the code during the two days, so which model sits behind them is a platform
-decision we make in advance. This page is the shortlist and, more usefully, what each one needs to
-run.
+decision we make in advance.
 
-**Everything here is search-derived as of 21 Sep 2026 and moves quickly. Verify before committing
-budget or a booking.**
+**Search-derived as of 21 Sep 2026 and moving quickly. Verify before committing budget or a
+booking.**
+
+## Where things run
+
+Three tiers, and they do different jobs. Full detail in [compute.md](compute.md).
+
+| | Memory | Bandwidth | Runs |
+| --- | --- | --- | --- |
+| **Coder dev workspaces** · 2× RTX PRO 6000 Blackwell Max-Q | 96 GB GDDR7 each, 192 GB across the pair | ~1.79 TB/s each `[literature]` | Day-to-day development, and an agent model that fits |
+| **Dual GB10** | 128 GB unified each | ~273 GB/s | Domain models — Boltz, Nesso-1, MLIPs. Not the large LLMs |
+| **HGX H200**, whole node | 8 × 141 GB ≈ 1.1 TB | ~4.8 TB/s | The large agent models, benchmarks, batch |
+
+The GB10s hold the small chemistry-side models comfortably and there's no reason to put a 500B MoE
+on them.
 
 ## The shortlist
 
-| Model | Total / active | Context | Modalities | Reported | Released |
+| Model | Total / active | Context | Modalities | Licence | Reported |
 | --- | --- | --- | --- | --- | --- |
-| **DeepSeek V4.1 Flash** | 552B / 8–16B | — | text, code | 90.6 Terminal-Bench 2.1 · 74.2 DeepSWE. Leads the board including closed models `[literature]` | 10 Sep 2026 |
-| **Kimi K3** | 2.8T / 104B | 1M | text, code | 88.3 Terminal-Bench 2.1 `[literature]` | 27 Jul 2026 |
-| **GLM 5.3** | 753B | — | text, code | 1769 GDPval-AA v2, ahead of Claude Fable 5 and GPT-5.6 Sol `[literature]` | 28 Aug 2026 |
-| **MiniMax M3** | 428B / ~23B | 1M | **text, code, image, video** | 59.0 SWE-bench Pro · 66.0 Terminal-Bench 2.1 · 74.2 MCP Atlas `[literature]` | Jun 2026 |
+| **DeepSeek V4.1 Flash** | 552B / 8–16B | — | text, code | — | 90.6 Terminal-Bench 2.1 · 74.2 DeepSWE. Leads the board including closed models `[literature]` |
+| **GLM 5.3** | 753B | — | **text, image, video** | bespoke GLM-5.3 | 1769 GDPval-AA v2, ahead of Claude Fable 5 and GPT-5.6 Sol `[literature]` |
+| **GLM 5.3 Flash** | 320B / 18B | — | **text, image, video** | **MIT** | First natively multimodal GLM-5 `[literature]` |
+| **MiniMax M3** | 428B / ~23B | 1M | **text, image, video** | — | 59.0 SWE-bench Pro · 66.0 Terminal-Bench 2.1 · 74.2 MCP Atlas `[literature]` |
+| **Kimi K3** | 2.8T / 104B | 1M | text, code | — | 88.3 Terminal-Bench 2.1 `[literature]` |
 
-**Kimi K3 is the one missing from the original three** and it's a serious contender on
-Terminal-Bench. Qwen3 and the DeepSeek V4 Pro variant are also in the conversation and worth a look
-if the shortlist needs widening.
+**Kimi K3 is the one missing from the original three.** Qwen3 and the DeepSeek V4 Pro variant are
+also in the conversation if the list needs widening.
 
-## What actually fits
+**GLM 5.3 is multimodal.** GLM-5.3-Flash, released 26 August, is the first natively multimodal model
+in the GLM-5 series and takes text, image and video. It's also MIT-licensed and only 18B active,
+which makes it the easiest thing on this list to place.
 
-This is the part that decides it, and it's arithmetic rather than preference. Weights at 4-bit,
-roughly half a byte per parameter, plus KV cache and overhead `[estimate]`:
+## What fits where
 
-| Model | Weights at 4-bit | Dual GB10 · 256 GB | One H200 · 141 GB |
+Weights at 4-bit, roughly half a byte per parameter, before KV cache and overhead `[estimate]`:
+
+| Model | Weights | Dev workspaces · 192 GB | H200 node · ~1.1 TB |
 | --- | --- | --- | --- |
-| MiniMax M3 | ~214 GB | **fits**, with room for KV cache | no |
-| DeepSeek V4.1 Flash | ~276 GB | marginal miss; needs ~3.5-bit or offload | no |
-| GLM 5.3 | ~377 GB | no | no |
-| Kimi K3 | ~1.4 TB | no | no |
+| GLM 5.3 Flash | ~160 GB | **fits** | yes, easily |
+| MiniMax M3 | ~214 GB | no | yes |
+| DeepSeek V4.1 Flash | ~276 GB | no | yes |
+| GLM 5.3 | ~377 GB | no | yes |
+| Kimi K3 | ~1.4 TB | no | **marginal** — needs ~3-bit and leaves little for KV cache |
 
-An HGX H200 node is normally eight GPUs and about 1.1 TB, which changes every row. **How much of a
-node we get is the question that settles the model choice**, and it's the same unresolved access
-question as everything else on [compute.md](compute.md).
+A whole H200 node takes everything except Kimi K3 comfortably, several of them at FP8 rather than
+4-bit. The interesting constraint has moved to the dev workspaces.
 
-## Why mixture-of-experts suits the GB10s
+## The dev-workspace case for GLM 5.3 Flash
 
-GB10 is capacity-rich and bandwidth-poor: 128 GB per box, ~273 GB/s. A dense model reads all its
-weights for every token, so bandwidth caps it hard. A sparse MoE reads only the active experts.
+The RTX PRO 6000 pair is fast memory in a small amount: 192 GB at ~1.79 TB/s, about six and a half
+times GB10's bandwidth. That rewards a model with few active parameters.
 
-Rough ceilings at 4-bit `[estimate]`:
+At 4-bit, 18B active is about 9 GB read per token, so ~1.79 TB/s gives a ceiling near **200 tokens
+per second** `[estimate]`. The ceiling ignores prefill and attention, so measure it. Against that,
+a dense 70B on the same hardware reads 35 GB per token and tops out near 50.
 
-| | Active params | Read per token | Ceiling |
-| --- | --- | --- | --- |
-| DeepSeek V4.1 Flash | 8–16B | 4–8 GB | ~34–68 tok/s |
-| MiniMax M3 | ~23B | ~11.5 GB | ~24 tok/s |
-| A dense 70B, for contrast | 70B | 35 GB | ~8 tok/s |
+Add the MIT licence and native image input and it's the obvious default for everyday development,
+with the H200 node behind it for anything that needs more.
 
-So **low active-parameter MoE is the shape that makes local agentic work viable on GB10**, and the
-two models that fit that description are the two at the top of the list. Measure it rather than
-trusting the arithmetic — the ceiling ignores prefill, attention and everything else.
+## Modalities
 
-## Modalities, and why they need deciding early
+Molecular work involves figures, plots and structure renders, so image input matters.
 
-Molecular work involves figures, plots and structure renders, so image input is not a nice-to-have.
-**MiniMax M3 is the only one on the shortlist with native image and video input.** The rest are text
-and code.
+**Three of the five take images**: GLM 5.3, GLM 5.3 Flash and MiniMax M3. MiniMax M3 and Kimi K3
+carry 1M context, which is worth having when an agent is reading a codebase.
 
-If a theme needs a model to look at a plot, that either picks the model or means a second one behind
-a router. Either is fine, and it's a platform decision rather than something to discover on the day.
+DeepSeek V4.1 Flash leads the coding benchmarks and is text-only, so if it becomes the default for
+code then something else needs to sit alongside it for anything visual.
 
 ## What to settle before the event
 
 | | |
 | --- | --- |
-| **How many H200 GPUs** we get, and for how long. Everything else follows from this | unresolved |
+| Serving stack on the dev workspaces, and one model known to answer | unresolved |
+| H200 node scheduling — agent serving competes with benchmark runs for the same node | unresolved |
 | Whether the **dual-GB10 ConnectX pairing** gives one 256 GB pool or two 128 GB boxes `[verify]` | unresolved |
-| **Self-host or API** for the models that don't fit. A hosted endpoint is a legitimate answer | unresolved |
-| Which models need **image input**, per theme | ask the themes |
-| A **serving stack** that builds for `aarch64` as well as `x86_64` ([the usual trap](compute.md)) | unresolved |
+| Which themes need image input | ask the themes |
+| A serving stack that builds for `aarch64` as well as `x86_64` ([the usual trap](compute.md)) | unresolved |
 
 Nobody should be choosing a model on day 1. One working setup per theme, known to run, is the whole
 pre-work list.

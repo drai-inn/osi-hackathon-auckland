@@ -25,9 +25,9 @@ Short on purpose. The detail follows later in the week.
 > your own problem and take a space.** We have default targets and chemistry ready if you'd rather
 > pick something up.
 >
-> Come prepared to work with AI agents and with code. **The agent writes the code, you bring the
-> judgement about whether the answer is any good**, which is the scarce half. Everyone is welcome,
-> whatever you last wrote and whenever you last wrote it.
+> Come prepared to work with AI agents and with code. **The agent writes the code and you bring the
+> judgement about whether the answer is any good.** Everyone is welcome, whatever you last wrote and
+> whenever you last wrote it.
 >
 > If you can only make the opening, come for the opening and leave your team to it. That's a
 > completely normal way to do this.

@@ -9,8 +9,8 @@ A hackathon. You come with your expertise and a problem, work on it for two days
 don't share your background, and show what happened.
 
 **Come prepared to work with AI agents and with code.** The agent writes the code. You bring the
-judgement about whether the answer is any good, which is the scarce half. Everyone is welcome here,
-whatever you last wrote and whenever you last wrote it.
+judgement about whether the answer is any good. Everyone is welcome here, whatever you last wrote
+and whenever you last wrote it.
 
 ## The shape of the two days
 
@@ -86,7 +86,7 @@ Also welcome. Turn up, pick a [theme](themes.md), find one or two people to work
 - **It's safe to experiment.** Nothing here is production. Breaking something is a result.
 - **A negative is a result.** "We tried it, here's where it fell over" is useful to everyone in the
   room.
-- **Show the thing, not the slides.**
+- **Show the thing. Slides optional.**
 
 ## What to bring
 
