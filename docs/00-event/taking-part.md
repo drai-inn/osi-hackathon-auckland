@@ -13,10 +13,57 @@ opposite of one. The agent writes the code; you supply the judgement about wheth
 any good, and that judgement is the part that's actually scarce. If you haven't written anything in
 fifteen years, or ever, you are not behind here.
 
+## The shape of the two days
+
+**Day 1 — get running, do something, work out what to measure, report back.**
+
+That order is deliberate and it's the opposite of how these usually go. Most events spend the
+morning planning an evaluation for a model nobody has run yet. You can't pick a benchmark for
+something you haven't seen behave. So: get it running, do something with it, and *then* work out
+what the right thing to measure is. The end of day 1 is everyone reporting back on what they found
+and what they think their benchmark should be.
+
+**Day 2 — measure it, and report what you actually got.** Including the negatives, which are often
+the more useful half.
+
+## Benchmarks and data
+
+**There's no central benchmark team and no manifest handed out.** Each group conceptualises and
+sources its own, because these aren't the same problem — measuring what a filter throws away at the
+top of a library and detecting when an interatomic potential has left its training distribution
+have almost nothing in common, and no single team could own both.
+
+Working out what to measure *is* the intellectual content. Handing you a benchmark would remove the
+interesting part.
+
+### The four questions
+
+What makes the groups comparable isn't a shared dataset, it's that everyone answers the same four
+questions about whatever they picked. This is the day-1 report-back, and it's the whole cross-group
+structure:
+
+1. **What's your ground truth?**
+2. **What are you comparing against — and is there a dumb baseline in there?**
+3. **What would change your mind?**
+4. **Where would it break?**
+
+Question 2 does most of the work. A recent benchmark found single-cell foundation models don't beat
+a simple linear baseline at predicting perturbation effects, and another found the choice of metric
+flips the model rankings outright. If nobody in the room is running the dumb baseline, nobody finds
+out.
+
+## Getting set up
+
+**Agentic support plus our team.** You don't need to have wrestled with an environment before, and
+you shouldn't have to spend day 1 doing it. Ask the agent first, ask us second.
+
+We'll have at least one model per theme known to run on our hardware before anyone arrives, so
+there's always something that starts.
+
 ## How the two days run
 
-**Bookends.** Each day opens and closes together. The opening sets what we're trying to find out;
-the close is what we found, including what didn't work.
+**Bookends.** Each day opens and closes together. Day 1 closes on the four questions; day 2 closes
+on what you actually got.
 
 **Lightning talks, both days.** Short, rough, no slides required. The point is cross-pollination
 between themes, not polish.

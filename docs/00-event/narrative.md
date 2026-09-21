@@ -40,9 +40,12 @@ Four [themes](themes.md), each a different rung. In each one, three moves:
 
 1. Find out what open-weight models exist in that area
 2. Get one or two running on our hardware — dual GB10 and an HGX H200
-3. Design a small experiment, and work out how you'd evaluate it
+3. Work out what to measure, and report it back at the end of day one
 
-The third is the hard part and the one we care most about. A recent benchmark found single-cell
+The third is the hard part and the one we care most about. Each group sources its own data and picks
+its own benchmark — there's no manifest handed out, because working out what to measure is the
+intellectual content, and evaluation looks completely different at each rung. What makes the groups
+comparable is that everyone answers the same four questions about whatever they chose. A recent benchmark found single-cell
 foundation models don't beat a simple linear baseline at predicting perturbation effects, and another
 found the choice of metric flips the model rankings outright. How to evaluate these things is
 genuinely unsettled. That's the opportunity, not a caveat.

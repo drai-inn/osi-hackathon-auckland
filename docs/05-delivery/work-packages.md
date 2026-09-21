@@ -1,7 +1,7 @@
 > **⚠️ Pre-pivot. Kept for reference, not current.**
 > On 21 Sep we moved from work packages and named owners to **four open themes and invited
 > project teams**. Start at [the themes](../00-event/themes.md) and [taking part](../00-event/taking-part.md).
-> Teams replace work packages. Two jobs still need someone: benchmark and data, and workflow and infrastructure.
+> Teams replace work packages. There is no central benchmark or workflow team either — setup is agentic support plus the core team, and each group sources its own data and works out its own benchmark.
 
 # Work packages
 

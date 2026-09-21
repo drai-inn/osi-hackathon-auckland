@@ -15,14 +15,18 @@ eighteen months and most of us only know our own corner of it.
 **Get one or two of them running on our hardware.** Dual GB10 and an HGX H200. One or two per area,
 not a survey — anything we can't actually run isn't a candidate.
 
-**Design a small experiment, and work out how you'd evaluate it.** This is the hard part and it's
-the part we're most interested in. Not "does it work" but *how would you know*, and *what would
-change your mind*.
+**Work out what to measure, and report it back.** Not "does it work" but *how would you know*, and
+*what would change your mind*. Each group sources its own data and picks its own benchmark — there's
+no manifest handed out, because evaluation looks completely different at each rung.
 
-That third one is a live question, not a formality. A recent benchmark found single-cell foundation
+That third move is a live question, not a formality. A recent benchmark found single-cell foundation
 models don't beat a simple linear baseline at predicting perturbation effects `[literature]`, and
 another found that the choice of metric flips the model rankings outright `[literature]`. Nobody has
 settled how to evaluate most of these things. That's the opportunity.
+
+End of day 1, every group reports back against
+[the same four questions](taking-part.md#the-four-questions). That's the cross-group structure —
+not a shared dataset, a shared shape.
 
 ---
 

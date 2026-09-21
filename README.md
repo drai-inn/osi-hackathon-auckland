@@ -55,12 +55,17 @@ your own problem and own a space.
 | **4 · Repurposing what we already have** | Genotype, structure and approved drugs, with deliberately small models |
 
 In each one, the same three moves: **find out what open-weight models exist in your area · get one
-or two running on our hardware · design a small experiment and work out how you'd evaluate it.**
+or two running on our hardware · work out what to measure, and report it back.**
 
 That third move is the hard part and the one we care most about. How to evaluate these models is
 genuinely unsettled — one recent benchmark found single-cell foundation models don't beat a simple
 linear baseline, and another found the choice of metric flips the rankings outright. That's the
 opportunity, not a caveat.
+
+**There's no central benchmark team and no manifest handed out.** Each group sources its own, because
+working out what to measure *is* the intellectual content. What makes the groups comparable is that
+everyone answers [the same four questions](docs/00-event/taking-part.md#the-four-questions) about
+whatever they picked, reported back at the end of day 1.
 
 **[The themes in full](docs/00-event/themes.md)**, with the open-weight models worth a look in each.
 
@@ -95,8 +100,14 @@ all of it.
 
 ## What the two days look like
 
-Bookends each day, lightning talks each day, work in ones, twos and threes on whatever you've taken
-on, and food and a social occasion both days. Nobody is assigned to anything.
+**Day 1** — get running, do something, work out what to measure, report back. That order is
+deliberate: you can't pick a benchmark for a model you haven't seen behave.
+**Day 2** — measure it, and report what you actually got, negatives included.
+
+Bookends each day, lightning talks each day, work in ones, twos and threes, and food and a social
+occasion both days. Nobody is assigned to anything. **Setup is agentic support plus our team** — you
+shouldn't spend day 1 fighting an install, and we'll have at least one model per theme known to run
+on our hardware before anyone arrives.
 
 **No stupid questions. Safe to experiment. A negative is a result.**
 

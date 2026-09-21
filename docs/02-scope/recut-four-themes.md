@@ -133,7 +133,7 @@ because left unsaid, the two-day ask reads as a polite no.
 | --- | --- |
 | Expertise at one rung of the ladder | The default targets, with structures and data already prepared |
 | A problem or candidate that fits | The chain, the infrastructure, the benchmark, the compute |
-| A commitment to run the shared control | The other three teams, which is the part they cannot get alone |
+| Curiosity about how you'd evaluate it | The other three groups, which is the part they cannot get alone |
 
 ### What "fits" means, and why it has to be written before the invitations
 
@@ -151,10 +151,13 @@ Everything about model, method and tooling is theirs. This is
 [interfaces.md](../03-pipeline/interfaces.md) extended from stages to teams, which means the
 discipline already exists and we are applying it one level up.
 
-**The shared control.** Every team runs the default target once, even if their real work is on their
-own problem. One run, not a parallel project. Without it there is nothing to compare across teams
-and no integrated claim at the end — and "shared control" is language we already use at
-[S6](../03-pipeline/stages/S6-quantum-labelling.md).
+**Not a shared benchmark — a shared shape.** There is no central benchmark team and no manifest
+handed out. Each group conceptualises and sources its own data, and works out its own benchmark,
+because evaluation at the top of a library and evaluation of an interatomic potential are not the
+same problem and one team cannot own both.
+
+What makes the groups comparable is that they all answer the **same four questions** about whatever
+they picked. See [taking-part.md](../00-event/taking-part.md#the-four-questions).
 
 ### Why the group-leader moment still matters
 
@@ -183,7 +186,7 @@ consistent with the rest of this repo.
 | Measure | Why this one |
 | --- | --- |
 | **Teams committed**, with a declared rung and a named problem | The real recruitment number. Headcount is not |
-| Teams that ran the **shared control** | Whether there is anything to compare at the end |
+| Groups that could answer the **four questions** about their own benchmark | Whether the day-1 report-back was real |
 | **Handoffs completed** — T1→T2, T2→T3 | Whether it was one experiment or four projects |
 | Group leaders **hands-on at the opening** | Champions. Hands on keys, not watching |
 | **Named follow-ons** — a person, a dataset, a date | The only measure that survives the event |
@@ -399,9 +402,9 @@ perturbation-profile schema, agreed in week 2, not on the day.
 | Compute plan, GB10/H200 split, budget tooling | **Survives unchanged.** The architecture split is theme-independent |
 | CDK9/CDK7 case, the structural figures, `pocket-anatomy.json` | **Survives.** Shared testbed for T1–T3 |
 | Stages S0–S8 | **Moves.** Becomes the interior of T1 and T2, not the top-level structure |
-| WP A–F | **Recut.** A (benchmark) and F (workflow) become shared foundations serving all four; B/D fold into T1; C/E fold into T2 |
+| WP A–F | **Retired outright.** No central benchmark team, no central workflow team. Setup is agentic support plus the core team; each group sources its own data and picks its own benchmark |
 | Stage gates | **Needs recutting.** Six gates were written for one chain. Each theme needs its own, plus two for the handoffs |
-| Adjacent activities 1–4 | **Dissolve into the themes.** Activity 2 (small-data HPO) survives as the cross-cutting thread; Activity 4's agentic and reproducibility content attaches to the shared foundation |
+| Adjacent activities 1–4 | **Dissolve into the themes.** The small-data thread survives as the cross-cutting question; the agentic content became the participation model |
 | Narrative, outreach copy, onboarding ladders | **Needs re-cutting** from a rewritten `narrative.md`, which is where all recruitment copy comes from |
 | **Themes 3 and 4** | **Missing entirely.** No stage page, no work package, no contacts, no compute estimate |
 
@@ -410,10 +413,10 @@ four weeks out.
 
 ## The honest risks
 
-**People.** Six packages needed 13–20. Four themes plus two shared foundations is not fewer people,
-it is the same people spread across more surface. At the low end that is three per theme, which is
-one illness away from a theme not happening. Either recruit harder or run two as tracks and two as
-clinics.
+**People.** Four themes with no central support means every group has to get itself running.
+Agentic support plus the core team is the plan, and it is untested at four-groups-at-once scale. The
+mitigation is not more people, it is making sure at least one model per theme already starts on our
+hardware before anyone arrives.
 
 **Timing.** Invitations were going out Wednesday against the old framing. The recut changes who we
 are inviting and what we are inviting them to. Themes 3 and 4 open genuinely new doors — ABI,
@@ -424,10 +427,10 @@ and code" is either the most attractive line in the invitation or the one that h
 rate, and we will not know which until it is in front of someone. Test it on two people this week —
 one who codes and one who does not — before Wednesday.
 
-**A team can commit and then not integrate.** Turning up with expertise and a problem is the easy
-part; emitting something another team can consume is the part that gets dropped at 4pm on day two.
-The declared interface and the shared control are the only defences, and both have to be agreed
-before anyone arrives, not negotiated on the day.
+**Day one is eaten by setup.** This is what happens at every hackathon and nothing about agents
+makes it automatic. If a group is still fighting an install at 3pm, the day-1 report-back has
+nothing in it and day two starts from behind. The only real defence is that one model per theme is
+known to run on our hardware beforehand.
 
 **Two of the four themes are where the domain experts are, and neither is written.** T3 and T4 carry
 the systems and pharmacology end of the framing. If they stay empty, the chain is structure and
@@ -446,7 +449,7 @@ longer.
 | **R9** | Does T1 run the model-class comparison, or just build the filter? | **Both.** The comparison is the methods result and it is nearly free once the filter exists. Equal tuning budget per quadrant or it is not worth running |
 | ~~R10~~ | A dedicated group-leader clinic? | **Settled: no.** Teams commit to the hackathon. The leader's hands-on moment is the opening; coming for the start and leaving the team to it is an expected and stated pattern |
 | **R11** | Do invitations ask each team to declare a rung and bring a problem or candidate? | **Yes, and the "what fits" spec has to exist first.** Without it we get four unrelated projects |
-| **R12** | Is the shared control run mandatory for every team? | **Yes.** One run on a default target. It is the only thing that makes the four comparable |
+| ~~R12~~ | A mandatory shared control run? | **Settled: no.** Each group sources its own data and picks its own benchmark. Comparability comes from every group answering the same four questions about theirs, reported back at the end of day one |
 | **R2** | Four full tracks, or two tracks and two clinics? | **Depends only on headcount.** Set a floor of three people per theme and decide against the actual list |
 | **R3** | Does CDK9/CDK7 stay the shared testbed for T1–T3? | **Yes.** It is the only thing preventing four unrelated projects |
 | **R4** | Are the T1→T2 and T2→T3 handoffs mandatory or best-effort? | **Mandatory, and schema-frozen in week 2.** Otherwise the recut has no integrated result |
