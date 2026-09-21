@@ -134,7 +134,7 @@ we go first.
 Inter is on Google Fonts; Martian Mono too. Both degrade acceptably to Helvetica/Menlo, and the
 poster is built to print correctly either way.
 
-**Applied in:** [`../poster.html`](../poster.html) · [`../site/index.html`](../site/index.html)
+**Applied in:** `../poster.html` · [`../site/index.html`](../site/index.html)
 
 ## Rules of thumb
 

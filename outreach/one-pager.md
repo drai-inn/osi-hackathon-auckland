@@ -1,4 +1,4 @@
-# How far can a chain of surrogates get us?
+# How far can a chain of surrogates take us in biomolecular interactions?
 
 **Open Scientific Intelligence Hackathon · Auckland site**
 
@@ -6,84 +6,75 @@
 
 ---
 
-## What we're trying
+## The question
 
-**Three things, in order.**
+Systems · proteins · ligand binding · drug discovery · pharmacology.
 
-**1. Hand every expensive step to a learned surrogate.**
-Individual steps have been done well by other groups. We haven't found anyone who ran the whole
-chain.
+Physiological outcomes come from molecules interacting. Those interactions produce functional
+change. Function is driven by spatial and structural change. Pharmacology is the effect of drugs on
+that system.
 
-**2. Measure where that lands, as a baseline.**
-It might not be good enough yet. We'd still like the number. Every step is improving quickly, and
-at some point the chain crosses a threshold. Without a starting point we won't know when.
+Biology has a ladder of scales, and machine learning now has one running alongside it. Association
+models over sequence, 3D-aware models over structure, interatomic potentials over atoms and motion,
+multi-scale models over cells and tissue. **Language models sit at nearly every rung too** — over
+protein sequence, over DNA, over molecules written as text, over gene expression, and over the
+literature itself. Most are open-weight and most arrived recently.
 
-**3. Get there by starting small.**
-Twelve compounds. Two targets. A handful of quantum labels. Explore the parameter space properly at
-that size, then scale only what survives.
+**Two days to find out how far up that second ladder you have to climb to get an answer you can
+trust.**
 
-## The testbed
+## Four themes
 
-Most drugs fail on selectivity rather than potency. A compound built for one protein also hits its
-close relatives, and conventional screening can't separate them, because it flattens a
-three-dimensional pocket into a fingerprint and throws away what makes two pockets different.
-
-Our case is **CDK9 against CDK7**. Two kinases with ATP sites similar enough that telling them
-apart is the whole difficulty.
-
-## The trajectory
-
-Four tiers. Each gate has to be green before we move up.
-
-| Tier | Size | What it answers |
-| --- | --- | --- |
-| Smoke test | 5 ligands, 2 targets | Do the containers run, do the formats line up |
-| **Hackathon** | **12-20 ligands, 3 poses, 20-50 labels** | **Do parameter changes move the ranking** |
-| Useful pilot | 50-100 ligands, 4 targets | Ranking stability, cost per label |
-| Scale-up | thousands, after filtering | Throughput and prioritisation |
-
-The pipeline has about eight configurable choices and each combination costs GPU hours, so nobody
-explores it properly. Recent work says that's the mistake. Small experiments fail to transfer
-because they're under-explored, not because they're small.
-
-What we want answered: is this even feasible, what data would we need, and how small can we go
-while still being usefully robust.
-
-## Who we need
-
-| | What you'd do |
+| | |
 | --- | --- |
-| **Medicinal chemistry / pharmacology** | Break our benchmark. Find the compounds our baseline gets wrong for reasons a chemist would call obvious |
-| **Structural biology** | Triage predicted poses. Tell us which are nonsense, which we can't work out without you |
-| **Quantum chemistry / physics** | When is a cheap approximation good enough, and how would you know? |
-| **Statistics / ML** | Bring your own small-data problem. Twenty samples, eight parameters, no budget |
-| **Research software engineering** | Make a multi-stage GPU pipeline someone else can run |
-| **New to all of this** | Own one configuration. One command, twenty minutes, your name on a data point in the final analysis |
+| **Screening at scale** | Models that know something about shape, used to filter before you pay for docking |
+| **Molecules in motion** | Machine-learned interatomic potentials in MD |
+| **Binding to whole system** | Carrying a molecular signal up to functional and physiological change |
+| **Repurposing what we have** | Genotype, structure and approved drugs, with deliberately small models |
 
-## What you get
+Notional, all four. Bring your own problem and take a space, or pick up the worked example we have
+ready.
 
-- Two days on real hardware. Dual GB10 boxes and H200 access, and a pipeline that already works when
-  you arrive, because we spend the month beforehand building it
-- A result with your name on it. Every participant's contribution lands in an artifact
-- A room of people from other disciplines who have the piece you're missing
+In each theme: find out what open-weight models exist in your area, get one or two running on our
+hardware, work out what to measure and report it back.
 
-## Three levels of commitment
+## What we're asking
 
-1. **Full participant**, both days, embedded in a team
-2. **Clinic participant**, 90 minutes on day 1 plus the day-2 presentations
-3. **Reviewer**, read the plan, tell us what's wrong with it, come to the closing session
+**Come and explore the broader opportunity while getting hands-on with AI in your own area.** Come
+prepared to work with agents and with code, to find out where your own methods are moving under the
+new models.
+
+The agent writes the code. You bring the judgement about whether the answer is any good. Everyone is
+welcome here, whatever you last wrote and whenever you last wrote it.
+
+We're inviting **project teams**. A group leader brings their team, their expertise, and a problem
+or candidate. If you can only come for the opening, come for the opening and leave your team to it.
+
+## The two days
+
+**Day 1** — get running, do something, work out what to measure, report back.
+**Day 2** — measure it, and report what you got, including the negatives.
+
+Bookends each day, lightning talks each day, work in ones, twos and threes, and food and a social
+occasion both days.
+
+## Practical
+
+| | |
+| --- | --- |
+| **When** | {{DATES}} |
+| **Where** | {{VENUE}}, University of Auckland |
+| **Cost** | Free |
+| **Bring** | A laptop |
+| **Compute** | Dual GB10 and an HGX H200 |
+| **Setup** | Agentic support plus our team. At least one model per theme runs before you arrive |
 
 ## The global event
 
-We're a local site for the global Open Scientific Intelligence Hackathon, in its fourth year with
-hubs on four continents. **It runs 21-22 October and registration is open to anyone**, so sign up
-for that whether or not you come to ours. We're on 19-20 October because those are the two days we
-have, and Wednesday the 21st is open if people want to carry the work into the global event.
+We're one local site of the Open Scientific Intelligence Hackathon, now in its fourth year, with
+sites on four continents and over a thousand participants last year. **It runs 21–22 October and
+registration is open to anyone.** Sign up for that as well.
 
----
+## Get in touch
 
-**Global event and registration:** {{REGISTER}} · **Our details:** {{LINK}}
-**Contact:** Nick Jones, njon001@aucklanduni.ac.nz
-
-*A clean "no" is a good outcome. Six gates were written before any data existed, and if the chain
-doesn't hold we'd rather know in two days than two years.*
+**{{LINK}}** · Nick Jones · njon001@aucklanduni.ac.nz

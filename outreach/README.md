@@ -1,47 +1,31 @@
-# Outreach collateral
+# Outreach
 
-Everything here is ready to send once the placeholders are filled. The reasoning behind it lives
-in [docs/00-event/](../docs/00-event/README.md).
+Everything for inviting someone. All of it is cut from [narrative.md](../docs/narrative.md) — rewrite
+the pitch there and re-cut, so the versions stay together.
 
-Placeholders to replace, all marked `{{LIKE_THIS}}`:
-
-| Placeholder | Meaning |
+| | |
 | --- | --- |
-| `{{DATES}}` | `Mon 19 - Tue 20 October 2026` |
-| `{{VENUE}}` | Room and building |
-| `{{LINK}}` | The Auckland micro-repo landing page |
-| `{{REGISTER}}` | `https://luma.com/ku88xh92`, the global registration |
-| `{{NAME}}`, `{{THEIR_WORK}}` | Per-recipient, in the invitations |
+| [short-form.md](short-form.md) | The note to send now, plus Slack, mailing list, social, calendar and signature versions |
+| [one-pager.md](one-pager.md) | A page you can hand over or attach |
+| [site/index.html](site/index.html) | The public landing page |
+| [poster.html](poster.html) | A3 poster. `make poster` rebuilds it and the PDF |
+| [brand/](brand/README.md) | Colours, type, the motif, the marks, and the rules for using them |
+| [imagery/](imagery/) | Generated collateral art, WebP. Prompts and seeds in [`tools/generate_imagery.py`](../tools/generate_imagery.py). `terrain` is the hero; it backs the banner and the landing page, and crops of all five back the theme cards |
 
-## What's here
+## Before you send anything
 
-| File | Use |
-| --- | --- |
-| [one-pager.md](one-pager.md) | The thing you attach to an email or hand to a head of department |
-| [invitations.md](invitations.md) | Seven templates, one per audience, plus the Tier-1 cold email |
-| [short-form.md](short-form.md) | Slack, mailing lists, socials, calendar invite, email signature |
-| [faq.md](faq.md) | For the micro-repo and for answering the same six questions repeatedly |
-| [poster.html](poster.html) | A3 print poster. Open in a browser → Print → Save as PDF |
+- Fill every `{{PLACEHOLDER}}`. The main ones are `{{LINK}}`, `{{DATES}}` and `{{VENUE}}`
+- Say what you'd like them to bring: their team, their expertise, and a problem or candidate
+- Mention that coming for the opening and leaving the team to it is fine. It's the difference
+  between a yes and a diary conflict
+- Point at the [global event](https://luma.com/ku88xh92) as well as ours
 
-## Where the words come from
+## The three things people ask
 
-All of it is cut from [narrative.md](../docs/00-event/narrative.md). If you rewrite the pitch,
-rewrite it there and re-cut, or the versions will drift apart within a fortnight.
+**Do I need to be able to code?** No. The agent writes the code and you bring the judgement about
+whether the answer is any good.
 
-## Four things to keep in every version
+**Do I need to bring a problem?** It helps, and we have
+[a worked example](../docs/worked-example.md) ready if you'd rather start with something.
 
-1. **"How far can a chain of surrogates get us?"** The lead, above the chemistry, in every piece.
-2. **"It might not be good enough yet. We'd still like the number."** A baseline we'll come back to.
-3. **"You'll own a result the group uses."** Don't soften it into "you'll learn about AI for
-   science", which is what everyone else's invitation says.
-4. **Name the discipline's own question.** Nobody outside computational chemistry wants to attend a
-   drug-discovery hackathon. Lead with theirs, not ours.
-
-**Posture.** We're a local site. Point people at the global event, which runs 21-22 October with
-registration open to anyone, and don't make anything of our dates.
-
-## Tone
-
-Confident, specific, no hype. We are not promising a drug. We are promising two days of real work
-on a real question with real hardware, and an honest answer at the end, including the possibility
-that the answer is no. That is a more attractive offer to good researchers than optimism is.
+**Can I send my team without coming myself?** Yes, and coming for the opening first is even better.

@@ -16,7 +16,7 @@ Cadence: weekly through the month, daily during 19-20 October.
 | --- | --- |
 | **Event** | Mon 19 - Tue 20 Oct 2026, University of Auckland |
 | **Global event** | 21-22 Oct, [registration open to anyone](https://luma.com/ku88xh92) |
-| **What this is** | [The narrative](docs/00-event/narrative.md) · [Pick a ladder](docs/00-event/onboarding/README.md) |
+| **What this is** | [The narrative](docs/narrative.md) · [Pick a ladder](docs/00-event/onboarding/README.md) |
 | **Plan** | [Critical path](docs/05-delivery/critical-path.md) · [Issues](https://github.com/drai-inn/drugs-surrogate-pipeline/issues) |
 
 ---
@@ -52,7 +52,7 @@ association models over sequence, 3D-aware models over structure, interatomic po
 and motion, multi-scale models over cells and tissue. Most of these are open-weight, most arrived
 recently, and very few of us know more than our own rung. Two days to find out what's real.
 
-**[Four themes](docs/00-event/themes.md).** Screening with physics in the loop · ML interatomic
+**[Four themes](docs/themes.md).** Screening with physics in the loop · ML interatomic
 potentials in MD · multi-scale from a binding event to a whole system · lightweight repurposing.
 Notional, all four. They say what we're interested in, not what you have to do.
 
@@ -120,11 +120,11 @@ only. The structures confirmed it. Guess, then check.
 within 15 Å of the ligand, so every radius we are considering drops the cyclin — and the cyclin is
 what holds the αC helix in the active position. We are cropping away the thing that sets the
 conformation we are trying to score. Nobody has checked whether it matters. It is now
-[C7](docs/02-scope/open-questions.md), and it is red.
+C7, and it is red.
 
 **New on the agenda: agentic development and operations.** Reviewed properly rather than waved
 through, because it was the dominant theme at last year's event and four of the 2025 projects sit
-directly on our stages. [The review](docs/05-delivery/proposals/2026-09-21-agentic-dev-ops.md) says
+directly on our stages. The review says
 yes to the development half now, yes to exactly one narrow experiment, and no to letting an agent
 drive the pipeline or submit jobs. Eight stages compound: an agent running the whole chain is the
 worst place to put one. What we think is ours is smaller and more interesting — an agent at a
@@ -132,7 +132,7 @@ decision point is another surrogate, so it owes a fidelity contract, and nobody 
 down a trust region.
 
 **Next.** Owners and hosts named by tonight, [roles.md](docs/05-delivery/roles.md) and the
-[open questions](docs/02-scope/open-questions.md) updated with them, and the email to the organisers
+open questions updated with them, and the email to the organisers
 about our dates and a Valence Labs introduction. Invitations Wednesday.
 
 *— Nick*
