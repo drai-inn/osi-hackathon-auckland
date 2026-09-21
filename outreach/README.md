@@ -10,6 +10,7 @@ the pitch there and re-cut, so the versions stay together.
 | [site/index.html](site/index.html) | The public landing page |
 | [poster.html](poster.html) | A3 poster. `make poster` rebuilds it and the PDF |
 | [brand/](brand/README.md) | Colours, type, the motif, the marks, and the rules for using them |
+| [imagery/](imagery/) | Generated collateral art. Prompts and seeds are recorded in [`tools/generate_imagery.py`](../tools/generate_imagery.py) |
 
 ## Before you send anything
 
