@@ -62,6 +62,25 @@ their own allocation from inside the container**, which is the property you want
 allocation cannot be tested from inside a whole-card workspace** — it needs the template edit and a
 rebuild.
 
+### Measured: image generation on one card
+
+Worked end to end, so the numbers are real rather than projected `[measured]`.
+
+| | |
+| --- | --- |
+| Model | **Qwen-Image**, 20.4B DiT + 8.3B Qwen2.5-VL text encoder, Apache-2.0 and **ungated** |
+| Weights | 54 GB pulled to `/home/coder`, about 9 minutes |
+| Load to GPU | 466 s including the pull · 53.8 GiB resident |
+| Generate | **40.8 s** at 1328×1328, 30 steps · peak 60.8 GiB |
+| Stack | `pip install diffusers transformers accelerate sentencepiece protobuf` on top of the image |
+
+**Gated repositories are the thing that bites.** FLUX.1-schnell and Stable Diffusion 3.5 both return
+401 without a HuggingFace token, Apache licence notwithstanding. Qwen-Image, Qwen-Image-Edit and
+SDXL are open. Anyone planning on a gated model needs a token in the workspace first.
+
+**Generated imagery belongs in event collateral, not in figures.** It cannot be regenerated
+deterministically and it will draw chemistry that looks right and is not.
+
 **What would actually fit in a slice.** Boltz, Nesso-1, MLIPs, ESM and most development work sit
 well inside 24 GB, which would turn two cards into eight concurrent users. Qwen-Image at bf16 (~57 GB
 on disk) and any large LLM still want a whole card. A mixed policy — a fractional tier by default,
