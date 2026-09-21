@@ -1,3 +1,8 @@
+> **⚠️ Pre-pivot. Kept for reference, not current.**
+> On 21 Sep we moved from work packages and named owners to **four open themes and invited
+> project teams**. Start at [the themes](../00-event/themes.md) and [taking part](../00-event/taking-part.md).
+> The gate and owner structure went with the pivot. The compute and access deadlines still stand.
+
 # Critical path — 20 working days to 19 Oct
 
 **Event:** Mon 19 - Tue 20 Oct 2026, two days, Wed 21 left open · **Global event:** 21-22 Oct ·

@@ -1,3 +1,8 @@
+> **⚠️ Pre-pivot. Kept for reference, not current.**
+> On 21 Sep we moved from work packages and named owners to **four open themes and invited
+> project teams**. Start at [the themes](../themes.md) and [taking part](../taking-part.md).
+> Six ladders was more structure than an invitation can carry. Superseded by taking-part.md.
+
 # Onboarding, the ladders
 
 Nobody should have to read this repo to be useful in it. So instead of one door, there are six

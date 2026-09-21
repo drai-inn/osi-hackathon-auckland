@@ -11,7 +11,7 @@ like this arrive from people who read the plan and said "that won't work, becaus
 ## Rung 0 · Orient, 10 minutes
 
 Read **[the narrative](../narrative.md)**, or just
-[the short versions](../narrative.md#the-short-versions) at the foot if you're skimming.
+[the short versions](../../../outreach/short-form.md) at the foot if you're skimming.
 
 **You now know:** what we're doing and whether you want to keep hearing about it.
 
