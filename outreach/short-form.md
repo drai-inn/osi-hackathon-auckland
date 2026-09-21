@@ -36,7 +36,7 @@ Short on purpose. The detail follows later in the week.
 > more detail later this week.
 >
 > Nick
-> {{LINK}}
+> https://drai-inn.github.io/osi-hackathon-auckland/
 
 ## Global hackathon Slack, introducing the Auckland site
 
@@ -65,7 +65,7 @@ Short on purpose. The detail follows later in the week.
 > which runs 21–22 October with registration open to anyone.
 >
 > Free · newcomers genuinely welcome.
-> {{LINK}} · njon001@aucklanduni.ac.nz
+> https://drai-inn.github.io/osi-hackathon-auckland/ · njon001@aucklanduni.ac.nz
 
 ## Social, long
 
@@ -77,13 +77,13 @@ Short on purpose. The detail follows later in the week.
 > rung of that ladder now. Two days working out which ones are real and how you'd evaluate them.
 >
 > Bring your team and your own problem. Cross-disciplinary by design, and newcomers are genuinely
-> welcome. {{LINK}}
+> welcome. https://drai-inn.github.io/osi-hackathon-auckland/
 
 ## Social, short
 
 > How far can a chain of surrogates take us in biomolecular interactions? Auckland site of the
 > global AI-for-science hackathon, 19–20 October 2026. Four themes, open-weight models, bring your own
-> problem. {{LINK}}
+> problem. https://drai-inn.github.io/osi-hackathon-auckland/
 
 ## Calendar invite
 
@@ -97,21 +97,21 @@ Short on purpose. The detail follows later in the week.
 > **Both days:** open together, lightning talks, work in small groups, close together. Food and a
 > social occasion each day.
 >
-> Read first: {{LINK}} · Questions: njon001@aucklanduni.ac.nz
+> Read first: https://drai-inn.github.io/osi-hackathon-auckland/ · Questions: njon001@aucklanduni.ac.nz
 
 ## Email signature, September–October
 
 > ---
 > Organising the **Auckland site** of the Open Scientific Intelligence Hackathon, 19–20 October 2026 —
 > how far can a chain of surrogates take us in biomolecular interactions.
-> Cross-disciplinary, free, newcomers welcome. {{LINK}}
+> Cross-disciplinary, free, newcomers welcome. https://drai-inn.github.io/osi-hackathon-auckland/
 
 ## Poster tear-off strip
 
 > **How far can a chain of surrogates take us in biomolecular interactions?**
 > AI for Science Hackathon · Auckland · 19–20 October 2026 · Free
 > Bring your team, your problem, and a laptop
-> {{LINK}}
+> https://drai-inn.github.io/osi-hackathon-auckland/
 
 ## Lift pitch, 30 seconds
 

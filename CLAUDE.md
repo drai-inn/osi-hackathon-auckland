@@ -76,5 +76,5 @@ it would be for sounding confident.
 
 There was a pre-pivot version of this repo built around an eight-stage pipeline, six work packages
 and named owners. It was removed on 21 Sep. It is in the git history and in
-[PR #15](https://github.com/drai-inn/drugs-surrogate-pipeline/pull/15) if anything needs pulling
+[PR #15](https://github.com/drai-inn/osi-hackathon-auckland/pull/15) if anything needs pulling
 back. Do not reintroduce work packages, owners, hosts, stage gates or a central benchmark team.

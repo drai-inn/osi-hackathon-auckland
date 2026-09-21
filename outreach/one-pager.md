@@ -76,4 +76,4 @@ registration is open to anyone.** Sign up for that as well.
 
 ## Get in touch
 
-**{{LINK}}** · Nick Jones · njon001@aucklanduni.ac.nz
+**https://drai-inn.github.io/osi-hackathon-auckland/** · Nick Jones · njon001@aucklanduni.ac.nz

@@ -35,3 +35,4 @@ venv/
 
 # Cached UniProt fetches; data/protein-space.json is the committed artefact
 .cache/
+_site/

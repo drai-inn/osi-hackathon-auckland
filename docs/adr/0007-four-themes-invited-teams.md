@@ -40,7 +40,7 @@ ADR-0001 through ADR-0004 described the pipeline architecture and are superseded
 and ADR-0006 (dates) still hold.
 
 The pre-pivot documents are removed rather than archived. They are in the git history and in
-[PR #15](https://github.com/drai-inn/drugs-surrogate-pipeline/pull/15) if anything needs pulling
+[PR #15](https://github.com/drai-inn/osi-hackathon-auckland/pull/15) if anything needs pulling
 back.
 
 One piece of pre-work survives: at least one model per theme has to be known to start on our
