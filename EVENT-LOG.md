@@ -27,11 +27,66 @@ Updated with each entry. The honest version, not the reassuring one.
 
 | | |
 | --- | --- |
-| **Week** | Week 1 · 21–27 Sep · *unblock* |
-| **Next gate** | Fri 25 Sep, we know what runs where |
-| **🔴 Blocking** | Owners and hosts unnamed · architecture spike unclaimed · cuEST unresolved · H200 unbooked · invitations out Wednesday |
+| **Week** | Week 1 · 21–27 Sep |
+| **Shape** | Four open themes, invited project teams. [Pivoted 21 Sep](../../pull/15) |
+| **🔴 Blocking** | Invitation list · which teams we're asking · H200 unbooked |
 | **Compute** | GB10 ×2 assumed available, unconfirmed · H200 unbooked |
-| **People** | 0 of 6 packages have a named owner. Today is when that changes |
+| **Teams** | 0 committed. That's the number that matters now |
+
+---
+
+## 2026-09-21 · We pivoted
+
+**The short version.** We came into this morning's session with one pipeline, six work packages and
+a list of owners to fill in. We're leaving with four open themes and an invitation. That's a bigger
+change than it sounds and it's the right one.
+
+**The question, widened.** *How far can a chain of surrogates take us in biomolecular interactions?*
+Systems, proteins, ligand binding, drug discovery, pharmacology. Same sentence as before, wider
+domain. Physiological outcomes come from molecules interacting; those interactions produce
+functional change; function is driven by spatial and structural change; pharmacology is the effect
+of drugs on that system. Nobody can currently carry a signal cleanly from one end to the other.
+
+**Why now.** Biology has a ladder of scales and machine learning now has one running alongside it —
+association models over sequence, 3D-aware models over structure, interatomic potentials over atoms
+and motion, multi-scale models over cells and tissue. Most of these are open-weight, most arrived
+recently, and very few of us know more than our own rung. Two days to find out what's real.
+
+**[Four themes](docs/00-event/themes.md).** Screening with physics in the loop · ML interatomic
+potentials in MD · multi-scale from a binding event to a whole system · lightweight repurposing.
+Notional, all four. They say what we're interested in, not what you have to do.
+
+In each one, the same three moves: find out what open-weight models exist in your area, get one or
+two running on our hardware, design a small experiment and work out how you'd evaluate it. **That
+third one is the hard part and the reason to come.** A recent benchmark found single-cell foundation
+models don't beat a simple linear baseline at predicting perturbation effects. Another found the
+choice of metric flips the model rankings outright. How to evaluate these things is genuinely
+unsettled, and that's the opportunity rather than a caveat.
+
+**We're inviting teams, not filling roles.** No owners, no hosts, no work packages. A group leader
+brings their team, their expertise, and a problem or candidate they want to look at. We have default
+targets and chemistry ready if you'd rather pick something up. If a leader can only make the
+opening, that's a completely normal way to take part — come for the start, get your hands on it,
+leave your team to it.
+
+**On coming prepared to work with agents and code.** That reads like a filter and it's the opposite
+of one. The agent writes the code; you supply the judgement about whether the answer is any good,
+and the judgement is the part that's actually scarce. If you haven't written anything in fifteen
+years, or ever, you are not behind here.
+
+**What we gave up, honestly.** The old plan had one tightly integrated chain and a claim that nobody
+had run the whole thing. Four loose themes is a portfolio, and a portfolio is a weaker scientific
+claim. We've taken that trade deliberately: engagement and curiosity over being prescriptive, at
+least for a first year. If the themes want to link up on the day, good.
+
+**Everything is lighter.** README is about half what it was, down to one figure. The CDK selectivity
+work is still there and still good, but it's now *the worked example we can offer*, not the point.
+Pre-pivot documents carry a banner rather than being deleted.
+
+**Next.** A short note out this week — light, fast, come discover and learn with us — with the
+detail following. The list of who we're asking is the thing that matters now.
+
+*— Nick*
 
 ---
 
