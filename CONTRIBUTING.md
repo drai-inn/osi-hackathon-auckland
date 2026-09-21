@@ -52,6 +52,12 @@ and reports are done.
 
 To post: commit to `event-log`. Newest at the top, dated, short, honest, including what broke.
 
+## Licence
+
+Contributions are accepted under the repository's licences: [CC BY 4.0](LICENSE) for documentation,
+copy and imagery, MIT for code in `tools/`. If you contribute something you did not write, say where
+it came from.
+
 ## Questions
 
 Nick Jones · njon001@aucklanduni.ac.nz · or open an issue.

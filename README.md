@@ -153,5 +153,8 @@ We don't know how far this gets. Some of these models may land level with much s
 problems we care about, and we'd like the number either way. A well-founded *"not yet, and here's
 why"* is a result we'd be happy to present.
 
+**Licence.** Documentation, copy and imagery under [CC BY 4.0](LICENSE); code in `tools/` under MIT.
+Brand marks and model weights are not covered — see [LICENSE](LICENSE).
+
 Nick Jones · njon001@aucklanduni.ac.nz ·
 [Global event](https://llmhackathon.github.io/) · [Live log](EVENT-LOG.md) · [Contributing](CONTRIBUTING.md)
