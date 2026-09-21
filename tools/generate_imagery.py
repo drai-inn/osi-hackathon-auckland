@@ -13,6 +13,10 @@ measured numbers.
 Qwen-Image is Apache-2.0 and ungated. FLUX and Stable Diffusion 3.5 need a
 HuggingFace token even where the licence is permissive.
 
+Committed images are WebP at quality 92, which costs nothing visible on these
+smooth gradients and takes the folder from 10.5 MB to 0.7 MB. Generate PNG, then
+convert.
+
 **This is for event collateral, never for figures.** Diffusion output cannot be
 regenerated deterministically across setups, and it will happily draw chemistry
 that looks right and is not. Figures come from data — see tools/make_cards.py
@@ -34,36 +38,36 @@ MODEL = "Qwen/Qwen-Image"
 PROVENANCE = {
     # Round 2, 21 Sep 2026. Qwen-Image, bfloat16, 1328x1328, 30 steps,
     # true_cfg_scale 4.0, seed 11, ~41 s each once the model is resident.
-    "outreach/imagery/folding-basin.png": dict(
+    "outreach/imagery/folding-basin.webp": dict(
         prompt="minimal techno-futurist poster art, one smooth undulating folding energy landscape "
                "surface, a single glowing cyan sphere settling into the basin, deep navy void, "
                "violet rim light, vast negative space, flat vector, elegant, playful"),
-    "outreach/imagery/through-the-membrane.png": dict(
+    "outreach/imagery/through-the-membrane.webp": dict(
         prompt="minimal techno-futurist illustration, a lipid membrane as a rhythmic row of round "
                "heads with tails, one bright cyan molecule slipping through the gap, deep navy, "
                "violet accents, flat geometric, spacious, witty"),
     # Round 3, 21 Sep 2026. Seed 23. Dropping "flat vector" for "soft gradients"
     # is what produced the organic feel; the colour ramp is what carries meaning.
-    "outreach/imagery/energy-surface.png": dict(
+    "outreach/imagery/energy-surface.webp": dict(
         prompt="organic undulating free energy surface seen at a low grazing angle, smooth viscous "
                "swelling forms, fine topographic contour bands following every peak and trough, "
                + "RAMP" + ", minimal, techno-futurist, generous negative space, soft gradients, "
                "elegant"),
-    "outreach/imagery/stacked-isosurfaces.png": dict(
+    "outreach/imagery/stacked-isosurfaces.webp": dict(
         prompt="stacked translucent iso-surfaces sliced through a molecular potential field, "
                "organic rounded layers offset in depth, each layer a band of " + "RAMP" + ", strong "
                "sense of dimension and cross-section, minimal, airy, techno-futurist, soft gradients"),
-    "outreach/imagery/drip.png": dict(
+    "outreach/imagery/drip.webp": dict(
         prompt="a glossy organic droplet stretching and dripping through a soft membrane gap, "
                "viscous gooey surface tension, the droplet shaded by " + "RAMP" + " to show its "
                "energy, deep navy background, playful, wet, techno-futurist, generous space, "
                "soft gradients"),
 
-    # Round 4, 21 Sep 2026. Seeds 31, 47 and 89 of one prompt, at 1664x928 and
-    # 34 steps. The 16:9 frame does much of the work of making it feel expansive,
-    # and "deep black navy void" plus the pale-background negatives fixed the
-    # washed-out sky that round 3 produced.
-    "outreach/imagery/terrain-{31,47,89}.png": dict(
+    # Round 4, 21 Sep 2026, at 1664x928 and 34 steps. Three seeds were generated
+    # and 89 kept. The 16:9 frame does much of the work of making it feel
+    # expansive, and "deep black navy void" plus the pale-background negatives
+    # fixed the washed-out sky that round 3 produced.
+    "outreach/imagery/terrain.webp": dict(
         prompt="a vast expansive undulating free energy surface receding to a distant horizon, seen "
                "from above and far back, fine topographic contour bands following every peak and "
                "trough, " + "RAMP" + ", set against a deep black navy void, dark background, glossy "
@@ -72,9 +76,9 @@ PROVENANCE = {
                "cages and fullerene lattices floating above and partly embedded in the ridges, fine "
                "whispery biological filaments and threads drifting across, around and through the "
                "surface, soft gradients, luminous, techno-futurist, expansive, minimal, elegant",
-        size=(1664, 928), steps=34, seeds=(31, 47, 89)),
+        size=(1664, 928), steps=34, seed=89),
 
-    "outreach/imagery/field-lines.png": dict(
+    "outreach/imagery/field-lines.webp": dict(
         prompt="minimal biophysics art, smooth electrostatic field lines curving around an unseen "
                "molecule, thin cyan contours on deep navy, one violet node, techno-futurist, airy, "
                "flat vector"),
