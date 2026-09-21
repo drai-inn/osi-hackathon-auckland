@@ -27,8 +27,13 @@ body{font-family:var(--font);color:var(--ink);background:var(--bg-top);line-heig
 a{color:var(--action)}
 
 /* hero */
-header{background:var(--void);color:var(--on-void);padding:56px 0 52px;position:relative;overflow:hidden}
-header .motif{position:absolute;right:-30px;bottom:-40px;width:420px;opacity:.09;pointer-events:none}
+header{background:var(--void);color:var(--on-void);padding:76px 0 68px;position:relative;overflow:hidden}
+/* terrain.webp sits behind the hero. Collateral, not a depiction of anything. */
+header::before{content:'';position:absolute;inset:0;background:url(../imagery/terrain.webp) center/cover;
+  opacity:.5}
+header::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,
+  rgba(20,28,54,.72) 0%, rgba(20,28,54,.55) 40%, rgba(20,28,54,.9) 100%)}
+header .wrap{position:relative;z-index:1}
 .eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
   color:var(--on-void-soft);margin-bottom:22px}
@@ -199,6 +204,11 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     </ol>
   </div>
 </div></section>
+
+<section style="padding:0;border:none">
+  <img src="../imagery/stacked-isosurfaces.webp" alt=""
+    style="width:100%;height:190px;object-fit:cover;display:block">
+</section>
 
 <section id="who"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>

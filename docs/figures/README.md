@@ -8,10 +8,10 @@ All generated from a script. Nothing hand-posed, no screenshots.
 | [pocket-anatomy.svg](pocket-anatomy.svg) | `tools/render_components.py` + `data/pocket-anatomy.json` | The twenty residues lining the CDK9 site, and the equivalent residue in the three counter-targets |
 | [zoom-ladder.svg](zoom-ladder.svg) | `tools/render_components.py` | One site at six scales, complex down to a quantum region, with heavy-atom counts |
 
-The four [theme cards](../cards/) come from `tools/make_cards.py`, which is standard-library only.
-Theme 2's artwork is real geometry — flavopiridol as deposited, inside four superposed CDK pockets —
-read from `data/card-geometry.json`, which `tools/extract_card_geometry.py` writes from the cached
-PDB entries.
+The four [theme cards](../cards/) are a different thing and live by different rules. They come
+from `tools/make_cards.py`, which composites a generated background from `docs/cards/bg/` with a
+scrim and the theme's text. **Those backgrounds are collateral, not data** — mood for a recruitment
+card. Everything on this page comes from deposited coordinates.
 
 ## Regenerate
 

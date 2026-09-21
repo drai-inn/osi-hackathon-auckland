@@ -29,7 +29,8 @@ Flat on purpose.
 | `docs/worked-example.md` | A CDK selectivity problem, ready to pick up |
 | `docs/compute.md` | Dual GB10 and an HGX H200 |
 | `docs/small-experiments.md` | Learning a parameter space when every run is expensive |
-| `docs/cards/`, `docs/figures/` | Generated. Never hand-edit an SVG |
+| `docs/figures/` | **Data.** Drawn from deposited coordinates by a script, and regenerable. Never hand-edit an SVG |
+| `docs/cards/`, `outreach/imagery/` | **Collateral.** Generated backgrounds, mood rather than measurement |
 | `docs/adr/` | Decisions |
 | `outreach/` | The collateral, and the brand |
 | `tools/` | Generators and the link checker |
@@ -49,6 +50,12 @@ number is a bug.
 
 **Every figure regenerates from a script.** No screenshots, no hand-posed renders. Structural
 figures carry their PDB ID, the date fetched and the command.
+
+**Collateral is held to a different standard, and the line matters.** Theme-card backgrounds and
+`outreach/imagery/` come from a diffusion model, so they cannot be regenerated deterministically and
+they will draw chemistry that looks right and is not. They carry mood. Anything a reader could take
+as a measurement belongs in `docs/figures/` and comes from data. Do not move an image across that
+line without saying so.
 
 **Run `make check` before committing.** It checks every relative link and anchor, and it has a
 self-test because GitHub's anchor rule is easy to get subtly wrong.

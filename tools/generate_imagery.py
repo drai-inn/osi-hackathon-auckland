@@ -38,10 +38,6 @@ MODEL = "Qwen/Qwen-Image"
 PROVENANCE = {
     # Round 2, 21 Sep 2026. Qwen-Image, bfloat16, 1328x1328, 30 steps,
     # true_cfg_scale 4.0, seed 11, ~41 s each once the model is resident.
-    "outreach/imagery/folding-basin.webp": dict(
-        prompt="minimal techno-futurist poster art, one smooth undulating folding energy landscape "
-               "surface, a single glowing cyan sphere settling into the basin, deep navy void, "
-               "violet rim light, vast negative space, flat vector, elegant, playful"),
     "outreach/imagery/through-the-membrane.webp": dict(
         prompt="minimal techno-futurist illustration, a lipid membrane as a rhythmic row of round "
                "heads with tails, one bright cyan molecule slipping through the gap, deep navy, "
@@ -78,10 +74,6 @@ PROVENANCE = {
                "surface, soft gradients, luminous, techno-futurist, expansive, minimal, elegant",
         size=(1664, 928), steps=34, seed=89),
 
-    "outreach/imagery/field-lines.webp": dict(
-        prompt="minimal biophysics art, smooth electrostatic field lines curving around an unseen "
-               "molecule, thin cyan contours on deep navy, one violet node, techno-futurist, airy, "
-               "flat vector"),
 }
 
 # Deep navy -> violet -> cyan -> pale is both perceptually ordered, so it reads

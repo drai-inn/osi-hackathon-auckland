@@ -13,6 +13,10 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   /* Render source, not a page. Screenshot at 1200x452 to rebuild the PNG. */
+  /* terrain.webp behind the type, dimmed hard so the headline stays first. */
+  .bg{position:absolute;inset:0;background:url(../imagery/terrain.webp) center/cover;opacity:.42}
+  .bgveil{position:absolute;inset:0;background:linear-gradient(105deg,
+    rgba(20,28,54,.94) 0%, rgba(20,28,54,.82) 52%, rgba(20,28,54,.55) 100%)}
   body{width:1200px;height:452px;overflow:hidden;
        font-family:Inter,"Helvetica Neue",Arial,sans-serif;
        background:var(--void);color:var(--on-void);position:relative}
@@ -20,7 +24,7 @@
   /* Top arch: borrowed from the global event's masthead, so our banner reads as
      part of the same event. Their wordmark treatment, their edition pill, their
      action colour. */
-  .arch{position:relative;background:var(--void-deep);height:52px;display:flex;
+  .arch{position:relative;z-index:2;background:var(--void-deep);height:52px;display:flex;
         align-items:center;justify-content:space-between;padding:0 46px;
         border-bottom:1px solid rgba(154,167,205,.14)}
   .arch .mark{display:flex;align-items:flex-end;gap:2.5px;height:15px}
@@ -72,6 +76,7 @@
     <span class="edition"><b></b>4TH EDITION · 21–22 OCTOBER 2026 · GLOBAL</span>
   </div>
 
+  <div class="bg"></div><div class="bgveil"></div>
   <div class="inner">
     <svg class="motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6">
       <path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/>
