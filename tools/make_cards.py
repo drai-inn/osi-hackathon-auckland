@@ -29,6 +29,11 @@ BG = OUT / "bg"
 VOID, PANEL, ON, SOFT = "#141C36", "#1D2A4F", "#EEF1FB", "#9AA7CD"
 SOUTH, GOLD, ACTION, VIOLET = "#00D3F6", "#C79A4D", "#3F5FBC", "#8B7CF6"
 
+# A four-step ramp rather than two colours, so the four read as one set. It
+# orders the cards, nothing more — the themes are not a fidelity ladder in this
+# order, and the scale label on each card is where the real claim is made.
+RUNG = ["#8B7CF6", "#7C8DF0", "#4FB6EE", "#00D3F6"]
+
 
 W, H = 600, 406
 FONT = "Inter,Helvetica Neue,Arial,sans-serif"
@@ -51,17 +56,20 @@ def wrap(text: str, width: int) -> list[str]:
         lines.append(line)
     return lines
 
+# The scale is the extra piece of context: it is what makes the four read as one
+# ladder rather than four unrelated tiles, and it is the thing a visitor uses to
+# work out which theme is theirs.
 CARDS = [
-    (1, "Screening at scale", SOUTH,
+    (1, "Screening at scale", "MANY MOLECULES, COARSE",
      "Models that know something about shape, used to filter before you pay for docking.",
      "Boltz-2 · OpenFold3 · IntFold · ChemBERTa-2 · ESM-2"),
-    (2, "Molecules in motion", SOUTH,
+    (2, "Molecules in motion", "ATOMS, IN MOTION",
      "Machine-learned interatomic potentials in MD. Near-quantum forces you can afford to run.",
      "MACE · UMA · eSEN · Orb-v3 · NequIP"),
-    (3, "Binding to whole system", VIOLET,
+    (3, "Binding to whole system", "ONE EVENT, WHOLE CELL",
      "Carrying a molecular signal up to functional and physiological change.",
      "STATE · scGPT · Geneformer · scFoundation"),
-    (4, "Repurposing what we have", VIOLET,
+    (4, "Repurposing what we have", "EVERY APPROVED DRUG",
      "Genotype, structure and approved drugs, with deliberately small models.",
      "Evo 2 · Nucleotide Transformer · TxGNN · PrimeKG"),
 ]
@@ -71,7 +79,8 @@ def data_uri(path: Path) -> str:
     return "data:image/webp;base64," + base64.b64encode(path.read_bytes()).decode()
 
 
-def build(n, title, accent, blurb, models) -> str:
+def build(n, title, scale, blurb, models) -> str:
+    accent = RUNG[n - 1]
     bg = data_uri(BG / f"theme-{n}.webp")
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
          f'viewBox="0 0 {W} {H}" width="{W}" height="{H}" font-family="{FONT}" role="img" '
@@ -98,8 +107,17 @@ def build(n, title, accent, blurb, models) -> str:
          f'<rect width="{W}" height="4" fill="{accent}"/>',
          '</g>']
 
-    o.append(f'<text x="34" y="52" fill="{accent}" font-size="12" font-weight="800" '
-             f'letter-spacing="1.8">THEME {n}</text>')
+    # Four ticks with this theme's one filled: the set reads as a ladder, and a
+    # card seen on its own still says where it sits.
+    for k in range(4):
+        on = k == n - 1
+        o.append(f'<rect x="{34 + k*13}" y="{40 if on else 43}" width="9" '
+                 f'height="{10 if on else 4}" rx="2" fill="{RUNG[k]}" '
+                 f'opacity="{1 if on else 0.33}"/>')
+    o.append(f'<text x="{34 + 4*13 + 8}" y="52" fill="{accent}" font-size="12" '
+             f'font-weight="800" letter-spacing="1.8">THEME {n}</text>')
+    o.append(f'<text x="{W-34}" y="52" text-anchor="end" fill="{ON}" font-size="11.5" '
+             f'font-weight="700" letter-spacing="1.4" opacity=".62">{esc(scale)}</text>')
     o.append(f'<text x="34" y="86" fill="{ON}" font-size="27" font-weight="800" '
              f'letter-spacing="-.4">{esc(title)}</text>')
     for i, line in enumerate(wrap(blurb, 56)):
@@ -114,7 +132,7 @@ def build(n, title, accent, blurb, models) -> str:
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    for n, title, accent, blurb, models in CARDS:
+    for n, title, scale, blurb, models in CARDS:
         p = OUT / f"theme-{n}.svg"
-        p.write_text(build(n, title, accent, blurb, models))
+        p.write_text(build(n, title, scale, blurb, models))
         print(f"wrote {p.relative_to(OUT.parent.parent.parent)}  ({p.stat().st_size:,} bytes)")

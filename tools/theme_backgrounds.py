@@ -28,9 +28,10 @@ MODEL = "Qwen/Qwen-Image"
 RAMP = ("a perceptually uniform colour ramp running deep navy in the shadows through violet "
         "to bright cyan in the highlights")
 
-FRAME = ("composition weighted to the right with a calm uncluttered upper left, falling away to "
-         "near black at the top and bottom edges, wide cinematic depth, soft gradients, "
-         "techno-futurist, minimal, elegant, no subject in the lower third")
+# "no subject in the lower third" emptied the frame rather than balancing it,
+# and asking for a calm upper left compounded that. Weighting is enough.
+FRAME = ("composition weighted to the right, falling away to near black at the top and bottom "
+         "edges, wide cinematic depth, soft gradients, techno-futurist, elegant")
 
 NEG = ("text, words, letters, numbers, watermark, signature, logo, cluttered, busy, "
        "stock illustration, bohr atom, staircase, bar chart, arrow, infographic, "
@@ -39,21 +40,35 @@ NEG = ("text, words, letters, numbers, watermark, signature, logo, cluttered, bu
        "centred composition, symmetrical")
 
 PROMPTS = {
-    1: ("screening at scale — an immense dark plain scattered with countless faint particles "
-        "receding to a horizon, a small handful of them lit bright cyan and standing out from "
-        f"the rest, {RAMP}, {FRAME}"),
+    1: ("screening at scale — an immense dark plain densely covered with many thousands of tiny "
+        "points of light receding to a far horizon, a dense glittering field, a small cluster of "
+        f"them lit bright cyan and standing out from the rest, {RAMP}, {FRAME}"),
     2: ("molecules in motion — a single luminous organic form caught mid-movement, its trajectory "
         "smeared into soft overlapping echoes behind it, viscous and fluid, "
         f"{RAMP}, {FRAME}"),
-    3: ("binding to a whole system — nested translucent shells opening outward from one small "
-        "bright core, each shell a wider scale than the last, layered depth, "
-        f"{RAMP}, {FRAME}"),
+    # "shells" produced a mollusc. Concentric membranes, and say what they are.
+    3: ("binding to a whole system — concentric translucent membranes expanding outward from one "
+        "small bright core like ripples frozen in three dimensions, each layer a wider scale than "
+        f"the last, layered depth, abstract, {RAMP}, {FRAME}"),
     4: ("repurposing what we have — a dark field of many identical small rounded forms in loose "
         "rows, three of them lit bright cyan and connected by a fine thread, the rest dim, "
         f"{RAMP}, {FRAME}"),
 }
 
 SEED = 53
+RERUN_SEED = 77          # themes 1 and 3, which needed a second attempt
+
+# Two things to know before changing these.
+#
+# Uploading a script to the workspace by piping into `coder ssh <ws> -- cmd`
+# silently writes an empty file; stdin is not forwarded for a command. Embed the
+# base64 in the command string instead. Backgrounding with nohup inside
+# `coder ssh -- cmd` is also killed when the session tears down, so run in the
+# foreground.
+#
+# "shells" produced a mollusc with a pearl in it, and over-constraining the
+# composition ("no subject in the lower third", "calm uncluttered upper left")
+# emptied the frame rather than balancing it. Both are fixed above.
 
 
 def main() -> None:
