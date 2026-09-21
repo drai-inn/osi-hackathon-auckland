@@ -10,14 +10,21 @@ seed so the output is identical on every run. Standard library only.
 """
 from __future__ import annotations
 
+import json
 import math
 import random
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "docs/cards"
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "docs/cards"
+GEOM = ROOT / "data/card-geometry.json"
 
 VOID, PANEL, ON, SOFT = "#141C36", "#1D2A4F", "#EEF1FB", "#9AA7CD"
 SOUTH, GOLD, ACTION, VIOLET = "#00D3F6", "#C79A4D", "#3F5FBC", "#8B7CF6"
+
+# CPK-ish, tuned for the dark panel
+ELEMENT = {"C": "#C7D0EA", "N": "#6FA8FF", "O": "#FF8A7A", "S": "#F2D06B",
+           "CL": "#7FE6A6", "F": "#7FE6A6", "P": "#F2A65A"}
 
 W, H = 600, 406
 ART_Y, ART_H = 112, 176
@@ -63,6 +70,58 @@ def art_screening(rng) -> list[str]:
              f'stroke="{SOFT}" stroke-width="1" opacity=".22"/>')
     o.append(f'<path d="M40 {cy+88:.0f} Q300 {cy+58:.0f} 512 {cy+13:.0f}" fill="none" '
              f'stroke="{SOFT}" stroke-width="1" opacity=".22"/>')
+    return o
+
+
+def art_motion_real(rng) -> list[str]:
+    """Flavopiridol as deposited, inside four superposed CDK pockets.
+
+    Real coordinates rather than a drawn squiggle. The spread between the four
+    backbones is genuine structural variation, which is the theme.
+    """
+    g = json.loads(GEOM.read_text())
+    lig, traces = g["ligand"], g["traces"]
+    # Frame on the ligand, not the whole crop, so the molecule is legible and the
+    # backbone reads as the pocket around it. Everything else clips.
+    lx = [p[0] for p in lig["atoms"]]; ly = [p[1] for p in lig["atoms"]]
+    cx, cy = (min(lx) + max(lx)) / 2, (min(ly) + max(ly)) / 2
+    span = max(max(lx) - min(lx), max(ly) - min(ly)) * 2.15
+    sc = (ART_H - 14) / span
+    ox = W / 2 - cx * sc
+    oy = ART_Y + ART_H / 2 - cy * sc
+    # drop the outer shell, which is tangle at this zoom
+    traces = [[q for q in t if abs(q[0] - cx) < span and abs(q[1] - cy) < span * 0.8]
+              for t in traces]
+    def S(p):
+        return ox + p[0] * sc, oy + p[1] * sc, p[2]
+
+    o = []
+    # the four backbones. CDK9 lit, the counter-targets behind it.
+    for k, t in enumerate(traces):
+        pr = [S(q) for q in t]
+        d = ""
+        pen = False
+        for a, b in zip(pr, pr[1:]):
+            if math.dist(a[:2], b[:2]) > sc * 6.0:      # chain break
+                pen = False
+                continue
+            if not pen:
+                d += f"M{a[0]:.1f} {a[1]:.1f}"
+                pen = True
+            d += f"L{b[0]:.1f} {b[1]:.1f}"
+        o.append(f'<path d="{d}" fill="none" stroke="{SOUTH if k == 0 else SOFT}" '
+                 f'stroke-width="{3.0 if k == 0 else 1.9}" stroke-linecap="round" '
+                 f'stroke-linejoin="round" opacity="{0.50 if k == 0 else 0.17}"/>')
+
+    # the ligand, drawn properly
+    lp = [S(p) for p in lig["atoms"]]
+    for i, j in lig["bonds"]:
+        o.append(f'<line x1="{lp[i][0]:.1f}" y1="{lp[i][1]:.1f}" x2="{lp[j][0]:.1f}" '
+                 f'y2="{lp[j][1]:.1f}" stroke="{GOLD}" stroke-width="4.0" '
+                 f'stroke-linecap="round" opacity=".95"/>')
+    for k, (x, y, _) in enumerate(lp):
+        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4.6" '
+                 f'fill="{ELEMENT.get(lig["elements"][k], GOLD)}"/>')
     return o
 
 
@@ -156,7 +215,7 @@ CARDS = [
     (1, "Screening at scale", SOUTH, art_screening,
      "Models that know something about shape, used to filter before you pay for docking.",
      "Boltz-2 · OpenFold3 · IntFold · ChemBERTa-2 · ESM-2"),
-    (2, "Molecules in motion", SOUTH, art_motion,
+    (2, "Molecules in motion", SOUTH, art_motion_real,
      "Machine-learned interatomic potentials in MD. Near-quantum forces you can afford to run.",
      "MACE · UMA · eSEN · Orb-v3 · NequIP"),
     (3, "Binding to whole system", VIOLET, art_scales,

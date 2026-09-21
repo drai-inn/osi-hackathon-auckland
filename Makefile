@@ -1,6 +1,6 @@
 # Light by design. Standard library only, so anything here runs on day 1.
 
-.PHONY: help check cards figures poster
+.PHONY: help check cards card-geometry figures poster
 
 help:
 	@echo "check    every relative link and anchor in the markdown"
@@ -14,6 +14,9 @@ check:
 
 cards:
 	python3 tools/make_cards.py
+
+card-geometry:            ## refresh the real coordinates the cards draw from
+	python3 tools/extract_card_geometry.py
 
 figures:
 	python3 tools/render_structures.py
