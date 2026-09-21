@@ -23,7 +23,8 @@ SKIP = {".git", ".cache", "node_modules", ".venv"}
 
 # Links out to GitHub's own UI, relative to the repo page rather than the tree.
 # They resolve on github.com and nowhere else, so they are not ours to check.
-GITHUB_UI = ("../../tree/", "../../pulls", "../../issues", "../../compare/", "../../projects")
+GITHUB_UI = ("../../tree/", "../../pull", "../../issues", "../../compare/", "../../projects",
+             "../../blob/", "../../commit/", "../../milestone")
 
 LINK = re.compile(r"!?\[[^\]]*\]\(\s*([^)\s]+)")
 MD_LINK_IN_HEADING = re.compile(r"\[([^\]]*)\]\([^)]*\)")
@@ -64,11 +65,12 @@ def targets(paths: list[Path]) -> list[Path]:
             out += [f for f in p.rglob("*.md") if not SKIP & set(f.parts)]
         elif p.suffix == ".md":
             out.append(p)
-    return sorted(set(out))
+    # resolve, or relative_to(ROOT) blows up on a relative path argument
+    return sorted({f.resolve() for f in out})
 
 
 def main(argv: list[str]) -> int:
-    paths = [Path(a) for a in argv] or [ROOT]
+    paths = [Path(a).resolve() for a in argv] or [ROOT]
     files = targets(paths)
     cache: dict[Path, set[str]] = {}
     bad, n = [], 0

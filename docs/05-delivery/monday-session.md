@@ -1,3 +1,8 @@
+> **⚠️ Pre-pivot. Kept for reference, not current.**
+> On 21 Sep we moved from work packages and named owners to **four open themes and invited
+> project teams**. Start at [the themes](../00-event/themes.md) and [taking part](../00-event/taking-part.md).
+> Historical. This is the session at which we pivoted.
+
 # Planning session — Mon 21 Sep, 2 hours
 
 **Purpose:** leave the room with names against work packages, the week-1 spikes assigned, and

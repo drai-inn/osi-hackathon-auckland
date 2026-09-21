@@ -1,3 +1,8 @@
+> **⚠️ Pre-pivot. Kept for reference, not current.**
+> On 21 Sep we moved from work packages and named owners to **four open themes and invited
+> project teams**. Start at [the themes](../00-event/themes.md) and [taking part](../00-event/taking-part.md).
+> No owners or hosts — we are inviting teams instead.
+
 # Roles, people, and who to invite
 
 Names are deliberately blank. **Filling them in is Monday's job** and the top of the critical path

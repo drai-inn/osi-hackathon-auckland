@@ -1,3 +1,8 @@
+> **⚠️ Pre-pivot. Kept for reference, not current.**
+> On 21 Sep we moved from work packages and named owners to **four open themes and invited
+> project teams**. Start at [the themes](../00-event/themes.md) and [taking part](../00-event/taking-part.md).
+> Superseded by the four themes.
+
 # Adjacent activities — the cross-disciplinary tracks
 
 **Purpose:** give researchers from adjacent disciplines a genuine reason to be in the room — one

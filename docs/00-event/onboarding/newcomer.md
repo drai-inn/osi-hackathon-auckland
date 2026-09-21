@@ -11,7 +11,7 @@ has a named person whose job is to unstick you.
 
 ## Rung 0 · Orient, 10 minutes
 
-Read **[the short versions](../narrative.md#the-short-versions)** at the foot of the narrative.
+Read **[the short versions](../../../outreach/short-form.md)** at the foot of the narrative.
 Three paragraphs. If the one-sentence version makes sense to you, you have enough.
 
 Then skim the **[glossary](../../02-scope/glossary.md)**, not to learn it, just so you know it

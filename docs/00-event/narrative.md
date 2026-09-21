@@ -1,221 +1,97 @@
-# The narrative
+# The pitch
 
-What we're doing and why. All the outreach copy in [`outreach/`](../../outreach/) is cut from this,
-so change it here first.
-
----
-
-## The short version
-
-> ### How far can a chain of surrogates get us?
-
-**Three things, in order.**
-
-**1. Hand every expensive step to a learned surrogate.**
-Individual steps have been done well by other groups.
-We haven't found anyone who ran the whole chain.
-
-**2. Measure where that lands, as a baseline.**
-It might not be good enough yet. We'd still like the number.
-Every step is improving quickly. At some point the chain crosses a threshold.
-Without a starting point we won't know when.
-
-**3. Get there by starting small.**
-Twelve compounds. Two targets. A handful of quantum labels.
-Explore the parameter space properly at that size.
-Scale only what survives.
+**All recruitment copy is cut from this page.** Rewrite it here and re-cut, or the versions drift
+apart within a fortnight.
 
 ---
 
-## 1. The testbed
+## The question
 
-Most drugs fail on selectivity, not potency.
+> ### How far can a chain of surrogates take us in biomolecular interactions?
+>
+> Systems · proteins · ligand binding · drug discovery · pharmacology
 
-A compound built for one protein also hits its close relatives. The programme fails late and
-expensively.
+## Why those five words are one chain
 
-Conventional screening is good at "does this bind something". It's poor at "why this pocket and not
-its near-twin". It flattens a 3D pocket into a fingerprint, and that throws away what separates two
-similar pockets: local geometry, induced fit, electrostatics, and how both protein and ligand move.
+Physiological outcomes come from molecules interacting. Those interactions produce functional
+change. Function is driven by spatial and structural change. Pharmacology is the effect of drugs on
+that system.
 
-**Our case is CDK9 against CDK7.** Same fold, same ligand, different answer.
+It reads bottom-up — structure, interaction, function, physiology — with the drug entering at the
+bottom and its effect read at the top. Nobody can currently carry a signal cleanly from one end to
+the other.
 
-Enough public data exists to build a defensible benchmark. Known selective and known pan-CDK
-compounds give us real discriminating cases, not actives against random decoys.
+## Why now
 
-![The four CDK targets, and what each phase of the pipeline actually holds](../03-pipeline/figures/objects-of-study.svg)
+Biology has a ladder of scales. Machine learning now has a ladder that runs alongside it: association
+models over sequence, 3D-aware and equivariant models over structure, interatomic potentials over
+atoms and motion, and multi-scale models over cells and tissue.
 
-## 2. The chain
+Most of these are open-weight and most of them arrived recently. Very few of us know more than our
+own rung.
 
-Eight steps.
+**The question in every theme is the same: how far up that second ladder do you have to climb to get
+an answer you can trust, and how would you know?** Higher isn't automatically better — it's more
+expensive, and at some point it stops buying accuracy. Nobody has measured where that point is.
 
-Each cheap enough to run on everything reaching it. Each allowed to be wrong in a characterised way
-that the next step corrects.
+## What we're actually doing
 
-Generate plausible complexes. Crop the pocket. Sample how it moves. Score the geometry. Send only
-the genuinely uncertain cases to quantum chemistry. Learn from those labels. Repeat.
+Four [themes](themes.md), each a different rung. In each one, three moves:
 
-![The eight steps, what passes between them, and where the gates sit](../03-pipeline/figures/pipeline-isometric.svg)
+1. Find out what open-weight models exist in that area
+2. Get one or two running on our hardware — dual GB10 and an HGX H200
+3. Design a small experiment, and work out how you'd evaluate it
 
-Four steps hand an expensive calculation to a learned model:
+The third is the hard part and the one we care most about. A recent benchmark found single-cell
+foundation models don't beat a simple linear baseline at predicting perturbation effects, and another
+found the choice of metric flips the model rankings outright. How to evaluate these things is
+genuinely unsettled. That's the opportunity, not a caveat.
 
-| Step | Replaces |
+## The four themes, in a line each
+
+| | |
 | --- | --- |
-| Co-folding | Experimental structure determination |
-| Learned ensembles | Molecular dynamics |
-| Equivariant scoring | Physics-based rescoring |
-| Delta-learned correction | Running quantum chemistry on everything |
+| **Screening at scale, with physics in the loop** | Models that know something about shape, used to filter before you pay for docking |
+| **Molecules in motion** | Machine-learned interatomic potentials in MD — near-quantum forces you can afford to run |
+| **From a binding event to a whole system** | Carrying a molecular signal up to functional and physiological change |
+| **Repurposing what we already have** | Genotype, structure and approved drugs, with deliberately small models |
 
-Versions of each exist. At the 2025 hackathon alone there was a docking tool using a
-machine-learned potential as its scoring function, an agent that ran protein-ligand MD end to end,
-and an assistant for setting up DFT.
+Notional, all four. They describe the kind of thing we're interested in, not a project plan. Bring
+your own problem and own a space.
 
-What we haven't found is the four assembled into one chain, with a budget discipline across it.
-That's the thing we want to measure.
+## What we're asking
 
-## 3. Why it's worth measuring even if it fails
+**Come and explore the broader opportunity while getting hands-on with AI in your own area.** Come
+prepared to work with agents and with code, to find out where your own methods are moving under the
+new models.
 
-A surrogate can be fast, confident and wrong.
+Two things at once, deliberately: depth in your own field, and a link into something larger.
 
-It can also be accurate on average while being wrong on exactly the close calls the pipeline exists
-to resolve.
+We're inviting **project teams**. A group leader brings their team, their expertise, and a problem
+or candidate. If you can only come for the opening, come for the opening and leave your team to it —
+that's an expected way to take part, not a lesser one.
 
-Chain four together and the errors compound in ways nobody has characterised, because nobody has
-chained them.
+## What you get out of it
 
-So each one declares where it can be trusted. Every surrogate carries a **fidelity contract**: a
-stated ground truth, a validation set containing close calls, and a region outside which it isn't
-believed. A surrogate with a correlation coefficient and no trust region isn't a method, it's a
-hope.
+A calibrated view of where these models currently stand in *your* field — which is what you need to
+decide whether to put a student on it.
 
-What comes out: a number for how far the chain gets, and which links are dragging. Useful now for
-deciding where to spend. Useful later as the comparison point when we run it again with better
-components.
+Two days with people who don't share your background. Compute you don't have to organise. Default
+targets and chemistry already prepared, so nobody starts from a blank page.
 
-## 4. Start small, then scale
+And a shot at something bigger: four themes that work on their own are also, linked, the start of a
+drug discovery capability UoA doesn't currently have. We'd call it a seed and nothing grander than
+that yet.
 
-The pipeline has about eight configurable choices. Crop radius. Conformers sampled. Quantum theory
-level. How aggressively to spend the expensive budget.
+## The honest part
 
-Each combination costs GPU hours. Nobody can explore that at production scale.
+We don't know how far this gets. That's the experiment. Several of these models may turn out not to
+beat much simpler things on the problems we care about, and if so we'd like the number, because
+every rung on that ladder is improving fast and at some point it crosses a threshold.
 
-So the usual approach is to guess most of it and tune two or three knobs on a small grid.
+A well-founded *"not yet, and here's why"* is a result we'd be happy to present.
 
-Recent work on small-scale machine learning experiments suggests that's the thing that goes wrong.
-Small experiments fail to transfer because they're **under-explored**, not because they're small.
-Four configurations showed nothing. Sixteen showed nothing. 256 gave a clean predictive answer.
+## The global event
 
-![Four tiers, from smoke test to scale-up, with a gate between each](../03-pipeline/figures/scale-trajectory.svg)
-
-The trajectory runs in four tiers, and each gate has to be green before we move up.
-
-**Smoke test.** Five ligands, two targets, one pose. Do the containers run, do the formats line up.
-
-**Hackathon minimum.** Twelve to twenty ligands, three poses, twenty to fifty quantum labels. Do
-parameter changes move the ranking, is each stage feasible.
-
-**Useful pilot.** Fifty to a hundred ligands, four targets, hundreds of labels. Ranking stability,
-selectivity trend, cost per label.
-
-**Scale-up.** Thousands of candidates after front-end filtering. Only once the gates below it pass.
-
-The questions we actually want answered are: is this even feasible, what data would we need, and
-how small can we go while still being usefully robust.
-
-That last one travels well beyond drug discovery. Anyone with one field season, a small cohort or a
-three-week synthesis has the same problem. A pipeline of choices, an expensive evaluation, and no
-way to grid-search. It's part of why this is cross-disciplinary.
-
-*(This thread came out of a conversation with Jack Flanagan, who suggested hyperparameter
-optimisation on small datasets as a microtopic and asked where the big wins are that scale. Written
-up in [hpo-microtopic.md](../04-experiments/hpo-microtopic.md).)*
-
-## 5. What we'll actually do
-
-The hackathon sits at tier two.
-
-Twelve to twenty compounds. CDK9 against one close counter-target. A deliberately small budget of
-quantum calculations.
-
-Small enough for a room of people to explore in two days. Large enough to show whether there's real
-selectivity signal.
-
-The phases get worked on in parallel first, so each is understood on its own. Then an integrated
-small-scale run.
-
-Six gates decide what happens next, written before any data existed. A clean "no" against those
-gates is a good outcome. What we're trying to avoid is the ambiguous result that lets a project
-drift forward on optimism.
-
-## 6. Why a hackathon, and why Auckland
-
-The interesting parts can't be done by one discipline.
-
-The benchmark needs a medicinal chemist who knows that two IC50 values measured at different ATP
-concentrations don't form a valid ratio. Get that wrong and everything downstream is an artefact,
-quietly, until the write-up.
-
-The pocket predictions need a structural biologist to say which are nonsense.
-
-The quantum layer needs someone who knows when a calculation has converged and when it has merely
-stopped.
-
-The statistics need someone willing to say out loud that a difference of 0.05 on twenty compounds
-is nothing.
-
-And the whole thing needs a research software engineer or it won't run twice.
-
-Those people are at the University of Auckland and mostly haven't worked together. This is the
-excuse.
-
-## 7. The global event
-
-We're a local site for the [Open Scientific Intelligence Hackathon](the-global-event.md). Fourth
-year, hubs on four continents, over a thousand participants last year. Three years of write-ups,
-every team credited.
-
-**The global event runs 21-22 October and registration is open to anyone.** If you're interested in
-this space at all, sign up for that whether or not you come to ours.
-
-We're on 19-20 October because those are the two days we have. Wednesday the 21st is open if people
-want to keep going, and it's the global event's opening day.
-
-## 8. What you get out of it
-
-**New to this.** You'll own a result the group uses. In the first hour you'll be running a
-configuration that becomes a data point in the final analysis, or looking at predicted structures
-and telling the computational people which ones are wrong. That's a judgement they can't make
-without you.
-
-**Already in this area.** Dual GB10 boxes for the month beforehand, H200 access for the benchmarks,
-a pipeline that runs when you arrive, and an open question in the middle of it.
-
-## 9. Afterwards
-
-A curated CDK selectivity benchmark, with a written statement of what it can and can't support.
-There's a real gap there and other groups would use it.
-
-A methods note on small-data configuration search. Not chemistry-specific.
-
-A measured baseline for the surrogate chain, and a workflow that makes re-running it cheap.
-
-That last one matters most. The components will improve. We want to answer "has it crossed the
-threshold yet" without rebuilding everything.
-
----
-
-## The short versions
-
-**One line.** How far can a chain of surrogates get us? We're measuring it on drug-target
-selectivity, starting small, as a baseline we'll come back to.
-
-**A paragraph.** Most drugs fail on selectivity, and conventional screening can't separate a target
-from its close relatives because it discards the 3D information that distinguishes them. We're
-handing every expensive step to a learned surrogate and keeping quantum chemistry for the cases
-where it changes the answer. Other groups have built individual steps. We haven't found the whole
-chain attempted. It might not be good enough yet, which is still worth knowing, because each step
-is improving quickly and we want a starting point to compare against. We get there by starting
-small and exploring the parameter space properly, then scaling only what survives.
-
-**For someone new.** Two days, dedicated GPUs, a pipeline that already works when you arrive, and a
-job that uses what you already know.
+We're one local site of the [global hackathon](the-global-event.md), which runs 21–22 October with
+registration open to anyone. Sign up for that too — it's the bigger room.

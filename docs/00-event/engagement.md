@@ -1,3 +1,8 @@
+> **⚠️ Pre-pivot. Kept for reference, not current.**
+> On 21 Sep we moved from work packages and named owners to **four open themes and invited
+> project teams**. Start at [the themes](themes.md) and [taking part](taking-part.md).
+> Superseded by taking-part.md. The design principle — you should own a result — survives.
+
 # Engagement design, high-impact experiences for people new to AI for science
 
 **Priority, stated plainly:** several participants will be experts in their own field and new to

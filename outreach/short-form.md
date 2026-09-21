@@ -1,105 +1,122 @@
 # Short-form copy
 
-Drop-in text for the places where nobody reads a one-pager.
+Cut from [narrative.md](../docs/00-event/narrative.md). Rewrite the pitch there and re-cut.
 
 ---
 
-## Global hackathon Slack, introducing the Auckland hub
+## 📨 The note to send now
 
-> 👋 Auckland, New Zealand hub checking in. University of Auckland.
->
-> We're trying a more AI-intensive approach to a structure-based pipeline, handing every expensive
-> step to a learned surrogate, to see how far the whole chain gets today. Individual steps have been
-> done well. We haven't found the whole chain attempted, so this is partly a baseline.
->
-> The pipeline: open-weight co-folding → pocket crop →
-> learned ensembles → equivariant scoring → GPU quantum chemistry only on the genuinely uncertain
-> cases → learn from those labels. Driving case is CDK9 vs CDK7 paralog selectivity.
->
-> Hardware: dual GB10 for the month beforehand, HGX H200 for benchmarks.
->
-> We're on 19-20 Oct, which is a local scheduling thing. Happy to be the canary on anything, and
-> we'll publish the benchmark and workflow in case they're useful to anyone else.
->
-> If you worked on **UMADock, DynaAgent, F.A.D.E, MIDAS, DFTPilot or LARA-HPC** last year, we'd
-> genuinely like 30 minutes of your time.
+Short on purpose. The detail follows later in the week.
 
-## University mailing list / newsletter
+> **Subject: AI for Science hackathon, Auckland, 19–20 Oct — bring your team?**
+>
+> Hi {{NAME}},
+>
+> We're running the Auckland site of the global AI for Science hackathon on **Mon 19 – Tue 20
+> October**, and I'd like your team in the room.
+>
+> The question we're chasing: **how far can a chain of surrogates take us in biomolecular
+> interactions?** Systems, proteins, ligand binding, drug discovery, pharmacology. There's now an
+> open-weight model claiming almost every rung of that ladder and very few of us know more than our
+> own. Two days to find out what's real.
+>
+> Four loose themes — screening with physics in the loop, ML interatomic potentials in MD,
+> multi-scale from binding to system, and lightweight repurposing. Notional, all of them. **Bring
+> your own problem and take a space.** We have default targets and chemistry ready if you'd rather
+> pick something up.
+>
+> Come prepared to work with AI agents and with code. That sounds like a filter and it's the
+> opposite of one — **the agent writes the code, you supply the judgement about whether the answer
+> is any good**, and the judgement is the scarce part.
+>
+> If you can only make the opening, come for the opening and leave your team to it. That's a
+> completely normal way to do this.
+>
+> Free, two GB10s and an H200, food both days. Moving fast and light — more detail later this week.
+>
+> Nick
+> {{LINK}}
 
-> **AI for Science Hackathon. Auckland hub, {{DATES}}**
+## Global hackathon Slack, introducing the Auckland site
+
+> 👋 Auckland, New Zealand site checking in. University of Auckland.
 >
-> **How far can a chain of surrogates get us?** We're handing every expensive step in a
-> structure-based pipeline to a learned surrogate, and measuring where that lands. Other groups
-> have done individual steps. We haven't found the whole chain attempted, so it's partly a baseline
-> we'll come back to.
+> We're asking how far a chain of surrogates takes us across biomolecular interactions — systems,
+> proteins, ligand binding, drug discovery, pharmacology. Four themes, each one a rung of that
+> ladder, each finding out which open-weight models are worth running and how you'd evaluate them.
 >
-> The testbed is drug-target selectivity. The University of Auckland is a local site for the global
-> Open Scientific Intelligence Hackathon, which runs 21-22 October with registration open to
-> anyone.
+> Hardware: dual GB10 for the month beforehand, HGX H200 for benchmarks. We're on 19–20 Oct, which
+> is a local scheduling thing.
 >
-> **We need medicinal chemists, structural biologists, quantum chemists, statisticians, ML
-> researchers and research software engineers**, and people new to AI for science, for whom we've
-> built specific on-ramps. Free. Dedicated GPUs. No prior experience required for several roles.
+> Happy to be the canary on anything, and we'll publish what we find including the negatives.
+
+## University mailing list
+
+> **AI for Science Hackathon · Auckland · {{DATES}}**
 >
-> The global event runs 21-22 October and registration is open to anyone, so sign up for that too.
+> **How far can a chain of surrogates take us in biomolecular interactions?** There's now an
+> open-weight model claiming almost every rung from sequence to physiology. Two days finding out
+> which ones hold up, and how you'd know.
 >
-> Details {{LINK}} · Register {{REGISTER}} · njon001@aucklanduni.ac.nz
+> Four themes. Bring your own problem or take one of ours. Come prepared to work with AI agents and
+> code — the agent writes it, you judge it, and no prior experience is needed for that.
+>
+> The University of Auckland is a local site of the global Open Scientific Intelligence Hackathon,
+> which runs 21–22 October with registration open to anyone.
+>
+> Free · dedicated GPUs · newcomers genuinely welcome.
+> {{LINK}} · njon001@aucklanduni.ac.nz
 
 ## Social, long
 
-> 🇳🇿 Auckland is hosting the New Zealand hub of the global Open Scientific Intelligence Hackathon,
+> 🇳🇿 Auckland is hosting the New Zealand site of the global Open Scientific Intelligence Hackathon,
 > {{DATES}}.
 >
-> **How far can a chain of surrogates get us?** Every expensive step in a structure-based pipeline
-> handed to a learned surrogate. Other groups have done individual steps, we haven't found the whole
-> chain attempted, and we'd like the number even if it turns out not to be good enough yet.
+> **How far can a chain of surrogates take us in biomolecular interactions?** Systems, proteins,
+> ligand binding, drug discovery, pharmacology. There's an open-weight model claiming nearly every
+> rung of that ladder now. Two days working out which ones are real and how you'd evaluate them.
 >
-> The testbed is drug-target selectivity, the problem that kills more programmes than potency does.
->
-> Cross-disciplinary by design. Newcomers genuinely welcome, you'll own a result, not watch one.
->
-> Global event 21-22 October, registration open to anyone. {{LINK}}
+> Bring your team and your own problem. Cross-disciplinary by design. Newcomers genuinely welcome —
+> you'll own a result, not watch one. {{LINK}}
 
 ## Social, short
 
-> How far can a chain of surrogates get us? Auckland site for the global AI-for-science hackathon,
-> {{DATES}}. Testbed: telling two near-identical drug targets apart. Chemists, physicists,
-> statisticians, RSEs, and anyone new to this. {{LINK}}
+> How far can a chain of surrogates take us in biomolecular interactions? Auckland site of the
+> global AI-for-science hackathon, {{DATES}}. Four themes, open-weight models, bring your own
+> problem. {{LINK}}
 
 ## Calendar invite
 
-> **OSI Hackathon. Auckland Hub**
+> **OSI Hackathon · Auckland Site**
 > {{DATES}} · {{VENUE}}
 >
-> How far can a chain of surrogates get us? An AI plus quantum-chemistry pipeline for drug-target
-> selectivity. A local site for the global Open Scientific Intelligence Hackathon.
+> How far can a chain of surrogates take us in biomolecular interactions? Four themes, open-weight
+> models, and small experiments to find out which hold up.
 >
-> **Bring:** a laptop. That's it, everything else is set up.
-> **Day 1:** framing, on-ramp clinics, parameter sweeps.
-> **Day 2:** integrated run, results, handoff to the global event.
+> **Bring:** a laptop. Everything else is set up.
+> **Both days:** open together, lightning talks, work in small groups, close together. Food and a
+> social occasion each day.
 >
-> Read first: {{LINK}}
-> Questions: njon001@aucklanduni.ac.nz
+> Read first: {{LINK}} · Questions: njon001@aucklanduni.ac.nz
 
 ## Email signature, September–October
 
 > ---
-> Organising the **Auckland hub** of the Open Scientific Intelligence Hackathon, {{DATES}} -
-> how far can a chain of surrogates get us. Cross-disciplinary, free, newcomers welcome.
-> {{LINK}}
+> Organising the **Auckland site** of the Open Scientific Intelligence Hackathon, {{DATES}} —
+> how far can a chain of surrogates take us in biomolecular interactions.
+> Cross-disciplinary, free, newcomers welcome. {{LINK}}
 
 ## Poster tear-off strip
 
-> **How far can a chain of surrogates get us?**
+> **How far can a chain of surrogates take us in biomolecular interactions?**
 > AI for Science Hackathon · Auckland · {{DATES}} · Free
-> Chemists · Physicists · Statisticians · Engineers · Newcomers
+> Bring your team, your problem, and a laptop
 > {{LINK}}
 
 ## Lift pitch, 30 seconds
 
-We want to try handing every expensive step in a structure-based pipeline to a learned surrogate,
-> and see how far the whole chain gets. Other groups have done individual steps. Nobody seems to
-> have run the lot. It might not be good enough yet, but we'd like the number, because every step is
-> improving quickly and at some point it crosses a threshold. The testbed is drug selectivity, where
-> most failures come from hitting the wrong protein and the tools can't tell near-identical targets
-> apart. Two days, cross-disciplinary, dedicated GPUs.
+> There's now an open-weight model claiming nearly every rung from sequence to physiology —
+> association models, 3D structure, interatomic potentials, multi-scale. Very few of us know more
+> than our own rung. Two days, four themes, and we find out how far up that ladder you have to climb
+> before the answer's trustworthy, and how you'd even know. Bring your team and your own problem.
+> The agent writes the code; you bring the judgement.

@@ -1,5 +1,10 @@
 # Scope
 
+> **⚠️ Pre-pivot in parts.** On 21 Sep we moved to [four open themes](../00-event/themes.md) and
+> invited project teams. The objective below now describes **the worked example we offer as a
+> default**, not the whole event. The reasoning behind the pivot is in
+> [recut-four-themes.md](recut-four-themes.md).
+
 ## Objective
 
 Determine, with evidence, whether a 3D chemistry-aware multi-fidelity surrogate pipeline
