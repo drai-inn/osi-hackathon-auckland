@@ -137,6 +137,7 @@ presentations and reports are done. Subscribe and you'll get every update and no
 | Coming along | [taking-part.md](docs/taking-part.md) · [the global event](docs/the-global-event.md) |
 | Something ready to work on | [worked-example.md](docs/worked-example.md) · [figures](docs/figures/) |
 | Compute | [compute.md](docs/compute.md) — two architectures, and what that means |
+| The models behind the agents | [agentic-models.md](docs/agentic-models.md) — the open-weight shortlist, and what actually fits |
 | Small experiments | [small-experiments.md](docs/small-experiments.md) — learning a parameter space when every run is expensive |
 | Inviting someone | [`outreach/`](outreach/) · [brand](outreach/brand/README.md) |
 | Who to talk to elsewhere | [interested-parties.md](docs/interested-parties.md) |
