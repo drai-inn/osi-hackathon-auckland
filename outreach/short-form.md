@@ -1,6 +1,6 @@
 # Short-form copy
 
-Cut from [narrative.md](../docs/00-event/narrative.md). Rewrite the pitch there and re-cut.
+Cut from [narrative.md](../docs/narrative.md). Rewrite the pitch there and re-cut.
 
 ---
 
@@ -25,9 +25,9 @@ Short on purpose. The detail follows later in the week.
 > your own problem and take a space.** We have default targets and chemistry ready if you'd rather
 > pick something up.
 >
-> Come prepared to work with AI agents and with code. That sounds like a filter and it's the
-> opposite of one — **the agent writes the code, you supply the judgement about whether the answer
-> is any good**, and the judgement is the scarce part.
+> Come prepared to work with AI agents and with code. **The agent writes the code, you bring the
+> judgement about whether the answer is any good**, which is the scarce half. Everyone is welcome,
+> whatever you last wrote and whenever you last wrote it.
 >
 > If you can only make the opening, come for the opening and leave your team to it. That's a
 > completely normal way to do this.
@@ -59,7 +59,7 @@ Short on purpose. The detail follows later in the week.
 > which ones hold up, and how you'd know.
 >
 > Four themes. Bring your own problem or take one of ours. Come prepared to work with AI agents and
-> code — the agent writes it, you judge it, and no prior experience is needed for that.
+> code. The agent writes it and you judge it, so no prior experience is needed.
 >
 > The University of Auckland is a local site of the global Open Scientific Intelligence Hackathon,
 > which runs 21–22 October with registration open to anyone.
@@ -76,8 +76,8 @@ Short on purpose. The detail follows later in the week.
 > ligand binding, drug discovery, pharmacology. There's an open-weight model claiming nearly every
 > rung of that ladder now. Two days working out which ones are real and how you'd evaluate them.
 >
-> Bring your team and your own problem. Cross-disciplinary by design. Newcomers genuinely welcome —
-> you'll own a result, not watch one. {{LINK}}
+> Bring your team and your own problem. Cross-disciplinary by design, and newcomers are genuinely
+> welcome. {{LINK}}
 
 ## Social, short
 
@@ -115,8 +115,8 @@ Short on purpose. The detail follows later in the week.
 
 ## Lift pitch, 30 seconds
 
-> There's now an open-weight model claiming nearly every rung from sequence to physiology —
-> association models, 3D structure, interatomic potentials, multi-scale. Very few of us know more
-> than our own rung. Two days, four themes, and we find out how far up that ladder you have to climb
-> before the answer's trustworthy, and how you'd even know. Bring your team and your own problem.
-> The agent writes the code; you bring the judgement.
+> There's now an open-weight model claiming nearly every rung from sequence to physiology:
+> association models, 3D structure, interatomic potentials, multi-scale. Most of us know our own
+> rung. Two days, four themes, and we find out how far up that ladder you have to climb before the
+> answer can be trusted, and how you'd know. Bring your team and your own problem. The agent writes
+> the code and you bring the judgement.

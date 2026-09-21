@@ -4,7 +4,7 @@
 
 ## Context
 
-The global [OSI Hackathon](../00-event/the-global-event.md) runs 21-22 October and Auckland is
+The global [OSI Hackathon](../the-global-event.md) runs 21-22 October and Auckland is
 listed as a 2026 site. We need two contiguous days for a room of people and a booked GPU block.
 
 We can't run past the 21st, and the 21st itself collides with other commitments. The two days we
@@ -37,7 +37,7 @@ The dates are certain, which unblocks invitations, the poster and the micro-repo
 
 We're probably not eligible for prizes, and the route into the write-up paper needs confirming
 rather than assuming. Ask the organisers what a site running on other dates can still take part in
-([A10](../02-scope/open-questions.md)). We also won't have the global Slack busy while we work,
+(A10). We also won't have the global Slack busy while we work,
 which costs us the mentor pool during our two days.
 
 **Revisit if** the organisers confirm we can't submit or be credited, and the competing local

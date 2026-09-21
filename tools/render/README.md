@@ -28,6 +28,6 @@ sweep and it helps to see what 10 versus 15 Å actually includes.
 
 Every committed structural figure carries, in the script that made it: the **PDB ID**, the **date
 fetched**, the **exact command**, and the **tool version**. Same discipline as the provenance tags
-on numbers. See [visualisation.md](../../docs/03-pipeline/visualisation.md).
+on numbers. See [visualisation.md](../../docs/worked-example.md).
 
 No hand-posed screenshots. If it can't be regenerated it won't survive the third revision.

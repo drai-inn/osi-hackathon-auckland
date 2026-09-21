@@ -1,127 +1,73 @@
 # Working notes for AI agents in this repo
 
-## What this repo is
+## What this is
 
-The team repo for the **Auckland hub of the Open Scientific Intelligence Hackathon 2026** — a
-global, 16-hub event now in its fourth year. Our project is a 3D chemistry-aware multi-fidelity
-surrogate pipeline for drug-target selectivity.
+The team repo for the **Auckland site of the Open Scientific Intelligence Hackathon 2026**, a
+global, multi-site event now in its fourth year.
 
-Both halves matter. It is a research project *and* a public, cross-disciplinary event we are
-recruiting for, and the repo is structured to keep those visible at once.
+**Mon 19 – Tue 20 Oct 2026.** The global event runs 21–22 October.
 
-**Key dates:** hackathon **Mon 19 – Tue 20 Oct 2026** (2 days) · US relay 20–21 Oct · the month
-before it is the build ([docs/05-delivery/critical-path.md](docs/05-delivery/critical-path.md)).
+The question: **how far can a chain of surrogates take us in biomolecular interactions?** Systems,
+proteins, ligand binding, drug discovery, pharmacology. Four open themes, each taking one rung of
+that ladder. See [ADR-0007](docs/adr/0007-four-themes-invited-teams.md) for the shape and why.
 
-It is currently mostly documents, because the stage implementations land during the month against
-frozen interfaces. Do not scaffold a Python package or implement pipeline stages unprompted —
-premature code would freeze decisions that are deliberately still open. Check
-[critical-path.md](docs/05-delivery/critical-path.md) for what week we are in and what is due.
+This is an invitation, not a project specification. We deliberately do not define the work in
+advance, because the groups who turn up bring their own problems and their own expertise. **Resist
+the urge to specify.** If something reads like it is closing down a choice a participant should
+make, it is probably wrong for this repo.
 
-## Hardware, which affects everything
+## Structure
 
-Two architectures: **dual GB10 (`aarch64`)** for development, pre-computation and the event's
-interactive load; **HGX H200 (`x86_64`)** for benchmarks and batch. Anything containerised must
-build for both. See [compute-plan.md](docs/06-feasibility/compute-plan.md) and
-[ADR-0005](docs/adr/0005-two-tier-compute-gb10-h200.md). This is the most commonly missed
-constraint in the repo.
-
-## Conventions that matter
-
-### Provenance tags on every number
-
-Every quantitative claim carries one of:
-
-| Tag | Meaning |
-| --- | --- |
-| `[measured]` | Someone ran it and recorded it |
-| `[source-doc]` | From the origin document — see `docs/01-context/source-notes/pipeline-options.md` |
-| `[literature]` | From a published source, cited |
-| `[estimate]` | A guess, and flagged as one |
-
-**An untagged number is a bug.** The compute budget is almost entirely `[estimate]` right now and
-says so loudly; day 1 of the hackathon converts those to `[measured]`.
-
-### Two framings the docs are built on
-
-- **Every surrogate owes a fidelity contract** (`docs/03-pipeline/fidelity-contracts.md`) — a
-  stated ground truth, validation set, agreement metric, and trust region. Four surrogates, four
-  contracts.
-- **The pipeline is the model; its configuration is the hyperparameter vector**
-  (`docs/04-experiments/hpo-microtopic.md`). Crop radius and microstate count are the object of
-  study, not settings to be guessed.
-
-### Engagement is a first-class concern
-
-Several participants will be new to AI for science. The design principle is that a newcomer's
-experience is good when they **personally own a result the group uses** — see
-[engagement.md](docs/00-event/engagement.md). When editing event-facing docs, keep the
-on-ramps and the host/owner split intact.
-
-### The structure, and the split that matters
+Flat on purpose.
 
 | | |
 | --- | --- |
-| `docs/00-event/` | **Outward-facing.** Narrative, the global event, public presence, engagement, outreach targets. What people outside the team read |
-| `docs/01-context` → `04-experiments` | The science |
-| `docs/05-delivery/` | **Inward-facing.** Critical path, plan, work packages, roles, US relay. How we run it |
-| `docs/06-feasibility/` | Compute, budget, risks, gates |
-| `outreach/` | The collateral itself |
+| `README.md` | The front door |
+| `docs/narrative.md` | The pitch. **All recruitment copy is cut from here** — rewrite it there and re-cut |
+| `docs/themes.md` | The four themes, with the open-weight models worth a look in each |
+| `docs/taking-part.md` | What the two days are like, and the four questions every group answers |
+| `docs/worked-example.md` | A CDK selectivity problem, ready to pick up |
+| `docs/compute.md` | Dual GB10 and an HGX H200 |
+| `docs/small-experiments.md` | Learning a parameter space when every run is expensive |
+| `docs/cards/`, `docs/figures/` | Generated. Never hand-edit an SVG |
+| `docs/adr/` | Decisions |
+| `outreach/` | The collateral, and the brand |
+| `tools/` | Generators and the link checker |
 
-When adding something, ask whether an outsider reads it. If yes it belongs in `00-event` or
-`outreach`; if no, it belongs in `05-delivery`. Do not let event material drift into the science
-sections — that is what the restructure fixed.
+## Hardware, which affects everything
 
-All recruitment copy is **cut from [narrative.md](docs/00-event/narrative.md)**. Rewrite the pitch
-there and re-cut, or the versions drift apart within a fortnight.
+**Dual GB10 is `aarch64`. The HGX H200 is `x86_64`.** Anything containerised has to build for both.
+This is the most commonly missed constraint here, and the one piece of pre-work that agents cannot
+fix on the day: at least one model per theme has to be known to start on our hardware before anyone
+arrives. See [compute.md](docs/compute.md).
 
-### Stage / work-package naming
+## Conventions
 
-- **Stages** are technical: `S0`–`S8`, one page each under `docs/03-pipeline/stages/`
-- **Work packages** are people: `A`–`F`, in `docs/05-delivery/work-packages.md`
-- Mapping in `docs/03-pipeline/architecture.md#stage-pages`. Don't invent a third scheme.
+**Provenance tags on every number.** `[measured]` someone ran it · `[source-doc]` from the origin
+documents · `[literature]` published, cited · `[estimate]` a guess, flagged as one. An untagged
+number is a bug.
 
-### Decisions
+**Every figure regenerates from a script.** No screenshots, no hand-posed renders. Structural
+figures carry their PDB ID, the date fetched and the command.
 
-Anything that changes scope, an interface, or a methodological commitment gets an ADR in
-`docs/adr/`. Six exist. Use `0000-template.md`.
-
-Reasoning that is not a formal decision — what was tried, what was rejected, why the copy reads the
-way it does — goes in `docs/05-delivery/sessions/`. **That is the only place in the repo that shows
-the evolution of our thinking.** Everywhere else states the current position, with no
-strikethroughs and no before-and-after. Read the latest session file before rewriting framing or
-copy; most of it has been argued once already.
-
-### Open questions
-
-`docs/02-scope/open-questions.md` is the project's honest edge. When you discover something
-uncertain, add a row with an owner — don't paper over it with a plausible assumption. When
-something gets resolved, keep the row and add the answer.
+**Run `make check` before committing.** It checks every relative link and anchor, and it has a
+self-test because GitHub's anchor rule is easy to get subtly wrong.
 
 ## Tone
 
-Written for a mixed-discipline audience: medicinal chemists, quantum chemists, statisticians, RSEs.
-Assume intelligence, not shared vocabulary. Name failure modes explicitly — most of the value in
-these documents is in the "failure modes" and "risks" sections, because that is where a week gets
-wasted or saved.
+Written for a mixed-discipline audience: chemists, physicists, statisticians, systems biologists,
+clinicians, RSEs. Assume intelligence, not shared vocabulary.
 
-Be concrete about what is not known. This repo is more useful for being honest about its gaps
-than it would be for sounding confident.
+Keep the language plain and positive. Say the thing once and move on. **Avoid the contrastive
+construction** — "not X, it's Y", "that sounds like A and it's the opposite", "the point isn't P,
+it's Q". It reads as sales and it is the main thing to watch for in drafts.
 
-## Tools
+Be concrete about what is not known. This repo is more useful for being honest about its gaps than
+it would be for sounding confident.
 
-Standard library only, so anyone can run them on day 1 without an environment:
+## History
 
-```bash
-python3 tools/validate_manifest.py data/manifest/benchmark_v0.example.csv
-python3 tools/compute_budget.py hackathon_minimum
-```
-
-If you change the per-unit costs in `compute_budget.py`, reconcile the walkthrough tables in
-`docs/06-feasibility/compute-budget.md` — they are generated by hand from the tool's output and
-will drift otherwise.
-
-## Source material
-
-Two documents seeded everything, distilled under `docs/01-context/source-notes/`. Read the source
-notes before proposing changes to the pipeline design — most "new" ideas are already considered
-and rejected there, with reasons.
+There was a pre-pivot version of this repo built around an eight-stage pipeline, six work packages
+and named owners. It was removed on 21 Sep. It is in the git history and in
+[PR #15](https://github.com/drai-inn/drugs-surrogate-pipeline/pull/15) if anything needs pulling
+back. Do not reintroduce work packages, owners, hosts, stage gates or a central benchmark team.

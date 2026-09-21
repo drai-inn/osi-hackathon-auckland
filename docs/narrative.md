@@ -1,0 +1,100 @@
+# The pitch
+
+**All recruitment copy is cut from this page.** Rewrite it here and re-cut, so the versions stay
+together.
+
+---
+
+## The question
+
+> ### How far can a chain of surrogates take us in biomolecular interactions?
+>
+> Systems · proteins · ligand binding · drug discovery · pharmacology
+
+## Why those five words are one chain
+
+Physiological outcomes come from molecules interacting. Those interactions produce functional
+change. Function is driven by spatial and structural change. Pharmacology is the effect of drugs on
+that system.
+
+It reads bottom-up: structure, interaction, function, physiology, with the drug entering at the
+bottom and its effect read at the top. Carrying a signal cleanly from one end to the other is still
+an open problem.
+
+## Why now
+
+Biology has a ladder of scales. Machine learning now has a ladder that runs alongside it: association
+models over sequence, 3D-aware and equivariant models over structure, interatomic potentials over
+atoms and motion, and multi-scale models over cells and tissue.
+
+Most are open-weight and most arrived recently. Most of us know our own rung.
+
+**Every theme asks the same question: how far up that second ladder do you have to climb to get an
+answer you can trust, and how would you know?** Climbing higher costs more, and somewhere along the
+way it stops buying accuracy. Finding where that happens is the work.
+
+## What we're actually doing
+
+Four [themes](themes.md), each a different rung. In each one, three moves:
+
+1. Find out what open-weight models exist in that area
+2. Get one or two running on our hardware — dual GB10 and an HGX H200
+3. Work out what to measure, and report it back at the end of day one
+
+The third is the one we care most about. Each group sources its own data and picks its own
+benchmark, because evaluation looks different at every rung and designing it is a good part of the
+work. Groups stay comparable by answering the same four questions about whatever they chose.
+
+A recent benchmark found single-cell foundation models level with a simple linear baseline at
+predicting perturbation effects, and another found the choice of metric changes which model comes
+out on top. How to evaluate these things is genuinely unsettled, and there's a lot of room to do
+useful work there.
+
+## The four themes, in a line each
+
+| | |
+| --- | --- |
+| **Screening at scale, with physics in the loop** | Models that know something about shape, used to filter before you pay for docking |
+| **Molecules in motion** | Machine-learned interatomic potentials in MD — near-quantum forces you can afford to run |
+| **From a binding event to a whole system** | Carrying a molecular signal up to functional and physiological change |
+| **Repurposing what we already have** | Genotype, structure and approved drugs, with deliberately small models |
+
+Notional, all four. They describe the kind of thing we're interested in. Bring your own problem and
+take a space.
+
+## What we're asking
+
+**Come and explore the broader opportunity while getting hands-on with AI in your own area.** Come
+prepared to work with agents and with code, to find out where your own methods are moving under the
+new models.
+
+Two things at once: depth in your own field, and a link into something larger.
+
+We're inviting **project teams**. A group leader brings their team, their expertise, and a problem
+or candidate. If you can only come for the opening, come for the opening and leave your team to it.
+That's a completely normal way to take part.
+
+## What you get out of it
+
+A calibrated view of where these models currently stand in *your* field, which is what you need in
+order to decide whether to put a student on it.
+
+Two days with people who don't share your background. Compute you don't have to organise. Default
+targets and chemistry already prepared, so nobody starts from a blank page.
+
+And a shot at something bigger. Four themes that work on their own are also, linked, the start of a
+drug discovery capability UoA doesn't have yet. We'd call it a seed for now.
+
+## What we expect
+
+We don't know how far this gets, and finding out is the work. Several of these models may land level
+with much simpler things on the problems we care about. We'd like the number either way, because
+every rung on that ladder is improving quickly, and knowing where it stands now tells us when that
+changes.
+
+A well-founded *"not yet, and here's why"* is a result we'd be happy to present.
+
+## The global event
+
+We're one local site of the [global hackathon](the-global-event.md), which runs 21–22 October with
+registration open to anyone. Sign up for that too — it's the bigger room.
