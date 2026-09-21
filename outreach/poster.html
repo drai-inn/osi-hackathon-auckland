@@ -65,7 +65,8 @@ h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
 /* print: A3 portrait, no margin. 1123x1587px is 297x420mm at 96dpi. */
 @page{size:A3 portrait;margin:0}
 @media print{
-  html,body{width:1123px;height:1587px}
+  /* a hair under A3 so rounding cannot push a second page */
+  html,body{width:1123px;height:1578px;overflow:hidden}
   body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
