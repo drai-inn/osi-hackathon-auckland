@@ -13,12 +13,60 @@ For GPU-hour arithmetic per run tier see compute-budget.md; this page is about
 
 ## The two resources
 
-### A third tier
+### A third tier: the Coder sandbox
 
 Development happens on **Coder dev workspaces** carrying **2× RTX PRO 6000 Blackwell Max-Q**, 96 GB
 GDDR7 each at ~1.79 TB/s `[literature]`. Fast memory in a small amount, and the right place for
-everyday work and for serving an agent model that fits in 192 GB. See
+everyday work and for serving an agent model that fits. See
 [agentic-models.md](agentic-models.md).
+
+**Getting a GPU workspace.** The `kubernetes-base` template takes `gpu = 1`, and pairing it with the
+`pytorch-notebook:cuda12-pytorch-2.11.0` image gives torch 2.11 on CUDA 12.8 with Python 3.13, ready
+for the Blackwell `sm_120` target. A working profile `[measured]`:
+
+| | |
+| --- | --- |
+| gpu · cpu · memory | 1 · 8 · 32 GiB |
+| GPU presented | RTX PRO 6000 Blackwell Max-Q, 97,887 MiB, whole card |
+| `/home/coder` | VAST NFS, ~700 GB free, **survives a rebuild** — put model weights here |
+| `/dev/shm` | **64 MiB**, and the template does not size it with memory. Breaks torch dataloader workers |
+| Egress | huggingface.co and pypi.org reachable |
+
+The default profile is 2 cores and 4 GiB, which is too small to load a large model even though the
+GPU beside it is 96 GB. Ask for the memory.
+
+### The two-GPU wall, and what HAMi does about it
+
+The namespace holds **two GPUs of quota, shared by everyone**. Under whole-card allocation that caps
+the whole site at two concurrent GPU users. For an event with four themes that is a queue.
+
+**HAMi is already installed and in the path.** `libvgpu.so` sits in `/etc/ld.so.preload`, so it
+intercepts every CUDA call in every workspace, and it is parameterised by two variables that the
+device plugin sets from the pod's resource request:
+
+```
+CUDA_DEVICE_MEMORY_LIMIT_0=97887m     # whole card, because the template asks for a whole card
+CUDA_DEVICE_SM_LIMIT=100              # all streaming multiprocessors
+```
+
+Fractional GPUs are therefore a **template change**, not an infrastructure project: request
+`nvidia.com/gpumem` and `nvidia.com/gpucores` instead of `nvidia.com/gpu: 1`.
+
+**Tested, so we know how it behaves** `[measured]`. Setting `CUDA_DEVICE_MEMORY_LIMIT_0=8000m` on
+the command line does not shrink the allocation. HAMi notices and logs
+`Limit inconsistency detected for 0th device, 8388608000 expected, get 102641958912`, then keeps
+the limit it was given at admission. The process went on to allocate 40 GiB.
+
+Two things follow. The limit is set once from the pod spec and cached, so **a user cannot widen
+their own allocation from inside the container**, which is the property you want. And **fractional
+allocation cannot be tested from inside a whole-card workspace** — it needs the template edit and a
+rebuild.
+
+**What would actually fit in a slice.** Boltz, Nesso-1, MLIPs, ESM and most development work sit
+well inside 24 GB, which would turn two cards into eight concurrent users. Qwen-Image at bf16 (~57 GB
+on disk) and any large LLM still want a whole card. A mixed policy — a fractional tier by default,
+whole cards on request — matches how the themes will actually use it, and it is worth settling
+before the event rather than during it.
 
 **The GB10s are for the domain models** — Boltz, Nesso-1, MLIPs — where 128 GB is plenty and the
 models are small. The large agent LLMs belong on the H200 node or the workspaces.
