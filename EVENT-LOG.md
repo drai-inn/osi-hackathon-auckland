@@ -20,8 +20,8 @@ record here and closes the loop.
 | **Status board** | Current week, next gate, what's blocking, where compute and people actually stand |
 
 **To post an update:** commit to `event-log`. Newest entry at the top, dated, short. Template at the
-foot of the file there. See [CONTRIBUTING.md](CONTRIBUTING.md#the-live-event-log).
+foot of the file there. See [CONTRIBUTING.md](CONTRIBUTING.md#the-live-log).
 
-**New here?** [The narrative](docs/00-event/narrative.md) ·
-[Pick a ladder](docs/00-event/onboarding/README.md) ·
-[Following along is Ladder E](docs/00-event/onboarding/follower.md)
+**New here?** [The narrative](docs/narrative.md) ·
+Pick a ladder ·
+Following along is Ladder E
