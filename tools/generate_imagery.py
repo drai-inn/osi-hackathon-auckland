@@ -42,17 +42,39 @@ PROVENANCE = {
         prompt="minimal techno-futurist illustration, a lipid membrane as a rhythmic row of round "
                "heads with tails, one bright cyan molecule slipping through the gap, deep navy, "
                "violet accents, flat geometric, spacious, witty"),
+    # Round 3, 21 Sep 2026. Seed 23. Dropping "flat vector" for "soft gradients"
+    # is what produced the organic feel; the colour ramp is what carries meaning.
+    "outreach/imagery/energy-surface.png": dict(
+        prompt="organic undulating free energy surface seen at a low grazing angle, smooth viscous "
+               "swelling forms, fine topographic contour bands following every peak and trough, "
+               + "RAMP" + ", minimal, techno-futurist, generous negative space, soft gradients, "
+               "elegant"),
+    "outreach/imagery/stacked-isosurfaces.png": dict(
+        prompt="stacked translucent iso-surfaces sliced through a molecular potential field, "
+               "organic rounded layers offset in depth, each layer a band of " + "RAMP" + ", strong "
+               "sense of dimension and cross-section, minimal, airy, techno-futurist, soft gradients"),
+    "outreach/imagery/drip.png": dict(
+        prompt="a glossy organic droplet stretching and dripping through a soft membrane gap, "
+               "viscous gooey surface tension, the droplet shaded by " + "RAMP" + " to show its "
+               "energy, deep navy background, playful, wet, techno-futurist, generous space, "
+               "soft gradients"),
+
     "outreach/imagery/field-lines.png": dict(
         prompt="minimal biophysics art, smooth electrostatic field lines curving around an unseen "
                "molecule, thin cyan contours on deep navy, one violet node, techno-futurist, airy, "
                "flat vector"),
 }
 
-# Shared across round 2. Keeping the negatives is most of what moved the output
+# Deep navy -> violet -> cyan -> pale is both perceptually ordered, so it reads
+# as a scientific colourmap, and close to the brand. Substituted for "RAMP" above.
+RAMP = ("a perceptually uniform colour ramp running deep navy in the troughs through violet "
+        "to bright cyan on the peaks and pale highlights at the crests")
+
+# Shared across rounds 2 and 3. Keeping the negatives is most of what moved the output
 # away from stock-illustration science.
 NEGATIVE = ("text, words, letters, numbers, watermark, signature, logo, cluttered, busy, "
             "stock illustration, bohr atom, staircase, bar chart, arrow, infographic, "
-            "3d render, photorealistic")
+            "gemstone, cut crystal, double helix, 3d render, photorealistic, harsh edges")
 
 DEFAULTS = dict(steps=30, seed=11, size=(1328, 1328), true_cfg_scale=4.0,
                 dtype="bfloat16", model=MODEL, date="2026-09-21")
