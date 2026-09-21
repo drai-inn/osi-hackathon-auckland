@@ -42,7 +42,7 @@ thing to beat.
 | **Gene expression** | Geneformer, scGPT and STATE are transformers over gene tokens |
 | **The literature, and the tools** | General LLMs, reading papers and driving code |
 
-Two things follow from that.
+Three things follow from that.
 
 **Sequence models are competitive with structure-aware ones more often than you'd expect.**
 ChemBERTa-2 beat D-MPNN, a strong graph network, on six of eight MoleculeNet tasks `[literature]`.
@@ -53,6 +53,26 @@ that holds on the problems we care about is a good question to spend two days on
 data, and schema-guided extraction from the literature gets you there in an afternoon. Verify what
 comes out — benchmarks of the current tools show a real accuracy-against-hallucination trade-off
 `[literature]` — and small self-hosted open models do well enough for this.
+
+**Physics-informed language models are a live area with no single model to download.** Worth being
+precise about, because the phrase covers two different things:
+
+- **The language model builds or steers the physics.** Lang-PINN turns a natural-language problem
+  description into a trainable physics-informed network, handling PDE parsing, architecture choice
+  and code generation. PINNsAgent automates PDE surrogation. LLM-PINN pulls constitutive relations
+  out of a domain knowledge base with RAG and wires them in. These are frameworks and agent systems
+  rather than checkpoints, and they sit close to how we're working anyway.
+- **Physics is fused into the representation.** Physics-informed equivariant graph networks aligned
+  with a language model through cross-modal fusion, as in 3D-MolGL.
+
+And a result that makes this an open question rather than a settled choice: **a general transformer
+with no built-in physical constraints can match or beat physics-constrained models on molecular
+dynamics when it has enough data**, learning approximate equivariance instead of having it imposed
+`[literature]`. Whether the physics prior earns its keep at our data scale is exactly the kind of
+thing two days can answer, and it's the same question theme 1 asks about model class.
+
+The [Awesome Physics-Informed LLMs](https://github.com/qiaosun22/AwesomePhysicsInformedLLMs) list is
+the best single starting point.
 
 ---
 
@@ -91,9 +111,11 @@ how many microstates you actually need · conformational change a static structu
 trained on materials or small molecules rather than protein–ligand interfaces, and some
 OMol25-derived weights carry a non-commercial licence.
 
-This is the most physics-native theme and the one where language models have least to offer
-directly. They're still useful for picking starting structures and for reading what other people
-found.
+This is the most physics-native theme. Language models still have a role: the physics-informed
+frameworks above build and steer simulations from a description, and there's a live finding that a
+plain transformer trained on enough data can match a physics-constrained model on MD `[literature]`.
+Testing that on a protein-ligand interface, where the data is thinner than in materials, would be a
+genuinely useful two days.
 
 ---
 

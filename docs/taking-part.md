@@ -46,7 +46,8 @@ metric changes which model comes out on top. Running the simple baseline is how 
 ## Getting set up
 
 **Agentic support plus our team.** Ask the agent first and us second, and you shouldn't need to
-spend day 1 on an environment.
+spend day 1 on an environment. The models behind that are open-weight and chosen in advance —
+see [agentic-models.md](agentic-models.md).
 
 At least one model per theme will be known to run on our hardware before anyone arrives, so there's
 always something that starts.

@@ -1,5 +1,8 @@
 # Compute plan — GB10 for the month, H200 for the benchmarks
 
+> Serving open-weight models for agentic development is sized separately in
+> [agentic-models.md](agentic-models.md), and it competes for the same hardware.
+
 Two resources with very different characters, available on different timescales. Using each for
 what it is good at is most of the feasibility argument for a two-day event.
 
