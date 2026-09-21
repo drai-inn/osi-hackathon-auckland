@@ -16,7 +16,9 @@ that system.
 
 Biology has a ladder of scales, and machine learning now has one running alongside it. Association
 models over sequence, 3D-aware models over structure, interatomic potentials over atoms and motion,
-multi-scale models over cells and tissue. Most are open-weight and most arrived recently.
+multi-scale models over cells and tissue. **Language models sit at nearly every rung too** — over
+protein sequence, over DNA, over molecules written as text, over gene expression, and over the
+literature itself. Most are open-weight and most arrived recently.
 
 **Two days to find out how far up that second ladder you have to climb to get an answer you can
 trust.**

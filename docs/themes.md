@@ -28,6 +28,32 @@ End of day 1, every group reports back against
 [the same four questions](taking-part.md#the-four-questions). A shared shape rather than a shared
 dataset, so the groups stay comparable while working on whatever they like.
 
+## Language models run through all of it
+
+Worth saying plainly, because it's easy to read the four themes as being about specialist
+architectures. Language models now sit at nearly every rung, and in several places they're the
+thing to beat.
+
+| Over | Models |
+| --- | --- |
+| **Protein sequence** | ESM-2, ESM-3, AMPLIFY, and the structure-aligned variants |
+| **DNA and genomes** | Evo 2, Nucleotide Transformer, HyenaDNA |
+| **Molecules as text** | ChemBERTa-2, MolFormer, SELFIES-based models |
+| **Gene expression** | Geneformer, scGPT and STATE are transformers over gene tokens |
+| **The literature, and the tools** | General LLMs, reading papers and driving code |
+
+Two things follow from that.
+
+**Sequence models are competitive with structure-aware ones more often than you'd expect.**
+ChemBERTa-2 beat D-MPNN, a strong graph network, on six of eight MoleculeNet tasks `[literature]`.
+Embeddings from Evo 2 reach 0.997 AUROC on ClinVar variant classification `[literature]`. Whether
+that holds on the problems we care about is a good question to spend two days on.
+
+**The cheapest useful thing an LLM does here is build your dataset.** Each group sources its own
+data, and schema-guided extraction from the literature gets you there in an afternoon. Verify what
+comes out — benchmarks of the current tools show a real accuracy-against-hallucination trade-off
+`[literature]` — and small self-hosted open models do well enough for this.
+
 ---
 
 ## 1 · Screening at scale, with physics in the loop
@@ -42,8 +68,12 @@ structure exists.
 
 **Open-weight worth a look.** **Boltz-2** for co-folding with affinity prediction; 2.1 is API-only,
 so 2 is the open one. **OpenFold3** and **Chai-1r** as alternatives. **IntFold** ships open weights
-and reports stronger affinity numbers than Boltz-2. Protein and molecular language models cover the
-cheap end of a comparison.
+and reports stronger affinity numbers than Boltz-2.
+
+On the language-model side: **ChemBERTa-2**, **MolFormer** and SELFIES-based models over the
+compound, **ESM-2** or **ESM-3** over the protein. These are the cheap arm of a model-class
+comparison, and cheap doesn't mean worse — ChemBERTa-2 beat a strong graph network on most of
+MoleculeNet.
 
 ---
 
@@ -61,6 +91,10 @@ how many microstates you actually need · conformational change a static structu
 trained on materials or small molecules rather than protein–ligand interfaces, and some
 OMol25-derived weights carry a non-commercial licence.
 
+This is the most physics-native theme and the one where language models have least to offer
+directly. They're still useful for picking starting structures and for reading what other people
+found.
+
 ---
 
 ## 3 · From a binding event to a whole system
@@ -74,8 +108,9 @@ an off-target effect is visible at the cell level · connecting a binding profil
 readout · anything that carries a signal between two scales and checks whether it survived.
 
 **Open-weight worth a look.** **STATE** (Arc Institute) · **scGPT** · **Geneformer** ·
-**scFoundation**. The 2026 Virtual Cell Challenge is live and gives you a ready-made evaluation
-setting if you want one.
+**scFoundation**. These are language models over gene tokens rather than words, which makes the
+comparison against a linear baseline especially interesting. The 2026 Virtual Cell Challenge is live
+and gives you a ready-made evaluation setting if you want one.
 
 ---
 
@@ -88,9 +123,10 @@ something that runs on a laptop.
 changes which approved drug fits · a retrospective hold-out · how small a model can get and still
 work.
 
-**Open-weight worth a look.** **TxGNN** on **PrimeKG** · lightweight knowledge-graph embeddings,
-which come in under a million parameters and hold their own · **ESM-2** embeddings where you need
-sequence · structure-aware scoring from theme 1 if you want to cross over.
+**Open-weight worth a look.** **Evo 2** (7B and 40B, open weights) for variant effect — embeddings
+from it reach 0.997 AUROC on ClinVar `[literature]` — and **Nucleotide Transformer** alongside it.
+**TxGNN** on **PrimeKG** for the drug-disease side, plus lightweight knowledge-graph embeddings that
+come in under a million parameters and hold their own. **ESM-2** where you need the protein.
 
 ---
 

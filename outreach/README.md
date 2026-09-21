@@ -8,6 +8,7 @@ the pitch there and re-cut, so the versions stay together.
 | [short-form.md](short-form.md) | The note to send now, plus Slack, mailing list, social, calendar and signature versions |
 | [one-pager.md](one-pager.md) | A page you can hand over or attach |
 | [site/index.html](site/index.html) | The public landing page |
+| [poster.html](poster.html) | A3 poster. `make poster` rebuilds it and the PDF |
 | [brand/](brand/README.md) | Colours, type, the motif, the marks, and the rules for using them |
 
 ## Before you send anything

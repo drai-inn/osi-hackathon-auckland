@@ -23,9 +23,16 @@ an open problem.
 
 ## Why now
 
-Biology has a ladder of scales. Machine learning now has a ladder that runs alongside it: association
-models over sequence, 3D-aware and equivariant models over structure, interatomic potentials over
-atoms and motion, and multi-scale models over cells and tissue.
+Biology has a ladder of scales. Machine learning now has a ladder that runs alongside it:
+association models over sequence, 3D-aware and equivariant models over structure, interatomic
+potentials over atoms and motion, and multi-scale models over cells and tissue.
+
+**Language models sit at nearly every rung as well.** ESM and AMPLIFY over protein sequence, Evo 2
+and Nucleotide Transformer over DNA, ChemBERTa and MolFormer over molecules written as text,
+Geneformer and scGPT over gene expression, and general LLMs for reading the literature and driving
+the tools. In several of these places the language model is the thing to beat: ChemBERTa-2 beat a
+strong graph network on most of MoleculeNet, and Evo 2 embeddings reach 0.997 AUROC on ClinVar
+variant classification.
 
 Most are open-weight and most arrived recently. Most of us know our own rung.
 
@@ -58,6 +65,10 @@ useful work there.
 | **Molecules in motion** | Machine-learned interatomic potentials in MD — near-quantum forces you can afford to run |
 | **From a binding event to a whole system** | Carrying a molecular signal up to functional and physiological change |
 | **Repurposing what we already have** | Genotype, structure and approved drugs, with deliberately small models |
+
+Language models cut across all four, and the cheapest useful thing they do is build your dataset.
+Each group sources its own, and schema-guided extraction from the literature gets you there in an
+afternoon.
 
 Notional, all four. They describe the kind of thing we're interested in. Bring your own problem and
 take a space.

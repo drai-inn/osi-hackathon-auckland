@@ -155,7 +155,7 @@ def art_repurposing(rng) -> list[str]:
 CARDS = [
     (1, "Screening at scale", SOUTH, art_screening,
      "Models that know something about shape, used to filter before you pay for docking.",
-     "Boltz-2 · OpenFold3 · Chai-1r · IntFold"),
+     "Boltz-2 · OpenFold3 · IntFold · ChemBERTa-2 · ESM-2"),
     (2, "Molecules in motion", SOUTH, art_motion,
      "Machine-learned interatomic potentials in MD. Near-quantum forces you can afford to run.",
      "MACE · UMA · eSEN · Orb-v3 · NequIP"),
@@ -164,7 +164,7 @@ CARDS = [
      "STATE · scGPT · Geneformer · scFoundation"),
     (4, "Repurposing what we have", VIOLET, art_repurposing,
      "Genotype, structure and approved drugs, with deliberately small models.",
-     "TxGNN · PrimeKG · lightweight KG embeddings"),
+     "Evo 2 · Nucleotide Transformer · TxGNN · PrimeKG"),
 ]
 
 

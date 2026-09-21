@@ -45,5 +45,5 @@
 <text x="34" y="320" fill="#EEF1FB" font-size="15" opacity=".82">Genotype, structure and approved drugs, with deliberately</text>
 <text x="34" y="342" fill="#EEF1FB" font-size="15" opacity=".82">small models.</text>
 <line x1="34" y1="358" x2="566" y2="358" stroke="#9AA7CD" opacity=".18"/>
-<text x="34" y="384" fill="#9AA7CD" font-size="12.5">TxGNN · PrimeKG · lightweight KG embeddings</text>
+<text x="34" y="384" fill="#9AA7CD" font-size="12.5">Evo 2 · Nucleotide Transformer · TxGNN · PrimeKG</text>
 </svg>

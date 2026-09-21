@@ -16,7 +16,9 @@ that system.
 
 Biology has a ladder of scales, and machine learning now has one running alongside it. Association
 models over sequence, 3D-aware models over structure, interatomic potentials over atoms and motion,
-multi-scale models over cells and tissue. Most are open-weight and most arrived recently.
+multi-scale models over cells and tissue. **Language models sit at nearly every rung too** — over
+protein sequence, over DNA, over molecules written as text, over gene expression, and over the
+literature itself. Most are open-weight and most arrived recently.
 
 Two days to find out how far up that second ladder you have to climb to get an answer you can trust.
 
@@ -60,7 +62,12 @@ do useful work there.
 
 Each group sources its own data and picks its own benchmark. What makes the groups comparable is
 that everyone answers [the same four questions](docs/taking-part.md#the-four-questions) about
-whatever they picked, reported back at the end of day 1.
+whatever they picked, reported back at the end of day 1. Schema-guided extraction with an LLM is a
+quick way to get a dataset together.
+
+**Language models are in scope everywhere**, not just as the agent writing your code. ESM and
+AMPLIFY over protein sequence, Evo 2 over DNA, ChemBERTa over molecules as text, Geneformer and
+scGPT over gene expression. In several of these places they're the thing to beat.
 
 **[The themes in full](docs/themes.md)** · **[a worked example](docs/worked-example.md)** if you'd
 rather start with something ready to go.
