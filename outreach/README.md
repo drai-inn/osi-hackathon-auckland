@@ -14,7 +14,9 @@ the pitch there and re-cut, so the versions stay together.
 
 ## Before you send anything
 
-- Fill every `{{PLACEHOLDER}}`. The main ones are `{{LINK}}`, `{{DATES}}` and `{{VENUE}}`
+- Dates and venue are already set: **Mon 19 – Tue 20 October 2026**, Digital Research Innovation &
+  AI Lab, Level 10, 70 Symonds Street. The placeholders left are `{{LINK}}`, `{{REGISTER}}`,
+  `{{REPO}}` and `{{EVENT_LOG_PR}}`, which need the public URLs
 - Say what you'd like them to bring: their team, their expertise, and a problem or candidate
 - Mention that coming for the opening and leaving the team to it is fine. It's the difference
   between a yes and a diary conflict

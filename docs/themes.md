@@ -12,8 +12,8 @@ The same three moves, whichever theme you're in.
 **Find out what open-weight models exist in your area.** The landscape moved a long way in the last
 eighteen months and most of us know our own corner of it.
 
-**Get one or two of them running on our hardware.** Dual GB10 and an HGX H200. One or two per area
-is plenty, and being able to run it is the main filter.
+**Get one or two of them running on our hardware.** One or two per area is plenty, and being able
+to run it is the main filter.
 
 **Work out what to measure, and report it back.** *How would you know it worked, and what would
 change your mind?* Each group sources its own data and picks its own benchmark. Evaluation looks

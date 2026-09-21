@@ -32,7 +32,8 @@ Short on purpose. The detail follows later in the week.
 > If you can only make the opening, come for the opening and leave your team to it. That's a
 > completely normal way to do this.
 >
-> Free, two GB10s and an H200, food both days. Moving fast and light — more detail later this week.
+> Free, food both days, and the environments are set up before you arrive. Moving fast and light —
+> more detail later this week.
 >
 > Nick
 > {{LINK}}
@@ -45,14 +46,13 @@ Short on purpose. The detail follows later in the week.
 > proteins, ligand binding, drug discovery, pharmacology. Four themes, each one a rung of that
 > ladder, each finding out which open-weight models are worth running and how you'd evaluate them.
 >
-> Hardware: dual GB10 for the month beforehand, HGX H200 for benchmarks. We're on 19–20 Oct, which
-> is a local scheduling thing.
+> We're on 19–20 Oct, which is a local scheduling thing.
 >
 > Happy to be the canary on anything, and we'll publish what we find including the negatives.
 
 ## University mailing list
 
-> **AI for Science Hackathon · Auckland · {{DATES}}**
+> **AI for Science Hackathon · Auckland · 19–20 October 2026**
 >
 > **How far can a chain of surrogates take us in biomolecular interactions?** There's now an
 > open-weight model claiming almost every rung from sequence to physiology. Two days finding out
@@ -64,13 +64,13 @@ Short on purpose. The detail follows later in the week.
 > The University of Auckland is a local site of the global Open Scientific Intelligence Hackathon,
 > which runs 21–22 October with registration open to anyone.
 >
-> Free · dedicated GPUs · newcomers genuinely welcome.
+> Free · newcomers genuinely welcome.
 > {{LINK}} · njon001@aucklanduni.ac.nz
 
 ## Social, long
 
 > 🇳🇿 Auckland is hosting the New Zealand site of the global Open Scientific Intelligence Hackathon,
-> {{DATES}}.
+> 19–20 October 2026.
 >
 > **How far can a chain of surrogates take us in biomolecular interactions?** Systems, proteins,
 > ligand binding, drug discovery, pharmacology. There's an open-weight model claiming nearly every
@@ -82,13 +82,13 @@ Short on purpose. The detail follows later in the week.
 ## Social, short
 
 > How far can a chain of surrogates take us in biomolecular interactions? Auckland site of the
-> global AI-for-science hackathon, {{DATES}}. Four themes, open-weight models, bring your own
+> global AI-for-science hackathon, 19–20 October 2026. Four themes, open-weight models, bring your own
 > problem. {{LINK}}
 
 ## Calendar invite
 
 > **OSI Hackathon · Auckland Site**
-> {{DATES}} · {{VENUE}}
+> 19–20 October 2026 · Digital Research Innovation & AI Lab, Level 10, 70 Symonds Street
 >
 > How far can a chain of surrogates take us in biomolecular interactions? Four themes, open-weight
 > models, and small experiments to find out which hold up.
@@ -102,14 +102,14 @@ Short on purpose. The detail follows later in the week.
 ## Email signature, September–October
 
 > ---
-> Organising the **Auckland site** of the Open Scientific Intelligence Hackathon, {{DATES}} —
+> Organising the **Auckland site** of the Open Scientific Intelligence Hackathon, 19–20 October 2026 —
 > how far can a chain of surrogates take us in biomolecular interactions.
 > Cross-disciplinary, free, newcomers welcome. {{LINK}}
 
 ## Poster tear-off strip
 
 > **How far can a chain of surrogates take us in biomolecular interactions?**
-> AI for Science Hackathon · Auckland · {{DATES}} · Free
+> AI for Science Hackathon · Auckland · 19–20 October 2026 · Free
 > Bring your team, your problem, and a laptop
 > {{LINK}}
 

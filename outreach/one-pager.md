@@ -2,7 +2,7 @@
 
 **Open Scientific Intelligence Hackathon · Auckland site**
 
-**{{DATES}} · {{VENUE}} · University of Auckland · Free**
+**Mon 19 – Tue 20 October 2026 · Digital Research Innovation & AI Lab, Level 10, 70 Symonds Street · University of Auckland · Free**
 
 ---
 
@@ -62,11 +62,10 @@ occasion both days.
 
 | | |
 | --- | --- |
-| **When** | {{DATES}} |
-| **Where** | {{VENUE}}, University of Auckland |
+| **When** | Mon 19 – Tue 20 October 2026 |
+| **Where** | Digital Research Innovation & AI Lab, Level 10, 70 Symonds Street, University of Auckland |
 | **Cost** | Free |
 | **Bring** | A laptop |
-| **Compute** | Dual GB10 and an HGX H200 |
 | **Setup** | Agentic support plus our team. At least one model per theme runs before you arrive |
 
 ## The global event

@@ -45,7 +45,7 @@ way it stops buying accuracy. Finding where that happens is the work.
 Four [themes](themes.md), each a different rung. In each one, three moves:
 
 1. Find out what open-weight models exist in that area
-2. Get one or two running on our hardware — dual GB10 and an HGX H200
+2. Get one or two running on our hardware
 3. Work out what to measure, and report it back at the end of day one
 
 The third is the one we care most about. Each group sources its own data and picks its own

@@ -120,10 +120,9 @@ theme known to run on our hardware before anyone arrives.
 | | |
 | --- | --- |
 | **When** | Mon 19 – Tue 20 October 2026. Wednesday 21st open if people want to keep going |
-| **Where** | University of Auckland |
+| **Where** | Digital Research Innovation & AI Lab, Level 10, 70 Symonds Street, University of Auckland |
 | **Cost** | Free |
 | **Bring** | A laptop |
-| **Compute** | Dual GB10 and an HGX H200 · [the detail](docs/compute.md) |
 | **Contact** | Nick Jones · njon001@aucklanduni.ac.nz |
 
 We keep a [live event log](EVENT-LOG.md) as a single pull request that stays open until the final
