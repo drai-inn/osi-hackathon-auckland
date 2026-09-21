@@ -32,14 +32,30 @@ MODEL = "Qwen/Qwen-Image"
 # Reproducible in intent rather than byte-for-byte: a different diffusers or
 # driver version will shift the output even on the same seed.
 PROVENANCE = {
-    "outreach/imagery/hero-surrogate-ladder.png": dict(
-        prompt="abstract scientific editorial illustration, a ladder of scales rising from "
-               "atoms to a protein pocket to a whole cell, deep navy background, cyan and "
-               "violet line work, geometric, restrained, poster art",
-        steps=30, seed=7, size=(1328, 1328), date="2026-09-21",
-        model=MODEL, dtype="bfloat16", true_cfg_scale=4.0,
-    ),
+    # Round 2, 21 Sep 2026. Qwen-Image, bfloat16, 1328x1328, 30 steps,
+    # true_cfg_scale 4.0, seed 11, ~41 s each once the model is resident.
+    "outreach/imagery/folding-basin.png": dict(
+        prompt="minimal techno-futurist poster art, one smooth undulating folding energy landscape "
+               "surface, a single glowing cyan sphere settling into the basin, deep navy void, "
+               "violet rim light, vast negative space, flat vector, elegant, playful"),
+    "outreach/imagery/through-the-membrane.png": dict(
+        prompt="minimal techno-futurist illustration, a lipid membrane as a rhythmic row of round "
+               "heads with tails, one bright cyan molecule slipping through the gap, deep navy, "
+               "violet accents, flat geometric, spacious, witty"),
+    "outreach/imagery/field-lines.png": dict(
+        prompt="minimal biophysics art, smooth electrostatic field lines curving around an unseen "
+               "molecule, thin cyan contours on deep navy, one violet node, techno-futurist, airy, "
+               "flat vector"),
 }
+
+# Shared across round 2. Keeping the negatives is most of what moved the output
+# away from stock-illustration science.
+NEGATIVE = ("text, words, letters, numbers, watermark, signature, logo, cluttered, busy, "
+            "stock illustration, bohr atom, staircase, bar chart, arrow, infographic, "
+            "3d render, photorealistic")
+
+DEFAULTS = dict(steps=30, seed=11, size=(1328, 1328), true_cfg_scale=4.0,
+                dtype="bfloat16", model=MODEL, date="2026-09-21")
 
 
 def main() -> None:
@@ -54,7 +70,7 @@ def main() -> None:
           flush=True)
 
     t1 = time.time()
-    img = pipe(prompt=prompt, negative_prompt=" ", width=1328, height=1328,
+    img = pipe(prompt=prompt, negative_prompt=NEGATIVE, width=1328, height=1328,
                num_inference_steps=steps, true_cfg_scale=4.0,
                generator=torch.Generator("cuda").manual_seed(seed)).images[0]
     img.save(out)
