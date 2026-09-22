@@ -36,11 +36,18 @@ ASSETS = [
     ("outreach/brand/uoa-logo-white.png", "assets/uoa-logo-white.png"),
     ("outreach/brand/uoa-logo-navy.png", "assets/uoa-logo-navy.png"),
     ("outreach/poster-A3.pdf", "poster.pdf"),
+    # Icons go to the site root, which is where anything that has not read the
+    # page looks for them.
+    ("outreach/brand/favicon.svg", "favicon.svg"),
+    ("outreach/brand/favicon-32.png", "favicon-32.png"),
+    ("outreach/brand/favicon-16.png", "favicon-16.png"),
+    ("outreach/brand/apple-touch-icon.png", "apple-touch-icon.png"),
 ] + [(f"docs/cards/theme-{n}.svg", f"assets/theme-{n}.svg") for n in (1, 2, 3, 4)] \
   + [(f"docs/cards/theme-open-{k}.svg", f"assets/theme-open-{k}.svg") for k in (1, 2)]
 
 REWRITE = [
     (r"\.\./imagery/", "assets/"),
+    (r"\.\./brand/(favicon|apple-touch-icon)", r"\1"),   # before the line below
     (r"\.\./brand/", "assets/"),
     (r"\.\./\.\./docs/cards/", "assets/"),
     (r"\.\./poster-A3\.pdf", "poster.pdf"),

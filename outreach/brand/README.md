@@ -62,6 +62,21 @@ construction. `--south` is UoA's cyan, which lands within a few degrees of hue o
 | [`uoa-motif.png`](uoa-motif.png) | The cyan motif, as supplied (36 × 18) | The canonical asset |
 | [`uoa-motif.svg`](uoa-motif.svg) | Faithful redraw of the same geometry | Inline and scalable use; the raster is 36 px wide and will not enlarge |
 
+## The favicon
+
+| File | What | Rebuild |
+| --- | --- | --- |
+| [`favicon.svg`](favicon.svg) | The crest, navy on light and reversed on dark | Hand-edited; see below |
+| `favicon-{16,32}.png` · `apple-touch-icon.png` | Flat navy tiles with the reversed crest | `make icons` |
+
+**A favicon is one of the three places the brand rules allow the crest to leave the wordmark**, so
+this is the exception rather than a liberty. The University's own site serves the crest in navy on
+transparent, and that is the source this is adapted from — at 16 px in a dark tab strip it is navy
+on near-black, so the SVG here carries the same light/dark switch as the lockup and the raster
+fallbacks sit on a solid navy tile. Both are approved treatments of the mark; neither invents one.
+
+If UoA reissue their favicon, re-fetch it and reapply the `.crest` class and the `<style>` block.
+
 ## Rendered cards
 
 | File | Size | Rebuild | Where it goes |
