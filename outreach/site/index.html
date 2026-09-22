@@ -115,7 +115,9 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
    drops the image's own near-black ground into the band's. */
 .band{padding:0;border:none;background:var(--void-deep);display:flex;justify-content:center}
 .band img{height:300px;width:auto;max-width:100%;object-fit:contain;display:block;
-  mix-blend-mode:screen}
+  mix-blend-mode:screen;
+  -webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%);
+  mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)}
 @media(max-width:600px){ .band img{height:210px} }
 .wrap-wide{max-width:1120px;margin:0 auto;padding:0 20px}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin:4px 0 8px}
@@ -149,7 +151,7 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
       trusted.</p>
     <div class="cta">
       <a class="btn btn-primary" href="https://luma.com/ku88xh92">Register — free</a>
-      <a class="btn btn-ghost" href="#themes">The four themes</a>
+      <a class="btn btn-ghost" href="#themes">The themes</a>
       <a class="btn btn-ghost" href="#follow">Follow along</a>
     </div>
     <p class="cta-note">Registration is the global event's, and it covers every site including
@@ -266,7 +268,7 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   <h2>Following along</h2>
   <p>We keep a live log as a single pull request that stays open until the final presentations and
     reports are done. Subscribe and you'll get every update and nothing else.</p>
-  <p><a class="btn btn-primary" href="{{EVENT_LOG_PR}}">Subscribe to the live log</a></p>
+  <p><a class="btn btn-primary" href="https://github.com/drai-inn/osi-hackathon-auckland/pull/16">Subscribe to the live log</a></p>
 </div></section>
 
 <section><div class="wrap">

@@ -1,8 +1,8 @@
 # 📡 Live event log — Auckland Hub
 
-**The log itself lives on the [`event-log`](../../tree/event-log) branch, in an open pull request.**
+**The log itself lives on the [`live-log`](../../tree/live-log) branch, in an open pull request.**
 
-### 👉 [**Subscribe to the live log**](../../pulls?q=is%3Apr+is%3Aopen+label%3Alive-log)
+### 👉 [**Subscribe to the live log**](../../pull/16)
 
 Click **Subscribe** on that PR and you'll get every update and nothing else — no issue traffic, no
 CI noise. **When it closes, the work is finished.** That's the only signal you need.
@@ -15,13 +15,12 @@ record here and closes the loop.
 
 | | |
 | --- | --- |
-| **Cadence** | Weekly through the month · daily during 19-20 Oct · full write-up at the close |
+| **Cadence** | Weekly through to October · daily during 19-20 Oct · full write-up at the close |
 | **Contents** | What landed, what slipped, what we learned, the numbers — including what broke |
-| **Status board** | Current week, next gate, what's blocking, where compute and people actually stand |
+| **Status board** | Current week, what's blocking, and where teams actually stand |
 
-**To post an update:** commit to `event-log`. Newest entry at the top, dated, short. Template at the
+**To post an update:** commit to `live-log`. Newest entry at the top, dated, short. Template at the
 foot of the file there. See [CONTRIBUTING.md](CONTRIBUTING.md#the-live-log).
 
-**New here?** [The narrative](docs/narrative.md) ·
-Pick a ladder ·
-Following along is Ladder E
+**New here?** [The narrative](docs/narrative.md) · [The themes](docs/themes.md) ·
+[Taking part](docs/taking-part.md)

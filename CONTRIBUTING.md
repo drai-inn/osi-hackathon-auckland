@@ -46,11 +46,11 @@ which creeps into drafts and reads as sales.
 
 ## The live log
 
-[EVENT-LOG.md](EVENT-LOG.md) lives on the `event-log` branch as a single open pull request. Anyone
+[EVENT-LOG.md](EVENT-LOG.md) lives on the `live-log` branch as a single open pull request. Anyone
 can subscribe to it and get every update and nothing else. It closes when the final presentations
 and reports are done.
 
-To post: commit to `event-log`. Newest at the top, dated, short, honest, including what broke.
+To post: commit to `live-log`. Newest at the top, dated, short, honest, including what broke.
 
 ## Licence
 

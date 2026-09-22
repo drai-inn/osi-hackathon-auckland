@@ -159,7 +159,7 @@ def build_open(k, title, scale, blurb) -> str:
          '</defs>',
          f'<rect width="{W}" height="{H}" rx="10" fill="url(#open{k})"/>',
          f'<rect x="1.5" y="1.5" width="{W-3}" height="{H-3}" rx="9" fill="none" '
-         f'stroke="{SOFT}" stroke-width="3" stroke-dasharray="9 8" opacity=".55"/>']
+         f'stroke="{SOFT}" stroke-width="3" stroke-dasharray="9 8" opacity=".72"/>']
 
     # Four hollow ticks: none of them is this card's.
     for i in range(4):
