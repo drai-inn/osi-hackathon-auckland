@@ -32,9 +32,8 @@ Two days to find out how far up that second ladder you have to climb to get an a
 > Hackathon for Materials Science and Chemistry and has widened to the physical sciences and
 > mathematics. Free, hybrid, and run from sites around the world on the same two days.
 >
-> | | | | |
-> | --- | --- | --- | --- |
-> | **120** projects submitted in 2025 | **16** on-site locations, plus virtual | **4** community papers, every team credited | **Free**, one registration covers every site |
+> **120** projects submitted in 2025 · **16** on-site locations plus virtual · **4** community
+> papers, every team credited · **free**, and one registration covers every site.
 >
 > **Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.** Registering once
 > covers both, and Wednesday the 21st is open if a group wants to carry the work across. Every
@@ -51,16 +50,37 @@ Two days to find out how far up that second ladder you have to climb to get an a
 All open source, all from the 2025 event. Worth half an hour before October — it's the fastest way
 to see what two days actually produces, and several are live starting points rather than sketches.
 
-| Near | Project | What it does |
-| --- | --- | --- |
-| **1** Screening at scale | **[MIDAS](https://github.com/pagel-s/MIDAS)** | Agentic structure-based drug design, steering DiffSBDD inside a pocket |
-| **1** | **[SmeLLMap](https://github.com/Justice-Lu/spatialESM_OdorClassification)** | ESM-2 over receptors with voxelised binding cavities — a different answer to representing a pocket |
-| **2** Molecules in motion | **[UMADock](https://github.com/MauricioCafiero/UMADock)** | Docking with an MLIP as the scoring function, with desolvation and ligand-strain terms |
-| **2** | **[DynaMate](https://github.com/schwallergroup/DynaMate)** | Autonomous protein–ligand MD over GROMACS and AMBER, with retries when a step fails. Began as DynaAgent and still being developed ([preprint](https://arxiv.org/abs/2512.10034)) |
-| **2** | **[LARA-HPC](https://github.com/BigDFT-group/llm-hackathon-2025)** | An agent submitting electronic-structure workflows to a cluster, with a rehearsal mode |
-| **2** | **[DFTPilot](https://github.com/chiku-parida/DFTPilot)** | Retrieval plus crystal GNNs to set up and preview a DFT calculation before you pay for it |
-| **3 and 4** | **[AssemblAI](https://github.com/ndharms/peptide-agent)** · **[ARIA](https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis)** | The nearest things. Nothing in 2025 carried a molecular signal up to cells, and nothing took on repurposing directly — which is the interesting part |
-| **Any theme** | **[ACME](https://github.com/HassanHarb92/ACME)** · **[AtomBridge](https://github.com/dpalmer-anl/AtomBridge)** · **[ATOMS Lab](https://github.com/ahaibel/mp-property-analogies)** · **[MCP4SDL](https://github.com/ivoryzh/MCP4SDL)** | Literature to structured data, papers to validated structures, small-data property prediction, and MCP interfaces to instruments |
+**Near theme 1, screening at scale**
+
+- **[MIDAS](https://github.com/pagel-s/MIDAS)** — agentic structure-based drug design, steering
+  DiffSBDD inside a pocket and analysing the poses it gets back. *Glasgow*
+- **[SmeLLMap](https://github.com/Justice-Lu/spatialESM_OdorClassification)** — ESM-2 over
+  receptors with voxelised binding cavities: a different answer to representing a pocket. *Duke*
+
+**Near theme 2, molecules in motion**
+
+- **[UMADock](https://github.com/MauricioCafiero/UMADock)** — docking with an MLIP as the scoring
+  function, with desolvation and ligand-strain terms. *CafChem*
+- **[DynaMate](https://github.com/schwallergroup/DynaMate)** — autonomous protein–ligand MD over
+  GROMACS and AMBER with MM/PB(GB)SA, retrying when a step fails. Began at the hackathon as
+  DynaAgent and still being developed ([preprint](https://arxiv.org/abs/2512.10034)). *EPFL, LIAC*
+- **[LARA-HPC](https://github.com/BigDFT-group/llm-hackathon-2025)** — an agent submitting
+  electronic-structure workflows to a cluster, with a rehearsal mode that validates first.
+  *CEA, CNR, INRIA, RIKEN and others*
+- **[DFTPilot](https://github.com/chiku-parida/DFTPilot)** — retrieval plus crystal GNNs to set up
+  and preview a DFT calculation before you pay for it. *DTU, UCL, Cambridge, NTU*
+
+**Near themes 3 and 4** — thin, which is the interesting part. Nothing in 2025 carried a molecular
+signal up to cells or physiology, and nothing took on drug repurposing directly.
+**[AssemblAI](https://github.com/ndharms/peptide-agent)** (peptide self-assembly protocols) and
+**[ARIA](https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis)** (causal knowledge graphs
+for inverse design) are the nearest.
+
+**Useful whatever you work on** —
+**[ACME](https://github.com/HassanHarb92/ACME)** literature to structured data ·
+**[AtomBridge](https://github.com/dpalmer-anl/AtomBridge)** papers to validated structures ·
+**[ATOMS Lab](https://github.com/ahaibel/mp-property-analogies)** property prediction on 50–300
+examples · **[MCP4SDL](https://github.com/ivoryzh/MCP4SDL)** MCP interfaces to lab instruments.
 
 **[The full picture](docs/the-global-event.md)**, including where the gaps are.
 
