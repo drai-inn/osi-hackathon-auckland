@@ -72,6 +72,17 @@ def main() -> None:
         raise SystemExit("external links without target=\"_blank\":\n  "
                          + "\n  ".join(sorted(set(stay))))
 
+    # One rule for the page: a <section> has an h2 and an id that is the GitHub
+    # slug of that h2. A strip with no heading is a <div> with a class.
+    anon = [t for t in re.findall(r"<section\b[^>]*>", html) if "id=" not in t]
+    if anon:
+        raise SystemExit(f"sections without an id: {anon}")
+    for ident, heading in zip(re.findall(r'<section id="([^"]+)"', html),
+                              re.findall(r"<h2>([^<]*)</h2>", html)):
+        want = re.sub(r"[^a-z0-9 -]", "", heading.lower()).replace(" ", "-")
+        if ident != want:
+            raise SystemExit(f'section id "{ident}" is not the slug of "{heading}" ({want})')
+
     (SITE / "index.html").write_text(html)
     (SITE / ".nojekyll").write_text("")          # assets/ is fine, but be explicit
 

@@ -74,6 +74,10 @@ they will draw chemistry that looks right and is not. They carry mood. Anything 
 as a measurement belongs in `docs/figures/` and comes from data. Do not move an image across that
 line without saying so.
 
+**One rule for the landing page's sections.** A `<section>` has an `h2` and an `id` that is the
+GitHub slug of that `h2`; a strip with no heading is a `<div>` with a class. Links off the site open
+in a new tab. `tools/build_site.py` fails the build on any of these rather than trusting them.
+
 **Run `make check` before committing.** It checks every relative link and anchor, and it has a
 self-test because GitHub's anchor rule is easy to get subtly wrong.
 
