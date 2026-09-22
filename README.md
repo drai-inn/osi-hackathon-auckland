@@ -188,6 +188,7 @@ theme known to run on our hardware before anyone arrives.
 | **Bring** | A laptop |
 | **Register** | Free, through the global event — [luma.com/ku88xh92](https://luma.com/ku88xh92) |
 | **Questions** | [Open an issue](https://github.com/drai-inn/osi-hackathon-auckland/issues/new) |
+| **Poster** | [A3, PDF](outreach/poster-A3.pdf) — print one for a noticeboard |
 
 We keep a [live event log](EVENT-LOG.md) as a single pull request that stays open until the final
 presentations and reports are done. Subscribe and you'll get every update and nothing else.

@@ -165,7 +165,9 @@ surface follows the reader's theme, switch:
 </picture>
 ```
 
-GitHub honours that in a README. The landing page carries the CSS equivalent as `.uoa-logo-swap`.
+GitHub honours that in a README, and [`../one-pager.md`](../one-pager.md) uses it. The landing
+page needs no switch: every surface on it that carries the lockup is dark in both modes, so it
+uses the reversed file directly.
 
 ### Using the motif
 
