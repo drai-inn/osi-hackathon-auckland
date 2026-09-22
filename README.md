@@ -26,15 +26,43 @@ Two days to find out how far up that second ladder you have to climb to get an a
 
 📖 **[The pitch](docs/narrative.md)** · 🧭 **[The themes](docs/themes.md)** · 🙋 **[Taking part](docs/taking-part.md)**
 
-> ### 🌏 The global event
-> We're one local site of the **Open Scientific Intelligence Hackathon**. Fourth year, hubs on four
-> continents, over a thousand participants last year, and a write-up each year crediting every team.
+> ### 🌏 The global event, which is why any of this is happening
 >
-> **It runs 21–22 October, and [one free registration](https://luma.com/ku88xh92) covers every site including ours.**
-> Auckland runs 19–20 October, and Wednesday the 21st is open if people want to carry the work
-> across into the global days.
+> The **Open Scientific Intelligence Hackathon** is in its fourth year. It began as the LLM
+> Hackathon for Materials Science and Chemistry and has widened to the physical sciences and
+> mathematics. Free, hybrid, and run from sites around the world on the same two days.
 >
-> [llmhackathon.github.io](https://llmhackathon.github.io/) · [how we fit in](docs/the-global-event.md)
+> | | | | |
+> | --- | --- | --- | --- |
+> | **120** projects submitted in 2025 | **16** on-site locations, plus virtual | **4** community papers, every team credited | **Free**, one registration covers every site |
+>
+> **Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.** Registering once
+> covers both, and Wednesday the 21st is open if a group wants to carry the work across. Every
+> edition is written up with every contributor named, which for two days' work is a real line on
+> a CV.
+>
+> **[Register — free](https://luma.com/ku88xh92)** ·
+> [llmhackathon.github.io](https://llmhackathon.github.io/) ·
+> [their Slack](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q) ·
+> [how we fit in](docs/the-global-event.md)
+
+### Built at past editions, close to our themes
+
+All open source, all from the 2025 event. Worth half an hour before October — it's the fastest way
+to see what two days actually produces, and several are live starting points rather than sketches.
+
+| Near | Project | What it does |
+| --- | --- | --- |
+| **1** Screening at scale | **[MIDAS](https://github.com/pagel-s/MIDAS)** | Agentic structure-based drug design, steering DiffSBDD inside a pocket |
+| **1** | **[SmeLLMap](https://github.com/Justice-Lu/spatialESM_OdorClassification)** | ESM-2 over receptors with voxelised binding cavities — a different answer to representing a pocket |
+| **2** Molecules in motion | **[UMADock](https://github.com/MauricioCafiero/UMADock)** | Docking with an MLIP as the scoring function, with desolvation and ligand-strain terms |
+| **2** | **[DynaMate](https://github.com/schwallergroup/DynaMate)** | Autonomous protein–ligand MD over GROMACS and AMBER, with retries when a step fails. Began as DynaAgent and still being developed ([preprint](https://arxiv.org/abs/2512.10034)) |
+| **2** | **[LARA-HPC](https://github.com/BigDFT-group/llm-hackathon-2025)** | An agent submitting electronic-structure workflows to a cluster, with a rehearsal mode |
+| **2** | **[DFTPilot](https://github.com/chiku-parida/DFTPilot)** | Retrieval plus crystal GNNs to set up and preview a DFT calculation before you pay for it |
+| **3 and 4** | **[AssemblAI](https://github.com/ndharms/peptide-agent)** · **[ARIA](https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis)** | The nearest things. Nothing in 2025 carried a molecular signal up to cells, and nothing took on repurposing directly — which is the interesting part |
+| **Any theme** | **[ACME](https://github.com/HassanHarb92/ACME)** · **[AtomBridge](https://github.com/dpalmer-anl/AtomBridge)** · **[ATOMS Lab](https://github.com/ahaibel/mp-property-analogies)** · **[MCP4SDL](https://github.com/ivoryzh/MCP4SDL)** | Literature to structured data, papers to validated structures, small-data property prediction, and MCP interfaces to instruments |
+
+**[The full picture](docs/the-global-event.md)**, including where the gaps are.
 
 <br>
 
@@ -56,6 +84,12 @@ for people to gather, and the shape of the room is still open.
 <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="docs/cards/theme-open-1.svg" width="49%" alt="An open theme. Bring a problem that doesn't sit in the four, and open an issue."></a>
 <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="docs/cards/theme-open-2.svg" width="49%" alt="An open theme. A dataset, an evaluation or a comparison you think ought to exist."></a>
 </p>
+
+**And the wider scope.** The global event takes submissions across the physical sciences and
+mathematics, in any of: **autonomous agents · language models · datasets · benchmarks · models ·
+scientific software.** Anything in that scope works here. A benchmark nobody has built, a dataset
+that should exist, a piece of software your field keeps rewriting, an agent that does a job you
+currently do by hand — all of it counts, and none of it has to be about ligands.
 
 The two dotted tiles are real. **[Propose a theme](https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A)** and we'll make space for it.
 
@@ -148,7 +182,7 @@ presentations and reports are done. Subscribe and you'll get every update and no
 | The models behind the agents | [agentic-models.md](docs/agentic-models.md) — the open-weight shortlist, and what actually fits |
 | Small experiments | [small-experiments.md](docs/small-experiments.md) — learning a parameter space when every run is expensive |
 | Inviting someone | [`outreach/`](outreach/) · [brand](outreach/brand/README.md) |
-| Who to talk to elsewhere | [interested-parties.md](docs/interested-parties.md) |
+| Who else is working on this | [interested-parties.md](docs/interested-parties.md) — past projects, with code |
 | Decisions | [`docs/adr/`](docs/adr/) · [glossary](docs/glossary.md) |
 
 <br>

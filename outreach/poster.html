@@ -31,21 +31,29 @@ body{background:var(--void);color:var(--on);font-family:Inter,"Helvetica Neue",A
   letter-spacing:.14em;color:var(--south);background:rgba(0,211,246,.12);
   border:1px solid rgba(0,211,246,.4);padding:7px 15px;border-radius:4px}
 
-.body{padding:32px 54px 0;flex:1;display:flex;flex-direction:column}
+.body{padding:22px 54px 0;flex:1;display:flex;flex-direction:column}
 .motif{width:40px;display:block;margin-bottom:16px}
 .kicker{font-size:13.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;
   color:var(--soft);margin-bottom:12px}
-h1{font-size:60px;font-weight:300;letter-spacing:-.025em;line-height:1.04;margin-bottom:18px}
+h1{font-size:55px;font-weight:300;letter-spacing:-.025em;line-height:1.04;margin-bottom:16px}
 h1 em{font-style:normal;color:var(--south)}
-.sub{font-size:20px;line-height:1.4;color:#C6D0EA;max-width:60ch;margin-bottom:6px}
+.sub{font-size:19px;line-height:1.4;color:#C6D0EA;max-width:66ch;margin-bottom:4px}
 .sub b{color:#fff;font-weight:600}
 .chain{font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
-  color:var(--south);margin:18px 0 20px}
+  color:var(--south);margin:16px 0 16px}
 
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;
-  max-width:900px;margin-left:auto;margin-right:auto}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;
+  max-width:800px}
 .cards img{width:100%;height:auto;display:block;border-radius:9px}
-.themes-note{margin:-14px 0 20px;font-size:10.2pt;color:#5C6470}
+.themes-note{margin:0 0 16px;font-size:14.5px;color:#9AA7CD;max-width:80ch}
+
+/* The global event, given its own ground above our themes. */
+.globalbar{background:var(--panel);border-left:4px solid var(--south);border-radius:6px;
+  padding:13px 20px;margin:0 0 18px}
+.globalbar .k{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:800;color:var(--south);margin-bottom:5px}
+.globalbar p{font-size:14.5px;line-height:1.45;color:#C6D0EA;margin:0;max-width:none}
+.globalbar b{color:#fff}
 
 .split{display:grid;grid-template-columns:1.32fr 1fr;gap:40px;margin-bottom:auto}
 h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
@@ -58,7 +66,7 @@ h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
 .rules{margin-top:14px;font-size:15.5px;color:var(--south);font-weight:700;line-height:1.6}
 
 .foot{background:var(--void-deep);padding:22px 54px;display:flex;align-items:center;
-  justify-content:space-between;gap:30px;flex-shrink:0;margin-top:22px}
+  justify-content:space-between;gap:30px;flex-shrink:0;margin-top:14px}
 .foot .url{font-size:25px;font-weight:800;letter-spacing:-.01em}
 .foot .who{font-size:15px;color:var(--soft);margin-top:5px}
 .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
@@ -111,14 +119,21 @@ h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
     trusted.</b></p>
   <div class="chain">Systems · Proteins · Ligand binding · Drug discovery · Pharmacology</div>
 
+  <div class="globalbar">
+    <div class="k">Part of the global event</div>
+    <p>The <b>Open Scientific Intelligence Hackathon</b>, 4th edition — 120 projects across 16 sites
+      in 2025, and a community paper each year crediting every team. <b>One free registration covers
+      both</b>: Auckland 19–20 October and the global days 21–22 October. <b>luma.com/ku88xh92</b></p>
+  </div>
+
   <div class="cards">
     <img src="../docs/cards/theme-1.svg" alt="Theme 1">
     <img src="../docs/cards/theme-2.svg" alt="Theme 2">
     <img src="../docs/cards/theme-3.svg" alt="Theme 3">
     <img src="../docs/cards/theme-4.svg" alt="Theme 4">
   </div>
-  <p class="themes-note">Four to start from, and they come from where we happen to sit. Bring your
-    problem and take a space, or propose a theme of your own.</p>
+  <p class="themes-note">Four to start from. Bring your problem and take a space, or propose a theme
+    of your own — the wider event takes agents, datasets, benchmarks, models and software too.</p>
 
   <div class="split">
     <div>
@@ -127,8 +142,7 @@ h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
         our default targets. Chemists, physicists, structural biologists, statisticians, systems
         biologists, pharmacologists, clinicians, bioinformaticians, RSEs, and anyone new to it.</p>
       <p><b>You don't need to be able to code.</b> The agent writes the code and you bring the
-        judgement about whether the answer is any good. If you can only make the opening, come for
-        the opening and leave your team to it.</p>
+        judgement about whether the answer is any good.</p>
       <div class="rules">No stupid questions · Safe to experiment · A negative is a result</div>
     </div>
     <div>

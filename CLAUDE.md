@@ -16,6 +16,11 @@ Registration is the **global event's** — one free sign-up covers every site, o
 no local registration and no local email address anywhere in the public assets; questions go to
 issues. Don't reintroduce a personal contact address.
 
+**The global event comes before our themes**, everywhere: on the site, in the README, in the pitch,
+on the poster. It's the reason there's an Auckland site at all, and a reader should meet it before
+they meet our framing. `docs/the-global-event.md` is the canonical version, including the list of
+past projects with links to their repos — check those still resolve before a release.
+
 This is an invitation, not a project specification. We deliberately do not define the work in
 advance, because the groups who turn up bring their own problems and their own expertise. **Resist
 the urge to specify.** If something reads like it is closing down a choice a participant should

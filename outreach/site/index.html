@@ -23,7 +23,8 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--font);color:var(--ink);background:var(--bg-top);line-height:1.55;
   -webkit-font-smoothing:antialiased}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+/* One container width everywhere, so every left edge on the page lines up. */
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 a{color:var(--action)}
 
 /* hero */
@@ -61,30 +62,31 @@ h1 em{font-style:normal;color:var(--south)}
   font-weight:700;margin-bottom:3px}
 .fact .v{font-size:16px;font-weight:700}
 
-section{padding:52px 0;border-bottom:1px solid var(--line)}
+section{padding:66px 0;border-bottom:1px solid var(--line)}
 h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
-  color:var(--ink-soft);margin-bottom:20px}
+  color:var(--ink-soft);margin-bottom:24px}
 /* Waipapa Taumata Rau motif. Sits on its own line with clear air above and below.
    Nothing inline beside it. ../brand/uoa-motif.svg */
-.uoa-motif{width:30px;display:block;margin:0 0 20px}
+.uoa-motif{width:30px;display:block;margin:0 0 22px}
 .hero-motif{margin-bottom:26px}
 .uoa-logo{height:48px;margin-bottom:14px}
 .hero-motif{width:44px;margin-bottom:18px;display:block}
 h3{font-size:23px;font-weight:300;letter-spacing:-.012em;margin-bottom:8px}
-p{max-width:64ch;margin-bottom:14px}
+p{max-width:66ch;margin:0 0 18px}
+p:last-child{margin-bottom:0}
 .big{font-size:24px;font-weight:300;letter-spacing:-.012em;max-width:56ch;line-height:1.42}
-.q{border-left:4px solid var(--south);padding-left:20px;margin:26px 0}
+.q{border-left:4px solid var(--south);padding:20px 0 20px 24px;margin:32px 0}
 
-.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px 30px}
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:20px 30px}
 .who .r .d{font-weight:700;margin-bottom:2px}
 .who .r .t{color:var(--ink-soft);font-size:15px}
 
-.newcomer{background:var(--void);color:var(--on-void);border-radius:8px;padding:28px 30px;margin:8px 0}
+.newcomer{background:var(--void);color:var(--on-void);border-radius:8px;padding:30px 32px;margin:14px 0 26px}
 .newcomer h3{color:var(--south);font-size:22px}
 .newcomer p{color:#D5DCF0;margin-bottom:0}
 .newcomer b{color:#fff}
 
-.ladders{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.ladders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(215px,100%),1fr));gap:14px}
 .card{border:1px solid var(--line);border-radius:8px;padding:18px 19px;background:#fff;
   text-decoration:none;color:inherit;display:block}
 .card:hover{border-color:var(--action)}
@@ -103,10 +105,42 @@ details p{margin:10px 0 0;color:var(--ink-soft)}
 footer{background:var(--void-deep);color:var(--on-void-soft);padding:36px 0;font-size:14px}
 footer a{color:var(--south)}
 footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
-@media(max-width:600px){ header{padding:40px 0 36px} section{padding:38px 0} }
+@media(max-width:600px){ header{padding:44px 0 40px} section{padding:46px 0}
+  .wrap{padding:0 18px} }
 .cta-note{margin-top:14px;font-size:13.5px;color:var(--on-void-soft);max-width:44ch;position:relative}
+/* The global event. A dark full-bleed panel between the question and the
+   themes: it is the thing that brought this site into being, so it reads
+   before our own framing rather than after it. */
+.global{background:var(--void);color:var(--on-void);border:none;
+  border-top:3px solid var(--south);padding:64px 0 68px}
+.global h2{color:var(--south);margin-bottom:22px}
+.global p{color:#D5DCF0}
+.global b{color:#fff}
+.global a{color:var(--south)}
+.g-title{font-size:clamp(25px,3.4vw,34px);font-weight:300;letter-spacing:-.015em;
+  line-height:1.2;max-width:22ch;margin-bottom:20px;color:var(--on-void)}
+.g-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:22px;
+  margin:30px 0;padding:24px 0;border-top:1px solid var(--line-on-void);
+  border-bottom:1px solid var(--line-on-void)}
+.g-stats .n{display:block;font-size:30px;font-weight:200;color:var(--south);line-height:1.1}
+.g-stats .l{display:block;font-size:13px;color:var(--on-void-soft);margin-top:6px;max-width:20ch}
+.g-sub{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
+  color:var(--on-void-soft);margin:44px 0 8px}
+.g-note{font-size:15px;color:var(--on-void-soft);max-width:66ch;margin-bottom:26px}
+.pgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));
+  gap:34px 40px}
+.pg h4{font-size:15px;font-weight:700;color:var(--on-void);margin-bottom:12px;
+  padding-bottom:9px;border-bottom:1px solid var(--line-on-void)}
+.pg ul{list-style:none;margin:0}
+.pg li{margin-bottom:13px;font-size:14.5px;line-height:1.5;color:var(--on-void-soft)}
+.pg li a{font-weight:700;text-decoration:none;border-bottom:1px solid rgba(0,211,246,.4)}
+.pg li a:hover{border-bottom-color:var(--south)}
+.pg .src{display:block;font-size:12px;opacity:.7;margin-top:3px}
+.areas{display:flex;flex-wrap:wrap;gap:9px;margin:4px 0 20px}
+.areas span{border:1px solid var(--line);border-radius:100px;padding:6px 15px;
+  font-size:13.5px;color:var(--ink-soft)}
 /* theme cards — wraps to one column on a phone */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:6px 0 24px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px;margin:6px 0 24px}
 .cards img{width:100%;height:auto;display:block;border-radius:10px}
 .cards a{display:block;border-radius:10px}
 .cards a:hover img{outline:2px solid var(--action);outline-offset:2px;border-radius:10px}
@@ -119,8 +153,7 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   -webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%);
   mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)}
 @media(max-width:600px){ .band img{height:210px} }
-.wrap-wide{max-width:1120px;margin:0 auto;padding:0 20px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin:4px 0 8px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:22px;margin:4px 0 8px}
 .steps .n{color:var(--south);font-weight:800;font-size:12px;letter-spacing:.18em;margin-bottom:6px}
 .steps p{margin:0}
 .qs{counter-reset:q;list-style:none;margin:6px 0 0}
@@ -177,7 +210,91 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     arrived recently. Most of us know our own rung.</p>
 </div></section>
 
-<section id="themes"><div class="wrap-wide">
+<section class="global" id="global"><div class="wrap">
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>The global event</h2>
+  <p class="g-title">This is the thing that got us to run a site at all.</p>
+  <p>The <b>Open Scientific Intelligence Hackathon</b> is in its fourth year. It began as the LLM
+    Hackathon for Materials Science and Chemistry and has widened to the physical sciences and
+    mathematics. Free, hybrid, and run from sites around the world on the same two days.</p>
+  <div class="g-stats">
+    <div><span class="n">120</span><span class="l">projects submitted in 2025</span></div>
+    <div><span class="n">16</span><span class="l">on-site locations, plus virtual</span></div>
+    <div><span class="n">4</span><span class="l">community papers, every team credited</span></div>
+    <div><span class="n">Free</span><span class="l">one registration covers every site</span></div>
+  </div>
+  <p><b>Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.</b> Registering
+    once covers both, and Wednesday the 21st is open if a group wants to carry the work across.
+    Every edition is written up with every contributor named, which for two days' work is a real
+    line on a CV.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="https://luma.com/ku88xh92">Register — free</a>
+    <a class="btn btn-ghost" href="https://llmhackathon.github.io/">llmhackathon.github.io</a>
+    <a class="btn btn-ghost" href="https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q">Join their Slack</a>
+  </div>
+
+  <h3 class="g-sub">Built at past editions, close to our themes</h3>
+  <p class="g-note">All open source, all from the 2025 event. Worth half an hour before October:
+    it's the fastest way to see what two days actually produces, and several of these are live
+    starting points rather than sketches.</p>
+  <div class="pgs">
+    <div class="pg">
+      <h4>Near theme 1 · Screening at scale</h4>
+      <ul>
+        <li><a href="https://github.com/pagel-s/MIDAS">MIDAS</a> — an agentic interface for
+          structure-based drug design, steering DiffSBDD inside a pocket and analysing the poses it
+          gets back.<span class="src">Glasgow</span></li>
+        <li><a href="https://github.com/Justice-Lu/spatialESM_OdorClassification">SmeLLMap</a> —
+          ESM-2 embeddings over receptors with voxelised binding cavities: a different answer to how
+          you represent a pocket.<span class="src">Duke</span></li>
+      </ul>
+    </div>
+    <div class="pg">
+      <h4>Near theme 2 · Molecules in motion</h4>
+      <ul>
+        <li><a href="https://github.com/MauricioCafiero/UMADock">UMADock</a> — docking with an
+          MLIP as the scoring function, with desolvation and ligand-strain terms.<span class="src">CafChem</span></li>
+        <li><a href="https://github.com/schwallergroup/DynaMate">DynaMate</a> — autonomous
+          protein–ligand MD over GROMACS and AMBER with MM/PB(GB)SA, and quality checks that retry
+          when a step fails. Started at the hackathon as DynaAgent and still being developed.<span class="src">EPFL LIAC · <a href="https://arxiv.org/abs/2512.10034">preprint</a></span></li>
+        <li><a href="https://github.com/BigDFT-group/llm-hackathon-2025">LARA-HPC</a> — an agent
+          that submits electronic-structure workflows to a cluster, with a rehearsal mode that
+          validates before anything real runs.<span class="src">CEA, CNR, INRIA, RIKEN and others</span></li>
+        <li><a href="https://github.com/chiku-parida/DFTPilot">DFTPilot</a> — retrieval plus
+          crystal GNNs to set up and preview a DFT calculation before you pay for it.<span class="src">DTU, UCL, Cambridge, NTU</span></li>
+      </ul>
+    </div>
+    <div class="pg">
+      <h4>Near themes 3 and 4</h4>
+      <ul>
+        <li>Thin, which is the interesting part. Nothing in 2025 carried a molecular signal up to
+          cells or physiology, and nothing took on drug repurposing directly.</li>
+        <li><a href="https://github.com/ndharms/peptide-agent">AssemblAI</a> — designing peptide
+          self-assembly protocols, the nearest thing to working up a scale.<span class="src">Harms Informatics, MIT</span></li>
+        <li><a href="https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis">ARIA</a> —
+          causal knowledge graphs for inverse design: the machinery theme 4 would use, pointed
+          somewhere else.<span class="src">Johns Hopkins</span></li>
+      </ul>
+    </div>
+    <div class="pg">
+      <h4>Useful whatever you work on</h4>
+      <ul>
+        <li><a href="https://github.com/HassanHarb92/ACME">ACME</a> — literature to structured
+          data, end to end. Fifth overall in 2025, and the quickest route to a dataset when you
+          don't have one.<span class="src">Argonne</span></li>
+        <li><a href="https://github.com/dpalmer-anl/AtomBridge">AtomBridge</a> — papers to
+          validated structures, with physical sanity checks on the way out.<span class="src">UIUC, Northwestern, Chicago, Georgia Tech</span></li>
+        <li><a href="https://github.com/ahaibel/mp-property-analogies">ATOMS Lab</a> — property
+          prediction on 50–300 examples, with the support set ablated properly. Small-data method,
+          done carefully.<span class="src">UMBC</span></li>
+        <li><a href="https://github.com/ivoryzh/MCP4SDL">MCP4SDL</a> — MCP interfaces to lab
+          instruments.<span class="src">UBC, Tennessee, ETH Zürich, Empa</span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="themes"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>Themes</h2>
   <p>Four to start from. They describe the kind of work we're interested in, and they come from
@@ -191,6 +308,16 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="../../docs/cards/theme-open-1.svg" alt="An open theme. Bring a problem that doesn't sit in the four, and open an issue."></a>
     <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="../../docs/cards/theme-open-2.svg" alt="An open theme. A dataset, an evaluation or a comparison you think ought to exist."></a>
   </div>
+  <h3 class="g-sub" style="color:var(--ink-soft);margin:34px 0 14px">And the wider scope</h3>
+  <p>The global event takes submissions across the physical sciences and mathematics, in any of
+    these:</p>
+  <div class="areas">
+    <span>Autonomous agents</span><span>Language models</span><span>Datasets</span>
+    <span>Benchmarks</span><span>Models</span><span>Scientific software</span>
+  </div>
+  <p>Anything in that scope works here. A benchmark nobody has built, a dataset that should exist,
+    a piece of software your field keeps rewriting, an agent that does a job you currently do by
+    hand — all of it counts, and none of it has to be about ligands.</p>
   <p>The two dotted tiles are real. <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A">Propose a theme</a> and we'll make
     space for it. We also have default targets and chemistry ready if you'd rather pick something
     up.</p>
@@ -269,18 +396,6 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   <p>We keep a live log as a single pull request that stays open until the final presentations and
     reports are done. Subscribe and you'll get every update and nothing else.</p>
   <p><a class="btn btn-primary" href="https://github.com/drai-inn/osi-hackathon-auckland/pull/16">Subscribe to the live log</a></p>
-</div></section>
-
-<section><div class="wrap">
-  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
-  <h2>The global event</h2>
-  <p>We're one local site of the <b>Open Scientific Intelligence Hackathon</b>, now in its fourth
-    year, with sites on four continents and over a thousand participants last year.</p>
-  <p><b>It runs 21–22 October, and one free registration covers every site.</b> Auckland runs
-    Mon 19 – Tue 20 October 2026, and Wednesday the 21st is open if people want to carry the work
-    across into the global days.</p>
-  <p><a href="https://luma.com/ku88xh92">Register</a> ·
-    <a href="https://llmhackathon.github.io/">llmhackathon.github.io</a></p>
 </div></section>
 
 <section style="border:none"><div class="wrap">

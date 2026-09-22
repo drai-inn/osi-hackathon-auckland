@@ -57,6 +57,24 @@ predicting perturbation effects, and another found the choice of metric changes 
 out on top. How to evaluate these things is genuinely unsettled, and there's a lot of room to do
 useful work there.
 
+## The global event, which is why any of this is happening
+
+We're one site of the [Open Scientific Intelligence Hackathon](the-global-event.md), in its fourth
+year. **120 projects submitted in 2025, 16 on-site locations plus virtual, four community papers
+with every team credited.** Free, and one registration covers every site.
+
+**Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.** Registering once
+covers both, and Wednesday the 21st is open if a group wants to carry the work across.
+
+Half an hour on [what people have built there](the-global-event.md#what-people-have-built-there) is
+the fastest way to see what two days produces. Several of the 2025 projects sit right next to our
+themes — an MLIP used as a docking score, an agent that runs protein–ligand MD, an agent that
+submits electronic-structure jobs to a cluster — and all of them are open source.
+
+The event takes submissions across the physical sciences and mathematics, in any of: autonomous
+agents, language models, datasets, benchmarks, models, scientific software. That's a wider door
+than our four themes, and it's open here too.
+
 ## The four themes, in a line each
 
 | | |
@@ -107,7 +125,3 @@ changes.
 
 A well-founded *"not yet, and here's why"* is a result we'd be happy to present.
 
-## The global event
-
-We're one local site of the [global hackathon](the-global-event.md), which runs 21–22 October with
-registration open to anyone. Sign up for that too — it's the bigger room.
