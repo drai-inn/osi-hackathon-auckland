@@ -19,18 +19,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "_site"
 
-REPO = "https://github.com/drai-inn/osi-hackathon-auckland"
 PAGES = "https://drai-inn.github.io/osi-hackathon-auckland/"
 
-FILL = {
-    "{{REPO}}": REPO,
-    "{{EVENT_LOG_PR}}": f"{REPO}/pull/14",
-    # No local registration exists yet. Until one does, the honest call to
-    # action is to get in touch; the global event's own registration is linked
-    # separately further down the page.
-    "{{REGISTER}}": "mailto:njon001@aucklanduni.ac.nz?subject=OSI%20Hackathon%20Auckland",
-    "{{LINK}}": PAGES,
-}
+# Nothing is substituted any more. Every URL the page needs is public and is
+# written into the source, so what you open from the filesystem while editing is
+# what ships. The check at the end of main() stays: a {{...}} reaching the built
+# page would mean someone had reintroduced a substitution without a value.
 
 ASSETS = [
     ("outreach/imagery/terrain.webp", "assets/terrain.webp"),
@@ -40,7 +34,8 @@ ASSETS = [
     ("outreach/imagery/through-the-membrane.webp", "assets/through-the-membrane.webp"),
     ("outreach/brand/readme-banner.png", "assets/banner.png"),
     ("outreach/poster-A3.pdf", "poster.pdf"),
-] + [(f"docs/cards/theme-{n}.svg", f"assets/theme-{n}.svg") for n in (1, 2, 3, 4)]
+] + [(f"docs/cards/theme-{n}.svg", f"assets/theme-{n}.svg") for n in (1, 2, 3, 4)] \
+  + [(f"docs/cards/theme-open-{k}.svg", f"assets/theme-open-{k}.svg") for k in (1, 2)]
 
 REWRITE = [
     (r"\.\./imagery/", "assets/"),
@@ -60,8 +55,6 @@ def main() -> None:
     html = (ROOT / "outreach/site/index.html").read_text()
     for pat, rep in REWRITE:
         html = re.sub(pat, rep, html)
-    for k, v in FILL.items():
-        html = html.replace(k, v)
 
     left = re.findall(r"\{\{[A-Z_]+\}\}", html)
     if left:

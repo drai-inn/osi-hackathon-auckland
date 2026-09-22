@@ -1,7 +1,8 @@
-# Four themes
+# Themes
 
-Notional, all four. They describe the kind of thing we're interested in. Bring your own problem and
-take a space.
+Four to start from. They describe the kind of work we're interested in, and they come from where we
+happen to sit. Bring your problem and take a space. If none of them fit, add one — we're making room
+for people to gather, and the shape of the room is still open.
 
 ---
 
@@ -158,7 +159,11 @@ We have default targets and chemistry ready to go, with structures and data prep
 to start from a blank page. There's a [worked example](worked-example.md) if you'd like to see one.
 Bringing your own problem is very welcome.
 
-## If none of these is quite it
+## Bringing a theme of your own
 
-Say so. Four themes is a starting shape. Work that sits between two of them, or underneath all of
-them, is usually the interesting kind, and we'd like to hear about it early.
+Four is a starting shape, and it reflects our own background rather than the boundary of what's
+interesting. Work that sits between two of them, underneath all of them, or somewhere else on the
+ladder entirely is welcome, and a team arriving with one is the best version of this.
+
+**[Propose a theme](https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A)** and we'll make space for it. Early is better than late, because it
+gives other people something to join.

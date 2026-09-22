@@ -20,10 +20,10 @@ Short on purpose. The detail follows later in the week.
 > open-weight model claiming almost every rung of that ladder and very few of us know more than our
 > own. Two days to find out what's real.
 >
-> Four loose themes — screening with physics in the loop, ML interatomic potentials in MD,
-> multi-scale from binding to system, and lightweight repurposing. Notional, all of them. **Bring
-> your own problem and take a space.** We have default targets and chemistry ready if you'd rather
-> pick something up.
+> Four themes to start from — screening with physics in the loop, ML interatomic potentials in MD,
+> multi-scale from binding to system, and lightweight repurposing. **Bring your problem and take a
+> space, or propose a theme of your own.** We have default targets and chemistry ready if you'd
+> rather pick something up.
 >
 > Come prepared to work with AI agents and with code. **The agent writes the code and you bring the
 > judgement about whether the answer is any good.** Everyone is welcome, whatever you last wrote and
@@ -65,7 +65,7 @@ Short on purpose. The detail follows later in the week.
 > which runs 21–22 October with registration open to anyone.
 >
 > Free · newcomers genuinely welcome.
-> https://drai-inn.github.io/osi-hackathon-auckland/ · njon001@aucklanduni.ac.nz
+> https://drai-inn.github.io/osi-hackathon-auckland/ · register at https://luma.com/ku88xh92
 
 ## Social, long
 
@@ -97,7 +97,7 @@ Short on purpose. The detail follows later in the week.
 > **Both days:** open together, lightning talks, work in small groups, close together. Food and a
 > social occasion each day.
 >
-> Read first: https://drai-inn.github.io/osi-hackathon-auckland/ · Questions: njon001@aucklanduni.ac.nz
+> Read first: https://drai-inn.github.io/osi-hackathon-auckland/ · Register: https://luma.com/ku88xh92
 
 ## Email signature, September–October
 

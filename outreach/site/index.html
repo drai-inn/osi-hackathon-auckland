@@ -104,9 +104,19 @@ footer{background:var(--void-deep);color:var(--on-void-soft);padding:36px 0;font
 footer a{color:var(--south)}
 footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 @media(max-width:600px){ header{padding:40px 0 36px} section{padding:38px 0} }
+.cta-note{margin-top:14px;font-size:13.5px;color:var(--on-void-soft);max-width:44ch;position:relative}
 /* theme cards — wraps to one column on a phone */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:6px 0 24px}
 .cards img{width:100%;height:auto;display:block;border-radius:10px}
+.cards a{display:block;border-radius:10px}
+.cards a:hover img{outline:2px solid var(--action);outline-offset:2px;border-radius:10px}
+/* A square image cropped into a letterbox strip loses the whole subject, so the
+   band is sized to the art and the art is contained inside it. screen blending
+   drops the image's own near-black ground into the band's. */
+.band{padding:0;border:none;background:var(--void-deep);display:flex;justify-content:center}
+.band img{height:300px;width:auto;max-width:100%;object-fit:contain;display:block;
+  mix-blend-mode:screen}
+@media(max-width:600px){ .band img{height:210px} }
 .wrap-wide{max-width:1120px;margin:0 auto;padding:0 20px}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin:4px 0 8px}
 .steps .n{color:var(--south);font-weight:800;font-size:12px;letter-spacing:.18em;margin-bottom:6px}
@@ -138,10 +148,12 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
       University of Auckland finding out how far up you have to climb before the answer can be
       trusted.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="{{REGISTER}}">Register — free</a>
+      <a class="btn btn-primary" href="https://luma.com/ku88xh92">Register — free</a>
       <a class="btn btn-ghost" href="#themes">The four themes</a>
       <a class="btn btn-ghost" href="#follow">Follow along</a>
     </div>
+    <p class="cta-note">Registration is the global event's, and it covers every site including
+      this one.</p>
   </div>
 </header>
 
@@ -165,16 +177,21 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 
 <section id="themes"><div class="wrap-wide">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
-  <h2>Four themes</h2>
-  <p>Notional, all four. They describe the kind of thing we're interested in. Bring your own problem
-    and take a space.</p>
+  <h2>Themes</h2>
+  <p>Four to start from. They describe the kind of work we're interested in, and they come from
+    where we happen to sit. Bring your problem and take a space. If none of them fit, add one —
+    we're making room for people to gather, and the shape of the room is still open.</p>
   <div class="cards">
     <img src="../../docs/cards/theme-1.svg" alt="Theme 1, screening at scale: models that know something about shape, used to filter before you pay for docking. Boltz-2, OpenFold3, Chai-1r, IntFold">
     <img src="../../docs/cards/theme-2.svg" alt="Theme 2, molecules in motion: machine-learned interatomic potentials in MD. MACE, UMA, eSEN, Orb-v3, NequIP">
     <img src="../../docs/cards/theme-3.svg" alt="Theme 3, binding to whole system: carrying a molecular signal up to functional and physiological change. STATE, scGPT, Geneformer, scFoundation">
     <img src="../../docs/cards/theme-4.svg" alt="Theme 4, repurposing what we have: genotype, structure and approved drugs with deliberately small models. TxGNN, PrimeKG, lightweight KG embeddings">
+    <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="../../docs/cards/theme-open-1.svg" alt="An open theme. Bring a problem that doesn't sit in the four, and open an issue."></a>
+    <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="../../docs/cards/theme-open-2.svg" alt="An open theme. A dataset, an evaluation or a comparison you think ought to exist."></a>
   </div>
-  <p>We have default targets and chemistry ready to go if you'd rather start with something.</p>
+  <p>The two dotted tiles are real. <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A">Propose a theme</a> and we'll make
+    space for it. We also have default targets and chemistry ready if you'd rather pick something
+    up.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -204,9 +221,8 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   </div>
 </div></section>
 
-<section style="padding:0;border:none">
-  <img src="../imagery/stacked-isosurfaces.webp" alt=""
-    style="width:100%;height:190px;object-fit:cover;display:block">
+<section class="band">
+  <img src="../imagery/stacked-isosurfaces.webp" alt="">
 </section>
 
 <section id="who"><div class="wrap">
@@ -258,17 +274,19 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   <h2>The global event</h2>
   <p>We're one local site of the <b>Open Scientific Intelligence Hackathon</b>, now in its fourth
     year, with sites on four continents and over a thousand participants last year.</p>
-  <p><b>It runs 21–22 October and registration is open to anyone.</b> Sign up for that whether or
-    not you come to ours. Auckland runs Mon 19 – Tue 20 October 2026, and Wednesday the 21st is open if people want to
-    carry the work across.</p>
-  <p><a href="https://llmhackathon.github.io/">llmhackathon.github.io</a></p>
+  <p><b>It runs 21–22 October, and one free registration covers every site.</b> Auckland runs
+    Mon 19 – Tue 20 October 2026, and Wednesday the 21st is open if people want to carry the work
+    across into the global days.</p>
+  <p><a href="https://luma.com/ku88xh92">Register</a> ·
+    <a href="https://llmhackathon.github.io/">llmhackathon.github.io</a></p>
 </div></section>
 
 <section style="border:none"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>Questions</h2>
-  <p>Nick Jones · <a href="mailto:njon001@aucklanduni.ac.nz">njon001@aucklanduni.ac.nz</a> ·
-    <a href="{{REPO}}">the repo</a></p>
+  <p><a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new">Open an issue</a> in the repo, or ask in the
+    hackathon Slack — the invitation comes with registration.</p>
+  <p><a href="https://github.com/drai-inn/osi-hackathon-auckland">github.com/drai-inn/osi-hackathon-auckland</a></p>
 </div></section>
 
 </body>

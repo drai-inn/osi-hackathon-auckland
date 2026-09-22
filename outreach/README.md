@@ -14,13 +14,15 @@ the pitch there and re-cut, so the versions stay together.
 
 ## Before you send anything
 
-- Dates and venue are already set: **Mon 19 – Tue 20 October 2026**, Digital Research Innovation &
-  AI Lab, Level 10, 70 Symonds Street. The placeholders left are `https://drai-inn.github.io/osi-hackathon-auckland/`, `{{REGISTER}}`,
-  `{{REPO}}` and `{{EVENT_LOG_PR}}`, which need the public URLs
+- Everything is filled in and ready to send. The one placeholder left anywhere is `{{NAME}}` in
+  [short-form.md](short-form.md), which is there because that note gets personalised before it goes
+- Dates and venue: **Mon 19 – Tue 20 October 2026**, Digital Research Innovation & AI Lab,
+  Level 10, 70 Symonds Street. Public page: https://drai-inn.github.io/osi-hackathon-auckland/
 - Say what you'd like them to bring: their team, their expertise, and a problem or candidate
 - Mention that coming for the opening and leaving the team to it is fine. It's the difference
   between a yes and a diary conflict
-- Point at the [global event](https://luma.com/ku88xh92) as well as ours
+- **Registration is the global event's** — [luma.com/ku88xh92](https://luma.com/ku88xh92) — and one sign-up covers
+  every site including ours. We don't run a separate local list
 
 ## The three things people ask
 

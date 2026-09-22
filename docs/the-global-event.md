@@ -1,7 +1,7 @@
 # The global event, and where Auckland fits
 
-We are not running a hackathon. We are running **one hub of a global one**, and that changes what
-we should build, how we should present it, and what we get back.
+We're running **one hub of a global event**, which shapes what we build, how we present it, and
+what we get back.
 
 ---
 
@@ -46,9 +46,9 @@ workspace, mentorship from academics and industry, and post-event recognition.
 the event. Auckland is already listed as a **site in planning**, someone has put us on the map.
 
 We run 19-20 Oct, because those are the two days we have
-([ADR-0006](adr/0006-run-19-20-october-as-a-precursor.md)). That raises a few questions only the
-organisers can answer, listed in
-public-presence.md.
+([ADR-0006](adr/0006-run-19-20-october-as-a-precursor.md)). Ben Blaiszik is supportive of our dates
+and our approach, so we run on ours and register through theirs: **one free registration covers
+every site, including this one.**
 
 **2026 sites.** Confirmed: Durham NC (Duke, Defne Çirci). In planning: Baltimore (JHU) · Boston
 (MIT) · Chicago · Lemont (Argonne) · Madison · New York · Raleigh (NC State) · San Francisco ·
@@ -69,40 +69,33 @@ A submission is: a description, a **public code repository**, and a **video demo
 excluded 32 of 120 submissions for incomplete documentation, so the documentation is not optional
 overhead, it is the difference between being in the paper and not.
 
-## Where our project sits, and what nobody has done
+## Where our themes sit
 
-Ours is an **Action System** in their taxonomy, tagged *Agentic Workflows · Simulations · Property
-Prediction*. Several 2025 teams built adjacent pieces
+Several 2025 teams built things adjacent to our four themes
 ([the full list](interested-parties.md#tier-1-directly-adjacent-work)):
 
-| Their project | What it did | Our stage |
+| Their project | What it did | Nearest theme |
 | --- | --- | --- |
-| **UMADock** | Docked ligands using an MLIP as the scoring function | S5 |
-| **DynaAgent** (EPFL LIAC) | Autonomous protein–ligand MD orchestration | S3 |
-| **F.A.D.E** | Target → Boltz structure → binding site → generation → affinity | S1, whole funnel |
-| **DFTPilot** | RAG-assisted DFT setup and preview | S6 |
-| **LARA-HPC** | Electronic-structure workflows submitted to HPC by an agent | S6, S8 |
-| **ACME** (Argonne) | Closed loop: QM → selection → automated experiment → feedback | S6, S7 |
+| **UMADock** | Docked ligands using an MLIP as the scoring function | 1, 2 |
+| **DynaAgent** (EPFL LIAC) | Autonomous protein-ligand MD orchestration | 2 |
+| **F.A.D.E** | Target → Boltz structure → binding site → generation → affinity | 1 |
+| **DFTPilot** | RAG-assisted DFT setup and preview | 2 |
+| **LARA-HPC** | Electronic-structure workflows submitted to HPC by an agent | 2 |
+| **ACME** (Argonne) | Closed loop: QM → selection → automated experiment → feedback | 2, 3 |
 
-So the pieces exist. **What does not exist in 88 documented projects is the thing we are building:**
+So people have been working near all of this. A few things are still thin across the 88 documented
+projects, and any of them is a reasonable place for a group to aim:
 
-1. **A multi-fidelity funnel with an explicit budget discipline**, cheap surrogates for volume,
-   quantum only where uncertainty says it changes the answer. Others built individual stages;
-   nobody assembled the cascade with the spend deliberately allocated.
-2. **Fidelity contracts.** Not one of the 88 states a trust region for its surrogate. This is the
-   most common gap in the field and the cheapest to fix.
-3. **Configuration space as the object of study.** Everyone tunes; nobody reports which parameters
-   mattered, with intervals. Our [small-experiments thread](small-experiments.md) sits on
-   fairly open ground.
-4. **Selectivity as the target.** One mention of "selectivity" in the entire 2025 paper.
+1. **A stated trust region for a surrogate.** Not one of the 88 says where its model can be relied
+   on and where it cannot.
+2. **Which settings mattered.** Everyone tunes; almost nobody reports which parameters moved the
+   answer, with intervals. The [small-experiments thread](small-experiments.md) is about that.
+3. **Selectivity.** One mention of the word in the entire 2025 paper.
+4. **Evaluation that survives a change of metric.** Recent benchmarks show the ranking of models
+   flipping when the metric changes.
 
-That is a good position to be in: adjacent enough that people recognise it, distinct enough to be
-worth presenting.
-
-**It also implies a scoping decision.** Most hackathon projects are built in two days. We prepare
-over a month and run in two ([ADR-0005](adr/0005-two-tier-compute-gb10-h200.md)). We'll arrive with
-more infrastructure than most sites and should say so plainly. The interesting claim is about the
-method.
+That's a good position to be in: adjacent enough that people recognise the work, open enough that
+there's something to find.
 
 ## What we owe and what we get
 
@@ -119,6 +112,6 @@ we should not plan around them.
 **What we can offer back:** a working benchmark, a reproducible workflow and a set of results,
 published before the global event opens, which other sites can pick up if useful.
 
-**What to lead with:** the global event itself. It runs 21-22 October, registration is open to
-anyone, and it's worth signing up for whether or not someone comes to ours. We're a local site and
-the copy should read that way.
+**What to lead with:** the global event itself. It runs 21-22 October, one free registration covers
+every site, and that registration is the one we point people at. We're a local site and the copy
+reads that way.

@@ -60,4 +60,4 @@ it came from.
 
 ## Questions
 
-Nick Jones · njon001@aucklanduni.ac.nz · or open an issue.
+[Open an issue](https://github.com/drai-inn/osi-hackathon-auckland/issues/new).

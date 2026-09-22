@@ -32,8 +32,8 @@ trust.**
 | **Binding to whole system** | Carrying a molecular signal up to functional and physiological change |
 | **Repurposing what we have** | Genotype, structure and approved drugs, with deliberately small models |
 
-Notional, all four. Bring your own problem and take a space, or pick up the worked example we have
-ready.
+These four come from where we happen to sit. Bring your problem and take a space, propose a fifth
+theme of your own, or pick up the worked example we have ready.
 
 In each theme: find out what open-weight models exist in your area, get one or two running on our
 hardware, work out what to measure and report it back.
@@ -71,9 +71,13 @@ occasion both days.
 ## The global event
 
 We're one local site of the Open Scientific Intelligence Hackathon, now in its fourth year, with
-sites on four continents and over a thousand participants last year. **It runs 21–22 October and
-registration is open to anyone.** Sign up for that as well.
+sites on four continents and over a thousand participants last year. **It runs 21–22 October, and
+one free registration covers every site including ours.**
 
-## Get in touch
+## Register, and ask
 
-**https://drai-inn.github.io/osi-hackathon-auckland/** · Nick Jones · njon001@aucklanduni.ac.nz
+Registration: **https://luma.com/ku88xh92** — free, and it covers Auckland and the global days.
+
+Read first: **https://drai-inn.github.io/osi-hackathon-auckland/**
+
+Questions: open an issue at **https://github.com/drai-inn/osi-hackathon-auckland/issues**

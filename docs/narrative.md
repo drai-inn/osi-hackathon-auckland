@@ -70,8 +70,10 @@ Language models cut across all four, and the cheapest useful thing they do is bu
 Each group sources its own, and schema-guided extraction from the literature gets you there in an
 afternoon.
 
-Notional, all four. They describe the kind of thing we're interested in. Bring your own problem and
-take a space.
+Four to start from. They describe the kind of work we're interested in, and they come from where we
+happen to sit. Bring your problem and take a space. If none of them fit, add one — we're making room
+for people to gather, and the shape of the room is still open.
+[Propose a theme](https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A).
 
 ## What we're asking
 

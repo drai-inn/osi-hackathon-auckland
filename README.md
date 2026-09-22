@@ -22,15 +22,17 @@ literature itself. Most are open-weight and most arrived recently.
 
 Two days to find out how far up that second ladder you have to climb to get an answer you can trust.
 
-📖 **[The pitch](docs/narrative.md)** · 🧭 **[Four themes](docs/themes.md)** · 🙋 **[Taking part](docs/taking-part.md)**
+🌐 **[drai-inn.github.io/osi-hackathon-auckland](https://drai-inn.github.io/osi-hackathon-auckland/)** — the public page, and where to send anyone
+
+📖 **[The pitch](docs/narrative.md)** · 🧭 **[The themes](docs/themes.md)** · 🙋 **[Taking part](docs/taking-part.md)**
 
 > ### 🌏 The global event
 > We're one local site of the **Open Scientific Intelligence Hackathon**. Fourth year, hubs on four
 > continents, over a thousand participants last year, and a write-up each year crediting every team.
 >
-> **It runs 21–22 October and [registration is open to anyone](https://luma.com/ku88xh92).** Sign up
-> for that whether or not you come to ours. Auckland runs 19–20 October, and Wednesday the 21st is
-> open if people want to carry the work across.
+> **It runs 21–22 October, and [one free registration](https://luma.com/ku88xh92) covers every site including ours.**
+> Auckland runs 19–20 October, and Wednesday the 21st is open if people want to carry the work
+> across into the global days.
 >
 > [llmhackathon.github.io](https://llmhackathon.github.io/) · [how we fit in](docs/the-global-event.md)
 
@@ -40,19 +42,24 @@ Two days to find out how far up that second ladder you have to climb to get an a
 
 <br>
 
-## Four themes
+## Themes
 
-Notional, all four. They describe the kind of thing we're interested in. Bring your own problem and
-take a space.
+Four to start from. They describe the kind of work we're interested in, and they come from where we
+happen to sit. Bring your problem and take a space. If none of them fit, add one — we're making room
+for people to gather, and the shape of the room is still open.
 
 <p>
 <img src="docs/cards/theme-1.svg" width="49%" alt="Theme 1, screening at scale: models that know something about shape, used to filter before you pay for docking. Boltz-2, OpenFold3, Chai-1r, IntFold">
 <img src="docs/cards/theme-2.svg" width="49%" alt="Theme 2, molecules in motion: machine-learned interatomic potentials in MD, near-quantum forces you can afford to run. MACE, UMA, eSEN, Orb-v3, NequIP">
 <img src="docs/cards/theme-3.svg" width="49%" alt="Theme 3, binding to whole system: carrying a molecular signal up to functional and physiological change. STATE, scGPT, Geneformer, scFoundation">
 <img src="docs/cards/theme-4.svg" width="49%" alt="Theme 4, repurposing what we have: genotype, structure and approved drugs with deliberately small models. TxGNN, PrimeKG, lightweight KG embeddings">
+<a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="docs/cards/theme-open-1.svg" width="49%" alt="An open theme. Bring a problem that doesn't sit in the four, and open an issue."></a>
+<a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="docs/cards/theme-open-2.svg" width="49%" alt="An open theme. A dataset, an evaluation or a comparison you think ought to exist."></a>
 </p>
 
-In each one, the same three moves: **find out what open-weight models exist in your area · get one
+The two dotted tiles are real. **[Propose a theme](https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A)** and we'll make space for it.
+
+In each of them, the same three moves: **find out what open-weight models exist in your area · get one
 or two running on our hardware · work out what to measure, and report it back.**
 
 That third move is the one we care most about. How to evaluate these models is genuinely unsettled.
@@ -123,7 +130,8 @@ theme known to run on our hardware before anyone arrives.
 | **Where** | Digital Research Innovation & AI Lab, Level 10, 70 Symonds Street, University of Auckland |
 | **Cost** | Free |
 | **Bring** | A laptop |
-| **Contact** | Nick Jones · njon001@aucklanduni.ac.nz |
+| **Register** | Free, through the global event — [luma.com/ku88xh92](https://luma.com/ku88xh92) |
+| **Questions** | [Open an issue](https://github.com/drai-inn/osi-hackathon-auckland/issues/new) |
 
 We keep a [live event log](EVENT-LOG.md) as a single pull request that stays open until the final
 presentations and reports are done. Subscribe and you'll get every update and nothing else.
@@ -156,5 +164,6 @@ why"* is a result we'd be happy to present.
 **Licence.** Documentation, copy and imagery under [CC BY 4.0](LICENSE); code in `tools/` under MIT.
 Brand marks and model weights are not covered — see [LICENSE](LICENSE).
 
-Nick Jones · njon001@aucklanduni.ac.nz ·
-[Global event](https://llmhackathon.github.io/) · [Live log](EVENT-LOG.md) · [Contributing](CONTRIBUTING.md)
+**[drai-inn.github.io/osi-hackathon-auckland](https://drai-inn.github.io/osi-hackathon-auckland/)** ·
+[Register](https://luma.com/ku88xh92) · [Global event](https://llmhackathon.github.io/) ·
+[Live log](EVENT-LOG.md) · [Contributing](CONTRIBUTING.md)

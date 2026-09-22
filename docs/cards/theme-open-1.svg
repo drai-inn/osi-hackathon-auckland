@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 406" width="600" height="406" font-family="Inter,Helvetica Neue,Arial,sans-serif" role="img" aria-label="An open theme. Bring a problem that doesn't sit in the four. Open an issue and we'll make room for it.">
+<title>Your theme — Bring a problem that doesn't sit in the four. Open an issue and we'll make room for it.</title>
+<defs>
+<linearGradient id="open1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D2A4F"/><stop offset="1" stop-color="#141C36"/></linearGradient>
+</defs>
+<rect width="600" height="406" rx="10" fill="url(#open1)"/>
+<rect x="1.5" y="1.5" width="597" height="403" rx="9" fill="none" stroke="#9AA7CD" stroke-width="3" stroke-dasharray="9 8" opacity=".55"/>
+<rect x="34" y="43" width="9" height="4" rx="2" fill="none" stroke="#9AA7CD" stroke-width="1.2" opacity=".5"/>
+<rect x="47" y="43" width="9" height="4" rx="2" fill="none" stroke="#9AA7CD" stroke-width="1.2" opacity=".5"/>
+<rect x="60" y="43" width="9" height="4" rx="2" fill="none" stroke="#9AA7CD" stroke-width="1.2" opacity=".5"/>
+<rect x="73" y="43" width="9" height="4" rx="2" fill="none" stroke="#9AA7CD" stroke-width="1.2" opacity=".5"/>
+<text x="94" y="52" fill="#9AA7CD" font-size="12" font-weight="800" letter-spacing="1.8">OPEN</text>
+<text x="566" y="52" text-anchor="end" fill="#EEF1FB" font-size="11.5" font-weight="700" letter-spacing="1.4" opacity=".45">SOMEWHERE ELSE ON THE LADDER</text>
+<text x="34" y="92" fill="#EEF1FB" font-size="37" font-weight="300" letter-spacing="-.6" opacity=".9">Your theme</text>
+<g stroke="#00D3F6" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M281.0 207.0 h38 M300.0 188.0 v38"/></g>
+<text x="34" y="310" fill="#EEF1FB" font-size="15.5" opacity=".78">Bring a problem that doesn't sit in the four. Open an</text>
+<text x="34" y="333" fill="#EEF1FB" font-size="15.5" opacity=".78">issue and we'll make room for it.</text>
+</svg>
