@@ -63,6 +63,15 @@ def main() -> None:
     if left:
         raise SystemExit(f"unfilled placeholders in the built page: {sorted(set(left))}")
 
+    # Every link that leaves the site opens in a new tab, so a reader following
+    # a project repo keeps the page they were reading. Easy to forget when
+    # adding one, so it is checked rather than trusted.
+    stay = [a for a in re.findall(r'<a\b[^>]*href="https?://[^"]*"[^>]*>', html)
+            if "target=" not in a]
+    if stay:
+        raise SystemExit("external links without target=\"_blank\":\n  "
+                         + "\n  ".join(sorted(set(stay))))
+
     (SITE / "index.html").write_text(html)
     (SITE / ".nojekyll").write_text("")          # assets/ is fine, but be explicit
 

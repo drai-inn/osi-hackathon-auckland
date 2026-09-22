@@ -59,6 +59,8 @@ construction. `--south` is UoA's cyan, which lands within a few degrees of hue o
 | --- | --- | --- |
 | [`uoa-logo-navy.png`](uoa-logo-navy.png) | Waipapa Taumata Rau · University of Auckland, navy | Light surfaces |
 | [`uoa-logo-white.png`](uoa-logo-white.png) | The same lockup, reversed | Dark surfaces |
+| [`uoa-motif.png`](uoa-motif.png) | The cyan motif, as supplied (36 × 18) | The canonical asset |
+| [`uoa-motif.svg`](uoa-motif.svg) | Faithful redraw of the same geometry | Inline and scalable use; the raster is 36 px wide and will not enlarge |
 
 Both are the supplied files at half resolution, 1000 × 474, **with their transparent margin left
 on**. That margin is the clear space: nothing else goes inside it, and nothing here crops it out.
@@ -96,13 +98,31 @@ surface follows the reader's theme, switch:
 
 GitHub honours that in a README. The landing page carries the CSS equivalent as `.uoa-logo-swap`.
 
+### Using the motif
+
+Six sheared bars in two opposed rows. It reads as a woven pattern, and it's small by design: a
+lead-in before a heading, or a separator between sections.
+
+**It sits on its own line, with clear air above and below it.** Nothing inline beside it, no text on
+the same line, no other decorative element next to it. It offsets the text that follows, and that's
+all it does.
+
+```html
+<img src="brand/uoa-motif.svg" alt="" width="36" height="18">
+<h2>The heading it offsets</h2>
+```
+
+Not a background, not a texture, not scaled up to hero size, and not more than one per section.
+
+**Where it appears:** before every section heading on the landing page, and between sections in the
+README. It is not on the poster or the banner, because those have no section structure for it to
+lead, and their one top-left slot now carries the lockup.
+
 ### What was removed on 22 Sep
 
-There was a `uoa-motif.svg` in here: six cyan sheared bars, redrawn from a 36 px raster and used as a
-lead-in before every heading. It was a University element taken out of the logo and used on its own,
-which is the thing the decoupling rule exists to prevent, and it was never an official asset. It is
-gone, along with the small linked-dot Southern Cross that sat in front of "Auckland site" on the
-landing page. Neither is coming back. The lockup does that job now.
+The small linked-dot Southern Cross that sat in front of "Auckland site" on the landing page. It
+read as a molecule rather than a constellation, and the lockup now opens the page instead.
+`mark-southern-cross.svg` stays in here as an event mark, unused on the public page.
 
 ### [`mark-pocket-pair.svg`](mark-pocket-pair.svg), the topic
 

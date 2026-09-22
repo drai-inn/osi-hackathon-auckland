@@ -18,8 +18,9 @@ issues. Don't reintroduce a personal contact address.
 
 **The University of Auckland lockup goes top left**, with the key message left-aligned under it,
 on every surface that carries it. Navy on light, reversed white on dark — the mark is never
-recoloured and the crest is never separated from the wordmark. There is no motif, no standalone
-crest and no invented UoA element; one was removed on 22 Sep and should not come back. See
+recoloured and the crest is never separated from the wordmark, and there is no standalone crest.
+The **cyan motif is a supplied UoA asset** and stays: it leads every section heading on the landing
+page and separates sections in the README, always on its own line with clear air around it. See
 [the brand guide](outreach/brand/README.md#university-of-auckland-assets).
 
 **The global event comes before our themes**, everywhere: on the site, in the README, in the pitch,
