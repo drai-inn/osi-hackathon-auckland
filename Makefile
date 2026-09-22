@@ -1,11 +1,12 @@
 # Light by design. Standard library only, so anything here runs on day 1.
 
-.PHONY: help check cards figures poster site pages
+.PHONY: help check cards figures banner poster site pages
 
 help:
 	@echo "check    every relative link and anchor in the markdown"
 	@echo "cards    regenerate the four theme cards"
 	@echo "figures  regenerate the structural figures (needs biopython + numpy)"
+	@echo "banner   rebuild the README banner PNG from outreach/brand/readme-banner.html"
 	@echo "poster   rebuild the A3 poster PDF from outreach/poster.html"
 	@echo "site     build the GitHub Pages site into _site/"
 	@echo "pages    build and publish _site/ to the gh-pages branch"
@@ -20,6 +21,13 @@ cards:
 figures:
 	python3 tools/render_structures.py
 	python3 tools/render_components.py
+
+banner:
+	@command -v chrome >/dev/null 2>&1 && CHROME=chrome || CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"; \
+	"$$CHROME" --headless --disable-gpu --hide-scrollbars --window-size=1200,500 \
+	  --screenshot=outreach/brand/readme-banner.png \
+	  "file://$$PWD/outreach/brand/readme-banner.html"
+	@echo "wrote outreach/brand/readme-banner.png"
 
 poster:
 	@command -v chrome >/dev/null 2>&1 && CHROME=chrome || CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"; \

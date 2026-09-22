@@ -33,12 +33,15 @@ ASSETS = [
     ("outreach/imagery/energy-surface.webp", "assets/energy-surface.webp"),
     ("outreach/imagery/through-the-membrane.webp", "assets/through-the-membrane.webp"),
     ("outreach/brand/readme-banner.png", "assets/banner.png"),
+    ("outreach/brand/uoa-logo-white.png", "assets/uoa-logo-white.png"),
+    ("outreach/brand/uoa-logo-navy.png", "assets/uoa-logo-navy.png"),
     ("outreach/poster-A3.pdf", "poster.pdf"),
 ] + [(f"docs/cards/theme-{n}.svg", f"assets/theme-{n}.svg") for n in (1, 2, 3, 4)] \
   + [(f"docs/cards/theme-open-{k}.svg", f"assets/theme-open-{k}.svg") for k in (1, 2)]
 
 REWRITE = [
     (r"\.\./imagery/", "assets/"),
+    (r"\.\./brand/", "assets/"),
     (r"\.\./\.\./docs/cards/", "assets/"),
     (r"\.\./poster-A3\.pdf", "poster.pdf"),
 ]

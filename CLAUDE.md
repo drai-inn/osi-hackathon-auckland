@@ -16,6 +16,12 @@ Registration is the **global event's** — one free sign-up covers every site, o
 no local registration and no local email address anywhere in the public assets; questions go to
 issues. Don't reintroduce a personal contact address.
 
+**The University of Auckland lockup goes top left**, with the key message left-aligned under it,
+on every surface that carries it. Navy on light, reversed white on dark — the mark is never
+recoloured and the crest is never separated from the wordmark. There is no motif, no standalone
+crest and no invented UoA element; one was removed on 22 Sep and should not come back. See
+[the brand guide](outreach/brand/README.md#university-of-auckland-assets).
+
 **The global event comes before our themes**, everywhere: on the site, in the README, in the pitch,
 on the poster. It's the reason there's an Auckland site at all, and a reader should meet it before
 they meet our framing. `docs/the-global-event.md` is the canonical version, including the list of
@@ -42,7 +48,7 @@ Flat on purpose.
 | `docs/figures/` | **Data.** Drawn from deposited coordinates by a script, and regenerable. Never hand-edit an SVG |
 | `docs/cards/`, `outreach/imagery/` | **Collateral.** Generated backgrounds, mood rather than measurement |
 | `docs/adr/` | Decisions |
-| `outreach/` | The collateral, and the brand |
+| `outreach/` | The collateral, and the brand. `make banner` and `make poster` rebuild the two rendered assets |
 | `tools/` | Generators and the link checker |
 
 ## Hardware, which affects everything

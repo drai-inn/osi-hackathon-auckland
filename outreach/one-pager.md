@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/uoa-logo-white.png">
+  <img src="brand/uoa-logo-navy.png" width="230" alt="Waipapa Taumata Rau, University of Auckland">
+</picture>
+
 # How far can a chain of surrogates take us in biomolecular interactions?
 
 **Open Scientific Intelligence Hackathon · Auckland site**

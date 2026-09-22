@@ -1,10 +1,4 @@
-<img src="outreach/brand/readme-banner.png" alt="How far can a chain of surrogates take us in biomolecular interactions? Open Scientific Intelligence Hackathon, Auckland site, Mon 19 – Tue 20 October 2026" width="100%">
-
-<br>
-
-<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
-
-<br>
+<img src="outreach/brand/readme-banner.png" alt="Waipapa Taumata Rau, University of Auckland. How far can a chain of surrogates take us in biomolecular interactions? Open Scientific Intelligence Hackathon, Auckland site, Mon 19 – Tue 20 October 2026" width="100%">
 
 ## How far can a chain of surrogates take us in biomolecular interactions?
 
@@ -84,12 +78,6 @@ examples · **[MCP4SDL](https://github.com/ivoryzh/MCP4SDL)** MCP interfaces to 
 
 **[The full picture](docs/the-global-event.md)**, including where the gaps are.
 
-<br>
-
-<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
-
-<br>
-
 ## Themes
 
 Four to start from. They describe the kind of work we're interested in, and they come from where we
@@ -134,12 +122,6 @@ the thing to beat.
 **[The themes in full](docs/themes.md)** · **[a worked example](docs/worked-example.md)** if you'd
 rather start with something ready to go.
 
-<br>
-
-<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
-
-<br>
-
 ## Who it's for
 
 **Come and explore the broader opportunity while getting hands-on with AI in your own area.** Come
@@ -170,12 +152,6 @@ theme known to run on our hardware before anyone arrives.
 
 **[More on taking part](docs/taking-part.md)** · **[How we work](CONTRIBUTING.md)**
 
-<br>
-
-<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
-
-<br>
-
 ## Practical
 
 | | |
@@ -204,12 +180,6 @@ presentations and reports are done. Subscribe and you'll get every update and no
 | Inviting someone | [`outreach/`](outreach/) · [brand](outreach/brand/README.md) |
 | Who else is working on this | [interested-parties.md](docs/interested-parties.md) — past projects, with code |
 | Decisions | [`docs/adr/`](docs/adr/) · [glossary](docs/glossary.md) |
-
-<br>
-
-<img src="outreach/brand/uoa-motif.svg" width="40" alt="">
-
-<br>
 
 We don't know how far this gets. Some of these models may land level with much simpler things on the
 problems we care about, and we'd like the number either way. A well-founded *"not yet, and here's
