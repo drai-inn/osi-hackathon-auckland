@@ -5,25 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OSI Hackathon — Auckland Hub</title>
 <meta name="description" content="Can AI tell two near-identical drug targets apart? The Auckland hub of the global Open Scientific Intelligence Hackathon, 19–20 October 2026.">
+<!-- The crest alone, which is one of the three places the brand rules allow it
+     to leave the wordmark. The SVG carries its own light/dark switch; the PNGs
+     are flat tiles for browsers that will not take an SVG icon. -->
+<link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../brand/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<meta name="theme-color" content="#141C36">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* Palette and type inherited from llmhackathon.github.io — see ../brand/README.md */
 :root{
+  --panel-bg:#141C36;
   --void:#141C36; --void-deep:#0D1226; --void-panel:#1D2A4F;
   --bg-top:#F6F6F2; --bg-bot:#DFE3EE;
   --ink:#1E2A4A; --ink-deep:#142042; --ink-soft:#5C6470;
   --on-void:#EEF1FB; --on-void-soft:#9AA7CD; --line-on-void:rgba(154,167,205,.30);
   --line:rgba(186,193,214,.65);
-  --action:#3F5FBC; --action-hover:#314C98; --gold:#C79A4D;
+  --action:#3F5FBC; --action-hover:#314C98; --on-action:#fff; --gold:#C79A4D;
   --uoa-navy:#0C0C48; --south:#00D3F6; --south-soft:#5EC9E8;
   --font:Inter,"Helvetica Neue",Arial,sans-serif;
+}
+/* The dark surfaces stay dark in both modes; what flips is the page ground and
+   the ink on it. A logo sitting on a surface that flips has to flip with it —
+   see .uoa-logo-swap below. The one on the hero does not, because the hero is
+   dark either way. */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg-top:#0E1630; --bg-bot:#0A1024;
+    --ink:#E3E9F8; --ink-deep:#F3F6FF; --ink-soft:#97A4C8;
+    --line:rgba(154,167,205,.22);
+    /* The accent goes light in dark mode, so the text on it has to go dark. */
+    --action:#5EC9E8; --action-hover:#93DDF2; --on-action:#0D1226;
+    /* The page ground goes dark, so the global panel has to come up to stay a
+       panel rather than merging with it. */
+    --panel-bg:#1A2444;
+  }
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);color:var(--ink);background:var(--bg-top);line-height:1.55;
   -webkit-font-smoothing:antialiased}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+/* One container width everywhere, so every left edge on the page lines up. */
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 a{color:var(--action)}
 
 /* hero */
@@ -37,7 +63,6 @@ header .wrap{position:relative;z-index:1}
 .eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
   color:var(--on-void-soft);margin-bottom:22px}
-.crux{width:22px;color:var(--south);flex-shrink:0}
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(94,201,232,.14);
   border:1px solid rgba(94,201,232,.45);color:var(--south);padding:6px 13px;border-radius:4px;
   font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
@@ -49,8 +74,8 @@ h1 em{font-style:normal;color:var(--south)}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;position:relative}
 .btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:700;
   text-decoration:none;font-size:15px}
-.btn-primary{background:var(--action);color:#fff}
-.btn-primary:hover{background:var(--action-hover)}
+.btn-primary{background:var(--action);color:var(--on-action)}
+.btn-primary:hover{background:var(--action-hover);color:var(--on-action)}
 .btn-ghost{border:1px solid var(--line-on-void);color:var(--on-void)}
 .btn-ghost:hover{border-color:var(--south);color:var(--south)}
 
@@ -61,31 +86,48 @@ h1 em{font-style:normal;color:var(--south)}
   font-weight:700;margin-bottom:3px}
 .fact .v{font-size:16px;font-weight:700}
 
-section{padding:52px 0;border-bottom:1px solid var(--line)}
+section{padding:66px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
 h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
-  color:var(--ink-soft);margin-bottom:20px}
-/* Waipapa Taumata Rau motif. Sits on its own line with clear air above and below.
-   Nothing inline beside it. ../brand/uoa-motif.svg */
-.uoa-motif{width:30px;display:block;margin:0 0 20px}
-.hero-motif{margin-bottom:26px}
-.uoa-logo{height:48px;margin-bottom:14px}
-.hero-motif{width:44px;margin-bottom:18px;display:block}
-h3{font-size:23px;font-weight:300;letter-spacing:-.012em;margin-bottom:8px}
-p{max-width:64ch;margin-bottom:14px}
-.big{font-size:24px;font-weight:300;letter-spacing:-.012em;max-width:56ch;line-height:1.42}
-.q{border-left:4px solid var(--south);padding-left:20px;margin:26px 0}
+  color:var(--ink-soft);margin-bottom:24px}
+/* The Waipapa Taumata Rau motif. Sits on its own line with clear air above and
+   below it, nothing inline beside it, one per section. ../brand/uoa-motif.svg */
+.uoa-motif{width:30px;display:block;margin:0 0 22px}
 
-.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px 30px}
+/* Waipapa Taumata Rau · University of Auckland. Top left of the page, with the
+   key message left-aligned under it, per the UoA placement guidance. The crest
+   is never separated from the wordmark and the mark is never recoloured, so a
+   change of surface means a change of file: navy on light, reversed on dark.
+   The supplied files carry their own clear space, so nothing sits inside it. */
+.uoa-logo{display:block;width:252px;height:auto;margin:0}
+/* Logo left, repo right, on one line above the message. */
+.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;
+  flex-wrap:wrap;margin-bottom:30px}
+.repo-cta{display:inline-flex;align-items:center;gap:9px;flex-shrink:0;margin-top:8px;
+  border:1px solid var(--line-on-void);border-radius:4px;padding:9px 15px;
+  color:var(--on-void);text-decoration:none;font-size:14px;font-weight:700}
+.repo-cta:hover{border-color:var(--south);color:var(--south)}
+.repo-cta svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
+@media(max-width:600px){
+  .uoa-logo{width:198px}
+  .topbar{margin-bottom:24px}
+  .repo-cta{font-size:13px;padding:8px 13px}
+}
+h3{font-size:23px;font-weight:300;letter-spacing:-.012em;margin-bottom:8px}
+p{max-width:66ch;margin:0 0 18px}
+p:last-child{margin-bottom:0}
+.big{font-size:24px;font-weight:300;letter-spacing:-.012em;max-width:56ch;line-height:1.42}
+.q{border-left:4px solid var(--south);padding:20px 0 20px 24px;margin:32px 0}
+
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:20px 30px}
 .who .r .d{font-weight:700;margin-bottom:2px}
 .who .r .t{color:var(--ink-soft);font-size:15px}
 
-.newcomer{background:var(--void);color:var(--on-void);border-radius:8px;padding:28px 30px;margin:8px 0}
+.newcomer{background:var(--void);color:var(--on-void);border-radius:8px;padding:30px 32px;margin:14px 0 26px}
 .newcomer h3{color:var(--south);font-size:22px}
 .newcomer p{color:#D5DCF0;margin-bottom:0}
 .newcomer b{color:#fff}
 
-.ladders{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
-.card{border:1px solid var(--line);border-radius:8px;padding:18px 19px;background:#fff;
   text-decoration:none;color:inherit;display:block}
 .card:hover{border-color:var(--action)}
 .card .n{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--action);
@@ -103,22 +145,67 @@ details p{margin:10px 0 0;color:var(--ink-soft)}
 footer{background:var(--void-deep);color:var(--on-void-soft);padding:36px 0;font-size:14px}
 footer a{color:var(--south)}
 footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
-@media(max-width:600px){ header{padding:40px 0 36px} section{padding:38px 0} }
+@media(max-width:600px){ header{padding:44px 0 40px} section{padding:46px 0}
+  .wrap{padding:0 18px} }
 .cta-note{margin-top:14px;font-size:13.5px;color:var(--on-void-soft);max-width:44ch;position:relative}
+/* The global event. A dark full-bleed panel between the question and the
+   themes: it is the thing that brought this site into being, so it reads
+   before our own framing rather than after it. */
+.global{background:var(--panel-bg);color:var(--on-void);border:none;
+  border-top:3px solid var(--south);padding:64px 0 68px}
+.global h2{color:var(--south);margin-bottom:22px}
+.global p{color:#D5DCF0}
+.global b{color:#fff}
+.global a{color:var(--south)}
+/* .global a is more specific than .btn-*, so the buttons in that panel need
+   their own colours back or they come out cyan-on-blue. */
+.global .btn-primary{color:var(--on-action)}
+.global .btn-ghost{color:var(--on-void)}
+.global .btn-ghost:hover{color:var(--south)}
+.g-title{font-size:clamp(25px,3.4vw,34px);font-weight:300;letter-spacing:-.015em;
+  line-height:1.2;max-width:22ch;margin-bottom:20px;color:var(--on-void)}
+.g-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:22px;
+  margin:30px 0;padding:24px 0;border-top:1px solid var(--line-on-void);
+  border-bottom:1px solid var(--line-on-void)}
+.g-stats .n{display:block;font-size:30px;font-weight:200;color:var(--south);line-height:1.1}
+.g-stats .l{display:block;font-size:13px;color:var(--on-void-soft);margin-top:6px;max-width:20ch}
+.g-sub{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
+  color:var(--on-void-soft);margin:44px 0 8px}
+.g-note{font-size:15px;color:var(--on-void-soft);max-width:66ch;margin-bottom:26px}
+.pgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));
+  gap:34px 40px}
+.pg h4{font-size:15px;font-weight:700;color:var(--on-void);margin-bottom:12px;
+  padding-bottom:9px;border-bottom:1px solid var(--line-on-void)}
+.pg ul{list-style:none;margin:0}
+.pg li{margin-bottom:13px;font-size:14.5px;line-height:1.5;color:var(--on-void-soft)}
+.pg li a{font-weight:700;text-decoration:none;border-bottom:1px solid rgba(0,211,246,.4)}
+.pg li a:hover{border-bottom-color:var(--south)}
+.pg .src{display:block;font-size:12px;opacity:.7;margin-top:3px}
+.areas{display:flex;flex-wrap:wrap;gap:9px;margin:4px 0 20px}
+.areas span{border:1px solid var(--line);border-radius:100px;padding:6px 15px;
+  font-size:13.5px;color:var(--ink-soft)}
+/* Two files, one slot. Use this wherever the logo sits on the page ground
+   rather than on a surface that is dark in both modes. */
+.uoa-logo-swap .on-dark{display:none}
+@media (prefers-color-scheme: dark){
+  .uoa-logo-swap .on-light{display:none}
+  .uoa-logo-swap .on-dark{display:block}
+}
 /* theme cards — wraps to one column on a phone */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:6px 0 24px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px;margin:6px 0 24px}
 .cards img{width:100%;height:auto;display:block;border-radius:10px}
 .cards a{display:block;border-radius:10px}
 .cards a:hover img{outline:2px solid var(--action);outline-offset:2px;border-radius:10px}
 /* A square image cropped into a letterbox strip loses the whole subject, so the
    band is sized to the art and the art is contained inside it. screen blending
    drops the image's own near-black ground into the band's. */
-.band{padding:0;border:none;background:var(--void-deep);display:flex;justify-content:center}
+.band{background:var(--void-deep);display:flex;justify-content:center}
 .band img{height:300px;width:auto;max-width:100%;object-fit:contain;display:block;
-  mix-blend-mode:screen}
+  mix-blend-mode:screen;
+  -webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%);
+  mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)}
 @media(max-width:600px){ .band img{height:210px} }
-.wrap-wide{max-width:1120px;margin:0 auto;padding:0 20px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin:4px 0 8px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:22px;margin:4px 0 8px}
 .steps .n{color:var(--south);font-weight:800;font-size:12px;letter-spacing:.18em;margin-bottom:6px}
 .steps p{margin:0}
 .qs{counter-reset:q;list-style:none;margin:6px 0 0}
@@ -132,15 +219,17 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 
 <header>
   <div class="wrap">
+    <div class="topbar">
+      <img class="uoa-logo" src="../brand/uoa-logo-white.png"
+        alt="Waipapa Taumata Rau, University of Auckland">
+      <a class="repo-cta" href="https://github.com/drai-inn/osi-hackathon-auckland" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+        <span>View on GitHub</span>
+      </a>
+    </div>
     <div class="eyebrow">
-      <svg class="crux" viewBox="0 0 80 110" aria-hidden="true">
-        <g fill="none" stroke="currentColor" stroke-width="2.5" opacity=".35"><path d="M44 8 L38 96 M12 46 L70 34"/></g>
-        <g fill="currentColor"><circle cx="44" cy="8" r="7"/><circle cx="38" cy="96" r="9"/>
-        <circle cx="12" cy="46" r="6"/><circle cx="70" cy="34" r="7.5"/><circle cx="52" cy="60" r="4" opacity=".7"/></g>
-      </svg>
       <span>Auckland site · Aotearoa New Zealand</span>
     </div>
-    <svg class="uoa-motif hero-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
     <div class="badge">● Mon 19 – Tue 20 October 2026 · Free</div>
     <h1>How far can a chain of <em>surrogates</em> take us in biomolecular interactions?</h1>
     <p class="lede">Systems, proteins, ligand binding, drug discovery, pharmacology. <b>Biology has a
@@ -148,9 +237,9 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
       University of Auckland finding out how far up you have to climb before the answer can be
       trusted.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://luma.com/ku88xh92">Register — free</a>
-      <a class="btn btn-ghost" href="#themes">The four themes</a>
-      <a class="btn btn-ghost" href="#follow">Follow along</a>
+      <a class="btn btn-primary" href="https://luma.com/ku88xh92" target="_blank" rel="noopener">Register — free</a>
+      <a class="btn btn-ghost" href="#themes">The themes</a>
+      <a class="btn btn-ghost" href="#following-along">Follow along</a>
     </div>
     <p class="cta-note">Registration is the global event's, and it covers every site including
       this one.</p>
@@ -164,7 +253,7 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   <div class="fact"><div class="k">Bring</div><div class="v">A laptop</div></div>
 </div></div>
 
-<section><div class="wrap">
+<section id="the-question"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>The question</h2>
   <p class="big">Physiological outcomes come from molecules interacting. Those interactions produce
@@ -175,7 +264,91 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     arrived recently. Most of us know our own rung.</p>
 </div></section>
 
-<section id="themes"><div class="wrap-wide">
+<section id="the-global-event" class="global"><div class="wrap">
+  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
+  <h2>The global event</h2>
+  <p class="g-title">This is the thing that got us to run a site at all.</p>
+  <p>The <b>Open Scientific Intelligence Hackathon</b> is in its fourth year. It began as the LLM
+    Hackathon for Materials Science and Chemistry and has widened to the physical sciences and
+    mathematics. Free, hybrid, and run from sites around the world on the same two days.</p>
+  <div class="g-stats">
+    <div><span class="n">120</span><span class="l">projects submitted in 2025</span></div>
+    <div><span class="n">16</span><span class="l">on-site locations, plus virtual</span></div>
+    <div><span class="n">4</span><span class="l">community papers, every team credited</span></div>
+    <div><span class="n">Free</span><span class="l">one registration covers every site</span></div>
+  </div>
+  <p><b>Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.</b> Registering
+    once covers both, and Wednesday the 21st is open if a group wants to carry the work across.
+    Every edition is written up with every contributor named, which for two days' work is a real
+    line on a CV.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="https://luma.com/ku88xh92" target="_blank" rel="noopener">Register — free</a>
+    <a class="btn btn-ghost" href="https://llmhackathon.github.io/" target="_blank" rel="noopener">llmhackathon.github.io</a>
+    <a class="btn btn-ghost" href="https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q" target="_blank" rel="noopener">Join their Slack</a>
+  </div>
+
+  <h3 class="g-sub">Built at past editions, close to our themes</h3>
+  <p class="g-note">All open source, all from the 2025 event. Worth half an hour before October:
+    it's the fastest way to see what two days actually produces, and several of these are live
+    starting points rather than sketches.</p>
+  <div class="pgs">
+    <div class="pg">
+      <h4>Near theme 1 · Screening at scale</h4>
+      <ul>
+        <li><a href="https://github.com/pagel-s/MIDAS" target="_blank" rel="noopener">MIDAS</a> — an agentic interface for
+          structure-based drug design, steering DiffSBDD inside a pocket and analysing the poses it
+          gets back.<span class="src">Glasgow</span></li>
+        <li><a href="https://github.com/Justice-Lu/spatialESM_OdorClassification" target="_blank" rel="noopener">SmeLLMap</a> —
+          ESM-2 embeddings over receptors with voxelised binding cavities: a different answer to how
+          you represent a pocket.<span class="src">Duke</span></li>
+      </ul>
+    </div>
+    <div class="pg">
+      <h4>Near theme 2 · Molecules in motion</h4>
+      <ul>
+        <li><a href="https://github.com/MauricioCafiero/UMADock" target="_blank" rel="noopener">UMADock</a> — docking with an
+          MLIP as the scoring function, with desolvation and ligand-strain terms.<span class="src">CafChem</span></li>
+        <li><a href="https://github.com/schwallergroup/DynaMate" target="_blank" rel="noopener">DynaMate</a> — autonomous
+          protein–ligand MD over GROMACS and AMBER with MM/PB(GB)SA, and quality checks that retry
+          when a step fails. Started at the hackathon as DynaAgent and still being developed.<span class="src">EPFL LIAC · <a href="https://arxiv.org/abs/2512.10034" target="_blank" rel="noopener">preprint</a></span></li>
+        <li><a href="https://github.com/BigDFT-group/llm-hackathon-2025" target="_blank" rel="noopener">LARA-HPC</a> — an agent
+          that submits electronic-structure workflows to a cluster, with a rehearsal mode that
+          validates before anything real runs.<span class="src">CEA, CNR, INRIA, RIKEN and others</span></li>
+        <li><a href="https://github.com/chiku-parida/DFTPilot" target="_blank" rel="noopener">DFTPilot</a> — retrieval plus
+          crystal GNNs to set up and preview a DFT calculation before you pay for it.<span class="src">DTU, UCL, Cambridge, NTU</span></li>
+      </ul>
+    </div>
+    <div class="pg">
+      <h4>Near themes 3 and 4</h4>
+      <ul>
+        <li>Thin, which is the interesting part. Nothing in 2025 carried a molecular signal up to
+          cells or physiology, and nothing took on drug repurposing directly.</li>
+        <li><a href="https://github.com/ndharms/peptide-agent" target="_blank" rel="noopener">AssemblAI</a> — designing peptide
+          self-assembly protocols, the nearest thing to working up a scale.<span class="src">Harms Informatics, MIT</span></li>
+        <li><a href="https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis" target="_blank" rel="noopener">ARIA</a> —
+          causal knowledge graphs for inverse design: the machinery theme 4 would use, pointed
+          somewhere else.<span class="src">Johns Hopkins</span></li>
+      </ul>
+    </div>
+    <div class="pg">
+      <h4>Useful whatever you work on</h4>
+      <ul>
+        <li><a href="https://github.com/HassanHarb92/ACME" target="_blank" rel="noopener">ACME</a> — literature to structured
+          data, end to end. Fifth overall in 2025, and the quickest route to a dataset when you
+          don't have one.<span class="src">Argonne</span></li>
+        <li><a href="https://github.com/dpalmer-anl/AtomBridge" target="_blank" rel="noopener">AtomBridge</a> — papers to
+          validated structures, with physical sanity checks on the way out.<span class="src">UIUC, Northwestern, Chicago, Georgia Tech</span></li>
+        <li><a href="https://github.com/ahaibel/mp-property-analogies" target="_blank" rel="noopener">ATOMS Lab</a> — property
+          prediction on 50–300 examples, with the support set ablated properly. Small-data method,
+          done carefully.<span class="src">UMBC</span></li>
+        <li><a href="https://github.com/ivoryzh/MCP4SDL" target="_blank" rel="noopener">MCP4SDL</a> — MCP interfaces to lab
+          instruments.<span class="src">UBC, Tennessee, ETH Zürich, Empa</span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="themes"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>Themes</h2>
   <p>Four to start from. They describe the kind of work we're interested in, and they come from
@@ -186,15 +359,25 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     <img src="../../docs/cards/theme-2.svg" alt="Theme 2, molecules in motion: machine-learned interatomic potentials in MD. MACE, UMA, eSEN, Orb-v3, NequIP">
     <img src="../../docs/cards/theme-3.svg" alt="Theme 3, binding to whole system: carrying a molecular signal up to functional and physiological change. STATE, scGPT, Geneformer, scFoundation">
     <img src="../../docs/cards/theme-4.svg" alt="Theme 4, repurposing what we have: genotype, structure and approved drugs with deliberately small models. TxGNN, PrimeKG, lightweight KG embeddings">
-    <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="../../docs/cards/theme-open-1.svg" alt="An open theme. Bring a problem that doesn't sit in the four, and open an issue."></a>
-    <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A"><img src="../../docs/cards/theme-open-2.svg" alt="An open theme. A dataset, an evaluation or a comparison you think ought to exist."></a>
+    <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A" target="_blank" rel="noopener"><img src="../../docs/cards/theme-open-1.svg" alt="An open theme. Bring a problem that doesn't sit in the four, and open an issue."></a>
+    <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A" target="_blank" rel="noopener"><img src="../../docs/cards/theme-open-2.svg" alt="An open theme. A dataset, an evaluation or a comparison you think ought to exist."></a>
   </div>
-  <p>The two dotted tiles are real. <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A">Propose a theme</a> and we'll make
+  <h3 class="g-sub" style="color:var(--ink-soft);margin:34px 0 14px">And the wider scope</h3>
+  <p>The global event takes submissions across the physical sciences and mathematics, in any of
+    these:</p>
+  <div class="areas">
+    <span>Autonomous agents</span><span>Language models</span><span>Datasets</span>
+    <span>Benchmarks</span><span>Models</span><span>Scientific software</span>
+  </div>
+  <p>Anything in that scope works here. A benchmark nobody has built, a dataset that should exist,
+    a piece of software your field keeps rewriting, an agent that does a job you currently do by
+    hand — all of it counts, and none of it has to be about ligands.</p>
+  <p>The two dotted tiles are real. <a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new?title=Theme%3A%20&amp;body=Four%20themes%20are%20up%20on%20the%20site.%20This%20one%20is%20somewhere%20else.%0A%0A%2A%2AThe%20problem%2C%20and%20roughly%20what%20scale%20it%20sits%20at%2A%2A%0A%0A%0A%2A%2AModels%20or%20methods%20you%27d%20want%20to%20try%2A%2A%0A%0A%0A%2A%2AWho%27s%20coming%20with%20you%2A%2A%0A" target="_blank" rel="noopener">Propose a theme</a> and we'll make
     space for it. We also have default targets and chemistry ready if you'd rather pick something
     up.</p>
 </div></section>
 
-<section><div class="wrap">
+<section id="what-a-group-does"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>What a group does</h2>
   <div class="steps">
@@ -221,11 +404,11 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   </div>
 </div></section>
 
-<section class="band">
+<div class="band">
   <img src="../imagery/stacked-isosurfaces.webp" alt="">
-</section>
+</div>
 
-<section id="who"><div class="wrap">
+<section id="who-its-for"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>Who it's for</h2>
   <p class="big">Come and explore the broader opportunity while getting hands-on with AI in your own
@@ -249,7 +432,7 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     opening and leave your team to it. Coming on your own works too.</p>
 </div></section>
 
-<section><div class="wrap">
+<section id="the-two-days"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>The two days</h2>
   <p><b>Day 1</b> — get running, do something, work out what to measure, report back. You can pick a
@@ -261,32 +444,20 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   <p><b>No stupid questions. It's safe to experiment. A negative is a result.</b></p>
 </div></section>
 
-<section id="follow"><div class="wrap">
+<section id="following-along"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>Following along</h2>
   <p>We keep a live log as a single pull request that stays open until the final presentations and
     reports are done. Subscribe and you'll get every update and nothing else.</p>
-  <p><a class="btn btn-primary" href="{{EVENT_LOG_PR}}">Subscribe to the live log</a></p>
+  <p><a class="btn btn-primary" href="https://github.com/drai-inn/osi-hackathon-auckland/pull/16" target="_blank" rel="noopener">Subscribe to the live log</a></p>
 </div></section>
 
-<section><div class="wrap">
-  <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
-  <h2>The global event</h2>
-  <p>We're one local site of the <b>Open Scientific Intelligence Hackathon</b>, now in its fourth
-    year, with sites on four continents and over a thousand participants last year.</p>
-  <p><b>It runs 21–22 October, and one free registration covers every site.</b> Auckland runs
-    Mon 19 – Tue 20 October 2026, and Wednesday the 21st is open if people want to carry the work
-    across into the global days.</p>
-  <p><a href="https://luma.com/ku88xh92">Register</a> ·
-    <a href="https://llmhackathon.github.io/">llmhackathon.github.io</a></p>
-</div></section>
-
-<section style="border:none"><div class="wrap">
+<section id="questions"><div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>Questions</h2>
-  <p><a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new">Open an issue</a> in the repo, or ask in the
+  <p><a href="https://github.com/drai-inn/osi-hackathon-auckland/issues/new" target="_blank" rel="noopener">Open an issue</a> in the repo, or ask in the
     hackathon Slack — the invitation comes with registration.</p>
-  <p><a href="https://github.com/drai-inn/osi-hackathon-auckland">github.com/drai-inn/osi-hackathon-auckland</a></p>
+  <p><a href="https://github.com/drai-inn/osi-hackathon-auckland" target="_blank" rel="noopener">github.com/drai-inn/osi-hackathon-auckland</a></p>
 </div></section>
 
 </body>

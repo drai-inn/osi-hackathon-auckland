@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/uoa-logo-white.png">
+  <img src="brand/uoa-logo-navy.png" width="230" alt="Waipapa Taumata Rau, University of Auckland">
+</picture>
+
 # How far can a chain of surrogates take us in biomolecular interactions?
 
 **Open Scientific Intelligence Hackathon · Auckland site**
@@ -23,7 +28,24 @@ literature itself. Most are open-weight and most arrived recently.
 **Two days to find out how far up that second ladder you have to climb to get an answer you can
 trust.**
 
-## Four themes
+## The global event, which is why any of this is happening
+
+We're one site of the **Open Scientific Intelligence Hackathon**, in its fourth year. 120 projects
+submitted in 2025, 16 on-site locations plus virtual, and a community paper each year crediting
+every team. Free, and **one registration covers every site.**
+
+Auckland runs **Mon 19 – Tue 20 October**; the global days are **21–22 October**. Registering once
+covers both.
+
+Several 2025 projects sit right next to our themes and all are open source: **UMADock** (an MLIP as
+the docking score), **DynaMate** (autonomous protein–ligand MD), **LARA-HPC** (an agent submitting
+jobs to a cluster), **MIDAS** (agentic structure-based design). Links on the site.
+
+The event takes submissions across the physical sciences and mathematics — agents, language models,
+datasets, benchmarks, models, scientific software. A wider door than our four themes, and it's open
+here too.
+
+## Themes
 
 | | |
 | --- | --- |
@@ -67,12 +89,6 @@ occasion both days.
 | **Cost** | Free |
 | **Bring** | A laptop |
 | **Setup** | Agentic support plus our team. At least one model per theme runs before you arrive |
-
-## The global event
-
-We're one local site of the Open Scientific Intelligence Hackathon, now in its fourth year, with
-sites on four continents and over a thousand participants last year. **It runs 21–22 October, and
-one free registration covers every site including ours.**
 
 ## Register, and ask
 

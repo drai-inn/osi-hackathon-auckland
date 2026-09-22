@@ -33,12 +33,22 @@ ASSETS = [
     ("outreach/imagery/energy-surface.webp", "assets/energy-surface.webp"),
     ("outreach/imagery/through-the-membrane.webp", "assets/through-the-membrane.webp"),
     ("outreach/brand/readme-banner.png", "assets/banner.png"),
+    ("outreach/brand/uoa-logo-white.png", "assets/uoa-logo-white.png"),
+    ("outreach/brand/uoa-logo-navy.png", "assets/uoa-logo-navy.png"),
     ("outreach/poster-A3.pdf", "poster.pdf"),
+    # Icons go to the site root, which is where anything that has not read the
+    # page looks for them.
+    ("outreach/brand/favicon.svg", "favicon.svg"),
+    ("outreach/brand/favicon-32.png", "favicon-32.png"),
+    ("outreach/brand/favicon-16.png", "favicon-16.png"),
+    ("outreach/brand/apple-touch-icon.png", "apple-touch-icon.png"),
 ] + [(f"docs/cards/theme-{n}.svg", f"assets/theme-{n}.svg") for n in (1, 2, 3, 4)] \
   + [(f"docs/cards/theme-open-{k}.svg", f"assets/theme-open-{k}.svg") for k in (1, 2)]
 
 REWRITE = [
     (r"\.\./imagery/", "assets/"),
+    (r"\.\./brand/(favicon|apple-touch-icon)", r"\1"),   # before the line below
+    (r"\.\./brand/", "assets/"),
     (r"\.\./\.\./docs/cards/", "assets/"),
     (r"\.\./poster-A3\.pdf", "poster.pdf"),
 ]
@@ -59,6 +69,26 @@ def main() -> None:
     left = re.findall(r"\{\{[A-Z_]+\}\}", html)
     if left:
         raise SystemExit(f"unfilled placeholders in the built page: {sorted(set(left))}")
+
+    # Every link that leaves the site opens in a new tab, so a reader following
+    # a project repo keeps the page they were reading. Easy to forget when
+    # adding one, so it is checked rather than trusted.
+    stay = [a for a in re.findall(r'<a\b[^>]*href="https?://[^"]*"[^>]*>', html)
+            if "target=" not in a]
+    if stay:
+        raise SystemExit("external links without target=\"_blank\":\n  "
+                         + "\n  ".join(sorted(set(stay))))
+
+    # One rule for the page: a <section> has an h2 and an id that is the GitHub
+    # slug of that h2. A strip with no heading is a <div> with a class.
+    anon = [t for t in re.findall(r"<section\b[^>]*>", html) if "id=" not in t]
+    if anon:
+        raise SystemExit(f"sections without an id: {anon}")
+    for ident, heading in zip(re.findall(r'<section id="([^"]+)"', html),
+                              re.findall(r"<h2>([^<]*)</h2>", html)):
+        want = re.sub(r"[^a-z0-9 -]", "", heading.lower()).replace(" ", "-")
+        if ident != want:
+            raise SystemExit(f'section id "{ident}" is not the slug of "{heading}" ({want})')
 
     (SITE / "index.html").write_text(html)
     (SITE / ".nojekyll").write_text("")          # assets/ is fine, but be explicit

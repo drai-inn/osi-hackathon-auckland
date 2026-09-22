@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+<!-- Source for outreach/brand/social-preview.png, the repository's social media
+     preview card. `make social` rebuilds it.
+
+     1280 x 640, which is GitHub's recommended size. Everything that matters
+     stays inside a 40 px border, because the card is cropped differently by
+     every service that renders it — the padding here is 64 px, which leaves
+     room to spare. Rendered to PNG rather than shipped as SVG so the Inter
+     typography is guaranteed wherever the card is unfurled. -->
+<style>
+  :root{
+    --void:#141C36; --on-void:#EEF1FB; --on-void-soft:#9AA7CD; --south:#00D3F6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1280px;height:640px;overflow:hidden;position:relative;
+       font-family:Inter,"Helvetica Neue",Arial,sans-serif;
+       background:var(--void);color:var(--on-void)}
+  /* terrain.webp behind the type, dimmed hard so the headline stays first. */
+  .bg{position:absolute;inset:0;background:url(../imagery/terrain.webp) center/cover;opacity:.44}
+  .bgveil{position:absolute;inset:0;background:linear-gradient(100deg,
+    rgba(20,28,54,.95) 0%, rgba(20,28,54,.84) 48%, rgba(20,28,54,.5) 100%)}
+  .inner{position:relative;z-index:1;height:100%;padding:64px;
+         display:flex;flex-direction:column}
+  /* Waipapa Taumata Rau · University of Auckland, top left, with the key
+     message left-aligned under it. Reversed, because the ground is dark. */
+  .uoa-logo{width:222px;display:block;margin-bottom:26px}
+  .kicker{font-size:15px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+          color:var(--south)}
+  h1{font-size:52px;font-weight:300;letter-spacing:-.024em;line-height:1.1;
+     margin-top:18px;max-width:1010px}
+  h1 em{font-style:normal;color:var(--south)}
+  .foot{margin-top:auto;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+        font-size:19px;color:var(--on-void-soft)}
+  .foot b{color:#fff;font-weight:700}
+  .foot .dot{color:var(--south)}
+</style></head><body>
+
+<div class="bg"></div><div class="bgveil"></div>
+
+<div class="inner">
+  <img class="uoa-logo" src="uoa-logo-white.png"
+    alt="Waipapa Taumata Rau, University of Auckland">
+  <div class="kicker">Open Scientific Intelligence Hackathon · Auckland site</div>
+  <h1>How far can a chain of <em>surrogates</em> take us in biomolecular interactions?</h1>
+  <div class="foot">
+    <b>Mon 19 – Tue 20 October 2026</b>
+    <span class="dot">·</span><span>University of Auckland</span>
+    <span class="dot">·</span><span>Free</span>
+  </div>
+</div>
+
+</body></html>

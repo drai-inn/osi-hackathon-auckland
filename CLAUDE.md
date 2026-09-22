@@ -8,8 +8,25 @@ global, multi-site event now in its fourth year.
 **Mon 19 – Tue 20 Oct 2026.** The global event runs 21–22 October.
 
 The question: **how far can a chain of surrogates take us in biomolecular interactions?** Systems,
-proteins, ligand binding, drug discovery, pharmacology. Four open themes, each taking one rung of
-that ladder. See [ADR-0007](docs/adr/0007-four-themes-invited-teams.md) for the shape and why.
+proteins, ligand binding, drug discovery, pharmacology. Four themes to start from, each taking one
+rung of that ladder, plus two open slots on the site and in the README for anything that belongs
+somewhere else. See [ADR-0007](docs/adr/0007-four-themes-invited-teams.md) for the shape and why.
+
+Registration is the **global event's** — one free sign-up covers every site, ours included. There is
+no local registration and no local email address anywhere in the public assets; questions go to
+issues. Don't reintroduce a personal contact address.
+
+**The University of Auckland lockup goes top left**, with the key message left-aligned under it,
+on every surface that carries it. Navy on light, reversed white on dark — the mark is never
+recoloured and the crest is never separated from the wordmark, and there is no standalone crest.
+The **cyan motif is a supplied UoA asset** and stays: it leads every section heading on the landing
+page and separates sections in the README, always on its own line with clear air around it. See
+[the brand guide](outreach/brand/README.md#university-of-auckland-assets).
+
+**The global event comes before our themes**, everywhere: on the site, in the README, in the pitch,
+on the poster. It's the reason there's an Auckland site at all, and a reader should meet it before
+they meet our framing. `docs/the-global-event.md` is the canonical version, including the list of
+past projects with links to their repos — check those still resolve before a release.
 
 This is an invitation, not a project specification. We deliberately do not define the work in
 advance, because the groups who turn up bring their own problems and their own expertise. **Resist
@@ -24,7 +41,7 @@ Flat on purpose.
 | --- | --- |
 | `README.md` | The front door |
 | `docs/narrative.md` | The pitch. **All recruitment copy is cut from here** — rewrite it there and re-cut |
-| `docs/themes.md` | The four themes, with the open-weight models worth a look in each |
+| `docs/themes.md` | The themes, the open-weight models worth a look in each, and how to propose one |
 | `docs/taking-part.md` | What the two days are like, and the four questions every group answers |
 | `docs/worked-example.md` | A CDK selectivity problem, ready to pick up |
 | `docs/compute.md` | Dual GB10 and an HGX H200 |
@@ -32,7 +49,7 @@ Flat on purpose.
 | `docs/figures/` | **Data.** Drawn from deposited coordinates by a script, and regenerable. Never hand-edit an SVG |
 | `docs/cards/`, `outreach/imagery/` | **Collateral.** Generated backgrounds, mood rather than measurement |
 | `docs/adr/` | Decisions |
-| `outreach/` | The collateral, and the brand |
+| `outreach/` | The collateral, and the brand. `make banner`, `make social` and `make poster` rebuild the rendered assets |
 | `tools/` | Generators and the link checker |
 
 ## Hardware, which affects everything
@@ -56,6 +73,10 @@ figures carry their PDB ID, the date fetched and the command.
 they will draw chemistry that looks right and is not. They carry mood. Anything a reader could take
 as a measurement belongs in `docs/figures/` and comes from data. Do not move an image across that
 line without saying so.
+
+**One rule for the landing page's sections.** A `<section>` has an `h2` and an `id` that is the
+GitHub slug of that `h2`; a strip with no heading is a `<div>` with a class. Links off the site open
+in a new tab. `tools/build_site.py` fails the build on any of these rather than trusting them.
 
 **Run `make check` before committing.** It checks every relative link and anchor, and it has a
 self-test because GitHub's anchor rule is easy to get subtly wrong.

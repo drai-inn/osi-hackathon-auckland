@@ -12,8 +12,12 @@ Short on purpose. The detail follows later in the week.
 >
 > Hi {{NAME}},
 >
-> We're running the Auckland site of the global AI for Science hackathon on **Mon 19 – Tue 20
-> October**, and I'd like your team in the room.
+> We're running the Auckland site of the **Open Scientific Intelligence Hackathon** on **Mon 19 –
+> Tue 20 October**, and I'd like your team in the room.
+>
+> The global event is the reason we're doing this. Fourth year, 120 projects submitted in 2025
+> across 16 sites, and a community paper each year that credits every team — a real publication for
+> two days' work. It runs 21–22 October and **one free registration covers both it and us**.
 >
 > The question we're chasing: **how far can a chain of surrogates take us in biomolecular
 > interactions?** Systems, proteins, ligand binding, drug discovery, pharmacology. There's now an
@@ -34,6 +38,9 @@ Short on purpose. The detail follows later in the week.
 >
 > Free, food both days, and the environments are set up before you arrive. Moving fast and light —
 > more detail later this week.
+>
+> If you want a sense of what two days produces, the 2025 projects are all open source and several
+> sit right next to our themes — there are links on the site.
 >
 > Nick
 > https://drai-inn.github.io/osi-hackathon-auckland/
@@ -58,7 +65,8 @@ Short on purpose. The detail follows later in the week.
 > open-weight model claiming almost every rung from sequence to physiology. Two days finding out
 > which ones hold up, and how you'd know.
 >
-> Four themes. Bring your own problem or take one of ours. Come prepared to work with AI agents and
+> Four themes to start from, and room for one of your own. Bring a problem or take one of ours.
+> Come prepared to work with AI agents and
 > code. The agent writes it and you judge it, so no prior experience is needed.
 >
 > The University of Auckland is a local site of the global Open Scientific Intelligence Hackathon,

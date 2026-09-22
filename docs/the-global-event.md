@@ -12,8 +12,9 @@ until this year the *LLM Hackathon for Applications in Materials Science and Che
 annual. Free. Hybrid: physical hubs worldwide plus an online hub.
 
 Lead organiser: **Ben Blaiszik** (University of Chicago / Argonne / Globus), corresponding author
-on all three write-ups. Registration: [luma.com/ku88xh92](https://luma.com/ku88xh92).
-Site: [llmhackathon.github.io](https://llmhackathon.github.io/).
+on all three write-ups. Registration: [luma.com/ku88xh92](https://luma.com/ku88xh92) — free, and one
+sign-up covers every site. Site: [llmhackathon.github.io](https://llmhackathon.github.io/).
+Slack: [join here](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q).
 
 ## Three years, and the trend
 
@@ -69,22 +70,63 @@ A submission is: a description, a **public code repository**, and a **video demo
 excluded 32 of 120 submissions for incomplete documentation, so the documentation is not optional
 overhead, it is the difference between being in the paper and not.
 
-## Where our themes sit
+## What people have built there
 
-Several 2025 teams built things adjacent to our four themes
-([the full list](interested-parties.md#tier-1-directly-adjacent-work)):
+### Near theme 1 · Screening at scale
 
-| Their project | What it did | Nearest theme |
-| --- | --- | --- |
-| **UMADock** | Docked ligands using an MLIP as the scoring function | 1, 2 |
-| **DynaAgent** (EPFL LIAC) | Autonomous protein-ligand MD orchestration | 2 |
-| **F.A.D.E** | Target → Boltz structure → binding site → generation → affinity | 1 |
-| **DFTPilot** | RAG-assisted DFT setup and preview | 2 |
-| **LARA-HPC** | Electronic-structure workflows submitted to HPC by an agent | 2 |
-| **ACME** (Argonne) | Closed loop: QM → selection → automated experiment → feedback | 2, 3 |
+- **[MIDAS](https://github.com/pagel-s/MIDAS)** — an agentic interface for structure-based drug
+  design, steering DiffSBDD inside a pocket and analysing the poses it gets back. *Glasgow*
+- **[SmeLLMap](https://github.com/Justice-Lu/spatialESM_OdorClassification)** — ESM-2 embeddings
+  over receptors with voxelised binding cavities: a different answer to how you represent a pocket.
+  *Duke*
 
-So people have been working near all of this. A few things are still thin across the 88 documented
-projects, and any of them is a reasonable place for a group to aim:
+### Near theme 2 · Molecules in motion
+
+- **[UMADock](https://github.com/MauricioCafiero/UMADock)** — docking with an MLIP as the scoring
+  function, with desolvation and ligand-strain terms. *CafChem*
+- **[DynaMate](https://github.com/schwallergroup/DynaMate)** — autonomous protein–ligand MD over
+  GROMACS and AMBER with MM/PB(GB)SA, and quality checks that retry when a step fails. Started at
+  the hackathon as DynaAgent and still being developed; there's a
+  [preprint](https://arxiv.org/abs/2512.10034). *EPFL, LIAC*
+- **[LARA-HPC](https://github.com/BigDFT-group/llm-hackathon-2025)** — an agent that submits
+  electronic-structure workflows to a cluster, with a rehearsal mode that validates before anything
+  real runs. *CEA, CNR, INRIA, RIKEN and others*
+- **[DFTPilot](https://github.com/chiku-parida/DFTPilot)** — retrieval plus crystal GNNs to set up
+  and preview a DFT calculation before you pay for it. *DTU, UCL, Cambridge, NTU*
+
+### Near themes 3 and 4
+
+Thin, which is the interesting part. Nothing in 2025 carried a molecular signal up to cells or
+physiology, and nothing took on drug repurposing directly.
+
+- **[AssemblAI](https://github.com/ndharms/peptide-agent)** — designing peptide self-assembly
+  protocols, the nearest thing to working up a scale. *Harms Informatics, MIT*
+- **[ARIA](https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis)** — causal knowledge
+  graphs for inverse design: the machinery theme 4 would use, pointed somewhere else.
+  *Johns Hopkins*
+
+### Useful whatever you work on
+
+- **[ACME](https://github.com/HassanHarb92/ACME)** — literature to structured data, end to end.
+  Fifth overall in 2025, and the quickest route to a dataset when you don't have one. *Argonne*
+- **[AtomBridge](https://github.com/dpalmer-anl/AtomBridge)** — papers to validated structures,
+  with physical sanity checks on the way out. *UIUC, Northwestern, Chicago, Georgia Tech*
+- **[ATOMS Lab](https://github.com/ahaibel/mp-property-analogies)** — property prediction on 50–300
+  examples, with the support set ablated properly. Small-data method, done carefully. *UMBC*
+- **[MuMMIE](https://github.com/zakidotai/MuMMIE)** — multilingual extraction from patents, built
+  as a benchmark. *UCLA, Duke, UIUC, JHU*
+- **[MCP4SDL](https://github.com/ivoryzh/MCP4SDL)** — MCP interfaces to lab instruments.
+  *UBC, Tennessee, ETH Zürich, Empa*
+
+
+The global event takes submissions across the physical sciences and mathematics, in any of:
+**autonomous agents · language models · datasets · benchmarks · models · scientific software.**
+Anything in that scope works here, and none of it has to be about ligands.
+
+## Where the gaps are
+
+Across 88 documented 2025 projects, a few things stay thin. Any of them is a reasonable place for a
+group to aim:
 
 1. **A stated trust region for a surrogate.** Not one of the 88 says where its model can be relied
    on and where it cannot.

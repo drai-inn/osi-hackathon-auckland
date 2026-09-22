@@ -57,19 +57,83 @@ construction. `--south` is UoA's cyan, which lands within a few degrees of hue o
 
 | File | What | Use |
 | --- | --- | --- |
-| [`uoa-logo-light.png`](uoa-logo-light.png) | Waipapa Taumata Rau · University of Auckland, navy on light | Footers, poster base, the site footer |
-| `uoa-logo-dark.png` | **Not yet supplied**, reversed version for dark surfaces | Hero sections. Until we have it, dark surfaces carry the motif and the name set in type, not the crest |
+| [`uoa-logo-navy.png`](uoa-logo-navy.png) | Waipapa Taumata Rau · University of Auckland, navy | Light surfaces |
+| [`uoa-logo-white.png`](uoa-logo-white.png) | The same lockup, reversed | Dark surfaces |
 | [`uoa-motif.png`](uoa-motif.png) | The cyan motif, as supplied (36 × 18) | The canonical asset |
-| [`uoa-motif.svg`](uoa-motif.svg) | Faithful redraw of the same geometry | Inline and scalable use, the raster is 36 px wide and will not enlarge |
+| [`uoa-motif.svg`](uoa-motif.svg) | Faithful redraw of the same geometry | Inline and scalable use; the raster is 36 px wide and will not enlarge |
+
+## The favicon
+
+| File | What | Rebuild |
+| --- | --- | --- |
+| [`favicon.svg`](favicon.svg) | The crest, navy on light and reversed on dark | Hand-edited; see below |
+| `favicon-{16,32}.png` · `apple-touch-icon.png` | Flat navy tiles with the reversed crest | `make icons` |
+
+**A favicon is one of the three places the brand rules allow the crest to leave the wordmark**, so
+this is the exception rather than a liberty. The University's own site serves the crest in navy on
+transparent, and that is the source this is adapted from — at 16 px in a dark tab strip it is navy
+on near-black, so the SVG here carries the same light/dark switch as the lockup and the raster
+fallbacks sit on a solid navy tile. Both are approved treatments of the mark; neither invents one.
+
+If UoA reissue their favicon, re-fetch it and reapply the `.crest` class and the `<style>` block.
+
+## Rendered cards
+
+| File | Size | Rebuild | Where it goes |
+| --- | --- | --- | --- |
+| [`readme-banner.png`](readme-banner.png) | 1200 × 500 | `make banner` | The top of [README.md](../../README.md) |
+| [`social-preview.png`](social-preview.png) | 1280 × 640 | `make social` | **Settings → General → Social preview.** It cannot be set through the API, so it is uploaded by hand |
+
+Both are rendered from the `.html` beside them rather than shipped as SVG, because Inter has to be
+guaranteed wherever the image is unfurled and nothing loads a webfont inside an `<img>`.
+
+The social card keeps everything that matters inside a **40 px border**, since every service that
+unfurls a link crops it differently. The padding is 64 px, which leaves room to spare.
+
+Both are the supplied files at half resolution, 1000 × 474, **with their transparent margin left
+on**. That margin is the clear space: nothing else goes inside it, and nothing here crops it out.
+
+### Placement
+
+**Top left of the page, with the title or key message left-aligned under it.** That is the rule for
+standard applications, and everything here follows it: the landing page hero, the README banner, the
+poster, the one-pager. A designer may place it differently for a specific reason; absent that
+reason, top left.
+
+### One UoA
+
+Faculties, service divisions, departments, schools and research centres **are not sub-brands and do
+not get their own lock-ups.** An internal division name can appear as content, in type, when it adds
+something for the reader. Where space is short, the University logo alone is the identifier.
+
+### The crest stays with the wordmark
+
+Do not decouple them. The only exceptions are a favicon, a social-media profile picture, and
+merchandise approved case by case by the Brand Manager. Nothing in this repo qualifies.
+
+### Light and dark
+
+The mark is never recoloured, so a change of surface is a change of file. Where the surface is dark
+in every mode — the site hero, the poster, the banner — use `uoa-logo-white.png` directly. Where the
+surface follows the reader's theme, switch:
+
+```html
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/uoa-logo-white.png">
+  <img src="brand/uoa-logo-navy.png" width="230" alt="Waipapa Taumata Rau, University of Auckland">
+</picture>
+```
+
+GitHub honours that in a README. The landing page carries the CSS equivalent as `.uoa-logo-swap`.
 
 ### Using the motif
 
 Six sheared bars in two opposed rows. It reads as a woven pattern, and it's small by design: a
 lead-in before a heading, or a separator between sections.
 
-**It sits on its own line, with clear air above and below it.** Nothing inline beside it, no text
-on the same line, no other decorative element next to it. It offsets the text that follows, and
-that's all it does.
+**It sits on its own line, with clear air above and below it.** Nothing inline beside it, no text on
+the same line, no other decorative element next to it. It offsets the text that follows, and that's
+all it does.
 
 ```html
 <img src="brand/uoa-motif.svg" alt="" width="36" height="18">
@@ -78,28 +142,15 @@ that's all it does.
 
 Not a background, not a texture, not scaled up to hero size, and not more than one per section.
 
-**Don't restyle it.** Not recoloured, not rearranged, not reproportioned, not animated. It's an
-institutional mark with design heritage that isn't ours to reinterpret, and the right way to use it
-is exactly as supplied.
+**Where it appears:** before every section heading on the landing page, and between sections in the
+README. It is not on the poster or the banner, because those have no section structure for it to
+lead, and their one top-left slot now carries the lockup.
 
-The SVG is a redraw only because the supplied raster is 36 px wide and will not scale. Geometry and
-colour match. **Replace it with the official vector** from UoA brand resources when we have one.
+### What was removed on 22 Sep
 
-### On the imagery we invented, and the line between
-
-Earlier in this project we deliberately avoided koru, fern and similar forms: they carry cultural
-meaning that is not ours to borrow for a poster, and using them casually would be worse than using
-nothing.
-
-That reasoning still holds, and the UoA motif is not an exception to it, it is the other side of
-it. It is the University's own mark, supplied to us for use as a University event, and we use it
-**unmodified and in its own colour**. Inventing our own variation on it would be exactly the thing
-we said we would not do.
-
-Our two invented marks stay deliberately neutral: the Southern Cross is a constellation, and the
-paired-pocket diagram is our science drawn literally.
-
-## Marks
+The small linked-dot Southern Cross that sat in front of "Auckland site" on the landing page. It
+read as a molecule rather than a constellation, and the lockup now opens the page instead.
+`mark-southern-cross.svg` stays in here as an event mark, unused on the public page.
 
 ### [`mark-pocket-pair.svg`](mark-pocket-pair.svg), the topic
 
