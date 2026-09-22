@@ -141,7 +141,7 @@ presentations and reports are done. Subscribe and you'll get every update and no
 | | |
 | --- | --- |
 | The pitch, and all copy cut from it | [narrative.md](docs/narrative.md) |
-| The four themes | [themes.md](docs/themes.md) |
+| The themes, and proposing one | [themes.md](docs/themes.md) |
 | Coming along | [taking-part.md](docs/taking-part.md) · [the global event](docs/the-global-event.md) |
 | Something ready to work on | [worked-example.md](docs/worked-example.md) · [figures](docs/figures/) |
 | Compute | [compute.md](docs/compute.md) — two architectures, and what that means |

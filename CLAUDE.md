@@ -8,8 +8,13 @@ global, multi-site event now in its fourth year.
 **Mon 19 – Tue 20 Oct 2026.** The global event runs 21–22 October.
 
 The question: **how far can a chain of surrogates take us in biomolecular interactions?** Systems,
-proteins, ligand binding, drug discovery, pharmacology. Four open themes, each taking one rung of
-that ladder. See [ADR-0007](docs/adr/0007-four-themes-invited-teams.md) for the shape and why.
+proteins, ligand binding, drug discovery, pharmacology. Four themes to start from, each taking one
+rung of that ladder, plus two open slots on the site and in the README for anything that belongs
+somewhere else. See [ADR-0007](docs/adr/0007-four-themes-invited-teams.md) for the shape and why.
+
+Registration is the **global event's** — one free sign-up covers every site, ours included. There is
+no local registration and no local email address anywhere in the public assets; questions go to
+issues. Don't reintroduce a personal contact address.
 
 This is an invitation, not a project specification. We deliberately do not define the work in
 advance, because the groups who turn up bring their own problems and their own expertise. **Resist
@@ -24,7 +29,7 @@ Flat on purpose.
 | --- | --- |
 | `README.md` | The front door |
 | `docs/narrative.md` | The pitch. **All recruitment copy is cut from here** — rewrite it there and re-cut |
-| `docs/themes.md` | The four themes, with the open-weight models worth a look in each |
+| `docs/themes.md` | The themes, the open-weight models worth a look in each, and how to propose one |
 | `docs/taking-part.md` | What the two days are like, and the four questions every group answers |
 | `docs/worked-example.md` | A CDK selectivity problem, ready to pick up |
 | `docs/compute.md` | Dual GB10 and an HGX H200 |

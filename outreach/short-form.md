@@ -58,7 +58,8 @@ Short on purpose. The detail follows later in the week.
 > open-weight model claiming almost every rung from sequence to physiology. Two days finding out
 > which ones hold up, and how you'd know.
 >
-> Four themes. Bring your own problem or take one of ours. Come prepared to work with AI agents and
+> Four themes to start from, and room for one of your own. Bring a problem or take one of ours.
+> Come prepared to work with AI agents and
 > code. The agent writes it and you judge it, so no prior experience is needed.
 >
 > The University of Auckland is a local site of the global Open Scientific Intelligence Hackathon,

@@ -23,7 +23,7 @@ literature itself. Most are open-weight and most arrived recently.
 **Two days to find out how far up that second ladder you have to climb to get an answer you can
 trust.**
 
-## Four themes
+## Themes
 
 | | |
 | --- | --- |
