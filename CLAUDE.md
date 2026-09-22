@@ -24,7 +24,9 @@ page and separates sections in the README, always on its own line with clear air
 [the brand guide](outreach/brand/README.md#university-of-auckland-assets).
 
 **The global event comes before our themes**, everywhere: on the site, in the README, in the pitch,
-on the poster. It's the reason there's an Auckland site at all, and a reader should meet it before
+on the poster. Where we point at them we use **their marks** — the five-bar lockup, the emission
+spectrum and the edition tile, at their proportions and their colours, never recoloured and never
+re-invented. See [the brand guide](outreach/brand/README.md#the-osi-hackathons-marks). It's the reason there's an Auckland site at all, and a reader should meet it before
 they meet our framing. `docs/the-global-event.md` is the canonical version, including the list of
 past projects with links to their repos — check those still resolve before a release.
 

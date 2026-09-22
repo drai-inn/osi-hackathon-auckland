@@ -12,6 +12,9 @@
 :root{
   --void:#141C36; --void-deep:#0D1226; --panel:#1D2A4F;
   --on:#EEF1FB; --soft:#9AA7CD; --action:#3F5FBC; --south:#00D3F6; --gold:#C79A4D;
+  /* The OSI Hackathon's own spectral palette, by value, for their lockup. */
+  --sp-violet:#8B7CF6; --sp-cyan:#5EC9E8; --sp-green:#3FA3C4;
+  --sp-amber:#C79A4D; --sp-red:#A66F44;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--void);color:var(--on);font-family:Inter,"Helvetica Neue",Arial,sans-serif}
@@ -24,8 +27,16 @@ body{background:var(--void);color:var(--on);font-family:Inter,"Helvetica Neue",A
 .arch{background:var(--void-deep);height:58px;display:flex;align-items:center;
   justify-content:space-between;gap:30px;padding:0 54px;flex-shrink:0}
 .arch .wm{display:flex;align-items:center;gap:12px}
+/* Their lockup bars, at their ratio and in their colours. This used to be
+   three ascending bars in our cyan, which was our own invention of a mark
+   they already have. */
 .arch .mark{display:flex;align-items:flex-end;gap:3px;height:18px}
-.arch .mark i{display:block;width:4px;background:var(--south);border-radius:1px}
+.arch .mark i{display:block;width:3px;border-radius:1px}
+.arch .mark i:nth-child(1){height:10px;background:var(--sp-violet)}
+.arch .mark i:nth-child(2){height:16px;background:var(--sp-cyan)}
+.arch .mark i:nth-child(3){height:7px;background:var(--sp-green)}
+.arch .mark i:nth-child(4){height:18px;background:var(--sp-amber)}
+.arch .mark i:nth-child(5){height:12px;background:var(--sp-red)}
 .arch .wm span{font-size:14px;font-weight:800;letter-spacing:.2em;color:#C9D3EE}
 .edition{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
   letter-spacing:.14em;color:var(--south);background:rgba(0,211,246,.12);
@@ -48,9 +59,21 @@ h1 em{font-style:normal;color:var(--south)}
 
 /* The global event, given its own ground above our themes. */
 .globalbar{background:var(--panel);border-left:4px solid var(--south);border-radius:6px;
-  padding:12px 20px;margin:0 0 15px}
+  padding:11px 20px 12px;margin:0 0 15px}
 .globalbar .k{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
-  font-weight:800;color:var(--south);margin-bottom:5px}
+  font-weight:800;color:var(--soft);margin-bottom:6px}
+/* The OSI Hackathon's lockup, reproduced from llmhackathon.github.io: five
+   spectral bars at their 10:16:7:18:12 ratio, then the wordmark. Their mark,
+   not ours, which is why the bars are not the cyan used everywhere else. */
+.osi-lockup{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.osi-bars{display:flex;align-items:flex-end;gap:3px;height:19px}
+.osi-bars i{display:block;width:3px;border-radius:1px}
+.osi-bars i:nth-child(1){height:11px;background:var(--sp-violet)}
+.osi-bars i:nth-child(2){height:17px;background:var(--sp-cyan)}
+.osi-bars i:nth-child(3){height:7px;background:var(--sp-green)}
+.osi-bars i:nth-child(4){height:19px;background:var(--sp-amber)}
+.osi-bars i:nth-child(5){height:13px;background:var(--sp-red)}
+.osi-word{font-size:20px;font-weight:700;letter-spacing:-.01em;color:#fff}
 .globalbar p{font-size:14.5px;line-height:1.45;color:#C6D0EA;margin:0;max-width:none}
 .globalbar b{color:#fff}
 
@@ -106,7 +129,7 @@ h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
 
 <div class="arch">
   <div class="wm">
-    <span class="mark"><i style="height:7px"></i><i style="height:12px"></i><i style="height:18px"></i></span>
+    <span class="mark"><i></i><i></i><i></i><i></i><i></i></span>
     <span>OPEN SCIENTIFIC INTELLIGENCE HACKATHON</span>
   </div>
   <span class="edition">4TH EDITION · GLOBAL · 21–22 OCTOBER 2026</span>
@@ -124,6 +147,10 @@ h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;
 
   <div class="globalbar">
     <div class="k">Part of the global event</div>
+    <div class="osi-lockup">
+      <span class="osi-bars"><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="osi-word">OSI Hackathon</span>
+    </div>
     <p>The <b>Open Scientific Intelligence Hackathon</b>, 4th edition — 120 projects across 16 sites
       in 2025, and a community paper each year crediting every team. <b>One free registration covers
       both</b>: Auckland 19–20 October and the global days 21–22 October. <b>luma.com/ku88xh92</b></p>

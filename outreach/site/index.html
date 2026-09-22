@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
 <meta name="theme-color" content="#141C36">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800&family=Martian+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 /* Palette and type inherited from llmhackathon.github.io — see ../brand/README.md */
 :root{
@@ -27,11 +27,17 @@
   --action:#3F5FBC; --action-hover:#314C98; --on-action:#fff; --gold:#C79A4D;
   --uoa-navy:#0C0C48; --south:#00D3F6; --south-soft:#5EC9E8;
   --font:Inter,"Helvetica Neue",Arial,sans-serif;
+  /* The OSI Hackathon's own spectral palette and second typeface, used only
+     for their marks in the global-event panel. Values from their stylesheet. */
+  --sp-violet:#8B7CF6; --sp-blue:#8AA0E6; --sp-cyan:#5EC9E8; --sp-green:#3FA3C4;
+  --sp-amber:#C79A4D; --sp-red:#A66F44;
+  --font-mono:"Martian Mono","SFMono-Regular",Menlo,monospace;
 }
 /* The dark surfaces stay dark in both modes; what flips is the page ground and
-   the ink on it. A logo sitting on a surface that flips has to flip with it —
-   see .uoa-logo-swap below. The one on the hero does not, because the hero is
-   dark either way. */
+   the ink on it. Every surface on this page that carries the University lockup
+   is dark either way, so the reversed file is used directly and never has to
+   swap. A surface that does follow the reader's theme — a README, the one-pager
+   — switches files instead; see ../brand/README.md#light-and-dark. */
 @media (prefers-color-scheme: dark){
   :root{
     --bg-top:#0E1630; --bg-bot:#0A1024;
@@ -142,17 +148,14 @@ summary::before{content:"+ ";color:var(--action);font-weight:800}
 details[open] summary::before{content:"– "}
 details p{margin:10px 0 0;color:var(--ink-soft)}
 
-footer{background:var(--void-deep);color:var(--on-void-soft);padding:36px 0;font-size:14px}
-footer a{color:var(--south)}
-footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 @media(max-width:600px){ header{padding:44px 0 40px} section{padding:46px 0}
   .wrap{padding:0 18px} }
 .cta-note{margin-top:14px;font-size:13.5px;color:var(--on-void-soft);max-width:44ch;position:relative}
 /* The global event. A dark full-bleed panel between the question and the
    themes: it is the thing that brought this site into being, so it reads
    before our own framing rather than after it. */
-.global{background:var(--panel-bg);color:var(--on-void);border:none;
-  border-top:3px solid var(--south);padding:64px 0 68px}
+.global{background:var(--panel-bg);color:var(--on-void);border:none;padding:0 0 68px}
+.global .wrap{padding-top:58px}
 .global h2{color:var(--south);margin-bottom:22px}
 .global p{color:#D5DCF0}
 .global b{color:#fff}
@@ -162,6 +165,70 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 .global .btn-primary{color:var(--on-action)}
 .global .btn-ghost{color:var(--on-void)}
 .global .btn-ghost:hover{color:var(--south)}
+
+/* ─── The OSI Hackathon's own marks ────────────────────────────────────────
+   Everything from here to the end of this block belongs to the global event,
+   not to us. The emission lines, the five lockup bars and the edition tile are
+   reproduced from llmhackathon.github.io at their own proportions and colours.
+   This is the one place on the page where a palette other than ours is used,
+   and it is deliberate: the panel should look like them, not like us wearing
+   their name. Check it still matches their site before a release —
+   see ../brand/README.md#the-osi-hackathons-marks */
+
+/* The emission spectrum that runs across the top of their pages. The line
+   positions are real: the hydrogen Balmer series, magnesium, and the sodium D
+   doublet. It replaces the plain cyan rule that used to open this panel. */
+.osi-spectrum{display:block;width:100%;height:38px;background:var(--void-deep)}
+.osi-spectrum line{stroke-width:3;filter:drop-shadow(0 0 6px currentColor)}
+.osi-spectrum .sp-violet{stroke:var(--sp-violet);color:var(--sp-violet)}
+.osi-spectrum .sp-blue{stroke:var(--sp-blue);color:var(--sp-blue)}
+.osi-spectrum .sp-cyan{stroke:var(--sp-cyan);color:var(--sp-cyan)}
+.osi-spectrum .sp-green{stroke:var(--sp-green);color:var(--sp-green)}
+.osi-spectrum .sp-amber{stroke:var(--sp-amber);color:var(--sp-amber)}
+.osi-spectrum .sp-red{stroke:var(--sp-red);color:var(--sp-red)}
+
+/* The lockup: five spectral bars and the wordmark, as it sits in their
+   masthead. Bar heights keep their 10:16:7:18:12 ratio. */
+.osi-lockup{display:inline-flex;align-items:center;gap:14px;text-decoration:none;
+  margin-bottom:14px}
+.global .osi-lockup{color:var(--on-void)}
+.global .osi-lockup:hover{color:#fff}
+.osi-bars{display:inline-flex;align-items:flex-end;gap:4px;height:26px;flex-shrink:0}
+.osi-bars i{display:block;width:4px;border-radius:1px}
+.osi-bars i:nth-child(1){height:14px;background:var(--sp-violet)}
+.osi-bars i:nth-child(2){height:23px;background:var(--sp-cyan)}
+.osi-bars i:nth-child(3){height:10px;background:var(--sp-green)}
+.osi-bars i:nth-child(4){height:26px;background:var(--sp-amber)}
+.osi-bars i:nth-child(5){height:17px;background:var(--sp-red)}
+.osi-word{font-size:27px;font-weight:700;letter-spacing:-.01em}
+.osi-full{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;line-height:1.75;color:var(--on-void-soft);max-width:48ch;
+  margin-bottom:26px}
+
+/* Their edition tile. The tile is paper in both colour schemes, so its text is
+   set in fixed values rather than the variables, which flip. */
+.g-top{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;margin-bottom:34px}
+.g-lead{flex:1 1 400px;min-width:0}
+.osi-tile{display:flex;flex-direction:column;flex-shrink:0;width:244px;aspect-ratio:1;
+  background:#fff;border-radius:8px;padding:20px 23px;text-decoration:none;
+  box-shadow:11px 11px 0 var(--void-deep)}
+.osi-tile:hover{box-shadow:11px 11px 0 var(--south)}
+.global .osi-tile{color:#1E2A4A}
+.osi-tile .t-num{display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--font-mono);font-size:13px;font-weight:600;color:#3F5FBC}
+.osi-tile .t-mass{color:#5C6470;font-size:11px}
+.osi-tile .t-sym{font-size:72px;font-weight:800;letter-spacing:-.02em;line-height:1;
+  color:#3F5FBC;margin:auto 0}
+.osi-tile .t-name{font-size:15px;font-weight:600}
+.osi-tile .t-det{font-family:var(--font-mono);font-size:10px;font-weight:500;
+  letter-spacing:.04em;text-transform:uppercase;color:#3F5FBC;margin-top:6px}
+@media(max-width:600px){
+  .osi-spectrum{height:28px}
+  .global .wrap{padding-top:44px}
+  .osi-word{font-size:23px}
+  .osi-tile{width:210px}
+}
 .g-title{font-size:clamp(25px,3.4vw,34px);font-weight:300;letter-spacing:-.015em;
   line-height:1.2;max-width:22ch;margin-bottom:20px;color:var(--on-void)}
 .g-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:22px;
@@ -184,13 +251,6 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
 .areas{display:flex;flex-wrap:wrap;gap:9px;margin:4px 0 20px}
 .areas span{border:1px solid var(--line);border-radius:100px;padding:6px 15px;
   font-size:13.5px;color:var(--ink-soft)}
-/* Two files, one slot. Use this wherever the logo sits on the page ground
-   rather than on a surface that is dark in both modes. */
-.uoa-logo-swap .on-dark{display:none}
-@media (prefers-color-scheme: dark){
-  .uoa-logo-swap .on-light{display:none}
-  .uoa-logo-swap .on-dark{display:block}
-}
 /* theme cards — wraps to one column on a phone */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px;margin:6px 0 24px}
 .cards img{width:100%;height:auto;display:block;border-radius:10px}
@@ -264,13 +324,42 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
     arrived recently. Most of us know our own rung.</p>
 </div></section>
 
-<section id="the-global-event" class="global"><div class="wrap">
+<section id="the-global-event" class="global">
+  <!-- The OSI Hackathon's emission spectrum, reproduced from their site: the
+       Balmer series, magnesium, and the sodium D doublet, at their wavelengths. -->
+  <svg class="osi-spectrum" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <line class="sp-violet" data-sp="H-delta" x1="94" y1="0" x2="94" y2="100"/>
+    <line class="sp-blue" data-sp="H-gamma" x1="169" y1="0" x2="169" y2="100"/>
+    <line class="sp-cyan" data-sp="H-beta" x1="332" y1="0" x2="332" y2="100"/>
+    <line class="sp-green" data-sp="Mg" x1="429" y1="0" x2="429" y2="100"/>
+    <line class="sp-amber" data-sp="Na-D2" x1="653" y1="0" x2="653" y2="100"/>
+    <line class="sp-amber" data-sp="Na-D1" x1="663" y1="0" x2="663" y2="100"/>
+    <line class="sp-red" data-sp="H-alpha" x1="863" y1="0" x2="863" y2="100"/>
+  </svg>
+  <div class="wrap">
   <svg class="uoa-motif" viewBox="0 0 36 18" aria-hidden="true"><g fill="#00D3F6"><path d="M0 2h7l4 4H4z"/><path d="M12 2h7l4 4h-7z"/><path d="M24 2h7l4 4h-7z"/><path d="M4 11h7l-4 4H0z"/><path d="M16 11h7l-4 4h-7z"/><path d="M28 11h7l-4 4h-7z"/></g></svg>
   <h2>The global event</h2>
-  <p class="g-title">This is the thing that got us to run a site at all.</p>
-  <p>The <b>Open Scientific Intelligence Hackathon</b> is in its fourth year. It began as the LLM
-    Hackathon for Materials Science and Chemistry and has widened to the physical sciences and
-    mathematics. Free, hybrid, and run from sites around the world on the same two days.</p>
+  <div class="g-top">
+    <div class="g-lead">
+      <a class="osi-lockup" href="https://llmhackathon.github.io/" target="_blank" rel="noopener">
+        <span class="osi-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="osi-word">OSI Hackathon</span>
+      </a>
+      <p class="osi-full">Open Scientific Intelligence Hackathon<br>for the Physical Sciences &amp; Mathematics</p>
+      <p class="g-title">This is the thing that got us to run a site at all.</p>
+      <p>Now in its fourth year. It began as the LLM Hackathon for Materials Science and
+        Chemistry and has widened to the physical sciences and mathematics — agents, language
+        models, datasets, benchmarks, models and scientific software. Free, hybrid, and run from
+        sites around the world on the same two days.</p>
+    </div>
+    <a class="osi-tile" href="https://llmhackathon.github.io/" target="_blank" rel="noopener"
+       aria-label="The 2026 edition of the OSI Hackathon, 21 and 22 October">
+      <span class="t-num"><span>26</span><span class="t-mass">Oct</span></span>
+      <span class="t-sym">Osi</span>
+      <span class="t-name">OSI Hackathon</span>
+      <span class="t-det">October 21&ndash;22, 2026</span>
+    </a>
+  </div>
   <div class="g-stats">
     <div><span class="n">120</span><span class="l">projects submitted in 2025</span></div>
     <div><span class="n">16</span><span class="l">on-site locations, plus virtual</span></div>
@@ -450,6 +539,8 @@ footer .r{margin-top:10px;font-size:12.5px;opacity:.75;max-width:70ch}
   <p>We keep a live log as a single pull request that stays open until the final presentations and
     reports are done. Subscribe and you'll get every update and nothing else.</p>
   <p><a class="btn btn-primary" href="https://github.com/drai-inn/osi-hackathon-auckland/pull/16" target="_blank" rel="noopener">Subscribe to the live log</a></p>
+  <p>There's an <a href="../poster-A3.pdf" target="_blank" rel="noopener">A3 poster</a> as well, for
+    putting up somewhere your group will walk past it.</p>
 </div></section>
 
 <section id="questions"><div class="wrap">

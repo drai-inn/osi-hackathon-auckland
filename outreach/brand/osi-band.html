@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700;800&family=Martian+Mono:wght@500;600&display=swap" rel="stylesheet">
+<!-- Source for outreach/brand/osi-band.png. Regenerate with `make osi`.
+
+     These are the OSI Hackathon's marks, not ours: the five lockup bars, the
+     wordmark and the edition tile are reproduced from llmhackathon.github.io
+     at their own proportions and colour values. The band carries its own dark
+     ground so it reads on either GitHub theme without a second file.
+
+     Rendered to PNG rather than shipped as SVG because GitHub will not load a
+     webfont inside an <img>, and the wordmark is Inter. -->
+<style>
+  :root{
+    --void:#141C36; --void-deep:#0D1226; --on-void:#EEF1FB; --on-void-soft:#9AA7CD;
+    /* Their spectral palette, by value. */
+    --sp-violet:#8B7CF6; --sp-blue:#8AA0E6; --sp-cyan:#5EC9E8;
+    --sp-green:#3FA3C4; --sp-amber:#C79A4D; --sp-red:#A66F44;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1200px;height:260px;background:var(--void);
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--on-void);
+    display:flex;flex-direction:column;overflow:hidden}
+  /* Their emission spectrum: the Balmer series, magnesium, the sodium D doublet. */
+  .spectrum{display:block;width:100%;height:34px;background:var(--void-deep);flex-shrink:0}
+  .spectrum line{stroke-width:3;filter:drop-shadow(0 0 6px currentColor)}
+  .sp-violet{stroke:var(--sp-violet);color:var(--sp-violet)}
+  .sp-blue{stroke:var(--sp-blue);color:var(--sp-blue)}
+  .sp-cyan{stroke:var(--sp-cyan);color:var(--sp-cyan)}
+  .sp-green{stroke:var(--sp-green);color:var(--sp-green)}
+  .sp-amber{stroke:var(--sp-amber);color:var(--sp-amber)}
+  .sp-red{stroke:var(--sp-red);color:var(--sp-red)}
+
+  .body{flex:1;display:flex;align-items:center;justify-content:space-between;
+    gap:40px;padding:0 54px}
+  /* The lockup, at their 10:16:7:18:12 bar ratio. */
+  .lockup{display:flex;align-items:center;gap:15px;margin-bottom:13px}
+  .bars{display:flex;align-items:flex-end;gap:5px;height:31px}
+  .bars i{display:block;width:5px;border-radius:1px}
+  .bars i:nth-child(1){height:17px;background:var(--sp-violet)}
+  .bars i:nth-child(2){height:28px;background:var(--sp-cyan)}
+  .bars i:nth-child(3){height:12px;background:var(--sp-green)}
+  .bars i:nth-child(4){height:31px;background:var(--sp-amber)}
+  .bars i:nth-child(5){height:21px;background:var(--sp-red)}
+  .word{font-size:33px;font-weight:700;letter-spacing:-.01em}
+  .full{font-family:"Martian Mono",monospace;font-size:11.5px;font-weight:500;
+    letter-spacing:.06em;text-transform:uppercase;line-height:1.85;color:var(--on-void-soft)}
+
+  /* Their edition tile. Paper in every context, so its ink is fixed. */
+  .tile{display:flex;flex-direction:column;flex-shrink:0;width:168px;height:168px;
+    background:#fff;border-radius:8px;padding:15px 17px;box-shadow:9px 9px 0 var(--void-deep)}
+  .t-num{display:flex;justify-content:space-between;align-items:baseline;
+    font-family:"Martian Mono",monospace;font-size:10px;font-weight:600;color:#3F5FBC}
+  .t-mass{color:#5C6470;font-size:9px}
+  .t-sym{font-size:52px;font-weight:800;letter-spacing:-.02em;line-height:1;
+    color:#3F5FBC;margin:auto 0}
+  .t-name{font-size:11.5px;font-weight:600;color:#1E2A4A}
+  .t-det{font-family:"Martian Mono",monospace;font-size:7.5px;font-weight:500;
+    letter-spacing:.04em;text-transform:uppercase;color:#3F5FBC;margin-top:4px}
+</style></head>
+<body>
+  <svg class="spectrum" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <line class="sp-violet" x1="94" y1="0" x2="94" y2="100"/>
+    <line class="sp-blue" x1="169" y1="0" x2="169" y2="100"/>
+    <line class="sp-cyan" x1="332" y1="0" x2="332" y2="100"/>
+    <line class="sp-green" x1="429" y1="0" x2="429" y2="100"/>
+    <line class="sp-amber" x1="653" y1="0" x2="653" y2="100"/>
+    <line class="sp-amber" x1="663" y1="0" x2="663" y2="100"/>
+    <line class="sp-red" x1="863" y1="0" x2="863" y2="100"/>
+  </svg>
+  <div class="body">
+    <div>
+      <div class="lockup">
+        <span class="bars"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="word">OSI Hackathon</span>
+      </div>
+      <div class="full">Open Scientific Intelligence Hackathon<br>for the Physical Sciences &amp; Mathematics</div>
+    </div>
+    <div class="tile">
+      <div class="t-num"><span>26</span><span class="t-mass">Oct</span></div>
+      <div class="t-sym">Osi</div>
+      <div class="t-name">OSI Hackathon</div>
+      <div class="t-det">October 21&ndash;22, 2026</div>
+    </div>
+  </div>
+</body></html>

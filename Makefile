@@ -1,12 +1,13 @@
 # Light by design. Standard library only, so anything here runs on day 1.
 
-.PHONY: help check cards figures banner social icons poster site pages
+.PHONY: help check cards figures banner osi social icons poster site pages
 
 help:
 	@echo "check    every relative link and anchor in the markdown"
 	@echo "cards    regenerate the four theme cards"
 	@echo "figures  regenerate the structural figures (needs biopython + numpy)"
 	@echo "banner   rebuild the README banner PNG from outreach/brand/readme-banner.html"
+	@echo "osi      rebuild the OSI Hackathon band used in the README"
 	@echo "social   rebuild the 1280x640 social preview card"
 	@echo "icons    rebuild the favicon raster fallbacks"
 	@echo "poster   rebuild the A3 poster PDF from outreach/poster.html"
@@ -30,6 +31,14 @@ banner:
 	  --screenshot=outreach/brand/readme-banner.png \
 	  "file://$$PWD/outreach/brand/readme-banner.html"
 	@echo "wrote outreach/brand/readme-banner.png"
+
+osi:
+	@command -v chrome >/dev/null 2>&1 && CHROME=chrome || CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"; \
+	"$$CHROME" --headless --disable-gpu --hide-scrollbars --window-size=1200,260 \
+	  --force-device-scale-factor=2 \
+	  --screenshot=outreach/brand/osi-band.png \
+	  "file://$$PWD/outreach/brand/osi-band.html"
+	@echo "wrote outreach/brand/osi-band.png"
 
 social:
 	@command -v chrome >/dev/null 2>&1 && CHROME=chrome || CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"; \

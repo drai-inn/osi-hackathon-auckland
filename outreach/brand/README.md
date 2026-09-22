@@ -40,6 +40,47 @@ aligned our `--south` accent to the UoA cyan so there is one accent rather than 
 The overall feel is **dark navy, indigo action, Inter at heavy weight, tight letter-spacing, small
 radii.** Serious, modern, not playful.
 
+## The OSI Hackathon's marks
+
+The global event has an identity of its own, and where we point at them we use **theirs**, not our
+interpretation of it. All of it is reproduced from
+[llmhackathon.github.io](https://llmhackathon.github.io/) at their own proportions and colour
+values.
+
+| Mark | What it is |
+| --- | --- |
+| **The lockup** | Five spectral bars at a `10:16:7:18:12` height ratio, aligned to a baseline, then the wordmark **OSI Hackathon** in Inter 700 |
+| **The emission spectrum** | Seven lines at fixed wavelengths — the hydrogen Balmer series (α, β, γ, δ), magnesium, and the sodium D doublet. It opens the global-event panel on the landing page and the [`osi-band.png`](osi-band.png) strip |
+| **The edition tile** | A periodic-table tile: `26` / `Oct`, the symbol **Osi**, the name, the dates. Paper white in every context, so its ink is fixed rather than themed |
+
+Their spectral palette, used **only** for their marks:
+
+| Token | Value |
+| --- | --- |
+| `--sp-violet` | `#8B7CF6` |
+| `--sp-blue` | `#8AA0E6` |
+| `--sp-cyan` | `#5EC9E8` |
+| `--sp-green` | `#3FA3C4` |
+| `--sp-amber` | `#C79A4D` |
+| `--sp-red` | `#A66F44` |
+
+Three rules, and they are the same ones we apply to the University's lockup:
+
+1. **Never recoloured.** The bars are violet-to-red because that is what they are. The poster arch
+   used to carry three ascending bars in our cyan, which was us inventing a mark they already had.
+2. **Never invented.** If a surface needs something of theirs that is not here, take it from their
+   site rather than drawing something in the spirit of it.
+3. **Their section, their palette.** The global-event panel is the one place on the landing page
+   that uses a palette other than ours, and that is the point of it.
+
+[`osi-band.html`](osi-band.html) → [`osi-band.png`](osi-band.png), rebuilt with `make osi`, carries
+the lockup, the spectrum and the tile on their own dark ground, so one file reads correctly on
+either GitHub theme. It is rendered to PNG rather than shipped as SVG because GitHub will not load
+a webfont inside an `<img>`, and the wordmark is Inter.
+
+**Check these against their site before a release.** They are someone else's marks and can change
+without us hearing about it.
+
 ## What we added, two tokens, and that is the limit
 
 | Token | Value | Use |
@@ -124,7 +165,9 @@ surface follows the reader's theme, switch:
 </picture>
 ```
 
-GitHub honours that in a README. The landing page carries the CSS equivalent as `.uoa-logo-swap`.
+GitHub honours that in a README, and [`../one-pager.md`](../one-pager.md) uses it. The landing
+page needs no switch: every surface on it that carries the lockup is dark in both modes, so it
+uses the reversed file directly.
 
 ### Using the motif
 

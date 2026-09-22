@@ -1,5 +1,7 @@
 # The global event, and where Auckland fits
 
+[![OSI Hackathon — Open Scientific Intelligence Hackathon for the Physical Sciences and Mathematics, 21–22 October 2026](../outreach/brand/osi-band.png)](https://llmhackathon.github.io/)
+
 We're running **one hub of a global event**, which shapes what we build, how we present it, and
 what we get back.
 

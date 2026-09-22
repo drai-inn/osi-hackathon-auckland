@@ -26,15 +26,15 @@ PAGES = "https://drai-inn.github.io/osi-hackathon-auckland/"
 # what ships. The check at the end of main() stays: a {{...}} reaching the built
 # page would mean someone had reintroduced a substitution without a value.
 
+# Only what the page actually asks for. The imagery the theme cards use is
+# embedded in those SVGs, the README banner and the navy lockup belong to
+# surfaces that are not this one, and shipping any of them here just made the
+# site four megabytes heavier than it reads. The guard at the end of main()
+# keeps this list honest.
 ASSETS = [
     ("outreach/imagery/terrain.webp", "assets/terrain.webp"),
     ("outreach/imagery/stacked-isosurfaces.webp", "assets/stacked-isosurfaces.webp"),
-    ("outreach/imagery/drip.webp", "assets/drip.webp"),
-    ("outreach/imagery/energy-surface.webp", "assets/energy-surface.webp"),
-    ("outreach/imagery/through-the-membrane.webp", "assets/through-the-membrane.webp"),
-    ("outreach/brand/readme-banner.png", "assets/banner.png"),
     ("outreach/brand/uoa-logo-white.png", "assets/uoa-logo-white.png"),
-    ("outreach/brand/uoa-logo-navy.png", "assets/uoa-logo-navy.png"),
     ("outreach/poster-A3.pdf", "poster.pdf"),
     # Icons go to the site root, which is where anything that has not read the
     # page looks for them.
@@ -89,6 +89,22 @@ def main() -> None:
         want = re.sub(r"[^a-z0-9 -]", "", heading.lower()).replace(" ", "-")
         if ident != want:
             raise SystemExit(f'section id "{ident}" is not the slug of "{heading}" ({want})')
+
+    # Nothing ships that the page does not ask for. A file copied here and then
+    # never referenced is invisible weight: it costs the clone and the deploy
+    # and no reader ever reaches it. Checked rather than trusted, because it is
+    # the kind of rot that accumulates quietly.
+    asked = set()
+    for pat in (r'(?:href|src)="([^"]+)"', r'srcset="([^"]+)"', r"url\(([^)]+)\)"):
+        for match in re.findall(pat, html):
+            for part in match.split(","):
+                url = part.strip().split()[0].strip("'\"")
+                if url and not url.startswith(("http", "#", "data:", "mailto:")):
+                    asked.add(url)
+    orphans = sorted({dest for _, dest in ASSETS} - asked)
+    if orphans:
+        raise SystemExit("copied into the site but never referenced by the page:\n  "
+                         + "\n  ".join(orphans))
 
     (SITE / "index.html").write_text(html)
     (SITE / ".nojekyll").write_text("")          # assets/ is fine, but be explicit
