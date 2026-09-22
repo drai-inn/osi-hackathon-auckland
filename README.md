@@ -26,6 +26,8 @@ Two days to find out how far up that second ladder you have to climb to get an a
 
 📖 **[The pitch](docs/narrative.md)** · 🧭 **[The themes](docs/themes.md)** · 🙋 **[Taking part](docs/taking-part.md)**
 
+[![OSI Hackathon — Open Scientific Intelligence Hackathon for the Physical Sciences and Mathematics, 21–22 October 2026](outreach/brand/osi-band.png)](https://llmhackathon.github.io/)
+
 > ### 🌏 The global event, which is why any of this is happening
 >
 > The **Open Scientific Intelligence Hackathon** is in its fourth year. It began as the LLM
