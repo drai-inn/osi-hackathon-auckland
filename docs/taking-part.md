@@ -66,6 +66,31 @@ afternoon on something neither group planned is a good sign.
 
 **Food and a social occasion each day.** Some of the best conversations happen there.
 
+## Submitting
+
+**Judging is the global event's.** Teams submit through
+[the main site](https://llmhackathon.github.io/submission/), which is where the central judges see
+it — Ben Blaiszik has confirmed that route for us. There is nothing to hand in to the Auckland
+organisers.
+
+What to plan for, based on how it has run before:
+
+| | |
+| --- | --- |
+| **A video** | Two minutes or less, posted somewhere public |
+| **A form** | One per team, linked from their submission page |
+| **A repo and a description** | Public. The 2025 paper left out 32 of 120 submissions for incomplete documentation |
+| **Judged on** | Potential for impact · innovativeness · whether it would scale · relevance to its field |
+
+**The 2026 deadline has not been announced.** It falls at the end of the global Day 2, 22 October,
+and the organisers say it goes to Slack first — their submission page still shows last year's date,
+so use Slack or [their agenda](https://llmhackathon.github.io/agenda/) for it. Central time runs 18
+hours behind us, so an evening deadline there is the following morning here.
+
+Our two days end on the 20th, so the video and the write-up have somewhere to go besides the last
+hour of day 2. See [the global event](the-global-event.md#judging-prizes-submission) for the longer
+version.
+
 ## Coming as a team
 
 We're inviting **project teams**. A group leader brings their team, their expertise, and a problem

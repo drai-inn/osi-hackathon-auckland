@@ -68,9 +68,25 @@ Awards** for novelty, plus an invitation to a showcase session. Sponsors have in
 Hugging Face, AIChemy, Cerebras, Fum, NSF, Abstrax Tech, biostate.AI, Advaita Capital and
 Green Dynamics.
 
-A submission is: a description, a **public code repository**, and a **video demo**. The 2025 paper
-excluded 32 of 120 submissions for incomplete documentation, so the documentation is not optional
-overhead, it is the difference between being in the paper and not.
+**Submission is central, and that is now confirmed rather than assumed.** Ben Blaiszik, on our
+site: *"Teams will just have to submit through the main site for our judges to see it."* A team
+submits to the global event and the central judges see it there. Nothing is handed to us.
+
+A submission is: a description, a **public code repository**, and a **video demo of two minutes or
+less** posted somewhere public, plus **one form per team**. The 2025 paper excluded 32 of 120
+submissions for incomplete documentation, so the documentation is the difference between being in
+the paper and not.
+
+**The 2026 deadline is not set.** [Their agenda](https://llmhackathon.github.io/agenda/) says the
+kick-off time, the mentorship blocks and the submission deadline are still being finalised, and
+that they go to Slack first. The deadline sits at the end of the global Day 2, 22 October. Their
+[submission guidelines](https://llmhackathon.github.io/submission/) page still carries the 2025
+deadline and the old materials-and-chemistry framing, so it describes the shape of a submission
+well and the dates not at all — take those from Slack or the agenda.
+
+Central time runs 18 hours behind us, so a deadline set for the evening of the 22nd in CT lands
+here on the morning of the 23rd. Our two days end on the 20th, which leaves a real window for
+cutting the video and writing up rather than doing it in the last hour.
 
 ## What people have built there
 
@@ -146,12 +162,12 @@ there's something to find.
 Running on other dates means some of this is to be negotiated rather than assumed.
 
 **We owe:** a Slack presence and honesty about our dates; a room that works; and, afterwards -
-documented submissions with code and demos, if they will have them.
+documented submissions with code and demos, through the main site.
 
 **We hope to keep:** a route to the write-up paper for everyone in the room, the mentor pool and
 Slack, the site listing marked with our own dates, and a standing relationship with the groups in
-[interested-parties.md](interested-parties.md). Prizes and the live showcase are probably out, and
-we should not plan around them.
+[interested-parties.md](interested-parties.md). The judging route is confirmed, so the write-up is
+open to anyone here who submits. The live showcase runs on their schedule after the global days.
 
 **What we can offer back:** a working benchmark, a reproducible workflow and a set of results,
 published before the global event opens, which other sites can pick up if useful.
