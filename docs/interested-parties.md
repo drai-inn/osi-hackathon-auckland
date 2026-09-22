@@ -78,7 +78,7 @@ Adjacent rather than overlapping, worth knowing about:
 
 - **SKY / Materials Design Group** (2025, 1st) — Imperial College London. Nearest-neighbour
   retrieval grounded in a structure database. [hspark1212/synthesis-agent](https://github.com/hspark1212/synthesis-agent)
-- **MixSense** (2025, 3rd) — MIT and CatholicTech. [jdsanc/LLMHackathon](https://github.com/jdsanc/LLMHackathon)
+- **MixSense** (2025, 3rd) — MIT and CatholicTech. [jdsanc/MixSense](https://github.com/jdsanc/MixSense)
 - **MOF-Genie** (2025, Visionary) — knowledge graph plus prediction over MOFs, the same machinery
   theme 4 would use. [AntoRoyan/MOF-Genie](https://github.com/AntoRoyan/MOF-Genie)
 - **Parse Patrol** and **Ragalicious** — Humboldt-Universität zu Berlin and BAM. Data
