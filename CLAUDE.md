@@ -49,7 +49,7 @@ Flat on purpose.
 | `docs/figures/` | **Data.** Drawn from deposited coordinates by a script, and regenerable. Never hand-edit an SVG |
 | `docs/cards/`, `outreach/imagery/` | **Collateral.** Generated backgrounds, mood rather than measurement |
 | `docs/adr/` | Decisions |
-| `outreach/` | The collateral, and the brand. `make banner` and `make poster` rebuild the two rendered assets |
+| `outreach/` | The collateral, and the brand. `make banner`, `make social` and `make poster` rebuild the rendered assets |
 | `tools/` | Generators and the link checker |
 
 ## Hardware, which affects everything

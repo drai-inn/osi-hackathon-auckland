@@ -62,6 +62,19 @@ construction. `--south` is UoA's cyan, which lands within a few degrees of hue o
 | [`uoa-motif.png`](uoa-motif.png) | The cyan motif, as supplied (36 × 18) | The canonical asset |
 | [`uoa-motif.svg`](uoa-motif.svg) | Faithful redraw of the same geometry | Inline and scalable use; the raster is 36 px wide and will not enlarge |
 
+## Rendered cards
+
+| File | Size | Rebuild | Where it goes |
+| --- | --- | --- | --- |
+| [`readme-banner.png`](readme-banner.png) | 1200 × 500 | `make banner` | The top of [README.md](../../README.md) |
+| [`social-preview.png`](social-preview.png) | 1280 × 640 | `make social` | **Settings → General → Social preview.** It cannot be set through the API, so it is uploaded by hand |
+
+Both are rendered from the `.html` beside them rather than shipped as SVG, because Inter has to be
+guaranteed wherever the image is unfurled and nothing loads a webfont inside an `<img>`.
+
+The social card keeps everything that matters inside a **40 px border**, since every service that
+unfurls a link crops it differently. The padding is 64 px, which leaves room to spare.
+
 Both are the supplied files at half resolution, 1000 × 474, **with their transparent margin left
 on**. That margin is the clear space: nothing else goes inside it, and nothing here crops it out.
 
