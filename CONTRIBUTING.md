@@ -70,8 +70,26 @@ stay current instead of drifting. `DRY=1` shows you what would be pushed and pos
 either. For more than one row, call [tools/post_update.py](tools/post_update.py) directly — `--row`
 is repeatable there.
 
-Newest at the top, dated, short, honest, including what broke. A log that records only progress
-isn't worth following.
+**The bar: would a participant act differently for having read it?** Someone deciding whether to
+come, or working out what to bring, or planning their two days. If the answer is no, it doesn't go
+in the log. Releases, build fixes, tooling, repo mechanics and our own process are all invisible to
+the people subscribed — they are backstage, and the log is not.
+
+Newest at the top, dated, short, honest. A log that records only progress isn't worth following,
+so say what isn't known and what has slipped **where that affects a participant** — whether a model
+will be running on the hardware, whether a deadline has moved. Not whether a build passed.
+
+The shape of an entry follows from the bar:
+
+```markdown
+## YYYY-MM-DD · Headline
+
+**What changed for you.**
+
+**What to do about it.** Nothing is a fine answer.
+
+**What we don't know yet.** And when we expect to know.
+```
 
 ## Licence
 

@@ -90,6 +90,12 @@ in a new tab. `tools/build_site.py` fails the build on any of these rather than 
 **Run `make check` before committing.** It checks every relative link and anchor, and it has a
 self-test because GitHub's anchor rule is easy to get subtly wrong.
 
+**The live log is for participants, not for us.** Every entry has to clear one bar: would someone
+deciding whether to come, or working out what to bring, act differently for having read it?
+Registration changing, times, what to prepare, whether a model will run on the hardware, a deadline
+moving — those belong. Releases, build fixes, tooling, repo mechanics and our own process do not,
+however hard-won they were. That judgement can't be automated, so it is the author's, every time.
+
 **A sync never travels alone.** The live log is a pull request people subscribe to, so every commit
 on `live-log` costs a subscriber a notification. Syncing the branch with `main`, writing the entry
 and commenting on the PR are one action: `make update ENTRY=... RELEASE=...`, which is
