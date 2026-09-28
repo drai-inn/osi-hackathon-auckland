@@ -59,7 +59,8 @@ and tells them nothing. Three things make an update, and they happen together or
 3. the same text is posted as a pull request comment, which is what reaches a subscriber as prose
    rather than as a commit subject
 
-**A release is the unit.** Cut the tag, write the entry, then run it in one pass:
+**The unit is a change a participant would act on**, which often but not always coincides with a
+release. Write the entry, then run it in one pass:
 
 ```
 make update ENTRY=entry.md RELEASE=v26.9.6 ROW='Week=28 Sep – 4 Oct'

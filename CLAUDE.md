@@ -99,8 +99,9 @@ however hard-won they were. That judgement can't be automated, so it is the auth
 **A sync never travels alone.** The live log is a pull request people subscribe to, so every commit
 on `live-log` costs a subscriber a notification. Syncing the branch with `main`, writing the entry
 and commenting on the PR are one action: `make update ENTRY=... RELEASE=...`, which is
-[tools/post_update.py](tools/post_update.py). A release is the unit — cut the tag, write the entry,
-run it once. Never push a bare "bring the live log up to date with main" again; four of those went
+[tools/post_update.py](tools/post_update.py). The unit is a change worth telling someone about, not
+a release; `RELEASE=` records the tag in the commit message and deliberately keeps it out of the
+entry. Never push a bare "bring the live log up to date with main" again; four of those went
 out between 22 and 28 Sep with no entry behind any of them, which is how the log went quiet while
 four releases shipped.
 
