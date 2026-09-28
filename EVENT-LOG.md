@@ -16,8 +16,8 @@ closes the loop.
 
 | | |
 | --- | --- |
-| **Cadence** | Every release · weekly through to October · daily during 19-20 Oct · full write-up at the close |
-| **Contents** | What landed, what slipped, what we learned, the numbers — including what broke |
+| **Cadence** | Whenever something changes what you'd do · weekly through to October · daily during 19-20 Oct · full write-up at the close |
+| **Contents** | What changed for you, what to do about it, and what we don't know yet — including what's slipped |
 | **Status board** | Current week, what's blocking, and where teams actually stand |
 
 **To post an update:** `make update ENTRY=entry.md RELEASE=v26.9.6`, which syncs the branch, files

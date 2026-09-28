@@ -77,7 +77,9 @@ def main() -> None:
     ap.add_argument("--entry", required=True, type=Path,
                     help="markdown file holding the entry, opening with '## YYYY-MM-DD · Headline'")
     ap.add_argument("--release", default=None,
-                    help="tag this update covers, e.g. v26.9.6. Linked from the entry and the comment")
+                    help="tag this update covers, e.g. v26.9.6. Recorded in the commit message, "
+                         "deliberately not in the entry — which release something shipped in is "
+                         "backstage, and the entry is for participants")
     ap.add_argument("--row", action="append", default=[], metavar="NAME=VALUE",
                     help="update a table row by name, repeatable. The status board and the header "
                          "both use '| **Name** | value |', so this reaches either. "
@@ -93,8 +95,6 @@ def main() -> None:
         tags = run("git", "tag", "--list", args.release, cwd=ROOT)
         if not tags:
             sys.exit(f"no such tag: {args.release}. Cut it before you announce it.")
-        entry += (f"\n\nReleased as **[{args.release}]"
-                  f"(https://github.com/{REPO}/releases/tag/{args.release})**.")
 
     work = Path(tempfile.mkdtemp(prefix="live-log-"))
     try:
@@ -138,8 +138,9 @@ def main() -> None:
 
         run("git", "add", LOG, cwd=work)
         subject = entry.splitlines()[0].lstrip("# ").strip()
+        body = f"Covers {args.release}.\n\n" if args.release else ""
         run("git", "commit", "-q", "-m",
-            f"Log: {subject}\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>", cwd=work)
+            f"Log: {subject}\n\n{body}Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>", cwd=work)
 
         if args.dry_run:
             print("--- would push to", BRANCH, "---")
