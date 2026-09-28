@@ -35,14 +35,15 @@ Two days to find out how far up that second ladder you have to climb to get an a
 > mathematics. Free, hybrid, and run from sites around the world on the same two days.
 >
 > **120** projects submitted in 2025 · **16** on-site locations plus virtual · **4** community
-> papers, every team credited · **free**, and one registration covers every site.
+> papers, every team credited · **free** to take part, at every site.
 >
-> **Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.** Registering once
-> covers both, and Wednesday the 21st is open if a group wants to carry the work across. Every
+> **Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.** Their registration
+> is the one that makes a project visible to the judges, and Wednesday the 21st is open if a group
+> wants to carry the work across. Every
 > edition is written up with every contributor named, which for two days' work is a real line on
 > a CV.
 >
-> **[Register — free](https://luma.com/ku88xh92)** ·
+> **[Register with the global event](https://luma.com/ku88xh92)** ·
 > [llmhackathon.github.io](https://llmhackathon.github.io/) ·
 > [their Slack](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q) ·
 > [how we fit in](docs/the-global-event.md)
@@ -186,7 +187,7 @@ theme known to run on our hardware before anyone arrives.
 | **Where** | Digital Research Innovation & AI Lab, Level 10, 70 Symonds Street, University of Auckland |
 | **Cost** | Free |
 | **Bring** | A laptop |
-| **Register** | Free, through the global event — [luma.com/ku88xh92](https://luma.com/ku88xh92) |
+| **Register** | Two free steps — [Auckland RSVP](https://forms.cloud.microsoft/r/JQCAFqHdZ4), then [the global event](https://luma.com/ku88xh92) |
 | **Questions** | [Open an issue](https://github.com/drai-inn/osi-hackathon-auckland/issues/new) |
 | **Poster** | [A3, PDF](outreach/poster-A3.pdf) — print one for a noticeboard |
 | **Submitting** | Through the global event, where the judges are — [what that takes](docs/taking-part.md#submitting) |
@@ -223,5 +224,5 @@ why"* is a result we'd be happy to present.
 Brand marks and model weights are not covered — see [LICENSE](LICENSE).
 
 **[drai-inn.github.io/osi-hackathon-auckland](https://drai-inn.github.io/osi-hackathon-auckland/)** ·
-[Register](https://luma.com/ku88xh92) · [Global event](https://llmhackathon.github.io/) ·
+[Auckland RSVP](https://forms.cloud.microsoft/r/JQCAFqHdZ4) · [Global registration](https://luma.com/ku88xh92) ·
 [Live log](EVENT-LOG.md) · [Contributing](CONTRIBUTING.md)

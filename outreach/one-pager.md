@@ -32,10 +32,10 @@ trust.**
 
 We're one site of the **Open Scientific Intelligence Hackathon**, in its fourth year. 120 projects
 submitted in 2025, 16 on-site locations plus virtual, and a community paper each year crediting
-every team. Free, and **one registration covers every site.**
+every team. **Free to take part, at every site.**
 
-Auckland runs **Mon 19 – Tue 20 October**; the global days are **21–22 October**. Registering once
-covers both.
+Auckland runs **Mon 19 Oct, 10am – Tue 20 Oct, 4pm**; the global days are **21–22 October**.
+Registering takes two free steps, ours and theirs.
 
 Several 2025 projects sit right next to our themes and all are open source: **UMADock** (an MLIP as
 the docking score), **DynaMate** (autonomous protein–ligand MD), **LARA-HPC** (an agent submitting
@@ -92,7 +92,10 @@ occasion both days.
 
 ## Register, and ask
 
-Registration: **https://luma.com/ku88xh92** — free, and it covers Auckland and the global days.
+Registration, two free steps:
+
+1. **Auckland RSVP** — https://forms.cloud.microsoft/r/JQCAFqHdZ4
+2. **Global event** — https://luma.com/ku88xh92 · the one their judges work from
 
 Read first: **https://drai-inn.github.io/osi-hackathon-auckland/**
 

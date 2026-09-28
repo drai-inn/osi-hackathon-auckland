@@ -12,9 +12,16 @@ proteins, ligand binding, drug discovery, pharmacology. Four themes to start fro
 rung of that ladder, plus two open slots on the site and in the README for anything that belongs
 somewhere else. See [ADR-0007](docs/adr/0007-four-themes-invited-teams.md) for the shape and why.
 
-Registration is the **global event's** — one free sign-up covers every site, ours included. There is
-no local registration and no local email address anywhere in the public assets; questions go to
-issues. Don't reintroduce a personal contact address.
+**Registration is two free steps**, and both belong in the copy: an
+[Auckland RSVP](https://forms.cloud.microsoft/r/JQCAFqHdZ4), run by the Digital Research Innovation
+& AI Digital Services team, and the **global event's own** at [luma.com/ku88xh92](https://luma.com/ku88xh92).
+The global one is what makes a project visible to their judges, so it is never the step that gets
+dropped. This replaces the earlier rule that there was no local registration — that held until
+28 Sep 2026, and pre-dates the form existing.
+
+The public assets still carry **no personal email address**; questions go to issues. The RSVP form
+names local contacts, and that is the form's business rather than ours. Don't put a personal
+address in the repo or on the site without being asked to.
 
 **The University of Auckland lockup goes top left**, with the key message left-aligned under it,
 on every surface that carries it. Navy on light, reversed white on dark — the mark is never

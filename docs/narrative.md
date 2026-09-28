@@ -61,10 +61,12 @@ useful work there.
 
 We're one site of the [Open Scientific Intelligence Hackathon](the-global-event.md), in its fourth
 year. **120 projects submitted in 2025, 16 on-site locations plus virtual, four community papers
-with every team credited.** Free, and one registration covers every site.
+with every team credited.** Free to take part, at every site.
 
-**Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.** Registering once
-covers both, and Wednesday the 21st is open if a group wants to carry the work across.
+**Auckland runs Mon 19 – Tue 20 October; the global days are 21–22 October.** Registering takes
+two free steps: an [RSVP for Auckland](https://forms.cloud.microsoft/r/JQCAFqHdZ4) and the [global event's own registration](https://luma.com/ku88xh92),
+which is the one their judges work from. Wednesday the 21st is open if a group wants to carry the
+work across.
 
 Half an hour on [what people have built there](the-global-event.md#what-people-have-built-there) is
 the fastest way to see what two days produces. Several of the 2025 projects sit right next to our

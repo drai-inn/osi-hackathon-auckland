@@ -14,8 +14,8 @@ until this year the *LLM Hackathon for Applications in Materials Science and Che
 annual. Free. Hybrid: physical hubs worldwide plus an online hub.
 
 Lead organiser: **Ben Blaiszik** (University of Chicago / Argonne / Globus), corresponding author
-on all three write-ups. Registration: [luma.com/ku88xh92](https://luma.com/ku88xh92) — free, and one
-sign-up covers every site. Site: [llmhackathon.github.io](https://llmhackathon.github.io/).
+on all three write-ups. Registration: [luma.com/ku88xh92](https://luma.com/ku88xh92) — free, and
+the one their judges work from. Site: [llmhackathon.github.io](https://llmhackathon.github.io/).
 Slack: [join here](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q).
 
 ## Three years, and the trend
@@ -50,8 +50,13 @@ the event. Auckland is already listed as a **site in planning**, someone has put
 
 We run 19-20 Oct, because those are the two days we have
 ([ADR-0006](adr/0006-run-19-20-october-as-a-precursor.md)). Ben Blaiszik is supportive of our dates
-and our approach, so we run on ours and register through theirs: **one free registration covers
-every site, including this one.**
+and our approach, so we run on ours and register through theirs as well as our own.
+
+**Registration is two free steps.** An [Auckland RSVP](https://forms.cloud.microsoft/r/JQCAFqHdZ4), which is ours and tells us who is
+in the room, on which days, and whether they're joining remotely; and the global event's own, which
+is the one that makes a project visible to their judges. A group that means to submit needs both.
+The Auckland form is run by the Digital Research Innovation & AI Digital Services team and names a
+local contact, which is the first non-GitHub route into this event we have had.
 
 **2026 sites.** Confirmed: Durham NC (Duke, Defne Çirci). In planning: Baltimore (JHU) · Boston
 (MIT) · Chicago · Lemont (Argonne) · Madison · New York · Raleigh (NC State) · San Francisco ·
@@ -172,6 +177,6 @@ open to anyone here who submits. The live showcase runs on their schedule after 
 **What we can offer back:** a working benchmark, a reproducible workflow and a set of results,
 published before the global event opens, which other sites can pick up if useful.
 
-**What to lead with:** the global event itself. It runs 21-22 October, one free registration covers
-every site, and that registration is the one we point people at. We're a local site and the copy
-reads that way.
+**What to lead with:** the global event itself. It runs 21-22 October, and its registration is the
+one that carries a project to the judges, so it is never the step that gets dropped. We're a local
+site and the copy reads that way. Our own RSVP sits alongside it rather than in front of it.

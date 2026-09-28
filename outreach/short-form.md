@@ -17,7 +17,8 @@ Short on purpose. The detail follows later in the week.
 >
 > The global event is the reason we're doing this. Fourth year, 120 projects submitted in 2025
 > across 16 sites, and a community paper each year that credits every team — a real publication for
-> two days' work. It runs 21–22 October and **one free registration covers both it and us**.
+> two days' work. It runs 21–22 October, and registering with them is free and is what puts a
+> project in front of their judges.
 >
 > The question we're chasing: **how far can a chain of surrogates take us in biomolecular
 > interactions?** Systems, proteins, ligand binding, drug discovery, pharmacology. There's now an
@@ -73,7 +74,7 @@ Short on purpose. The detail follows later in the week.
 > which runs 21–22 October with registration open to anyone.
 >
 > Free · newcomers genuinely welcome.
-> https://drai-inn.github.io/osi-hackathon-auckland/ · register at https://luma.com/ku88xh92
+> https://drai-inn.github.io/osi-hackathon-auckland/ · RSVP https://forms.cloud.microsoft/r/JQCAFqHdZ4
 
 ## Social, long
 
@@ -105,7 +106,7 @@ Short on purpose. The detail follows later in the week.
 > **Both days:** open together, lightning talks, work in small groups, close together. Food and a
 > social occasion each day.
 >
-> Read first: https://drai-inn.github.io/osi-hackathon-auckland/ · Register: https://luma.com/ku88xh92
+> Read first: https://drai-inn.github.io/osi-hackathon-auckland/ · RSVP: https://forms.cloud.microsoft/r/JQCAFqHdZ4 · Global: https://luma.com/ku88xh92
 
 ## Email signature, September–October
 

@@ -21,8 +21,9 @@ the pitch there and re-cut, so the versions stay together.
 - Say what you'd like them to bring: their team, their expertise, and a problem or candidate
 - Mention that coming for the opening and leaving the team to it is fine. It's the difference
   between a yes and a diary conflict
-- **Registration is the global event's** — [luma.com/ku88xh92](https://luma.com/ku88xh92) — and one sign-up covers
-  every site including ours. We don't run a separate local list
+- **Registration is two free steps** — the [Auckland RSVP](https://forms.cloud.microsoft/r/JQCAFqHdZ4) for the room, then the
+  [global event's own](https://luma.com/ku88xh92), which is what makes a project visible to their judges. Say both,
+  and say why the second one matters
 
 ## The three things people ask
 
