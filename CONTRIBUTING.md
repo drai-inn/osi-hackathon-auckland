@@ -65,9 +65,10 @@ and tells them nothing. Three things make an update, and they happen together or
 make update ENTRY=entry.md RELEASE=v26.9.6 ROW='Week=28 Sep – 4 Oct'
 ```
 
-`ROW` is repeatable and updates any `| **Name** | value |` row, which is how the status board and
-the header table stay current instead of drifting. `DRY=1` shows you what would be pushed and
-posted without doing either. See [tools/post_update.py](tools/post_update.py).
+`ROW` updates any `| **Name** | value |` row, which is how the status board and the header table
+stay current instead of drifting. `DRY=1` shows you what would be pushed and posted without doing
+either. For more than one row, call [tools/post_update.py](tools/post_update.py) directly — `--row`
+is repeatable there.
 
 Newest at the top, dated, short, honest, including what broke. A log that records only progress
 isn't worth following.

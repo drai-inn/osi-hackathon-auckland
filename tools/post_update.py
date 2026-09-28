@@ -99,7 +99,12 @@ def main() -> None:
     work = Path(tempfile.mkdtemp(prefix="live-log-"))
     try:
         run("git", "fetch", "-q", "origin", BRANCH, cwd=ROOT)
-        run("git", "worktree", "add", "-q", str(work), BRANCH, cwd=ROOT)
+        # Detached on purpose. A worktree that checks out the branch moves the
+        # real ref when it commits, which means a --dry-run leaves the branch
+        # advanced and the next real run stacks a second entry on top of it.
+        # That happened once; it is not allowed to happen twice.
+        run("git", "worktree", "add", "--detach", "-q", str(work),
+            f"origin/{BRANCH}", cwd=ROOT)
 
         # Sync. The log is ours on both sides of a conflict; main only ever
         # carries the pointer to this branch.
@@ -124,7 +129,12 @@ def main() -> None:
                              log, count=1)
             if not n:
                 sys.exit(f"found no table row called '{name.strip()}' to update")
-        path.write_text(insert(log, entry))
+        updated = insert(log, entry)
+        heading = entry.splitlines()[0]
+        if updated.count(heading) != 1:
+            sys.exit(f"that entry would appear {updated.count(heading)} times in {LOG}. "
+                     "Something already put it there.")
+        path.write_text(updated)
 
         run("git", "add", LOG, cwd=work)
         subject = entry.splitlines()[0].lstrip("# ").strip()
@@ -137,7 +147,7 @@ def main() -> None:
             print(f"\n--- would comment on PR #{PR} ---\n{entry}")
             return
 
-        run("git", "push", "-q", "origin", BRANCH, cwd=work)
+        run("git", "push", "-q", "origin", f"HEAD:{BRANCH}", cwd=work)
         body = work / ".comment.md"
         body.write_text(entry)
         run("gh", "pr", "comment", PR, "--repo", REPO, "--body-file", str(body), cwd=work)
