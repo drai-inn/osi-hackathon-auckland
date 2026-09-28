@@ -50,7 +50,27 @@ which creeps into drafts and reads as sales.
 can subscribe to it and get every update and nothing else. It closes when the final presentations
 and reports are done.
 
-To post: commit to `live-log`. Newest at the top, dated, short, honest, including what broke.
+**A sync never travels alone.** People subscribed to that pull request get a notification for every
+commit on the branch, so a bare "bring the live log up to date with main" spends their attention
+and tells them nothing. Three things make an update, and they happen together or not at all:
+
+1. the branch is synced with `main`, which keeps the pull request's diff honest
+2. a dated entry goes into `EVENT-LOG.md`, which is the record
+3. the same text is posted as a pull request comment, which is what reaches a subscriber as prose
+   rather than as a commit subject
+
+**A release is the unit.** Cut the tag, write the entry, then run it in one pass:
+
+```
+make update ENTRY=entry.md RELEASE=v26.9.6 ROW='Week=28 Sep – 4 Oct'
+```
+
+`ROW` is repeatable and updates any `| **Name** | value |` row, which is how the status board and
+the header table stay current instead of drifting. `DRY=1` shows you what would be pushed and
+posted without doing either. See [tools/post_update.py](tools/post_update.py).
+
+Newest at the top, dated, short, honest, including what broke. A log that records only progress
+isn't worth following.
 
 ## Licence
 

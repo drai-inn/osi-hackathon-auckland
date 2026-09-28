@@ -10,16 +10,18 @@ CI noise. **When it closes, the work is finished.** That's the only signal you n
 ---
 
 **Why a branch and not this file?** Because the PR gives you one thing to subscribe to and one clear
-finish line. Every update is a commit; the diff is the log; merging it at the end lands the complete
-record here and closes the loop.
+finish line. Every update arrives twice over: as a commit, which is the record, and as a comment on
+the PR, which is the readable version. Merging it at the end lands the complete record here and
+closes the loop.
 
 | | |
 | --- | --- |
-| **Cadence** | Weekly through to October · daily during 19-20 Oct · full write-up at the close |
+| **Cadence** | Every release · weekly through to October · daily during 19-20 Oct · full write-up at the close |
 | **Contents** | What landed, what slipped, what we learned, the numbers — including what broke |
 | **Status board** | Current week, what's blocking, and where teams actually stand |
 
-**To post an update:** commit to `live-log`. Newest entry at the top, dated, short. Template at the
+**To post an update:** `make update ENTRY=entry.md RELEASE=v26.9.6`, which syncs the branch, files
+the entry and posts the comment in one pass. Newest entry at the top, dated, short. Template at the
 foot of the file there. See [CONTRIBUTING.md](CONTRIBUTING.md#the-live-log).
 
 **New here?** [The narrative](docs/narrative.md) · [The themes](docs/themes.md) ·

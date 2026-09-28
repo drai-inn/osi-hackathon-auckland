@@ -1,6 +1,6 @@
 # Light by design. Standard library only, so anything here runs on day 1.
 
-.PHONY: help check cards figures banner osi social icons poster site pages
+.PHONY: help check cards figures banner osi social icons poster site pages update
 
 help:
 	@echo "check    every relative link and anchor in the markdown"
@@ -13,6 +13,8 @@ help:
 	@echo "poster   rebuild the A3 poster PDF from outreach/poster.html"
 	@echo "site     build the GitHub Pages site into _site/"
 	@echo "pages    build and publish _site/ to the gh-pages branch"
+	@echo "update   post an update to the live log: sync, entry, PR comment"
+	@echo "         make update ENTRY=entry.md RELEASE=v26.9.6 ROW='Week=28 Sep – 4 Oct'"
 
 check:
 	python3 tools/check_links.py --self-test
@@ -63,3 +65,12 @@ pages: site
 	@git rev-parse --verify gh-pages >/dev/null 2>&1 || git branch gh-pages $$(git commit-tree $$(git hash-object -t tree /dev/null) -m "init gh-pages")
 	@cd _site && git init -q . && git add -A && git -c user.email=noreply@auckland.ac.nz -c user.name="pages build" commit -qm "Publish site" && git push -qf https://github.com/drai-inn/osi-hackathon-auckland.git HEAD:gh-pages && rm -rf .git
 	@echo "published -> https://drai-inn.github.io/osi-hackathon-auckland/"
+
+# One pass: sync the branch, add the entry, comment on the pull request. See
+# the docstring in tools/post_update.py for why those three are not separable.
+update:
+	@test -n "$(ENTRY)" || { echo "ENTRY=path/to/entry.md is required"; exit 1; }
+	python3 tools/post_update.py --entry "$(ENTRY)" \
+	  $(if $(RELEASE),--release "$(RELEASE)") \
+	  $(if $(ROW),--row "$(ROW)") \
+	  $(if $(DRY),--dry-run)
