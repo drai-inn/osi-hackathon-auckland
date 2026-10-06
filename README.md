@@ -192,9 +192,6 @@ theme known to run on our hardware before anyone arrives.
 | **Poster** | [A3, PDF](outreach/poster-A3.pdf) — print one for a noticeboard |
 | **Submitting** | Through the global event, where the judges are — [what that takes](docs/taking-part.md#submitting) |
 
-We keep a [live event log](EVENT-LOG.md) as a single pull request that stays open until the final
-presentations and reports are done. Subscribe and you'll get every update and nothing else.
-
 ## Where things are
 
 | | |
@@ -225,4 +222,4 @@ Brand marks and model weights are not covered — see [LICENSE](LICENSE).
 
 **[drai-inn.github.io/osi-hackathon-auckland](https://drai-inn.github.io/osi-hackathon-auckland/)** ·
 [Auckland RSVP](https://forms.cloud.microsoft/r/JQCAFqHdZ4) · [Global registration](https://luma.com/ku88xh92) ·
-[Live log](EVENT-LOG.md) · [Contributing](CONTRIBUTING.md)
+[Contributing](CONTRIBUTING.md)

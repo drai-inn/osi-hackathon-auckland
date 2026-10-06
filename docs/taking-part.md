@@ -118,7 +118,3 @@ Also welcome. Turn up, pick a [theme](themes.md), find one or two people to work
 A laptop, and a problem you care about or the willingness to pick one up. The compute, the targets,
 the data and the environments are set up before you arrive.
 
-## Following along without coming
-
-The [live log](../EVENT-LOG.md) is one pull request you can subscribe to. It closes when the work is
-finished.

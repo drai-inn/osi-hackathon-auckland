@@ -44,45 +44,6 @@ re-cut, so the versions stay together.
 **Keep it plain.** Say the thing once. Watch for the contrastive construction — "not X, it's Y" —
 which creeps into drafts and reads as sales.
 
-## The live log
-
-[EVENT-LOG.md](EVENT-LOG.md) lives on the `live-log` branch as a single open pull request. Anyone
-can subscribe to it and get every update and nothing else. It closes when the final presentations
-and reports are done.
-
-**A sync never travels alone.** People subscribed to that pull request get a notification for every
-commit on the branch, so a bare "bring the live log up to date with main" spends their attention
-and tells them nothing. Three things make an update, and they happen together or not at all:
-
-1. the branch is synced with `main`, which keeps the pull request's diff honest
-2. a dated entry goes into `EVENT-LOG.md`, which is the record
-3. the same text is posted as a pull request comment, which is what reaches a subscriber as prose
-   rather than as a commit subject
-
-**The unit is a change a participant would act on**, which often but not always coincides with a
-release. Write the entry, then run it in one pass:
-
-```
-make update ENTRY=entry.md RELEASE=v26.9.6 ROW='Week=28 Sep – 4 Oct'
-```
-
-`ROW` updates any `| **Name** | value |` row, which is how the status board and the header table
-stay current instead of drifting. `DRY=1` shows you what would be pushed and posted without doing
-either. For more than one row, call [tools/post_update.py](tools/post_update.py) directly — `--row`
-is repeatable there.
-
-**The bar: would a participant act differently for having read it?** Someone deciding whether to
-come, or working out what to bring, or planning their two days. If the answer is no, it doesn't go
-in the log. Releases, build fixes, tooling, repo mechanics and our own process are all invisible to
-the people subscribed — they are backstage, and the log is not.
-
-Newest at the top, dated, short, honest. A log that records only progress isn't worth following,
-so say what isn't known and what has slipped **where that affects a participant** — whether a model
-will be running on the hardware, whether a deadline has moved. Not whether a build passed.
-
-The shape of an entry follows from the bar:
-
-```markdown
 ## YYYY-MM-DD · Headline
 
 **What changed for you.**
