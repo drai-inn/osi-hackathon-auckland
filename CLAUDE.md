@@ -37,6 +37,12 @@ re-invented. See [the brand guide](outreach/brand/README.md#the-osi-hackathons-m
 they meet our framing. `docs/the-global-event.md` is the canonical version, including the list of
 past projects with links to their repos — check those still resolve before a release.
 
+**Their Slack invite expires, and fails silently.** Slack answers a dead shared invite with HTTP
+200 and a generic "Create Account" page, so `make check` and a status-code sweep both see nothing
+wrong. Before a release, open the invite and confirm the title reads *Join LLMs for Materials and
+Chemistry on Slack*. Take the current one from [llmhackathon.github.io](https://llmhackathon.github.io/);
+ours was dead by 6 Oct 2026 and had to be replaced.
+
 This is an invitation, not a project specification. We deliberately do not define the work in
 advance, because the groups who turn up bring their own problems and their own expertise. **Resist
 the urge to specify.** If something reads like it is closing down a choice a participant should

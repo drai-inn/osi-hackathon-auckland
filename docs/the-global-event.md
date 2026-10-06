@@ -16,7 +16,7 @@ annual. Free. Hybrid: physical hubs worldwide plus an online hub.
 Lead organiser: **Ben Blaiszik** (University of Chicago / Argonne / Globus), corresponding author
 on all three write-ups. Registration: [luma.com/ku88xh92](https://luma.com/ku88xh92) — free, and
 the one their judges work from. Site: [llmhackathon.github.io](https://llmhackathon.github.io/).
-Slack: [join here](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q).
+Slack: [join here](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-4c046lidd-qTNHooaS7NLiT8~mD5dmFg).
 
 ## Three years, and the trend
 

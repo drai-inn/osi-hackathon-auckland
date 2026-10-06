@@ -59,7 +59,7 @@ checked September 2026. The fuller picture, with what each one does, is in
 | **Jan Janssen** | MPI for Sustainable Materials | LangSim 2024, LARA-HPC 2025. Workflow orchestration |
 | **Yuan Chiang** | UC Berkeley | LangSim 2024. Natural-language interfaces to simulation |
 
-Contact details are not listed here. The [Slack](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q)
+Contact details are not listed here. The [Slack](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-4c046lidd-qTNHooaS7NLiT8~mD5dmFg)
 is the right route, and it comes with registration.
 
 ## 2026 sites

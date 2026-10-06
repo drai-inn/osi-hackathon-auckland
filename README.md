@@ -45,7 +45,7 @@ Two days to find out how far up that second ladder you have to climb to get an a
 >
 > **[Register with the global event](https://luma.com/ku88xh92)** ·
 > [llmhackathon.github.io](https://llmhackathon.github.io/) ·
-> [their Slack](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-3df7bc0z5-I6odHw8eHaBbtHqsGxqz0Q) ·
+> [their Slack](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-4c046lidd-qTNHooaS7NLiT8~mD5dmFg) ·
 > [how we fit in](docs/the-global-event.md)
 
 ### Built at past editions, close to our themes
