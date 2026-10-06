@@ -25,11 +25,36 @@ Updated with each entry. The honest version.
 
 | | |
 | --- | --- |
-| **Week** | 28 Sep – 4 Oct |
+| **Week** | 5 – 11 Oct |
 | **Shape** | Four themes to start from, and room for any others people bring |
 | **🔴 Blocking** | Who we're inviting · no team has committed yet |
 | **Hardware** | Goal is at least one model per theme known to start before anyone arrives. Not there yet |
 | **Teams** | 0 committed. That's the number that matters now |
+
+---
+
+## 2026-10-06 · The Slack link was broken, and Slack is where the deadline lands
+
+**If you tried to join the Slack and couldn't, that was us.** The invite on our site had expired.
+Slack handles a dead invite by quietly showing you a generic signup page that never mentions the
+workspace, so it looked like you'd done something wrong. You hadn't.
+**[The link works now](https://join.slack.com/t/llmsformateri-0lw8517/shared_invite/zt-4c046lidd-qTNHooaS7NLiT8~mD5dmFg)**
+— worth another try if you gave up on it.
+
+**It matters more than a broken link usually would.** The organisers publish the **submission
+deadline to Slack first**, along with the kick-off time and the mentorship blocks. None of those
+are announced yet, with two weeks to go. Being in that workspace is how you hear first, and it's
+also where teams form across sites before the event rather than on the day.
+
+**Nothing else has changed for you since 28 September.** Registration is still the same two free
+steps — the [Auckland RSVP](https://forms.cloud.microsoft/r/JQCAFqHdZ4) and
+[the global event's](https://luma.com/ku88xh92) — and we still run 10am Monday 19 October to 4pm
+Tuesday 20 October at Level 10, 70 Symonds Street.
+
+**What we don't know yet.** The submission deadline, still. And we don't yet have a model confirmed
+to start on our hardware for every theme — that's the pre-work between now and the 19th, and it's
+the thing most likely to cost you time on day one if we get it wrong. Both will be in the next
+update, which will be before the event rather than after it.
 
 ---
 
